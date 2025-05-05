@@ -3,178 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân - TRẦN HUỲNH VŨ</title>
+    <title>Giới Thiệu Bản Thân - Trần Huỳnh Vũ</title>
     <style>
-        /* Reset một số thuộc tính mặc định */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            color: #333;
         }
 
-        /* Cấu trúc chung của trang */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f5f9;
-            color: #333;
+        /* Header */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        /* Section - Nội dung giới thiệu */
+        section {
+            background-color: white;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 2px solid #007BFF; /* Viền khung màu xanh */
+            border-radius: 8px; /* Bo góc mềm mại */
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
             line-height: 1.6;
         }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            max-width: 900px;
-        }
-
-        /* Phần header */
-        header {
-            text-align: center;
-            margin-top: 20px;
-            padding: 30px;
-            background-color: #2980b9;
-            color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-bottom: 0;
-        }
-
-        /* Phần giới thiệu về bản thân */
-        .intro {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            border: 1px solid #ddd;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .intro h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #2980b9;
-        }
-
-        .intro p {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        /* Phần kỹ năng */
-        .skills {
-            margin: 40px 0;
-        }
-
-        .skills h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #2980b9;
-        }
-
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .skills li {
-            font-size: 18px;
-            padding: 10px;
-            background-color: #ecf0f1;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .skills li:hover {
-            background-color: #3498db;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        /* Phần liên hệ */
-        .contact {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            border: 1px solid #ddd;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #2980b9;
-        }
-
-        .contact a {
-            color: #3498db;
+        /* Liên kết email */
+        a {
+            color: #007BFF;
             text-decoration: none;
-            font-size: 18px;
         }
 
-        .contact a:hover {
+        a:hover {
             text-decoration: underline;
-            color: #1abc9c;
         }
 
-        /* Phần footer */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #2980b9;
-            color: #fff;
-            margin-top: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Xin chào, tôi là TRẦN HUỲNH VŨ</h1>
-            <p>Lập trình viên phần mềm với hơn 5 năm kinh nghiệm</p>
-        </header>
+    <header>
+        <h1>Giới Thiệu Bản Thân</h1>
+    </header>
 
-        <section class="intro">
-            <h2>Về tôi</h2>
-            <p>
-                Tôi là một lập trình viên đam mê công nghệ, chuyên phát triển các ứng dụng web và học máy.
-                Với hơn 5 năm kinh nghiệm trong ngành, tôi đã làm việc với nhiều công nghệ và ngôn ngữ lập trình khác nhau.
-            </p>
-        </section>
+    <section>
+        <h2>Thông Tin Cá Nhân</h2>
+        <p><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
+        <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+        <p><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
+        <p><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
+        <p><strong>Giới thiệu:</strong> Tôi là một sinh viên ngành Công Nghệ Thông Tin, hiện đang theo học tại Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang. Tôi đam mê công nghệ, đặc biệt là lập trình và phát triển phần mềm. Mục tiêu của tôi là học hỏi và phát triển bản thân trong lĩnh vực công nghệ để có thể đóng góp cho cộng đồng và phát triển sự nghiệp lâu dài.</p>
+    </section>
 
-        <section class="skills">
-            <h2>Kỹ năng của tôi</h2>
-            <ul>
-                <li>Python</li>
-                <li>JavaScript (React.js, Node.js)</li>
-                <li>Machine Learning</li>
-                <li>Data Analysis</li>
-                <li>SQL & NoSQL</li>
-            </ul>
-        </section>
-
-        <section class="contact">
-            <h2>Liên hệ</h2>
-            <p>Email: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/tranhuynhvu" target="_blank">linkedin.com/in/tranhuynhvu</a></p>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 TRẦN HUỲNH VŨ</p>
-        </footer>
-    </div>
+    <footer>
+        <p>Bản quyền © 2025 Trần Huỳnh Vũ</p>
+    </footer>
 </body>
 </html>
