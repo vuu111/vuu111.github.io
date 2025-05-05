@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Bản Thân - TRẦN HUỲNH VŨ</title>
+    <style>
+        /* Reset một số thuộc tính mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* Cấu trúc chung của trang */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        /* Phần header */
+        header {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Phần giới thiệu về bản thân */
+        .intro {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        .intro h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Phần kỹ năng */
+        .skills {
+            margin: 40px 0;
+        }
+
+        .skills h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li {
+            font-size: 18px;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Phần liên hệ */
+        .contact {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Phần footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Xin chào, tôi là Nguyễn Văn A</h1>
+            <p>Lập trình viên phần mềm với hơn 5 năm kinh nghiệm</p>
+        </header>
+        <section class="intro">
+            <h2>Về tôi</h2>
+            <p>
+                Tôi là một lập trình viên đam mê công nghệ, chuyên phát triển các ứng dụng web và học máy.
+                Với hơn 5 năm kinh nghiệm trong ngành, tôi đã làm việc với nhiều công nghệ và ngôn ngữ lập trình khác nhau.
+            </p>
+        </section>
+        <section class="skills">
+            <h2>Kỹ năng của tôi</h2>
+            <ul>
+                <li>Python</li>
+                <li>JavaScript (React.js, Node.js)</li>
+                <li>Machine Learning</li>
+                <li>Data Analysis</li>
+                <li>SQL & NoSQL</li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Liên hệ</h2>
+            <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/nguyenvana" target="_blank">linkedin.com/in/nguyenvana</a></p>
+        </section>
+        <footer>
+            <p>&copy; 2025 TRẦN HUỲNH VŨ</p>
+        </footer>
+    </div>
+</body>
+</html>
