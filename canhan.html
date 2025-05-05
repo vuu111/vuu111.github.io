@@ -4,46 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới Thiệu Bản Thân - Trần Huỳnh Vũ</title>
+    <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
-        /* Header */
         header {
             background-color: #007BFF;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
-        h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
         }
 
-        /* Section - Nội dung giới thiệu */
         section {
-            background-color: white;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border: 2px solid #007BFF; /* Viền khung màu xanh */
-            border-radius: 8px; /* Bo góc mềm mại */
+            background-color: #fff;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            border-left: 6px solid #007BFF;
+            border-radius: 12px;
         }
 
         h2 {
             color: #007BFF;
+            margin-top: 0;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin: 12px 0;
         }
 
-        /* Liên kết email */
+        strong {
+            display: inline-block;
+            width: 140px;
+            color: #555;
+        }
+
         a {
             color: #007BFF;
             text-decoration: none;
@@ -53,19 +61,36 @@
             text-decoration: underline;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             background-color: #007BFF;
             color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 15px 10px;
+            font-size: 0.95em;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            strong {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Giới Thiệu Bản Thân</h1>
     </header>
@@ -80,7 +105,8 @@
     </section>
 
     <footer>
-        <p>Bản quyền © 2025 Trần Huỳnh Vũ</p>
+        <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
