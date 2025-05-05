@@ -1,11 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Dịch Vụ - Công Ty CNTT IT Chuyên Nghiệp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8; /* Màu nền nhẹ nhàng */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #2196F3; /* Màu xanh chủ đạo */
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        header nav {
+            margin-top: 15px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #FFD700; /* Màu vàng khi hover */
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        /* Phần Nội dung chính */
+        section {
+            background-color: white;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #2196F3; /* Màu xanh giống header */
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        section label {
+            font-size: 16px;
+            color: #008080; /* Màu xanh lá cây */
+        }
+
+        section input[type="email"],
+        section input[type="text"],
+        section textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        section input[type="email"]:focus,
+        section input[type="text"]:focus,
+        section textarea:focus {
+            outline: none;
+            border-color: #2196F3; /* Màu xanh khi focus */
+        }
+
+        section ol {
+            margin-left: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        section li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #eee; /* Màu nền footer */
+            color: #444; /* Màu văn bản footer */
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #2196F3; /* Màu xanh giống header */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Dịch Vụ</h1>
         <hr>
@@ -19,18 +138,23 @@
 
     <section>
         <h2>Dịch vụ chúng tôi cung cấp</h2>
-        <label for="gmail">Nhập Gmail:</label><br>
-        <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required><br><br>
+        
+        <!-- Form liên hệ -->
         <form method="post" action="#">
-        <label for="ten">Họ và tên:</label><br>
-        <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required><br><br>
+            <label for="gmail">Nhập Gmail:</label><br>
+            <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required><br><br>
 
-        <label for="noidung">Nội dung:</label><br>
-        <textarea id="noidung" name="noidung" rows="5" cols="40" placeholder="Nhập nội dung liên hệ hoặc góp ý..." required></textarea><br><br>
+            <label for="ten">Họ và tên:</label><br>
+            <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required><br><br>
 
-        <input type="submit" value="Gửi">
+            <label for="noidung">Nội dung:</label><br>
+            <textarea id="noidung" name="noidung" rows="5" placeholder="Nhập nội dung liên hệ hoặc góp ý..." required></textarea><br><br>
+
+            <input type="submit" value="Gửi">
         </form>
 
+        <!-- Danh sách dịch vụ -->
+        <h3>Chúng tôi cung cấp các dịch vụ:</h3>
         <ol>
             <li>Thiết kế website chuyên nghiệp</li>
             <li>Phần mềm quản lý theo yêu cầu</li>
@@ -43,6 +167,6 @@
         <hr>
         <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     </footer>
+
 </body>
 </html>
-
