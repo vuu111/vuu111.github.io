@@ -1,128 +1,132 @@
-/* Màu nền và văn bản cơ bản */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fa; /* Màu nền trang web (xanh nhạt) */
-    margin: 0;
-    padding: 0;
-    color: #333; /* Màu chữ đen cho văn bản */
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dịch Vụ - Công Ty CNTT IT Chuyên Nghiệp</title>
+    <style>
+        /* Tổng thể */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-/* Header */
-header {
-    background-color: #2196F3; /* Màu xanh dương đậm */
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        /* Header */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 40px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-/* Navigation links trong header */
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-header nav a:hover {
-    color: #FFD700; /* Màu vàng khi hover */
-}
+        /* Section nội dung */
+        section {
+            background-color: white;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-/* Phần nội dung chính */
-section {
-    background-color: white;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
+        h2 {
+            color: #007BFF;
+        }
 
-section h2 {
-    color: #2196F3; /* Màu xanh dương cho tiêu đề */
-    font-size: 26px;
-    margin-bottom: 15px;
-}
+        /* Form */
+        form label {
+            font-weight: bold;
+        }
 
-section p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-}
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-section li {
-    margin-bottom: 10px;
-}
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
 
-/* Các phần nhập liệu (input, textarea) */
-section input[type="email"],
-section input[type="text"],
-section textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
+        /* Danh sách dịch vụ */
+        ol {
+            padding-left: 20px;
+        }
 
-section input[type="email"]:focus,
-section input[type="text"]:focus,
-section textarea:focus {
-    outline: none;
-    border-color: #2196F3; /* Màu xanh dương khi focus */
-}
+        ol li {
+            margin-bottom: 10px;
+        }
 
-/* Nút gửi (Submit button) */
-section input[type="submit"] {
-    background-color: #2196F3; /* Màu xanh dương cho nút */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dịch Vụ</h1>
+        <nav>
+            <a href="trangchu.html">Trang Chủ</a> |
+            <a href="thongtin.html">Thông Tin</a> |
+            <a href="dichvu.html">Dịch Vụ</a>
+        </nav>
+    </header>
 
-section input[type="submit"]:hover {
-    background-color: #1E88E5; /* Màu xanh dương đậm khi hover */
-}
+    <section>
+        <h2>Dịch vụ chúng tôi cung cấp</h2>
+        <form method="post" action="#">
+            <label for="gmail">Nhập Gmail:</label>
+            <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required>
 
-/* Footer */
-footer {
-    background-color: #2F4F4F; /* Màu xám đậm cho footer */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-}
+            <label for="ten">Họ và tên:</label>
+            <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required>
 
-footer a {
-    color: #FFD700; /* Màu vàng cho liên kết */
-    text-decoration: none;
-}
+            <label for="noidung">Nội dung:</label>
+            <textarea id="noidung" name="noidung" rows="5" placeholder="Nhập nội dung liên hệ hoặc góp ý..." required></textarea>
 
-footer a:hover {
-    text-decoration: underline;
-}
+            <input type="submit" value="Gửi">
+        </form>
 
-/* Các thẻ hr (line) */
-hr {
-    border: 0;
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
-}
+        <ol>
+            <li>Thiết kế website chuyên nghiệp</li>
+            <li>Phần mềm quản lý theo yêu cầu</li>
+            <li>Chuyển đổi số cho doanh nghiệp</li>
+            <li>Hỗ trợ kỹ thuật và bảo trì hệ thống</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
+    </footer>
+</body>
+</html>
