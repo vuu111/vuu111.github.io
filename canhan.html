@@ -15,7 +15,7 @@
         /* Cấu trúc chung của trang */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f0f5f9;
             color: #333;
             line-height: 1.6;
         }
@@ -30,32 +30,38 @@
         header {
             text-align: center;
             margin-top: 20px;
-            padding: 20px;
-            background-color: #2c3e50;
+            padding: 30px;
+            background-color: #2980b9;
             color: #fff;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 36px;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         header p {
             font-size: 18px;
+            margin-bottom: 0;
         }
 
         /* Phần giới thiệu về bản thân */
         .intro {
             margin: 40px 0;
             padding: 20px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
+            background-color: #fff;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .intro h2 {
             font-size: 28px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #2980b9;
         }
 
         .intro p {
@@ -70,8 +76,8 @@
 
         .skills h2 {
             font-size: 28px;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            margin-bottom: 15px;
+            color: #2980b9;
         }
 
         .skills ul {
@@ -81,41 +87,57 @@
 
         .skills li {
             font-size: 18px;
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            background-color: #ecf0f1;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills li:hover {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
         }
 
         /* Phần liên hệ */
         .contact {
             margin: 40px 0;
             padding: 20px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
+            background-color: #fff;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact h2 {
             font-size: 28px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #2980b9;
         }
 
         .contact a {
             color: #3498db;
             text-decoration: none;
+            font-size: 18px;
         }
 
         .contact a:hover {
             text-decoration: underline;
+            color: #1abc9c;
         }
 
         /* Phần footer */
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #2c3e50;
+            padding: 15px;
+            background-color: #2980b9;
             color: #fff;
             margin-top: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
     </style>
 </head>
 <body>
@@ -124,6 +146,7 @@
             <h1>Xin chào, tôi là TRẦN HUỲNH VŨ</h1>
             <p>Lập trình viên phần mềm với hơn 5 năm kinh nghiệm</p>
         </header>
+
         <section class="intro">
             <h2>Về tôi</h2>
             <p>
@@ -131,6 +154,7 @@
                 Với hơn 5 năm kinh nghiệm trong ngành, tôi đã làm việc với nhiều công nghệ và ngôn ngữ lập trình khác nhau.
             </p>
         </section>
+
         <section class="skills">
             <h2>Kỹ năng của tôi</h2>
             <ul>
@@ -141,15 +165,16 @@
                 <li>SQL & NoSQL</li>
             </ul>
         </section>
+
         <section class="contact">
             <h2>Liên hệ</h2>
-            <p>Email: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+            <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/tranhuynhvu" target="_blank">linkedin.com/in/tranhuynhvu</a></p>
         </section>
+
         <footer>
             <p>&copy; 2025 TRẦN HUỲNH VŨ</p>
         </footer>
     </div>
 </body>
 </html>
-
