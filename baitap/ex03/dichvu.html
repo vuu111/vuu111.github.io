@@ -1,172 +1,126 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Dịch Vụ - Công Ty CNTT IT Chuyên Nghiệp</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8; /* Màu nền nhẹ nhàng */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+/* Màu nền và văn bản cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa; /* Màu nền trang web (xanh nhạt) */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Màu chữ đen cho văn bản */
+}
 
-        /* Header */
-        header {
-            background-color: #2196F3; /* Màu xanh chủ đạo */
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+/* Header */
+header {
+    background-color: #2196F3; /* Màu xanh dương đậm */
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
 
-        header nav {
-            margin-top: 15px;
-        }
+/* Navigation links trong header */
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
 
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
+header nav a:hover {
+    color: #FFD700; /* Màu vàng khi hover */
+}
 
-        header nav a:hover {
-            color: #FFD700; /* Màu vàng khi hover */
-        }
+/* Phần nội dung chính */
+section {
+    background-color: white;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
 
-        hr {
-            border: 0;
-            border-top: 1px solid #ddd;
-            margin: 20px 0;
-        }
+section h2 {
+    color: #2196F3; /* Màu xanh dương cho tiêu đề */
+    font-size: 26px;
+    margin-bottom: 15px;
+}
 
-        /* Phần Nội dung chính */
-        section {
-            background-color: white;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
+section p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-        section h2 {
-            color: #2196F3; /* Màu xanh giống header */
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
 
-        section p {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 20px;
-        }
+section li {
+    margin-bottom: 10px;
+}
 
-        section label {
-            font-size: 16px;
-            color: #008080; /* Màu xanh lá cây */
-        }
+/* Các phần nhập liệu (input, textarea) */
+section input[type="email"],
+section input[type="text"],
+section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
 
-        section input[type="email"],
-        section input[type="text"],
-        section textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
+section input[type="email"]:focus,
+section input[type="text"]:focus,
+section textarea:focus {
+    outline: none;
+    border-color: #2196F3; /* Màu xanh dương khi focus */
+}
 
-        section input[type="email"]:focus,
-        section input[type="text"]:focus,
-        section textarea:focus {
-            outline: none;
-            border-color: #2196F3; /* Màu xanh khi focus */
-        }
+/* Nút gửi (Submit button) */
+section input[type="submit"] {
+    background-color: #2196F3; /* Màu xanh dương cho nút */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        section ol {
-            margin-left: 20px;
-            font-size: 18px;
-            color: #333;
-        }
+section input[type="submit"]:hover {
+    background-color: #1E88E5; /* Màu xanh dương đậm khi hover */
+}
 
-        section li {
-            margin-bottom: 10px;
-        }
+/* Footer */
+footer {
+    background-color: #2F4F4F; /* Màu xám đậm cho footer */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
 
-        /* Footer */
-        footer {
-            background-color: #eee; /* Màu nền footer */
-            color: #444; /* Màu văn bản footer */
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-        }
+footer a {
+    color: #FFD700; /* Màu vàng cho liên kết */
+    text-decoration: none;
+}
 
-        footer a {
-            color: #2196F3; /* Màu xanh giống header */
-            text-decoration: none;
-        }
+footer a:hover {
+    text-decoration: underline;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Dịch Vụ</h1>
-        <hr>
-        <nav>
-            <a href="trangchu.html">Trang Chủ</a> |
-            <a href="thongtin.html">Thông Tin</a> |
-            <a href="dichvu.html">Dịch Vụ</a>
-        </nav>
-        <hr>
-    </header>
-
-    <section>
-        <h2>Dịch vụ chúng tôi cung cấp</h2>
-        
-        <!-- Form liên hệ -->
-        <form method="post" action="#">
-            <label for="gmail">Nhập Gmail:</label><br>
-            <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required><br><br>
-
-            <label for="ten">Họ và tên:</label><br>
-            <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required><br><br>
-
-            <label for="noidung">Nội dung:</label><br>
-            <textarea id="noidung" name="noidung" rows="5" placeholder="Nhập nội dung liên hệ hoặc góp ý..." required></textarea><br><br>
-
-            <input type="submit" value="Gửi">
-        </form>
-
-        <!-- Danh sách dịch vụ -->
-        <h3>Chúng tôi cung cấp các dịch vụ:</h3>
-        <ol>
-            <li>Thiết kế website chuyên nghiệp</li>
-            <li>Phần mềm quản lý theo yêu cầu</li>
-            <li>Chuyển đổi số cho doanh nghiệp</li>
-            <li>Hỗ trợ kỹ thuật và bảo trì hệ thống</li>
-        </ol>
-    </section>
-
-    <footer>
-        <hr>
-        <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
-    </footer>
-
-</body>
-</html>
+/* Các thẻ hr (line) */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
