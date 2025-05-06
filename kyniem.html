@@ -3,46 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chuyện tình của đôi ta</title>
+  <title>Gửi vợ yêu</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      height: 100vh;
+      background: linear-gradient(to top right, #ffb6c1, #ffe4e1);
       font-family: 'Courier New', monospace;
-      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       overflow: hidden;
+      animation: backgroundGlow 10s infinite alternate;
+      color: white;
     }
 
-    .container {
+    @keyframes backgroundGlow {
+      0% { background: linear-gradient(to top right, #ffb6c1, #ffe4e1); }
+      50% { background: linear-gradient(to top right, #ffc0cb, #ffe4e1); }
+      100% { background: linear-gradient(to top right, #ffb6c1, #ffe4e1); }
+    }
+
+    .box {
       text-align: center;
       background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 15px;
+      padding: 40px;
+      border-radius: 20px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
 
     h1 {
       font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff69b4;
     }
 
-    .typing, .typing2 {
-      font-size: 1.3em;
+    .typing {
+      font-size: 1.5em;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #fff;
+      border-right: 2px solid white;
       width: 0;
       display: inline-block;
-      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
-    }
-
-    .typing2 {
-      animation-delay: 4.5s;
-      margin-top: 20px;
+      animation: typing 5s steps(60, end) forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
@@ -50,7 +54,7 @@
     }
 
     @keyframes blink {
-      from, to { border-color: transparent; }
+      0%, 100% { border-color: transparent; }
       50% { border-color: white; }
     }
 
@@ -61,9 +65,11 @@
       background: red;
       transform: rotate(45deg);
       animation: floatHeart 6s linear infinite;
+      opacity: 0.8;
     }
 
-    .heart::before, .heart::after {
+    .heart::before,
+    .heart::after {
       content: '';
       position: absolute;
       width: 20px;
@@ -72,27 +78,25 @@
       border-radius: 50%;
     }
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { top: 0; left: -10px; }
 
     @keyframes floatHeart {
-      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Gửi người anh thương</h1>
-    <p class="typing">Chúng ta đã cùng nhau đi qua biết bao kỷ niệm đẹp...</p><br>
-    <p class="typing2">Người yêu ơi, em có biết rằng anh đang nhớ em nhiều lắm không?</p>
+  <div class="box">
+    <h1>💖 Gửi vợ yêu 💖</h1>
+    <p class="typing">Vợ yêu ơi, em có biết giờ này đang có một người nhớ em lắm không?</p>
   </div>
 
   <script>
@@ -100,7 +104,8 @@
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+      heart.style.transform = `rotate(45deg) scale(${Math.random() * 0.5 + 0.5})`;
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
