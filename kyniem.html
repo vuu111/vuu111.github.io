@@ -15,28 +15,42 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      animation: backgroundGlow 10s infinite alternate;
+    }
+
+    /* Hiệu ứng ánh sáng nền lãng mạn */
+    @keyframes backgroundGlow {
+      0% {
+        background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      }
+      50% {
+        background: linear-gradient(to top right, #ffccd9, #ffd1dc);
+      }
+      100% {
+        background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      }
     }
 
     .container {
       background: rgba(255, 255, 255, 0.1);
       padding: 40px;
       border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px #fff;
+      font-size: 3em;
+      text-shadow: 0 0 20px #ffb3b3, 0 0 30px #ff80ab, 0 0 40px #ff80ab;
     }
 
     p {
       margin-top: 20px;
-      font-size: 1.2em;
+      font-size: 1.4em;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid white;
+      border-right: 3px solid white;
       width: 0;
       animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
     }
@@ -52,50 +66,52 @@
 
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       background: red;
       transform: rotate(45deg);
-      animation: floatHeart 8s linear infinite;
-      opacity: 0.6;
+      animation: floatHeart 6s linear infinite;
+      opacity: 0.8;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       background: red;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -10px;
+      top: -12px;
       left: 0;
     }
 
     .heart::after {
-      left: -10px;
+      left: -12px;
       top: 0;
     }
 
     @keyframes floatHeart {
       0% {
         transform: translateY(0) rotate(45deg);
-        opacity: 0.6;
+        opacity: 0.8;
       }
       100% {
-        transform: translateY(-100vh) rotate(45deg);
+        transform: translateY(-120vh) rotate(45deg);
         opacity: 0;
       }
     }
+
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Gửi người anh thương</h1>
     <p>Chúng ta đã cùng nhau đi qua biết bao kỷ niệm đẹp...</p>
+    <p>Người yêu ơi, em có biết rằng anh đang nhớ em nhiều lắm không?</p>
   </div>
 
   <script>
@@ -103,17 +119,16 @@
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.style.left = Math.random() * 100 + 'vw';  // Vị trí ngẫu nhiên trên màn hình
+      heart.style.animationDuration = (Math.random() * 4 + 6) + 's';  // Thời gian rơi ngẫu nhiên
       document.body.appendChild(heart);
 
-      // Xóa tim sau 10 giây để tránh nhiều tim quá
-      setTimeout(() => heart.remove(), 10000);
+      // Xóa tim sau 6 giây để không có quá nhiều tim tồn tại
+      setTimeout(() => heart.remove(), 6000);
     }
 
-    // Tạo tim mỗi 300ms
-    setInterval(createHeart, 300);
+    // Tạo tim mỗi 150ms, nhiều hơn so với lần trước
+    setInterval(createHeart, 150);  
   </script>
 </body>
 </html>
-
