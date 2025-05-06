@@ -18,7 +18,6 @@
       animation: backgroundGlow 10s infinite alternate;
     }
 
-    /* Hiệu ứng ánh sáng nền lãng mạn */
     @keyframes backgroundGlow {
       0% {
         background: linear-gradient(to top right, #ff9a9e, #fad0c4);
@@ -45,14 +44,27 @@
       text-shadow: 0 0 20px #ffb3b3, 0 0 30px #ff80ab, 0 0 40px #ff80ab;
     }
 
-    p {
+    .typing {
       margin-top: 20px;
       font-size: 1.4em;
       white-space: nowrap;
       overflow: hidden;
       border-right: 3px solid white;
       width: 0;
+      display: inline-block;
       animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    .typing2 {
+      margin-top: 20px;
+      font-size: 1.4em;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid white;
+      width: 0;
+      display: inline-block;
+      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+      animation-delay: 4.5s;
     }
 
     @keyframes typing {
@@ -96,11 +108,11 @@
 
     @keyframes floatHeart {
       0% {
-        transform: translateY(0) rotate(45deg);
+        transform: translateY(0) rotate(45deg) scale(1);
         opacity: 0.8;
       }
       100% {
-        transform: translateY(-120vh) rotate(45deg);
+        transform: translateY(-120vh) rotate(45deg) scale(1.5);
         opacity: 0;
       }
     }
@@ -110,25 +122,23 @@
 <body>
   <div class="container">
     <h1>Gửi người anh thương</h1>
-    <p>Chúng ta đã cùng nhau đi qua biết bao kỷ niệm đẹp...</p>
-    <p>Người yêu ơi, em có biết rằng anh đang nhớ em nhiều lắm không?</p>
+    <p class="typing">Chúng ta đã cùng nhau đi qua biết bao kỷ niệm đẹp...</p>
+    <p class="typing2">Người yêu ơi, em có biết rằng anh đang nhớ em nhiều lắm không?</p>
   </div>
 
   <script>
-    // Hàm tạo tim và thêm vào trang
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';  // Vị trí ngẫu nhiên trên màn hình
-      heart.style.animationDuration = (Math.random() * 4 + 6) + 's';  // Thời gian rơi ngẫu nhiên
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+      heart.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      heart.style.transform = `rotate(45deg) scale(${Math.random() * 0.5 + 0.5})`;
       document.body.appendChild(heart);
-
-      // Xóa tim sau 6 giây để không có quá nhiều tim tồn tại
       setTimeout(() => heart.remove(), 6000);
     }
 
-    // Tạo tim mỗi 150ms, nhiều hơn so với lần trước
-    setInterval(createHeart, 150);  
+    setInterval(createHeart, 150);
   </script>
 </body>
 </html>
