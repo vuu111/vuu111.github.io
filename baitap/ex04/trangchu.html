@@ -10,6 +10,7 @@
       --hover-color: #4682B4;
       --bg-light: #f0f8ff;
       --text-color: #333;
+      --dark-blue: #104E8B;
     }
 
     * {
@@ -25,18 +26,17 @@
       line-height: 1.6;
     }
 
-    /* PHẦN HUỲNH VŨ WEB DESIGN */
+    /* Dòng chữ Huỳnh Vũ Web Design */
     .top-banner {
-      background-color: #104E8B;
-      color: white;
+      background-color: var(--dark-blue);
+      color: #fff;
       text-align: center;
-      padding: 15px 0;
-      font-size: 26px;
-      font-weight: bold;
+      padding: 12px 0;
+      font-size: 20px;
+      font-weight: 600;
       letter-spacing: 1px;
     }
 
-    /* HEADER */
     header {
       background: var(--main-color);
       color: white;
@@ -46,7 +46,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 30px;
     }
 
     header p {
@@ -73,7 +73,6 @@
       background: var(--hover-color);
     }
 
-    /* SECTION */
     section {
       background: white;
       max-width: 900px;
@@ -110,4 +109,135 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--hover-color);
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+      display: none;
+      font-weight: bold;
+    }
+
+    img.responsive-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #87CEFA;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .top-banner {
+        font-size: 18px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 5px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dòng trên cùng -->
+  <div class="top-banner">
+    Huỳnh Vũ Web Design
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
+    <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
+    <nav>
+      <a href="trangchu.html">Trang Chủ</a>
+      <a href="thongtin.html">Thông Tin</a>
+      <a href="dichvu.html">Dịch Vụ</a>
+    </nav>
+  </header>
+
+  <!-- Giới thiệu -->
+  <section>
+    <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
+    <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
+
+    <form id="emailForm">
+      <label for="gmail">Nhập Gmail của bạn:</label>
+      <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
+      <button type="submit">Gửi</button>
+      <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
+    </form>
+
+    <img src="https://itnow.vn/wp-content/uploads/2022/03/giai-phap-he-thong-cntt-hieu-qua-cho-doanh-nghiep-1.jpeg"
+         alt="Giải pháp hệ thống CNTT"
+         class="responsive-img" loading="lazy" />
+  </section>
+
+  <!-- Liên hệ -->
+  <section>
+    <h2>Liên hệ ngay hôm nay!</h2>
+    <p>Email hỗ trợ: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
+    <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+  </footer>
+
+  <!-- Script xử lý form -->
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('gmail');
+      const successMessage = document.getElementById('successMessage');
+
+      if (emailInput.value.trim() !== "") {
+        successMessage.style.display = 'block';
+        emailInput.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
