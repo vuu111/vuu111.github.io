@@ -27,6 +27,7 @@
             margin-bottom: 20px;
         }
 
+        /* Hình ảnh Trần Huỳnh Vũ */
         header img {
             position: absolute;
             top: -60px;
@@ -40,7 +41,7 @@
 
         header h1 {
             font-size: 2.8em;
-            margin-top: 40px;
+            margin-top: 60px;
             color: #ffeb3b;
             text-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
             animation: glow 1.5s ease-in-out infinite alternate;
@@ -62,6 +63,31 @@
             font-weight: 500;
             margin-top: 10px;
             color: #ffeb3b;
+        }
+
+        /* Hiệu ứng gõ chữ */
+        .typing-effect {
+            font-size: 1.8em;
+            font-weight: 500;
+            color: #ffeb3b;
+            display: inline-block;
+            border-right: 3px solid #ffeb3b;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            to {
+                width: 30em;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
         }
 
         /* Cấu trúc chung của phần nội dung */
@@ -167,7 +193,7 @@
     <header>
         <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ">
         <h1>Trần Huỳnh Vũ</h1>
-        <p class="slogan">Rất vui khi được gặp bạn!</p>
+        <p class="slogan typing-effect">Rất vui khi được gặp bạn!</p>
     </header>
 
     <section class="section-1">
