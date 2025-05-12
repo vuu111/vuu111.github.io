@@ -12,7 +12,7 @@
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: linear-gradient(180deg, #2C3E50, #4CA1AF);
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     /* Hiệu ứng sóng biển */
@@ -144,15 +144,39 @@
       bottom: 0;
       width: 100%;
     }
+
+    /* Phần của ảnh và tên Trần Huỳnh Vũ */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 20px;
+    }
+
+    .profile-header img {
+      margin-right: 20px;
+      border: 4px solid #fff;
+    }
+
+    .profile-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 8px rgba(255, 235, 59, 0.6);
+    }
   </style>
 </head>
 <body>
 
   <!-- Phần tiêu đề -->
   <header>
-    <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ">
-    <h1>Trần Huỳnh Vũ</h1>
-    <p>Web Developer & IT Student</p>
+    <div class="profile-header">
+      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ" />
+      <div>
+        <h1>Trần Huỳnh Vũ</h1>
+        <p>Web Developer & IT Student</p>
+      </div>
+    </div>
   </header>
 
   <!-- Dòng chữ chạy -->
@@ -161,7 +185,7 @@
   <!-- Phần nội dung -->
   <section>
     <h2>Thông Tin Cá Nhân</h2>
-    <p>Email: tranvu11102001@gmail.com</p>
+    <p>Email: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
     <p>Trường học: Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
     <p>Ngành học: Công nghệ thông tin (CNTT)</p>
     <p>Giới thiệu: Tôi là sinh viên đam mê công nghệ, yêu thích lập trình và thiết kế web. Luôn học hỏi để phát triển bản thân trong lĩnh vực phần mềm và sáng tạo kỹ thuật số.</p>
@@ -216,6 +240,8 @@
     <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
   </footer>
 
+  <!-- Sóng biển nền -->
   <div class="wave"></div>
+
 </body>
 </html>
