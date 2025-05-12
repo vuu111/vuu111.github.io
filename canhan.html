@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trần Huỳnh Vũ - Giới Thiệu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://img.lovepik.com/bg/20231227/The-Beautiful-Background-of-Pretty-Clouds-in-the-Blue-Sky_2494406_wh860.png"/>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://thuanphatnhuy.com/wp-content/uploads/2021/05/background-dep-dam-may.jpg') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
       background-size: cover;
       color: #333;
       line-height: 1.6;
       position: relative;
     }
 
-    /* Lớp phủ làm tối nhẹ để chữ nổi lên */
     body::before {
       content: "";
       position: fixed;
@@ -28,29 +28,43 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* chỉnh opacity tại đây */
+      background: rgba(0, 0, 0, 0.4);
       z-index: -1;
     }
 
     header {
       display: flex;
       align-items: center;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      border-bottom: 3px solid #1877f2;
+      padding: 30px 20px;
+      background: url('https://images.unsplash.com/photo-1525097487452-6278ff080c31') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      color: white;
+      border-bottom: 4px solid #1877f2;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
 
     .avatar-container {
       margin-right: 20px;
       text-align: center;
+      z-index: 1;
     }
 
     .avatar {
       width: 130px;
       height: 130px;
       border-radius: 50%;
-      border: 4px solid #1877f2;
+      border: 4px solid #fff;
       object-fit: cover;
     }
 
@@ -76,16 +90,17 @@
 
     .intro {
       flex-grow: 1;
+      z-index: 1;
     }
 
     h1 {
-      font-size: 2rem;
-      color: #1877f2;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
     }
 
     .tagline {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 1.2rem;
+      font-style: italic;
     }
 
     main {
@@ -95,7 +110,7 @@
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.92);
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
