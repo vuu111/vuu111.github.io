@@ -2,73 +2,70 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Công Ty Suzaki - Xe Mới Ra Mắt</title>
-    <style>
-        body {
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .header img {
-            width: 150px;
-            height: auto;
-        }
-
-        .content {
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.6);
-            text-align: center;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .gallery img {
-            width: 300px;
-            height: auto;
-            border: 3px solid white;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Việt Nam Suzuki</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <img src="logo-suzaki.png" alt="Logo Suzaki">
-        <h1>CÔNG TY SUZAKI</h1>
-        <h2>Giới thiệu các mẫu xe mới ra mắt</h2>
-    </div>
+    <!-- Thanh điều hướng -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo-suzuki.png" alt="Logo Suzuki">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#xe-moi">Xe mới</a></li>
+                <li><a href="#dich-vu">Dịch vụ</a></li>
+                <li><a href="#khuyen-mai">Khuyến mãi</a></li>
+                <li><a href="#lien-he">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content">
-        <p>Dưới đây là 4 mẫu xe Suzaki mới ra mắt năm 2025:</p>
-
-        <div class="gallery">
-            <img src="xe1.jpg" alt="Suzaki Xe 1">
-            <img src="xe2.jpg" alt="Suzaki Xe 2">
-            <img src="xe3.jpg" alt="Suzaki Xe 3">
-            <img src="xe4.jpg" alt="Suzaki Xe 4">
+    <!-- Slider hình ảnh -->
+    <section id="slider">
+        <div class="slide">
+            <img src="xe1.jpg" alt="Xe mới 1">
         </div>
-    </div>
+        <div class="slide">
+            <img src="xe2.jpg" alt="Xe mới 2">
+        </div>
+        <div class="slide">
+            <img src="xe3.jpg" alt="Xe mới 3">
+        </div>
+        <div class="slide">
+            <img src="xe4.jpg" alt="Xe mới 4">
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="gioi-thieu">
+        <h2>Giới thiệu về Suzuki</h2>
+        <p>Chúng tôi cung cấp các dòng xe ô tô và xe máy chất lượng cao, phù hợp với nhu cầu và sở thích của bạn.</p>
+    </section>
+
+    <!-- Dịch vụ -->
+    <section id="dich-vu">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <p>Chúng tôi cung cấp các dịch vụ bảo dưỡng, sửa chữa và hỗ trợ khách hàng tận tâm và chuyên nghiệp.</p>
+    </section>
+
+    <!-- Khuyến mãi -->
+    <section id="khuyen-mai">
+        <h2>Khuyến mãi đặc biệt</h2>
+        <p>Khám phá các chương trình khuyến mãi hấp dẫn khi mua xe tại Suzuki.</p>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="lien-he">
+        <h2>Liên hệ với chúng tôi</h2>
+        <p>Địa chỉ: Đường số 2, Khu công nghiệp Long Bình, Biên Hòa, Đồng Nai</p>
+        <p>Điện thoại: 0251.3838.707</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Công ty TNHH Việt Nam Suzuki</p>
+    </footer>
 </body>
 </html>
