@@ -1,247 +1,222 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giới Thiệu Bản Thân - Trần Huỳnh Vũ</title>
-  <style>
-    /* Toàn bộ trang */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(180deg, #2C3E50, #4CA1AF);
-      color: #fff;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Bản Thân - Trần Huỳnh Vũ</title>
+    <style>
+        /* Cấu hình chung cho body và html */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            overflow-x: hidden; /* Ẩn cuộn ngang */
+            scroll-behavior: smooth; /* Cuộn mượt */
+            background-color: #f4f6f9;
+        }
 
-    /* Hiệu ứng sóng biển */
-    .wave {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 100px;
-      background: url('https://codepen.io/baarbaracrr/pen/KKovmGb') repeat-x;
-      animation: wave-animation 10s linear infinite;
-    }
+        /* Hiệu ứng cho Header */
+        header {
+            position: relative;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
 
-    @keyframes wave-animation {
-      0% { background-position-x: 0; }
-      100% { background-position-x: 100%; }
-    }
+        header img {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
 
-    /* Phần tiêu đề */
-    header {
-      position: relative;
-      text-align: center;
-      padding: 50px 20px;
-      z-index: 10;
-    }
+        header h1 {
+            font-size: 2.8em;
+            margin-top: 40px;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+        /* Hiệu ứng glow cho tên */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff176, 0 0 10px #ffc107;
+            }
+            to {
+                text-shadow: 0 0 15px #fff59d, 0 0 25px #ffca28;
+            }
+        }
 
-    header h1 {
-      margin-top: 0;
-      font-size: 2.5em;
-    }
+        .slogan {
+            font-size: 1.4em;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: 10px;
+            color: #ffeb3b;
+        }
 
-    header p {
-      margin: 5px 0;
-      font-size: 1.2em;
-    }
+        /* Cấu trúc chung của phần nội dung */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
 
-    /* Dòng chữ chạy */
-    .marquee {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      padding: 10px;
-      font-size: 1.2em;
-      text-align: center;
-      animation: marquee-animation 10s linear infinite;
-    }
+        /* Hiệu ứng fadeIn */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-    @keyframes marquee-animation {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+        /* Các màu sắc cho các section */
+        .section-1 {
+            background-color: #f1c40f;
+        }
 
-    /* Phần nội dung */
-    section {
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      margin: 20px;
-      border-radius: 10px;
-    }
+        .section-2 {
+            background-color: #e74c3c;
+        }
 
-    h2 {
-      font-size: 2em;
-      color: #1abc9c;
-    }
+        .section-3 {
+            background-color: #2ecc71;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+        /* Bảng Tài Năng & Sở Thích */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
 
-    table th, table td {
-      padding: 10px;
-      text-align: left;
-      border: 1px solid #fff;
-    }
+        .skills-table th, .skills-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
 
-    table th {
-      background: #34495e;
-    }
+        .skills-table th {
+            background-color: #007BFF;
+            color: white;
+        }
 
-    table tr:nth-child(even) {
-      background: #2c3e50;
-    }
+        .skills-table tr:hover {
+            background-color: #f1f9ff;
+        }
 
-    /* Phần icon mạng xã hội */
-    .social-icons {
-      text-align: center;
-      margin-top: 20px;
-    }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #1e3c72;
+            color: white;
+            margin-top: 40px;
+        }
 
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background: #fff;
-      border-radius: 50%;
-      line-height: 40px;
-      text-align: center;
-      color: #2c3e50;
-      font-size: 1.5em;
-      transition: transform 0.3s;
-    }
+        /* Hiệu ứng cho các icon mạng xã hội */
+        .social-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
+        .social-icons img {
+            width: 50px;
+            transition: transform 0.3s ease;
+        }
 
-    /* Phần chân trang */
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #2c3e50;
-      color: #fff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
+        .social-icons img:hover {
+            transform: scale(1.25);
+        }
 
-    /* Phần của ảnh và tên Trần Huỳnh Vũ */
-    .profile-header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-top: 20px;
-    }
+        /* Media Query cho mobile */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2em;
+            }
 
-    .profile-header img {
-      margin-right: 20px;
-      border: 4px solid #fff;
-    }
+            .slogan {
+                font-size: 1.2em;
+            }
 
-    .profile-header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      color: #ffeb3b;
-      text-shadow: 2px 2px 8px rgba(255, 235, 59, 0.6);
-    }
-  </style>
+            section {
+                padding: 40px 15px;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-  <!-- Phần tiêu đề -->
-  <header>
-    <div class="profile-header">
-      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ" />
-      <div>
+    <header>
+        <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ">
         <h1>Trần Huỳnh Vũ</h1>
-        <p>Web Developer & IT Student</p>
-      </div>
-    </div>
-  </header>
+        <p class="slogan">Rất vui khi được gặp bạn!</p>
+    </header>
 
-  <!-- Dòng chữ chạy -->
-  <div class="marquee">🌟 Rất vui khi được gặp bạn! 🌟</div>
+    <section class="section-1">
+        <h2>Thông Tin Cá Nhân</h2>
+        <p><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
+        <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+        <p><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
+        <p><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
+        <p><strong>Giới thiệu:</strong> Tôi là một sinh viên ngành Công Nghệ Thông Tin, đam mê lập trình và phát triển phần mềm. Mục tiêu của tôi là học hỏi và phát triển trong lĩnh vực công nghệ.</p>
+    </section>
 
-  <!-- Phần nội dung -->
-  <section>
-    <h2>Thông Tin Cá Nhân</h2>
-    <p>Email: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-    <p>Trường học: Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-    <p>Ngành học: Công nghệ thông tin (CNTT)</p>
-    <p>Giới thiệu: Tôi là sinh viên đam mê công nghệ, yêu thích lập trình và thiết kế web. Luôn học hỏi để phát triển bản thân trong lĩnh vực phần mềm và sáng tạo kỹ thuật số.</p>
-  </section>
+    <section class="section-2">
+        <h2>Tài Năng & Sở Thích</h2>
+        <table class="skills-table">
+            <thead>
+                <tr>
+                    <th>Mục</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tài năng</td>
+                    <td>Chơi game Liên Quân Mobile giỏi, tư duy chiến thuật tốt</td>
+                </tr>
+                <tr>
+                    <td>Sở thích</td>
+                    <td>Thư giãn, nghe nhạc, khám phá công nghệ mới</td>
+                </tr>
+                <tr>
+                    <td>Hoạt động thường ngày</td>
+                    <td>Làm vlog, quay video chia sẻ kiến thức</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-  <section>
-    <h2>Tài Năng</h2>
-    <table>
-      <tr>
-        <th>Kỹ năng</th>
-        <th>Chi tiết</th>
-      </tr>
-      <tr>
-        <td>Lập trình</td>
-        <td>HTML, CSS, JavaScript, Python cơ bản</td>
-      </tr>
-      <tr>
-        <td>Thiết kế giao diện</td>
-        <td>Sử dụng Figma, Canva, responsive web</td>
-      </tr>
-      <tr>
-        <td>Làm video</td>
-        <td>Tạo vlog, chia sẻ kiến thức công nghệ</td>
-      </tr>
-      <tr>
-        <td>Giao tiếp nhóm</td>
-        <td>Kỹ năng trình bày và teamwork tốt</td>
-      </tr>
-      <tr>
-        <td>Game thủ</td>
-        <td>Chơi Liên Quân Mobile giỏi, tư duy chiến thuật tốt</td>
-      </tr>
-    </table>
-  </section>
+    <section class="section-3">
+        <h2>Mạng Xã Hội</h2>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><img src="https://png.pngtree.com/element_our/sm/20180515/sm_5afaf0c42f0c8.jpg" alt="Facebook"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img src="https://inkythuatso.com/uploads/images/2021/11/linkedin-logo-inkythuatso-2-01-29-15-30-40.jpg" alt="LinkedIn"></a>
+            <a href="https://github.com" target="_blank"><img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub"></a>
+        </div>
+    </section>
 
-  <section>
-    <h2>Sở Thích</h2>
-    <ul>
-      <li>Thư giãn và nghe nhạc</li>
-      <li>Khám phá công nghệ mới</li>
-      <li>Làm vlog và quay video chia sẻ kiến thức</li>
-    </ul>
-  </section>
-
-  <div class="social-icons">
-    <a href="https://www.facebook.com" target="_blank">F</a>
-    <a href="https://www.linkedin.com" target="_blank">L</a>
-    <a href="https://github.com" target="_blank">G</a>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
-  </footer>
-
-  <!-- Sóng biển nền -->
-  <div class="wave"></div>
+    <footer>
+        <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
