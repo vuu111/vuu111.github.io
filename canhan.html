@@ -13,17 +13,32 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #e9f0f5;
+      background: url('https://i.pinimg.com/736x/e5/0e/b5/e50eb5c7d26812bd46494b7d9bfa1c66.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
+      position: relative;
+    }
+
+    /* Lớp phủ làm tối nhẹ để chữ nổi lên */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* chỉnh opacity tại đây */
+      z-index: -1;
     }
 
     header {
       display: flex;
       align-items: center;
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #1877f2;
     }
 
     .avatar-container {
@@ -80,11 +95,11 @@
     }
 
     .card {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.92);
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
 
     .card h2 {
@@ -123,7 +138,7 @@
     }
 
     footer {
-      background-color: #1877f2;
+      background-color: rgba(24, 119, 242, 0.95);
       color: white;
       text-align: center;
       padding: 15px;
@@ -145,7 +160,7 @@
 
   <header>
     <div class="avatar-container">
-      <img src="https://cdn2.fptshop.com.vn/unsafe/800x0/anh_nak_ve_than_1_e75d736672.jpg" class="avatar" alt="Trần Huỳnh Vũ">
+      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" class="avatar" alt="Trần Huỳnh Vũ">
       <div class="social-icons">
         <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
