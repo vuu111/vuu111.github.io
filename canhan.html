@@ -4,69 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trần Huỳnh Vũ - Giới Thiệu</title>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/D+f1gILBR9T6B0oE0x7wT1sz0H1vxGMhIuKN7kTdc9lOQaTV6+zYzUoVOFL1p9qgUux+ZxPHOj9XbqIbQGiWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
       color: #fff;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      min-height: 100vh;
     }
 
     header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      padding: 20px 30px;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-bottom: 4px solid #00bcd4;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.6);
     }
 
-    .avatar-info {
+    .profile {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      gap: 15px;
     }
 
-    .avatar-info img {
-      width: 120px;
-      height: 120px;
+    .profile img {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       border: 3px solid #00bcd4;
-      margin-bottom: 10px;
     }
 
-    .avatar-info h1 {
+    .profile-info h1 {
       font-size: 1.8rem;
+      margin-bottom: 5px;
     }
 
-    .tagline {
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00bcd4;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
       font-style: italic;
       color: #ffeb3b;
-      margin-top: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #fff;
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-      max-width: 100%;
     }
 
     @keyframes typing {
@@ -75,28 +57,22 @@
     }
 
     @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: white }
+      50% { border-color: transparent }
     }
 
     .social-icons {
-      margin-top: 10px;
+      display: flex;
+      gap: 15px;
     }
 
     .social-icons a {
-      color: #fff;
-      background: #00bcd4;
-      margin-left: 10px;
-      padding: 10px;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-      display: inline-block;
+      color: #00bcd4;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
     }
 
     .social-icons a:hover {
-      background: #03a9f4;
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
 
     main {
@@ -106,17 +82,16 @@
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.9);
       color: #333;
       padding: 20px;
       border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
+      margin-bottom: 25px;
     }
 
     .card h2 {
-      color: #00bcd4;
       margin-bottom: 15px;
+      color: #007BFF;
     }
 
     .info-line {
@@ -125,56 +100,71 @@
 
     .info-line strong {
       display: inline-block;
-      width: 150px;
+      width: 160px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 10px;
     }
 
     th, td {
+      padding: 12px;
       text-align: left;
-      padding: 10px;
       border-bottom: 1px solid #ccc;
     }
 
     th {
-      background-color: #00bcd4;
-      color: #fff;
+      background: #007BFF;
+      color: white;
     }
 
     tr:hover {
-      background-color: #f1f1f1;
+      background: #f1f9ff;
     }
 
     footer {
+      background: #007BFF;
       text-align: center;
-      background: rgba(0, 188, 212, 0.9);
-      color: #fff;
       padding: 15px;
-      margin-top: 40px;
+      color: #fff;
+    }
+
+    a {
+      color: #007BFF;
     }
 
     @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
       }
 
       .social-icons {
-        margin-top: 20px;
+        margin-top: 10px;
+      }
+
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .typewriter {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="avatar-info">
+    <div class="profile">
       <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ" />
-      <h1>Trần Huỳnh Vũ</h1>
-      <p class="tagline">Rất vui khi được gặp bạn <i class="fas fa-heart"></i></p>
+      <div class="profile-info">
+        <h1>Trần Huỳnh Vũ</h1>
+        <div class="typewriter">Rất vui khi được gặp bạn <i class="fa-solid fa-handshake"></i></div>
+      </div>
     </div>
     <div class="social-icons">
       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -189,59 +179,18 @@
       <h2>Thông Tin Cá Nhân</h2>
       <p class="info-line"><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
       <p class="info-line"><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-      <p class="info-line"><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
-      <p class="info-line"><strong>Giới thiệu:</strong> Tôi là sinh viên đam mê lập trình, thích khám phá công nghệ mới và chia sẻ giá trị với cộng đồng.</p>
+      <p class="info-line"><strong>Ngành học:</strong> Công nghệ thông tin</p>
+      <p class="info-line"><strong>Giới thiệu:</strong> Sinh viên yêu thích công nghệ, đam mê lập trình và chia sẻ giá trị với cộng đồng.</p>
     </div>
 
     <div class="card">
       <h2>Tài Năng</h2>
       <table>
-        <thead>
-          <tr>
-            <th>Lĩnh vực</th>
-            <th>Mô tả</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Game</td>
-            <td>Chơi giỏi Liên Quân Mobile, tư duy chiến thuật</td>
-          </tr>
-          <tr>
-            <td>Lập trình</td>
-            <td>Thành thạo HTML, CSS, JavaScript cơ bản</td>
-          </tr>
-          <tr>
-            <td>Video Editing</td>
-            <td>Dựng video, làm vlog</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <tr><th>Lĩnh vực</th><th>Mô tả</th></tr>
+        <tr><td>Game</td><td>Chơi Liên Quân Mobile giỏi, phối hợp tốt</td></tr>
+        <tr><td>Lập trình</td><td>Thành thạo HTML, CSS, JS cơ bản</td></tr>
+        <tr><td>Video Editing</td><td>Làm vlog, dựng clip cá nhân</td></tr>
+        <tr><td>Hội họa</td><td>Vẽ tay sáng tạo, thiết kế cơ bản</td></tr>
+      </
 
-    <div class="card">
-      <h2>Sở Thích</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Sở thích</th>
-            <th>Mô tả</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nghe nhạc</td>
-            <td>Yêu nhạc chill và học tập cùng âm nhạc</td>
-          </tr>
-          <tr>
-            <td>Khám phá</td>
-            <td>Tìm hiểu công nghệ, phần mềm mới</td>
-          </tr>
-          <tr>
-            <td>Vlog</td>
-            <td>Chia sẻ cuộc sống học tập hàng ngày</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </
+        
