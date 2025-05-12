@@ -1,125 +1,255 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suzuki - Xe Mới 2025</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        body {
-            background: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #001f3f;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header img {
-            width: 100px;
-        }
-        nav {
-            background: #003366;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suzuki Việt Nam - Xe Mới 2025</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-        /* Slider */
-        .slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 20px;
-            background: #000;
-        }
-        .slider img {
-            height: 300px;
-            border-radius: 10px;
-            scroll-snap-align: center;
-        }
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
+    header {
+      background: #00264d;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        .highlight {
-            background: #e3f2fd;
-        }
+    header img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
 
-        footer {
-            background: #001f3f;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-        }
+    nav {
+      background: #003366;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 10px;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .slider img {
-                height: 200px;
-            }
-        }
-    </style>
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #0059b3;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 30px 20px;
+      background: #000;
+    }
+
+    .slider img {
+      height: 300px;
+      border-radius: 10px;
+      scroll-snap-align: center;
+      transition: transform 0.3s;
+    }
+
+    .slider img:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .highlight {
+      background: #eaf4ff;
+    }
+
+    .xe-noi-bat {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .xe-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      transition: box-shadow 0.3s;
+    }
+
+    .xe-item img {
+      width: 100%;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .xe-item:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .ly-do {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .ly-do div {
+      flex: 1 1 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #0073e6;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-style: italic;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #003366;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0059b3;
+    }
+
+    footer {
+      background: #00264d;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .slider img {
+        height: 200px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://inkythuatso.com/uploads/images/2021/11/logo-suzuki-inkythuatso-2-01-15-14-24-02.jpg" alt="Logo Suzuki">
-        <h1>Chào Mừng Đến Với SUZUKI</h1>
-    </header>
+  <header>
+    <img src="https://inkythuatso.com/uploads/images/2021/11/logo-suzuki-inkythuatso-2-01-15-14-24-02.jpg" alt="Logo Suzuki">
+    <h1>Chào Mừng Đến Với Suzuki Việt Nam</h1>
+    <p>Khám phá các dòng xe đẳng cấp cho năm 2025</p>
+  </header>
 
-    <nav>
-        <a href="#xe">Xe Mới</a>
-        <a href="#gioi-thieu">Giới Thiệu</a>
-        <a href="#dich-vu">Dịch Vụ</a>
-        <a href="#lien-he">Liên Hệ</a>
-    </nav>
+  <nav>
+    <a href="#xe">Xe Nổi Bật</a>
+    <a href="#gioi-thieu">Giới Thiệu</a>
+    <a href="#dich-vu">Dịch Vụ</a>
+    <a href="#ly-do">Tại Sao Chọn Suzuki</a>
+    <a href="#danh-gia">Đánh Giá</a>
+    <a href="#lien-he">Liên Hệ</a>
+  </nav>
 
-    <section id="xe" class="slider">
-        <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
-        <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg?rt=20240410142832" alt="Suzuki Mẫu 2">
-        <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
-        <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
-    </section>
+  <section class="slider" id="xe">
+    <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki mẫu 1">
+    <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki mẫu 2">
+    <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki mẫu 3">
+    <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki mẫu 4">
+  </section>
 
-    <section id="gioi-thieu" class="highlight">
-        <h2>Về Chúng Tôi</h2>
-        <p>Suzuki là thương hiệu toàn cầu chuyên cung cấp các dòng xe ô tô và xe máy chất lượng, bền bỉ và tiết kiệm nhiên liệu.</p>
-    </section>
+  <section>
+    <h2>Các Dòng Xe Nổi Bật 2025</h2>
+    <div class="xe-noi-bat">
+      <div class="xe-item">
+        <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Xe điện Suzuki">
+        <h3>Xe Điện Suzuki eZ2025</h3>
+        <p>Thiết kế hiện đại, vận hành êm ái, phù hợp với đô thị.</p>
+      </div>
+      <div class="xe-item">
+        <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Jymmi">
+        <h3>Suzuki Jimny 2025</h3>
+        <p>Dòng xe SUV nhỏ gọn, khả năng off-road mạnh mẽ, phong cách retro.</p>
+      </div>
+      <div class="xe-item">
+        <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Swift">
+        <h3>Suzuki Swift Hybrid</h3>
+        <p>Động cơ hybrid tiết kiệm nhiên liệu, thiết kế thể thao.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="dich-vu">
-        <h2>Dịch Vụ Hàng Đầu</h2>
-        <p>Bảo hành chính hãng, phụ tùng chính hiệu, đội ngũ kỹ thuật viên chuyên nghiệp và tận tâm.</p>
-    </section>
+  <section class="highlight" id="gioi-thieu">
+    <h2>Về Chúng Tôi</h2>
+    <p>Suzuki là thương hiệu xe hơi và xe máy hàng đầu Nhật Bản, nổi tiếng với chất lượng, độ bền, và khả năng tiết kiệm nhiên liệu.</p>
+  </section>
 
-    <section id="lien-he" class="highlight">
-        <h2>Liên Hệ</h2>
-        <p>Địa chỉ: Đường số 2, KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
-        <p>Điện thoại: 0251 3838 707</p>
-        <p>Email: info@suzuki.com.vn</p>
-    </section>
-
-    <footer>
-        &copy; 2025 Công ty TNHH Việt Nam Suzuki. Bản quyền được bảo hộ.
-    </footer>
-
-</body>
-</html>
+  <section id="dich-vu">
+    <h2>Dịch Vụ Của Chúng Tôi</h2>
+    <p>Chúng tôi
