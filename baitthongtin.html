@@ -59,38 +59,47 @@
       background-color: #0059b3;
     }
 
-    .slider {
+    /* Tạo container cho các hình ảnh xe */
+    .car-gallery {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      background: #000;
+      justify-content: space-around;
+      gap: 30px;
       flex-wrap: wrap;
+      padding: 40px 20px;
     }
 
-    .slider .image-container {
-      width: 280px; /* Chiều rộng của mỗi hình ảnh */
-      height: 400px; /* Chiều cao cố định cho hình ảnh */
-      border-radius: 10px;
-      overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
-      position: relative; /* Để chứa cả hình ảnh và chú thích */
+    .car-item {
+      width: 280px;
+      height: auto;
+      text-align: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    .slider .image-container img {
+    .car-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* Đảm bảo hình ảnh vừa vặn và không bị méo */
+      height: 250px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
 
-    .caption {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
+    .car-item:hover {
+      transform: scale(1.05);
+    }
+
+    .car-item h3 {
+      font-size: 20px;
+      margin: 15px 0;
+      color: #333;
+    }
+
+    .car-item p {
       font-size: 16px;
+      color: #555;
+      padding: 0 15px 15px;
     }
 
     section {
@@ -103,36 +112,6 @@
       font-size: 32px; /* Tăng kích thước tiêu đề */
       color: #003366;
       margin-bottom: 20px;
-    }
-
-    #gioi-thieu {
-      background-image: url('https://www.motortrend.com/uploads/sites/10/2018/10/2020-Suzuki-Jimny-4x4-front-three-quarter-02.jpg?fit=around%7C875:492');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-      position: relative;
-    }
-
-    #gioi-thieu .overlay {
-      background: rgba(0,0,0,0.5);
-      padding: 50px;
-      border-radius: 10px;
-      font-size: 20px; /* Tăng kích thước chữ cho phần giới thiệu */
-    }
-
-    .highlight {
-      background: #e3f2fd;
-    }
-
-    .info-block {
-      margin-top: 30px;
-      background: white;
-      border-left: 5px solid #0073e6;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      font-size: 18px; /* Tăng font chữ trong các khối thông tin */
     }
 
     footer {
@@ -150,22 +129,13 @@
     }
 
     @media (max-width: 768px) {
-      .slider .image-container {
-        width: 220px;
-        height: 300px;
+      .car-gallery {
+        flex-direction: column;
+        align-items: center;
       }
 
-      #gioi-thieu .overlay {
-        padding: 25px;
-        font-size: 18px;
-      }
-
-      section h2 {
-        font-size: 28px;
-      }
-
-      nav a {
-        font-size: 16px;
+      .car-item {
+        width: 90%;
       }
     }
   </style>
@@ -186,51 +156,52 @@
     <a href="#lien-he">Liên Hệ</a>
   </nav>
 
-  <section id="xe" class="slider">
-    <div class="image-container">
-      <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
-      <div class="caption">Mẫu xe Suzuki Mới 2025</div>
-    </div>
-    <div class="image-container">
-      <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Mẫu 2">
-      <div class="caption">Xe Suzuki Kế Thừa Công Nghệ</div>
-    </div>
-    <div class="image-container">
-      <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
-      <div class="caption">Sang Trọng và Tiết Kiệm</div>
-    </div>
-    <div class="image-container">
-      <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
-      <div class="caption">Sự Lựa Chọn Hoàn Hảo</div>
+  <!-- Phần Xe Mới -->
+  <section id="xe">
+    <h2>Xe Mới 2025</h2>
+    <div class="car-gallery">
+      <!-- Xe 1 -->
+      <div class="car-item">
+        <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
+        <h3>Suzuki Swift 2025</h3>
+        <p>Động cơ mạnh mẽ, tiết kiệm nhiên liệu vượt trội, thiết kế năng động và thời trang, phù hợp cho mọi gia đình.</p>
+      </div>
+
+      <!-- Xe 2 -->
+      <div class="car-item">
+        <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Mẫu 2">
+        <h3>Suzuki Vitara 2025</h3>
+        <p>Xe gầm cao với khả năng vận hành tuyệt vời, hỗ trợ off-road, mang lại cảm giác lái phấn khích và thoải mái.</p>
+      </div>
+
+      <!-- Xe 3 -->
+      <div class="car-item">
+        <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
+        <h3>Suzuki Jimny 2025</h3>
+        <p>Với thiết kế gọn nhẹ, khả năng di chuyển linh hoạt, Jimny là lựa chọn tuyệt vời cho những người yêu thích xe địa hình.</p>
+      </div>
+
+      <!-- Xe 4 -->
+      <div class="car-item">
+        <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
+        <h3>Suzuki XL7 2025</h3>
+        <p>Được trang bị đầy đủ các tính năng hiện đại, XL7 là chiếc xe lý tưởng cho các gia đình yêu thích sự thoải mái và sang trọng.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Phần Giới Thiệu -->
   <section id="gioi-thieu">
-    <div class="overlay">
-      <h2>Giới Thiệu</h2>
-      <p>Suzuki là thương hiệu Nhật Bản với hơn 100 năm kinh nghiệm trong lĩnh vực sản xuất xe máy, ô tô và động cơ. Tại Việt Nam, Suzuki mang đến các dòng xe chất lượng cao, tiết kiệm nhiên liệu và độ bền vượt trội. Hướng tới tương lai, Suzuki cam kết đổi mới công nghệ và nâng cao trải nghiệm khách hàng.</p>
-    </div>
+    <h2>Giới Thiệu</h2>
+    <p>Suzuki là thương hiệu Nhật Bản với hơn 100 năm kinh nghiệm trong lĩnh vực sản xuất xe máy, ô tô và động cơ. Tại Việt Nam, Suzuki mang đến các dòng xe chất lượng cao, tiết kiệm nhiên liệu và độ bền vượt trội. Hướng tới tương lai, Suzuki cam kết đổi mới công nghệ và nâng cao trải nghiệm khách hàng.</p>
   </section>
 
-  <section id="dich-vu">
-    <h2>Dịch Vụ</h2>
-    <div class="info-block">
-      <ul>
-        <li>Bảo dưỡng & sửa chữa chính hãng</li>
-        <li>Phụ tùng chính hiệu</li>
-        <li>Bảo hành lên đến 5 năm</li>
-        <li>Chăm sóc khách hàng 24/7</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="lien-he" class="highlight">
+  <!-- Phần Liên Hệ -->
+  <section id="lien-he">
     <h2>Liên Hệ</h2>
-    <div class="info-block">
-      <p>🏢 Địa chỉ: Đường số 2, KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
-      <p>📞 Điện thoại: 0251 3838 707</p>
-      <p>📧 Email: info@suzuki.com.vn</p>
-    </div>
+    <p>Địa chỉ: Đường số 2, KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
+    <p>Điện thoại: 0251 3838 707</p>
+    <p>Email: info@suzuki.com.vn</p>
   </section>
 
   <footer>
