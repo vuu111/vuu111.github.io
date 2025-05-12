@@ -1,82 +1,74 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới Thiệu Công Ty Suzuki</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://i.imgur.com/zpZJ0gA.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <title>Công Ty Suzaki - Xe Mới Ra Mắt</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-      background-color: rgba(255, 255, 255, 0.95);
-      margin: 50px auto;
-      padding: 40px;
-      max-width: 1000px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-    header {
-      text-align: center;
-      padding-bottom: 30px;
-    }
+        .header img {
+            width: 150px;
+            height: auto;
+        }
 
-    header img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
+        .content {
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
 
-    header h1 {
-      margin: 10px 0;
-      color: #003366;
-      font-size: 36px;
-    }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-    header p {
-      font-size: 18px;
-      color: #555;
-    }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border: 3px solid white;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
 
-    h2 {
-      color: #003366;
-      border-left: 6px solid #007bff;
-      padding-left: 10px;
-      margin-top: 30px;
-      font-size: 26px;
-    }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo-suzaki.png" alt="Logo Suzaki">
+        <h1>CÔNG TY SUZAKI</h1>
+        <h2>Giới thiệu các mẫu xe mới ra mắt</h2>
+    </div>
 
-    p, ul {
-      font-size: 17px;
-      line-height: 1.7;
-    }
+    <div class="content">
+        <p>Dưới đây là 4 mẫu xe Suzaki mới ra mắt năm 2025:</p>
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #003366;
-      color: white;
-      border-radius: 0 0 15px 15
+        <div class="gallery">
+            <img src="xe1.jpg" alt="Suzaki Xe 1">
+            <img src="xe2.jpg" alt="Suzaki Xe 2">
+            <img src="xe3.jpg" alt="Suzaki Xe 3">
+            <img src="xe4.jpg" alt="Suzaki Xe 4">
+        </div>
+    </div>
+</body>
+</html>
