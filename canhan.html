@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giới thiệu Công ty TNHH Việt Nam Suzuki</title>
+  <title>Giới Thiệu - Trần Huỳnh Vũ</title>
+
+  <!-- Font Awesome để hiển thị biểu tượng -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -11,136 +13,170 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: url('https://images.unsplash.com/photo-1560807707-8cc77767d783') no-repeat center center fixed;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474113Zud/hinh-anh-canh-dong-hoa-dep-nhat_014855679_thumb.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #333;
+      color: #fff;
     }
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      border-radius: 15px;
-      overflow: hidden;
-    }
+
     header {
-      background: linear-gradient(135deg, #0066cc, #003366);
-      color: white;
-      text-align: center;
-      padding: 50px 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
     }
-    header h1 {
+
+    .avatar-block {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #00bcd4;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .name-title h1 {
+      font-size: 1.6em;
       margin: 0;
-      font-size: 36px;
-      font-weight: bold;
     }
-    header p {
-      margin-top: 15px;
-      font-size: 20px;
+
+    .greeting {
+      color: #ffeb3b;
+      font-size: 1em;
+      margin-top: 4px;
       font-style: italic;
     }
-    .logo {
-      width: 150px;
-      margin-top: 20px;
-    }
-    section {
-      padding: 40px 30px;
-      line-height: 1.8;
-    }
-    h2 {
-      color: #003366;
-      border-left: 6px solid #0066cc;
-      padding-left: 10px;
-      font-size: 28px;
-      margin-top: 30px;
-    }
-    ul {
-      padding-left: 20px;
-      font-size: 18px;
-    }
-    ul li {
-      margin: 10px 0;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #003366;
-      text-decoration: underline;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 16px;
-    }
-    footer a {
-      color: #00ccff;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #ffffff;
-    }
+
     .social-icons {
-      margin-top: 20px;
+      display: flex;
+      gap: 15px;
     }
+
     .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 1.5em;
+      color: #00bcd4;
+      font-size: 1.4em;
       transition: transform 0.3s ease;
     }
+
     .social-icons a:hover {
-      transform: scale(1.2);
-      color: #00ccff;
+      transform: scale(1.3);
+      color: #fff;
     }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 28px;
-      }
-      section {
-        padding: 20px;
-      }
-      ul li {
-        font-size: 16px;
-      }
+
+    main {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      max-width: 900px;
+      margin: 30px auto;
+      border-radius: 12px;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #00bcd4;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      color: #00eaff;
+    }
+
+    p, td, th {
+      font-size: 1.05em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      color: #fff;
+    }
+
+    th {
+      background: #007bff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+      margin-top: 30px;
+    }
+
+    a {
+      color: #00eaff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Công ty TNHH Việt Nam Suzuki</h1>
-      <p>Thương hiệu xe Nhật Bản với hơn 100 năm chinh phục mọi hành trình</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Suzuki_logo.svg/1200px-Suzuki_logo.svg.png" alt="Logo Suzuki" class="logo">
-    </header>
+
+  <header>
+    <div class="avatar-block">
+      <img class="avatar" src="https://img6.thuthuatphanmem.vn/uploads/2022/11/18/anh-avatar-don-gian-ma-dep_081757969.jpg" alt="Avatar" />
+      <div class="name-title">
+        <h1>Trần Huỳnh Vũ</h1>
+        <div class="greeting">Rất vui khi được gặp bạn ❤️</div>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Thông Tin Cá Nhân</h2>
+      <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+      <p><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
+      <p><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
+      <p><strong>Giới thiệu:</strong> Tôi là sinh viên yêu thích công nghệ, đam mê lập trình và khám phá phần mềm mới.</p>
+    </section>
 
     <section>
-      <h2>🌟 Giới thiệu chung</h2>
-      <p>Công ty TNHH Việt Nam Suzuki (VISUCO) được thành lập vào ngày 21 tháng 4 năm 1995, với vốn điều lệ 97.900.000 USD và 100% vốn đầu tư từ Suzuki Motor Corporation Nhật Bản. Nhà máy sản xuất đặt tại Khu công nghiệp Long Bình, Biên Hòa, Đồng Nai, chuyên sản xuất và lắp ráp xe ô tô và xe máy Suzuki tại Việt Nam.</p>
+      <h2>Tài Năng</h2>
+      <table>
+        <tr><th>Lĩnh vực</th><th>Mô tả</th></tr>
+        <tr><td>Lập trình</td><td>Biết HTML, CSS, JavaScript cơ bản</td></tr>
+        <tr><td>Hội họa</td><td>Vẽ tay sáng tạo, phối màu tốt</td></tr>
+        <tr><td>Game</td><td>Giỏi Liên Quân, có tư duy chiến thuật</td></tr>
+        <tr><td>Edit video</td><td>Làm vlog, chia sẻ cuộc sống</td></tr>
+      </table>
+    </section>
 
-      <h2>🎯 Sứ mệnh & Tầm nhìn</h2>
-      <p><strong>Sứ mệnh:</strong> Cung cấp các sản phẩm xe ô tô và xe máy chất lượng cao, tiết kiệm nhiên liệu, thân thiện với môi trường, đáp ứng nhu cầu vận chuyển của người tiêu dùng Việt Nam.</p>
-      <p><strong>Tầm nhìn:</strong> Trở thành thương hiệu xe máy, ô tô hàng đầu tại Việt Nam, được khách hàng tin tưởng và yêu mến.</p>
+    <section>
+      <h2>Sở Thích</h2>
+      <table>
+        <tr><th>Sở thích</th><th>Mô tả</th></tr>
+        <tr><td>Nghe nhạc</td><td>Thư giãn, giải trí sau giờ học</td></tr>
+        <tr><td>Khám phá công nghệ</td><td>Tìm hiểu phần mềm mới, AI</td></tr>
+        <tr><td>Du lịch</td><td>Đi khám phá cảnh đẹp, quay video</td></tr>
+      </table>
+    </section>
+  </main>
 
-      <h2>🚗 Sản phẩm chính</h2>
-      <ul>
-        <li><strong>Ô tô:</strong> Super Carry Truck, Super Carry Van, Super Carry Pro, Ertiga, Grand Vitara, Vitara, New Swift, Ciaz, Celerio</li>
-        <li><strong>Xe máy:</strong> Gixxer, Raider R150, Satria F150, GSX-S1000, GSX-R150, GSX-S150, Bandit 150, GZ150, GD110, INTRUDER 150, IMPULSE</li>
-      </ul>
+  <footer>
+    &copy; 2025 Trần Huỳnh Vũ. All rights reserved.
+  </footer>
 
-      <h2>📍 Thông tin liên hệ</h2>
-      <p><strong>Địa chỉ nhà máy:</strong> Đường số 2, Khu công nghiệp Long Bình, Tp. Biên Hòa, Tỉnh Đồng Nai</p>
-      <p><strong>Văn phòng đại diện:</strong> Số 2, Phổ Quang, P. 2, Q. Tân Bình, Tp. HCM</p>
-      <p><strong>Hotline:</strong> 0935154697</p>
-      <p><strong>Email:</strong> <a href="mailto:it-suzuki@
-::contentReference[oaicite:0]{index=0}
- 
+</body>
+</html>
