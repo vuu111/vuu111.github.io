@@ -1,203 +1,162 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch Vụ - Huỳnh Vũ Web Design</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dịch Vụ - Huỳnh Vũ Web Design</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-        /* Banner trên cùng */
-        .top-banner {
-            background-color: #111;
-            color: #00e0ff;
-            text-align: center;
-            padding: 12px 0;
-            font-size: 18px;
-            letter-spacing: 1.5px;
-            font-weight: bold;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        }
+    /* Top Banner */
+    .top-banner {
+      background-color: #222;
+      color: #00bfa6;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #007BFF, #00C6FF);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #00bfa6, #0097a7);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    nav {
+      margin-top: 10px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 17px;
-            font-weight: 500;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav a:hover {
+      color: #ffeb3b;
+    }
 
-        /* Nội dung chính */
-        section {
-            background-color: white;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
+    /* Section */
+    section {
+      background-color: #fff;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
 
-        h2 {
-            color: #007BFF;
-            margin-bottom: 20px;
-        }
+    h2 {
+      color: #00bfa6;
+      margin-bottom: 20px;
+    }
 
-        /* Form */
-        form label {
-            font-weight: bold;
-            display: block;
-            margin-top: 15px;
-        }
+    form label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-        textarea {
-            resize: vertical;
-        }
+    textarea {
+      resize: vertical;
+    }
 
-        input[type="submit"] {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            cursor: pointer;
-            border-radius: 6px;
-            font-size: 16px;
-            margin-top: 20px;
-        }
+    input[type="submit"] {
+      background-color: #00bfa6;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
 
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+    input[type="submit"]:hover {
+      background-color: #009688;
+    }
 
-        /* Danh sách dịch vụ */
-        ol {
-            padding-left: 20px;
-            margin-top: 30px;
-        }
+    ol {
+      padding-left: 20px;
+      margin-top: 30px;
+    }
 
-        ol li {
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
+    ol li {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            background-color: #007BFF;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 14px;
-        }
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-        footer .credits {
-            font-style: italic;
-            color: #dff;
-            margin-top: 5px;
-            font-size: 13px;
-        }
+    footer .credits {
+      color: #00bfa6;
+      font-style: italic;
+      margin-top: 5px;
+    }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 26px;
-            }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
 
-            nav a {
-                margin: 0 8px;
-                font-size: 15px;
-            }
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
 
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+      section {
+        padding: 20px;
+        margin: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Top banner -->
-    <div class="top-banner">Huỳnh Vũ Web Design</div>
+  <!-- Top Banner -->
+  <div class="top-banner">Huỳnh Vũ Web Design</div>
 
-    <!-- Header -->
-    <header>
-        <h1>Dịch Vụ</h1>
-        <nav>
-            <a href="trangchu.html">Trang Chủ</a> |
-            <a href="thongtin.html">Thông Tin</a> |
-            <a href="dichvu.html">Dịch Vụ</a>
-        </nav>
-    </header>
-
-    <!-- Nội dung -->
-    <section>
-        <h2>Dịch vụ chúng tôi cung cấp</h2>
-
-        <form method="post" action="#">
-            <label for="gmail">Nhập Gmail:</label>
-            <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required>
-
-            <label for="ten">Họ và tên:</label>
-            <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required>
-
-            <label for="noidung">Nội dung:</label>
-            <textarea id="noidung" name="noidung" rows="5" placeholder="Nhập nội dung liên hệ hoặc góp ý..." required></textarea>
-
-            <input type="submit" value="Gửi">
-        </form>
-
-        <ol>
-            <li>✅ Thiết kế website chuyên nghiệp</li>
-            <li>⚙️ Phần mềm quản lý theo yêu cầu</li>
-            <li>📲 Chuyển đổi số cho doanh nghiệp</li>
-            <li>🔧 Hỗ trợ kỹ thuật và bảo trì hệ thống</li>
-        </ol>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
-        <div class="credits">Thiết kế bởi Huỳnh Vũ Web Design</div>
-    </footer>
-
-</body>
-</html>
+  <!-- Header -->
+  <header>
+    <h1>Dịch Vụ</h1>
+    <nav>
+      <a href="trangchu.html">Trang Chủ</a>
