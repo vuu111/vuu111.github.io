@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trần Huỳnh Vũ - Giới Thiệu</title>
-  <link rel="stylesheet" href="https://img.lovepik.com/bg/20231227/The-Beautiful-Background-of-Pretty-Clouds-in-the-Blue-Sky_2494406_wh860.png"/>
+  <!-- Font Awesome link mới -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6R7cJ1Mj6jM1nkm+ZP6bD98E6iN5xMxSkO2ZllBj9CFWqzjUKTdzrZ/Nf8LkWHjw6z8VA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       box-sizing: border-box;
@@ -101,6 +102,42 @@
     .tagline {
       font-size: 1.2rem;
       font-style: italic;
+      display: flex;
+      align-items: center;
+      animation: typing 3s steps(30) 1s forwards, pulse 2s infinite alternate;
+    }
+
+    .tagline i {
+      margin-left: 10px;
+      font-size: 1.6rem;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        color: #ffeb3b;
+      }
+      100% {
+        color: #ff9800;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
     }
 
     main {
@@ -185,7 +222,7 @@
     </div>
     <div class="intro">
       <h1>Trần Huỳnh Vũ</h1>
-      <p class="tagline">Rất vui khi được gặp bạn 👋</p>
+      <p class="tagline">Rất vui khi được gặp bạn <i class="fas fa-smile"></i></p>
     </div>
   </header>
 
