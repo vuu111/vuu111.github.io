@@ -61,19 +61,36 @@
 
     .slider {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      justify-content: center;
       gap: 20px;
       padding: 20px;
       background: #000;
-      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .slider img {
-      max-height: 400px;
+    .slider .image-container {
+      width: 280px; /* Chiều rộng của mỗi hình ảnh */
+      height: 400px; /* Chiều cao cố định cho hình ảnh */
       border-radius: 10px;
-      scroll-snap-align: center;
-      object-fit: cover;
+      overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+      position: relative; /* Để chứa cả hình ảnh và chú thích */
+    }
+
+    .slider .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Đảm bảo hình ảnh vừa vặn và không bị méo */
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
     }
 
     section {
@@ -133,9 +150,9 @@
     }
 
     @media (max-width: 768px) {
-      .slider img {
-        height: 250px;
-        width: auto;
+      .slider .image-container {
+        width: 220px;
+        height: 300px;
       }
 
       #gioi-thieu .overlay {
@@ -170,10 +187,22 @@
   </nav>
 
   <section id="xe" class="slider">
-    <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
-    <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Mẫu 2">
-    <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
-    <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
+    <div class="image-container">
+      <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
+      <div class="caption">Mẫu xe Suzuki Mới 2025</div>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Mẫu 2">
+      <div class="caption">Xe Suzuki Kế Thừa Công Nghệ</div>
+    </div>
+    <div class="image-container">
+      <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
+      <div class="caption">Sang Trọng và Tiết Kiệm</div>
+    </div>
+    <div class="image-container">
+      <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
+      <div class="caption">Sự Lựa Chọn Hoàn Hảo</div>
+    </div>
   </section>
 
   <section id="gioi-thieu">
