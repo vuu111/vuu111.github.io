@@ -30,20 +30,19 @@
       background: var(--main-color);
       color: white;
       text-align: center;
-      padding: 50px 20px 30px;
+      padding: 40px 20px 30px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 32px;
     }
 
-    header .sub-brand {
-      font-size: 14px;
+    .sub-brand {
+      font-size: 16px;
       color: #e0e0e0;
       font-style: italic;
-      margin-top: 8px;
-      margin-bottom: 4px;
+      margin: 8px 0;
     }
 
     header p {
@@ -73,4 +72,162 @@
     /* SECTION */
     section {
       background: white;
-      max-width: 900
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    section h2 {
+      color: var(--main-color);
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    section p {
+      font-size: 17px;
+    }
+
+    form {
+      margin-top: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--main-color);
+    }
+
+    input[type="email"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--hover-color);
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+      display: none;
+      font-weight: bold;
+    }
+
+    img.responsive-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #104E8B;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #87CEFA;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 5px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
+    <div class="sub-brand">Huỳnh Vũ Web Design</div>
+    <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
+    <nav>
+      <a href="trangchu.html">Trang Chủ</a>
+      <a href="thongtin.html">Thông Tin</a>
+      <a href="dichvu.html">Dịch Vụ</a>
+    </nav>
+  </header>
+
+  <!-- GIỚI THIỆU -->
+  <section>
+    <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
+    <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
+
+    <form id="emailForm">
+      <label for="gmail">Nhập Gmail của bạn:</label>
+      <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
+      <button type="submit">Gửi</button>
+      <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
+    </form>
+
+    <img src="https://itnow.vn/wp-content/uploads/2022/03/giai-phap-he-thong-cntt-hieu-qua-cho-doanh-nghiep-1.jpeg"
+         alt="Giải pháp hệ thống CNTT"
+         class="responsive-img" loading="lazy" />
+  </section>
+
+  <!-- LIÊN HỆ -->
+  <section>
+    <h2>Liên hệ ngay hôm nay!</h2>
+    <p>Email hỗ trợ: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
+    <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+  </footer>
+
+  <!-- SCRIPT xử lý form -->
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('gmail');
+      const successMessage = document.getElementById('successMessage');
+
+      if (emailInput.value.trim() !== "") {
+        successMessage.style.display = 'block';
+        emailInput.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
