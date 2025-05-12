@@ -1,225 +1,203 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân - Trần Huỳnh Vũ</title>
-    <style>
-        /* Cấu hình chung cho body và html */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background-color: #f4f6f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trần Huỳnh Vũ - Trang Giới Thiệu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
 
-        /* Thanh điều hướng */
-        nav {
-            background-color: #1877f2;
-            padding: 15px 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    header {
+      background-color: #fff;
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        nav .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
+    .avatar-container {
+      position: relative;
+      display: inline-block;
+    }
 
-        nav .links a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #1877f2;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-        nav .links a:hover {
-            text-decoration: underline;
-        }
+    .social-icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 220px;
+    }
 
-        /* Header: ảnh đại diện và tên */
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 40px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+    .social-icons a {
+      background-color: #1877f2;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: transform 0.3s, background-color 0.3s;
+      text-decoration: none;
+    }
 
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #1877f2;
-            margin-bottom: 20px;
-        }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      background-color: #0d5db3;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #333;
-        }
+    h1 {
+      margin-top: 20px;
+      font-size: 2.4em;
+      color: #1877f2;
+    }
 
-        header p {
-            color: #555;
-            font-size: 1.2em;
-        }
+    .tagline {
+      font-size: 1.2em;
+      color: #555;
+    }
 
-        /* Phần thông tin cá nhân */
-        .profile-info {
-            background-color: white;
-            width: 100%;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
-            border-radius: 10px;
-        }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+    }
 
-        .profile-info h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #1877f2;
-        }
+    main h2 {
+      color: #1877f2;
+      margin-bottom: 20px;
+    }
 
-        .profile-info p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
+    main p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
 
-        .profile-info a {
-            color: #1877f2;
-            text-decoration: none;
-        }
+    .info-line {
+      margin: 10px 0;
+    }
 
-        .profile-info a:hover {
-            text-decoration: underline;
-        }
+    .info-line strong {
+      width: 150px;
+      display: inline-block;
+      color: #444;
+    }
 
-        .skills-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 25px;
-            font-size: 1.05em;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        .skills-table th, .skills-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
+    .skills-table th,
+    .skills-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
 
-        .skills-table th {
-            background-color: #1877f2;
-            color: white;
-        }
+    .skills-table th {
+      background-color: #1877f2;
+      color: white;
+    }
 
-        .skills-table tr:hover {
-            background-color: #f1f9ff;
-        }
+    .skills-table tr:hover {
+      background-color: #f5f9ff;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 10px;
-            background-color: #1877f2;
-            color: white;
-            margin-top: 40px;
-        }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1877f2;
+      color: white;
+      margin-top: 40px;
+    }
 
-        /* Media Query cho mobile */
-        @media (max-width: 600px) {
-            header img {
-                width: 120px;
-                height: 120px;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            .profile-info {
-                padding: 20px;
-                margin: 10px;
-            }
-
-            .profile-info h2 {
-                font-size: 1.8em;
-            }
-        }
-
-    </style>
+    @media (max-width: 600px) {
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+      .social-icons {
+        width: 160px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="avatar-container">
+      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ" class="avatar" />
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <h1>Trần Huỳnh Vũ</h1>
+    <p class="tagline">Chào bạn! Rất vui khi được gặp bạn 🌟</p>
+  </header>
 
-    <!-- Thanh điều hướng -->
-    <nav>
-        <div class="logo">Trần Huỳnh Vũ</div>
-        <div class="links">
-            <a href="#">Trang Chủ</a>
-            <a href="#">Giới Thiệu</a>
-            <a href="#">Liên Hệ</a>
-        </div>
-    </nav>
+  <main>
+    <h2>Thông Tin Cá Nhân</h2>
+    <p class="info-line"><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
+    <p class="info-line"><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+    <p class="info-line"><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
+    <p class="info-line"><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
+    <p class="info-line"><strong>Giới thiệu:</strong> Tôi là một sinh viên đam mê công nghệ, yêu thích lập trình, chia sẻ kiến thức qua vlog và mong muốn phát triển sự nghiệp trong lĩnh vực phần mềm.</p>
 
-    <!-- Header -->
-    <header>
-        <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ">
-        <h1>Trần Huỳnh Vũ</h1>
-        <p>Công nghệ thông tin - Sinh viên trường Cao đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-    </header>
+    <h2>Tài Năng & Sở Thích</h2>
+    <table class="skills-table">
+      <thead>
+        <tr>
+          <th>Danh mục</th>
+          <th>Chi tiết</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tài năng</td>
+          <td>Chơi Liên Quân giỏi, tư duy chiến thuật tốt, phối hợp nhóm hiệu quả</td>
+        </tr>
+        <tr>
+          <td>Sở thích</td>
+          <td>Nghe nhạc, xem vlog công nghệ, học lập trình web</td>
+        </tr>
+        <tr>
+          <td>Vlog</td>
+          <td>Quay video chia sẻ cuộc sống, review thiết bị công nghệ</td>
+        </tr>
+        <tr>
+          <td>Kỹ năng khác</td>
+          <td>Photoshop cơ bản, dựng video, viết nội dung sáng tạo</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 
-    <!-- Thông Tin Cá Nhân -->
-    <section class="profile-info">
-        <h2>Thông Tin Cá Nhân</h2>
-        <p><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
-        <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-        <p><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-        <p><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
-        <p><strong>Giới thiệu:</strong> Tôi là một sinh viên ngành Công Nghệ Thông Tin, đam mê lập trình và phát triển phần mềm. Mục tiêu của tôi là học hỏi và phát triển trong lĩnh vực công nghệ.</p>
-    </section>
-
-    <!-- Tài Năng & Sở Thích -->
-    <section class="profile-info">
-        <h2>Tài Năng & Sở Thích</h2>
-        <table class="skills-table">
-            <thead>
-                <tr>
-                    <th>Mục</th>
-                    <th>Chi tiết</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tài năng</td>
-                    <td>Chơi game Liên Quân Mobile giỏi, tư duy chiến thuật tốt</td>
-                </tr>
-                <tr>
-                    <td>Sở thích</td>
-                    <td>Thư giãn, nghe nhạc, khám phá công nghệ mới</td>
-                </tr>
-                <tr>
-                    <td>Hoạt động thường ngày</td>
-                    <td>Làm vlog, quay video chia sẻ kiến thức</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
-    </footer>
-
+  <footer>
+    &copy; 2025 Trần Huỳnh Vũ - All rights reserved.
+  </footer>
 </body>
 </html>
