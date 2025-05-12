@@ -3,69 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Việt Nam Suzuki</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Suzaki - Xe Mới 2025</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #001f3f;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header img {
+            width: 100px;
+        }
+        nav {
+            background: #003366;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Slider */
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px;
+            background: #000;
+        }
+        .slider img {
+            height: 300px;
+            border-radius: 10px;
+            scroll-snap-align: center;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .highlight {
+            background: #e3f2fd;
+        }
+
+        footer {
+            background: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slider img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Thanh điều hướng -->
+
     <header>
-        <nav>
-            <div class="logo">
-                <img src="logo-suzuki.png" alt="Logo Suzuki">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#xe-moi">Xe mới</a></li>
-                <li><a href="#dich-vu">Dịch vụ</a></li>
-                <li><a href="#khuyen-mai">Khuyến mãi</a></li>
-                <li><a href="#lien-he">Liên hệ</a></li>
-            </ul>
-        </nav>
+        <img src="logo-suzaki.png" alt="Logo Suzaki">
+        <h1>Chào Mừng Đến Với SUZAKI</h1>
     </header>
 
-    <!-- Slider hình ảnh -->
-    <section id="slider">
-        <div class="slide">
-            <img src="xe1.jpg" alt="Xe mới 1">
-        </div>
-        <div class="slide">
-            <img src="xe2.jpg" alt="Xe mới 2">
-        </div>
-        <div class="slide">
-            <img src="xe3.jpg" alt="Xe mới 3">
-        </div>
-        <div class="slide">
-            <img src="xe4.jpg" alt="Xe mới 4">
-        </div>
+    <nav>
+        <a href="#xe">Xe Mới</a>
+        <a href="#gioi-thieu">Giới Thiệu</a>
+        <a href="#dich-vu">Dịch Vụ</a>
+        <a href="#lien-he">Liên Hệ</a>
+    </nav>
+
+    <section id="xe" class="slider">
+        <img src="xe1.jpg" alt="Suzaki Mẫu 1">
+        <img src="xe2.jpg" alt="Suzaki Mẫu 2">
+        <img src="xe3.jpg" alt="Suzaki Mẫu 3">
+        <img src="xe4.jpg" alt="Suzaki Mẫu 4">
     </section>
 
-    <!-- Giới thiệu -->
-    <section id="gioi-thieu">
-        <h2>Giới thiệu về Suzuki</h2>
-        <p>Chúng tôi cung cấp các dòng xe ô tô và xe máy chất lượng cao, phù hợp với nhu cầu và sở thích của bạn.</p>
+    <section id="gioi-thieu" class="highlight">
+        <h2>Về Chúng Tôi</h2>
+        <p>Suzaki là thương hiệu hàng đầu chuyên cung cấp xe chất lượng cao, thiết kế hiện đại và tiết kiệm nhiên liệu.</p>
     </section>
 
-    <!-- Dịch vụ -->
     <section id="dich-vu">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <p>Chúng tôi cung cấp các dịch vụ bảo dưỡng, sửa chữa và hỗ trợ khách hàng tận tâm và chuyên nghiệp.</p>
+        <h2>Dịch Vụ Hàng Đầu</h2>
+        <p>Bảo hành chính hãng, phụ tùng chính hiệu, đội ngũ kỹ thuật viên chuyên nghiệp.</p>
     </section>
 
-    <!-- Khuyến mãi -->
-    <section id="khuyen-mai">
-        <h2>Khuyến mãi đặc biệt</h2>
-        <p>Khám phá các chương trình khuyến mãi hấp dẫn khi mua xe tại Suzuki.</p>
-    </section>
-
-    <!-- Liên hệ -->
-    <section id="lien-he">
-        <h2>Liên hệ với chúng tôi</h2>
-        <p>Địa chỉ: Đường số 2, Khu công nghiệp Long Bình, Biên Hòa, Đồng Nai</p>
-        <p>Điện thoại: 0251.3838.707</p>
+    <section id="lien-he" class="highlight">
+        <h2>Liên Hệ</h2>
+        <p>Địa chỉ: KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
+        <p>Điện thoại: 0251 3838 707</p>
+        <p>Email: info@suzaki.vn</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Công ty TNHH Việt Nam Suzuki</p>
+        &copy; 2025 Công ty TNHH Suzaki Việt Nam. Bản quyền được bảo hộ.
     </footer>
+
 </body>
 </html>
