@@ -2,154 +2,150 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trần Huỳnh Vũ - Trang Giới Thiệu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trần Huỳnh Vũ - Giới Thiệu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* Reset và thiết lập chung */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e9f0f5;
       color: #333;
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       padding: 20px;
       background-color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
     .avatar-container {
-      position: relative;
       margin-right: 20px;
+      text-align: center;
     }
+
     .avatar {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       border: 4px solid #1877f2;
       object-fit: cover;
     }
+
     .social-icons {
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
+      margin-top: 10px;
     }
+
     .social-icons a {
-      background-color: #1877f2;
+      margin: 0 5px;
       color: white;
+      background-color: #1877f2;
       padding: 8px;
       border-radius: 50%;
-      font-size: 18px;
-      transition: background-color 0.3s;
-      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+      display: inline-block;
     }
+
     .social-icons a:hover {
       background-color: #0d5db3;
+      transform: scale(1.1);
     }
+
+    .intro {
+      flex-grow: 1;
+    }
+
     h1 {
       font-size: 2rem;
       color: #1877f2;
     }
+
     .tagline {
       font-size: 1.1rem;
       color: #555;
     }
 
-    /* Phần giới thiệu */
-    .profile-info {
+    main {
       max-width: 900px;
       margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
       background-color: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
-    .profile-info h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+
+    .card h2 {
       color: #1877f2;
+      margin-bottom: 15px;
     }
-    .profile-info p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
+
     .info-line {
       margin: 10px 0;
     }
+
     .info-line strong {
       width: 150px;
       display: inline-block;
       color: #444;
     }
-    .skills-table {
+
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
-    }
-    .skills-table th,
-    .skills-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-    }
-    .skills-table th {
-      background-color: #1877f2;
-      color: white;
-    }
-    .skills-table tr:hover {
-      background-color: #f5f9ff;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px 10px;
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
       background-color: #1877f2;
       color: white;
+    }
+
+    tr:hover {
+      background-color: #f5faff;
+    }
+
+    footer {
+      background-color: #1877f2;
+      color: white;
+      text-align: center;
+      padding: 15px;
       margin-top: 40px;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
       }
-      .avatar {
-        width: 100px;
-        height: 100px;
-      }
-      h1 {
-        font-size: 1.5rem;
-      }
-      .profile-info {
-        padding: 15px;
-      }
-      .skills-table th,
-      .skills-table td {
-        padding: 10px;
+      .avatar-container {
+        margin: 0 0 15px 0;
       }
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <div class="avatar-container">
-      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ" class="avatar" />
+      <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" class="avatar" alt="Trần Huỳnh Vũ">
       <div class="social-icons">
         <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
@@ -157,28 +153,78 @@
         <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <div>
+    <div class="intro">
       <h1>Trần Huỳnh Vũ</h1>
-      <p class="tagline">Chào bạn! Rất vui khi được gặp bạn 🌟</p>
+      <p class="tagline">Rất vui khi được gặp bạn 👋</p>
     </div>
   </header>
 
-  <div class="profile-info">
-    <h2>Thông Tin Cá Nhân</h2>
-    <p class="info-line"><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
-    <p class="info-line"><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-    <p class="info-line"><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-    <p class="info-line"><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
-    <p class="info-line"><strong>Giới thiệu:</strong> Tôi là một sinh viên đam mê công nghệ, yêu thích lập trình, chia sẻ kiến thức qua vlog và mong muốn phát triển sự nghiệp trong lĩnh vực phần mềm.</p>
+  <main>
+    <div class="card">
+      <h2>Thông Tin Cá Nhân</h2>
+      <p class="info-line"><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
+      <p class="info-line"><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+      <p class="info-line"><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
+      <p class="info-line"><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
+      <p class="info-line"><strong>Giới thiệu:</strong> Tôi là sinh viên CNTT đam mê công nghệ, yêu lập trình, thích chia sẻ và tạo giá trị qua vlog công nghệ.</p>
+    </div>
 
-    <h2>Tài Năng & Sở Thích</h2>
-    <table class="skills-table">
-      <thead>
-        <tr>
-          <th>Danh mục</th>
-          <th>Chi tiết</th>
-        </tr>
-      </thead>
+    <div class="card">
+      <h2>Tài Năng</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Lĩnh vực</th>
+            <th>Chi tiết</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Game</td>
+            <td>Chơi giỏi Liên Quân Mobile, tư duy chiến thuật tốt</td>
+          </tr>
+          <tr>
+            <td>Kỹ thuật số</td>
+            <td>Chỉnh sửa video, Photoshop cơ bản, quay vlog</td>
+          </tr>
+          <tr>
+            <td>Giao tiếp</td>
+            <td>Thuyết trình tốt, truyền đạt rõ ràng</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-::contentReference[oaicite:0]{index=0}
- 
+    <div class="card">
+      <h2>Sở Thích</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sở thích</th>
+            <th>Mô tả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nghe nhạc</td>
+            <td>Yêu thích nhạc chill, cổ điển và hiện đại</td>
+          </tr>
+          <tr>
+            <td>Khám phá công nghệ</td>
+            <td>Luôn tò mò với phần mềm và công nghệ mới</td>
+          </tr>
+          <tr>
+            <td>Làm vlog</td>
+            <td>Quay video chia sẻ cuộc sống sinh viên, mẹo học tập</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Trần Huỳnh Vũ. All rights reserved.
+  </footer>
+
+</body>
+</html>
