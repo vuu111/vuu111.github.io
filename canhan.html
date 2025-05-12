@@ -2,143 +2,145 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trần Huỳnh Vũ - Trang Giới Thiệu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body {
+    /* Reset và thiết lập chung */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
+      background-color: #f4f6f9;
       color: #333;
+      line-height: 1.6;
     }
 
+    /* Header */
     header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
       background-color: #fff;
-      text-align: center;
-      padding: 60px 20px 40px;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
     .avatar-container {
       position: relative;
-      display: inline-block;
+      margin-right: 20px;
     }
-
     .avatar {
-      width: 160px;
-      height: 160px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       border: 4px solid #1877f2;
       object-fit: cover;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-
     .social-icons {
       position: absolute;
-      top: 50%;
+      bottom: -10px;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 220px;
+      gap: 10px;
     }
-
     .social-icons a {
       background-color: #1877f2;
       color: white;
-      padding: 10px;
+      padding: 8px;
       border-radius: 50%;
       font-size: 18px;
-      transition: transform 0.3s, background-color 0.3s;
+      transition: background-color 0.3s;
       text-decoration: none;
     }
-
     .social-icons a:hover {
-      transform: scale(1.2);
       background-color: #0d5db3;
     }
-
     h1 {
-      margin-top: 20px;
-      font-size: 2.4em;
+      font-size: 2rem;
       color: #1877f2;
     }
-
     .tagline {
-      font-size: 1.2em;
+      font-size: 1.1rem;
       color: #555;
     }
 
-    main {
+    /* Phần giới thiệu */
+    .profile-info {
       max-width: 900px;
       margin: 30px auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
     }
-
-    main h2 {
+    .profile-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
       color: #1877f2;
-      margin-bottom: 20px;
     }
-
-    main p {
-      font-size: 1.1em;
-      line-height: 1.7;
+    .profile-info p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
     }
-
     .info-line {
       margin: 10px 0;
     }
-
     .info-line strong {
       width: 150px;
       display: inline-block;
       color: #444;
     }
-
     .skills-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-
     .skills-table th,
     .skills-table td {
       padding: 12px 16px;
       border-bottom: 1px solid #eee;
       text-align: left;
     }
-
     .skills-table th {
       background-color: #1877f2;
       color: white;
     }
-
     .skills-table tr:hover {
       background-color: #f5f9ff;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 20px 10px;
       background-color: #1877f2;
       color: white;
       margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
-      .avatar {
-        width: 120px;
-        height: 120px;
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
       }
-      .social-icons {
-        width: 160px;
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .profile-info {
+        padding: 15px;
+      }
+      .skills-table th,
+      .skills-table td {
+        padding: 10px;
       }
     }
   </style>
@@ -155,11 +157,13 @@
         <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <h1>Trần Huỳnh Vũ</h1>
-    <p class="tagline">Chào bạn! Rất vui khi được gặp bạn 🌟</p>
+    <div>
+      <h1>Trần Huỳnh Vũ</h1>
+      <p class="tagline">Chào bạn! Rất vui khi được gặp bạn 🌟</p>
+    </div>
   </header>
 
-  <main>
+  <div class="profile-info">
     <h2>Thông Tin Cá Nhân</h2>
     <p class="info-line"><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
     <p class="info-line"><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
@@ -175,29 +179,6 @@
           <th>Chi tiết</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Tài năng</td>
-          <td>Chơi Liên Quân giỏi, tư duy chiến thuật tốt, phối hợp nhóm hiệu quả</td>
-        </tr>
-        <tr>
-          <td>Sở thích</td>
-          <td>Nghe nhạc, xem vlog công nghệ, học lập trình web</td>
-        </tr>
-        <tr>
-          <td>Vlog</td>
-          <td>Quay video chia sẻ cuộc sống, review thiết bị công nghệ</td>
-        </tr>
-        <tr>
-          <td>Kỹ năng khác</td>
-          <td>Photoshop cơ bản, dựng video, viết nội dung sáng tạo</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
 
-  <footer>
-    &copy; 2025 Trần Huỳnh Vũ - All rights reserved.
-  </footer>
-</body>
-</html>
+::contentReference[oaicite:0]{index=0}
+ 
