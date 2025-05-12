@@ -13,17 +13,21 @@
     }
 
     body {
-      background: #f4f4f4;
+      background: url('https://your-image-url.com/background.jpg') no-repeat center center fixed;
+      background-size: cover; /* Lấp đầy toàn bộ màn hình */
       color: #333;
       line-height: 1.6;
       font-size: 18px; /* Tăng kích thước font chữ toàn bộ trang */
     }
 
     header {
-      background: #001f3f;
+      background: rgba(0, 31, 63, 0.7); /* Nền đen mờ để dễ đọc chữ */
       color: #fff;
       text-align: center;
       padding: 30px 20px;
+      background-image: url('https://your-image-url.com/header-background.jpg');
+      background-size: cover; /* Lấp đầy phần header */
+      background-position: center;
     }
 
     header img {
@@ -59,13 +63,14 @@
       background-color: #0059b3;
     }
 
-    /* Tạo container cho các hình ảnh xe */
     .car-gallery {
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       gap: 30px;
-      flex-wrap: wrap;
+      overflow-x: auto;
       padding: 40px 20px;
+      scroll-snap-type: x mandatory;
+      background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ cho gallery */
     }
 
     .car-item {
@@ -76,6 +81,7 @@
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
 
     .car-item img {
@@ -106,10 +112,13 @@
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ */
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     section h2 {
-      font-size: 32px; /* Tăng kích thước tiêu đề */
+      font-size: 32px; 
       color: #003366;
       margin-bottom: 20px;
     }
@@ -119,7 +128,10 @@
       color: #fff;
       text-align: center;
       padding: 25px 10px;
-      font-size: 16px; /* Tăng kích thước chữ trong footer */
+      font-size: 16px; 
+      background-image: url('https://your-image-url.com/footer-background.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     footer small {
@@ -130,12 +142,11 @@
 
     @media (max-width: 768px) {
       .car-gallery {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center; 
       }
 
       .car-item {
-        width: 90%;
+        width: 90%; 
       }
     }
   </style>
@@ -156,7 +167,6 @@
     <a href="#lien-he">Liên Hệ</a>
   </nav>
 
-  <!-- Phần Xe Mới -->
   <section id="xe">
     <h2>Xe Mới 2025</h2>
     <div class="car-gallery">
@@ -190,13 +200,11 @@
     </div>
   </section>
 
-  <!-- Phần Giới Thiệu -->
   <section id="gioi-thieu">
     <h2>Giới Thiệu</h2>
     <p>Suzuki là thương hiệu Nhật Bản với hơn 100 năm kinh nghiệm trong lĩnh vực sản xuất xe máy, ô tô và động cơ. Tại Việt Nam, Suzuki mang đến các dòng xe chất lượng cao, tiết kiệm nhiên liệu và độ bền vượt trội. Hướng tới tương lai, Suzuki cam kết đổi mới công nghệ và nâng cao trải nghiệm khách hàng.</p>
   </section>
 
-  <!-- Phần Liên Hệ -->
   <section id="lien-he">
     <h2>Liên Hệ</h2>
     <p>Địa chỉ: Đường số 2, KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
