@@ -2,181 +2,259 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giới Thiệu - Trần Huỳnh Vũ</title>
-
-  <!-- Font Awesome để hiển thị biểu tượng -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-RXf+QSDCUQs6lD1Vb3J6eGk5Ul2U7PZwDQJ7QgRhvOqpzcrK1eRi7Vn8FzvPykUN2ueUJjD5QsZ7Y0hZpE+zOw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suzuki Việt Nam - Xe Mới 2025</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474113Zud/hinh-anh-canh-dong-hoa-dep-nhat_014855679_thumb.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
+      background: #00264d;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background: #003366;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 10px;
     }
 
-    .avatar-block {
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #0059b3;
+    }
+
+    .slider {
       display: flex;
-      align-items: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 30px 20px;
+      background: #000;
     }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid #00bcd4;
-      object-fit: cover;
-      margin-right: 15px;
+    .slider img {
+      height: 300px;
+      border-radius: 10px;
+      scroll-snap-align: center;
+      transition: transform 0.3s;
     }
 
-    .name-title h1 {
-      font-size: 1.6em;
-      margin: 0;
-    }
-
-    .greeting {
-      color: #ffeb3b;
-      font-size: 1em;
-      margin-top: 4px;
-      font-style: italic;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-icons a {
-      color: #00bcd4;
-      font-size: 1.4em;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.3);
-      color: #fff;
-    }
-
-    main {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      max-width: 900px;
-      margin: 30px auto;
-      border-radius: 12px;
+    .slider img:hover {
+      transform: scale(1.05);
     }
 
     section {
-      margin-bottom: 25px;
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 0.8s ease-in;
     }
 
     section h2 {
-      border-bottom: 2px solid #00bcd4;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-      color: #00eaff;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #003366;
     }
 
-    p, td, th {
-      font-size: 1.05em;
+    .highlight {
+      background: #eaf4ff;
     }
 
-    table {
+    .xe-noi-bat {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .xe-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      transition: box-shadow 0.3s;
+    }
+
+    .xe-item img {
       width: 100%;
-      border-collapse: collapse;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
     }
 
-    th, td {
+    .xe-item:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .ly-do {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .ly-do div {
+      flex: 1 1 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #0073e6;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-style: italic;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
       padding: 10px;
-      border-bottom: 1px solid #ccc;
-      color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
     }
 
-    th {
-      background: #007bff;
+    button {
+      background: #003366;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0059b3;
     }
 
     footer {
+      background: #00264d;
+      color: white;
       text-align: center;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      color: #ccc;
-      margin-top: 30px;
+      padding: 25px 10px;
+      font-size: 14px;
     }
 
-    a {
-      color: #00eaff;
-      text-decoration: none;
+    footer small {
+      display: block;
+      margin-top: 8px;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .slider img {
+        height: 200px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="avatar-block">
-      <img class="avatar" src="https://img6.thuthuatphanmem.vn/uploads/2022/11/18/anh-avatar-don-gian-ma-dep_081757969.jpg" alt="Avatar" />
-      <div class="name-title">
-        <h1>Trần Huỳnh Vũ</h1>
-        <div class="greeting">Rất vui khi được gặp bạn ❤️</div>
-      </div>
-    </div>
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
+    <img src="https://inkythuatso.com/uploads/images/2021/11/logo-suzuki-inkythuatso-2-01-15-14-24-02.jpg" alt="Logo Suzuki">
+    <h1>Chào Mừng Đến Với Suzuki Việt Nam</h1>
+    <p>Khám phá các dòng xe đẳng cấp cho năm 2025</p>
   </header>
 
-  <main>
-    <section>
-      <h2>Thông Tin Cá Nhân</h2>
-      <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-      <p><strong>Trường học:</strong> Trường Cao Đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
-      <p><strong>Ngành học:</strong> Công nghệ thông tin (CNTT)</p>
-      <p><strong>Giới thiệu:</strong> Tôi là sinh viên yêu thích công nghệ, đam mê lập trình và khám phá phần mềm mới.</p>
-    </section>
+  <nav>
+    <a href="#xe">Xe Nổi Bật</a>
+    <a href="#gioi-thieu">Giới Thiệu</a>
+    <a href="#dich-vu">Dịch Vụ</a>
+    <a href="#ly-do">Tại Sao Chọn Suzuki</a>
+    <a href="#danh-gia">Đánh Giá</a>
+    <a href="#lien-he">Liên Hệ</a>
+  </nav>
 
-    <section>
-      <h2>Tài Năng</h2>
-      <table>
-        <tr><th>Lĩnh vực</th><th>Mô tả</th></tr>
-        <tr><td>Lập trình</td><td>Biết HTML, CSS, JavaScript cơ bản</td></tr>
-        <tr><td>Hội họa</td><td>Vẽ tay sáng tạo, phối màu tốt</td></tr>
-        <tr><td>Game</td><td>Giỏi Liên Quân, có tư duy chiến thuật</td></tr>
-        <tr><td>Edit video</td><td>Làm vlog, chia sẻ cuộc sống</td></tr>
-      </table>
-    </section>
+  <section class="slider" id="xe">
+    <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki mẫu 1">
+    <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki mẫu 2">
+    <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki mẫu 3">
+    <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki mẫu 4">
+  </section>
 
-    <section>
-      <h2>Sở Thích</h2>
-      <table>
-        <tr><th>Sở thích</th><th>Mô tả</th></tr>
-        <tr><td>Nghe nhạc</td><td>Thư giãn, giải trí sau giờ học</td></tr>
-        <tr><td>Khám phá công nghệ</td><td>Tìm hiểu phần mềm mới, AI</td></tr>
-        <tr><td>Du lịch</td><td>Đi khám phá cảnh đẹp, quay video</td></tr>
-      </table>
-    </section>
-  </main>
+  <section>
+    <h2>Các Dòng Xe Nổi Bật 2025</h2>
+    <div class="xe-noi-bat">
+      <div class="xe-item">
+        <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Xe điện Suzuki">
+        <h3>Xe Điện Suzuki eZ2025</h3>
+        <p>Thiết kế hiện đại, vận hành êm ái, phù hợp với đô thị.</p>
+      </div>
+      <div class="xe-item">
+        <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Jymmi">
+        <h3>Suzuki Jimny 2025</h3>
+        <p>Dòng xe SUV nhỏ gọn, khả năng off-road mạnh mẽ, phong cách retro.</p>
+      </div>
+      <div class="xe-item">
+        <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Swift">
+        <h3>Suzuki Swift Hybrid</h3>
+        <p>Động cơ hybrid tiết kiệm nhiên liệu, thiết kế thể thao.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 Trần Huỳnh Vũ. All rights reserved.
-  </footer>
+  <section class="highlight" id="gioi-thieu">
+    <h2>Về Chúng Tôi</h2>
+    <p>Suzuki là thương hiệu xe hơi và xe máy hàng đầu Nhật Bản, nổi tiếng với chất lượng, độ bền, và khả năng tiết kiệm nhiên liệu.</p>
+  </section>
 
-</body>
-</html>
+  <section id="
