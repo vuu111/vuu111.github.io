@@ -13,21 +13,17 @@
     }
 
     body {
-      background: url('https://media.vov.vn/sites/default/files/styles/large/public/2020-12/1._ngoai_hinh_thoi_thuong_hut_mat_nguoi_nhin_cua_suzuki_swift.jpg') no-repeat center center fixed;
-      background-size: cover; /* Lấp đầy toàn bộ màn hình */
+      background: #f4f4f4;
       color: #333;
       line-height: 1.6;
-      font-size: 18px; /* Tăng kích thước font chữ toàn bộ trang */
+      font-size: 18px; /* Tăng kích thước font chữ */
     }
 
     header {
-      background: rgba(0, 31, 63, 0.7); /* Nền đen mờ để dễ đọc chữ */
+      background: #001f3f;
       color: #fff;
       text-align: center;
       padding: 30px 20px;
-      background-image: url('https://your-image-url.com/header-background.jpg');
-      background-size: cover; /* Lấp đầy phần header */
-      background-position: center;
     }
 
     header img {
@@ -36,7 +32,7 @@
     }
 
     header h1 {
-      font-size: 36px; /* Tăng kích thước tiêu đề */
+      font-size: 36px;
       margin-top: 15px;
     }
 
@@ -55,7 +51,7 @@
       font-weight: bold;
       padding: 12px 20px;
       border-radius: 5px;
-      font-size: 18px; /* Kích thước chữ trong menu */
+      font-size: 18px;
       transition: background 0.3s;
     }
 
@@ -65,19 +61,19 @@
 
     .car-gallery {
       display: flex;
-      justify-content: flex-start;
-      gap: 30px;
-      overflow-x: auto;
+      justify-content: space-between;
+      gap: 20px;
       padding: 40px 20px;
-      scroll-snap-type: x mandatory;
-      background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ cho gallery */
+      flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 1200px;
     }
 
     .car-item {
       width: 280px;
       height: auto;
       text-align: center;
-      background: white;
+      background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
@@ -112,13 +108,13 @@
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
-      background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ */
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     section h2 {
-      font-size: 32px; 
+      font-size: 32px;
       color: #003366;
       margin-bottom: 20px;
     }
@@ -128,10 +124,7 @@
       color: #fff;
       text-align: center;
       padding: 25px 10px;
-      font-size: 16px; 
-      background-image: url('https://your-image-url.com/footer-background.jpg');
-      background-size: cover;
-      background-position: center;
+      font-size: 16px;
     }
 
     footer small {
