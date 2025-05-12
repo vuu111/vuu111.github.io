@@ -11,125 +11,106 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, sans-serif;
-            overflow-x: hidden; /* Ẩn cuộn ngang */
-            scroll-behavior: smooth; /* Cuộn mượt */
+            overflow-x: hidden;
+            scroll-behavior: smooth;
             background-color: #f4f6f9;
         }
 
-        /* Hiệu ứng cho Header */
+        /* Thanh điều hướng */
+        nav {
+            background-color: #1877f2;
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav .links a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header: ảnh đại diện và tên */
         header {
-            position: relative;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            color: #fff;
-            text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #1877f2;
             margin-bottom: 20px;
         }
 
-        /* Hình ảnh Trần Huỳnh Vũ */
-        header img {
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-        }
-
         header h1 {
-            font-size: 2.8em;
-            margin-top: 60px;
-            color: #ffeb3b;
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
-            animation: glow 1.5s ease-in-out infinite alternate;
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
         }
 
-        /* Hiệu ứng glow cho tên */
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff176, 0 0 10px #ffc107;
-            }
-            to {
-                text-shadow: 0 0 15px #fff59d, 0 0 25px #ffca28;
-            }
+        header p {
+            color: #555;
+            font-size: 1.2em;
         }
 
-        .slogan {
-            font-size: 1.4em;
-            font-style: italic;
-            font-weight: 500;
-            margin-top: 10px;
-            color: #ffeb3b;
-        }
-
-        /* Hiệu ứng gõ chữ */
-        .typing-effect {
-            font-size: 1.8em;
-            font-weight: 500;
-            color: #ffeb3b;
-            display: inline-block;
-            border-right: 3px solid #ffeb3b;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            to {
-                width: 30em;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        /* Cấu trúc chung của phần nội dung */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        /* Phần thông tin cá nhân */
+        .profile-info {
+            background-color: white;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
             border-radius: 10px;
-            transition: transform 0.3s ease;
-            animation: fadeIn 1.5s ease-out forwards;
         }
 
-        /* Hiệu ứng fadeIn */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .profile-info h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1877f2;
         }
 
-        /* Các màu sắc cho các section */
-        .section-1 {
-            background-color: #f1c40f;
+        .profile-info p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
-        .section-2 {
-            background-color: #e74c3c;
+        .profile-info a {
+            color: #1877f2;
+            text-decoration: none;
         }
 
-        .section-3 {
-            background-color: #2ecc71;
+        .profile-info a:hover {
+            text-decoration: underline;
         }
 
-        /* Bảng Tài Năng & Sở Thích */
         .skills-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
-            font-size: 1.1em;
+            margin-top: 25px;
+            font-size: 1.05em;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .skills-table th, .skills-table td {
@@ -139,7 +120,7 @@
         }
 
         .skills-table th {
-            background-color: #007BFF;
+            background-color: #1877f2;
             color: white;
         }
 
@@ -151,38 +132,29 @@
         footer {
             text-align: center;
             padding: 20px 10px;
-            background-color: #1e3c72;
+            background-color: #1877f2;
             color: white;
             margin-top: 40px;
         }
 
-        /* Hiệu ứng cho các icon mạng xã hội */
-        .social-icons a {
-            margin-right: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons img {
-            width: 50px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.25);
-        }
-
         /* Media Query cho mobile */
         @media (max-width: 600px) {
+            header img {
+                width: 120px;
+                height: 120px;
+            }
+
             header h1 {
-                font-size: 2.2em;
+                font-size: 2em;
             }
 
-            .slogan {
-                font-size: 1.2em;
+            .profile-info {
+                padding: 20px;
+                margin: 10px;
             }
 
-            section {
-                padding: 40px 15px;
+            .profile-info h2 {
+                font-size: 1.8em;
             }
         }
 
@@ -190,13 +162,25 @@
 </head>
 <body>
 
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="logo">Trần Huỳnh Vũ</div>
+        <div class="links">
+            <a href="#">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="#">Liên Hệ</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <header>
         <img src="https://genk.mediacdn.vn/139269124445442048/2024/6/1/photo-1-17168606131071257137350-1717278776106716631383.jpg" alt="Trần Huỳnh Vũ">
         <h1>Trần Huỳnh Vũ</h1>
-        <p class="slogan typing-effect">Rất vui khi được gặp bạn!</p>
+        <p>Công nghệ thông tin - Sinh viên trường Cao đẳng Kỹ Thuật Công Nghệ Nha Trang</p>
     </header>
 
-    <section class="section-1">
+    <!-- Thông Tin Cá Nhân -->
+    <section class="profile-info">
         <h2>Thông Tin Cá Nhân</h2>
         <p><strong>Họ và tên:</strong> Trần Huỳnh Vũ</p>
         <p><strong>Email:</strong> <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
@@ -205,7 +189,8 @@
         <p><strong>Giới thiệu:</strong> Tôi là một sinh viên ngành Công Nghệ Thông Tin, đam mê lập trình và phát triển phần mềm. Mục tiêu của tôi là học hỏi và phát triển trong lĩnh vực công nghệ.</p>
     </section>
 
-    <section class="section-2">
+    <!-- Tài Năng & Sở Thích -->
+    <section class="profile-info">
         <h2>Tài Năng & Sở Thích</h2>
         <table class="skills-table">
             <thead>
@@ -231,15 +216,7 @@
         </table>
     </section>
 
-    <section class="section-3">
-        <h2>Mạng Xã Hội</h2>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><img src="https://png.pngtree.com/element_our/sm/20180515/sm_5afaf0c42f0c8.jpg" alt="Facebook"></a>
-            <a href="https://www.linkedin.com" target="_blank"><img src="https://inkythuatso.com/uploads/images/2021/11/linkedin-logo-inkythuatso-2-01-29-15-30-40.jpg" alt="LinkedIn"></a>
-            <a href="https://github.com" target="_blank"><img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub"></a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Trần Huỳnh Vũ. All rights reserved.</p>
     </footer>
