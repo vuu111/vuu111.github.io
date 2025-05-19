@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kỹ Năng Sống Cho Học Sinh</title>
+  <title>Khám Phá Vũ Trụ</title>
   <style>
     /* Reset CSS */
     * {
@@ -15,12 +15,13 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(to right, #00bcd4, #2196f3);
+      background: linear-gradient(to right, #1a237e, #283593);
       color: #fff;
       padding: 20px 0;
       text-align: center;
@@ -49,7 +50,7 @@
     }
 
     .hero {
-      background-image: url('https://cdn.pixabay.com/photo/2015/09/18/19/03/earth-944157_1280.jpg');
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/13/08/earth-1868104_1280.jpg');
       background-size: cover;
       background-position: center;
       height: 60vh;
@@ -59,6 +60,7 @@
       color: #fff;
       text-align: center;
       padding: 0 20px;
+      position: relative;
     }
 
     .hero h2 {
@@ -66,54 +68,23 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .skills {
+    .content {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    .skills h2 {
+    .content h2 {
       text-align: center;
       margin-bottom: 30px;
       color: #2196f3;
     }
 
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .skill {
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .skill:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .skill-content {
-      padding: 15px;
-    }
-
-    .skill-content h3 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .skill-content p {
-      font-size: 0.95em;
-      color: #666;
+    .content p {
+      font-size: 1.1em;
+      color: #ccc;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
     footer {
@@ -124,6 +95,17 @@
       margin-top: 40px;
     }
 
+    /* Hiệu ứng cuộn Parallax */
+    .parallax {
+      background-image: url('https://cdn.pixabay.com/photo/2015/09/18/18/03/earth-942264_1280.jpg');
+      height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Thiết kế responsive */
     @media (max-width: 600px) {
       .hero h2 {
         font-size: 2em;
@@ -134,42 +116,38 @@
 <body>
 
   <header>
-    <h1>Kỹ Năng Sống Cho Học Sinh</h1>
+    <h1>Khám Phá Vũ Trụ</h1>
     <nav>
       <ul>
         <li><a href="#">Trang Chủ</a></li>
-        <li><a href="#">Kỹ Năng Giao Tiếp</a></li>
-        <li><a href="#">Kỹ Năng Quản Lý Thời Gian</a></li>
-        <li><a href="#">Kỹ Năng Giải Quyết Vấn Đề</a></li>
+        <li><a href="#">Vũ Trụ Là Gì?</a></li>
+        <li><a href="#">Hệ Mặt Trời</a></li>
+        <li><a href="#">Khám Phá</a></li>
         <li><a href="#">Liên Hệ</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Khám Phá Những Kỹ Năng Quan Trọng Cho Học Sinh</h2>
+    <h2>Khám Phá Vẻ Đẹp Vô Tận Của Vũ Trụ</h2>
   </section>
 
-  <section class="skills">
-    <h2>Những Kỹ Năng Sống Quan Trọng</h2>
-    <div class="skill-grid">
-      <div class="skill">
-        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/08/earth-1868104_1280.jpg" alt="Kỹ Năng Giao Tiếp">
-        <div class="skill-content">
-          <h3>Kỹ Năng Giao Tiếp</h3>
-          <p>Giao tiếp hiệu quả giúp học sinh thể hiện ý tưởng, lắng nghe và hiểu người khác, xây dựng mối quan hệ tốt đẹp.</p>
-        </div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.pixabay.com/photo/2015/09/18/19/03/earth-944157_1280.jpg" alt="Kỹ Năng Quản Lý Thời Gian">
-        <div class="skill-content">
-          <h3>Kỹ Năng Quản Lý Thời Gian</h3>
-          <p>Biết cách sắp xếp thời gian hợp lý giúp học sinh hoàn thành công việc đúng hạn và giảm căng thẳng.</p>
-        </div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/08/earth-1868104_1280.jpg" alt="Kỹ Năng Giải Quyết Vấn Đề">
-        <div class="skill-content">
-          <h3>Kỹ Năng Giải Quyết Vấn Đề</h3>
-          <p>Khả năng phân tích tình huống và tìm ra giải pháp
+  <section class="parallax"></section>
 
+  <section class="content">
+    <h2>Vũ Trụ Là Gì?</h2>
+    <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại trong lĩnh vực thiên văn học. Nó bao gồm các hành tinh, ngôi sao, thiên thể và cấu trúc trong không gian. Vũ trụ có kích thước vô cùng lớn và đã hình thành và phát triển qua hàng tỷ năm.</p>
+
+    <h2>Hệ Mặt Trời</h2>
+    <p>Hệ Mặt Trời là một hệ thống bao gồm Mặt Trời và tất cả các thiên thể bị Mặt Trời hấp dẫn, bao gồm các hành tinh như Trái Đất, sao Hỏa, sao Kim, sao Mộc, sao Thổ, sao Thiên Vương và sao Hải Vương, cùng với các vệ tinh tự nhiên và các tiểu hành tinh.</p>
+
+    <h2>Khám Phá Vũ Trụ</h2>
+    <p>Việc khám phá vũ trụ không chỉ giúp chúng ta hiểu rõ hơn về nguồn gốc và cấu trúc của vũ trụ mà còn mở ra những cơ hội mới trong nghiên cứu khoa học và công nghệ. Các sứ mệnh không gian như việc đưa con người lên Mặt Trăng, khám phá sao Hỏa và nghiên cứu các hành tinh xa xôi là những bước tiến quan trọng trong hành trình khám phá vũ trụ của nhân loại.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
+  </footer>
+
+</body>
+</html>
