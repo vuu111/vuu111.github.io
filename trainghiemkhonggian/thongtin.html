@@ -12,12 +12,30 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       background-color: #0d0d0d;
       color: #fff;
       overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Background động */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center center / cover no-repeat;
+      opacity: 0.2;
+      z-index: -1;
     }
 
     header {
@@ -32,6 +50,7 @@
       display: flex;
       justify-content: center;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
 
     nav ul li {
@@ -63,9 +82,19 @@
       position: relative;
     }
 
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     .hero h2 {
       font-size: 3em;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
     }
 
     .content {
@@ -87,15 +116,6 @@
       margin-bottom: 20px;
     }
 
-    footer {
-      background-color: #2196f3;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
-    }
-
-    /* Hiệu ứng cuộn Parallax */
     .parallax {
       background-image: url('https://cdn.pixabay.com/photo/2015/09/18/18/03/earth-942264_1280.jpg');
       height: 400px;
@@ -105,10 +125,25 @@
       background-size: cover;
     }
 
-    /* Thiết kế responsive */
+    footer {
+      background-color: #2196f3;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
     @media (max-width: 600px) {
       .hero h2 {
         font-size: 2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 10px 0;
       }
     }
   </style>
@@ -119,34 +154,38 @@
     <h1>Khám Phá Vũ Trụ</h1>
     <nav>
       <ul>
-        <li><a href="#">Trang Chủ</a></li>
-        <li><a href="#">Vũ Trụ Là Gì?</a></li>
-        <li><a href="#">Hệ Mặt Trời</a></li>
-        <li><a href="#">Khám Phá</a></li>
-        <li><a href="#">Liên Hệ</a></li>
+        <li><a href="#home">Trang Chủ</a></li>
+        <li><a href="#universe">Vũ Trụ Là Gì?</a></li>
+        <li><a href="#solar">Hệ Mặt Trời</a></li>
+        <li><a href="#explore">Khám Phá</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <h2>Khám Phá Vẻ Đẹp Vô Tận Của Vũ Trụ</h2>
   </section>
 
   <section class="parallax"></section>
 
   <section class="content">
-    <h2>Vũ Trụ Là Gì?</h2>
+    <h2 id="universe">Vũ Trụ Là Gì?</h2>
     <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại trong lĩnh vực thiên văn học. Nó bao gồm các hành tinh, ngôi sao, thiên thể và cấu trúc trong không gian. Vũ trụ có kích thước vô cùng lớn và đã hình thành và phát triển qua hàng tỷ năm.</p>
 
-    <h2>Hệ Mặt Trời</h2>
+    <h2 id="solar">Hệ Mặt Trời</h2>
     <p>Hệ Mặt Trời là một hệ thống bao gồm Mặt Trời và tất cả các thiên thể bị Mặt Trời hấp dẫn, bao gồm các hành tinh như Trái Đất, sao Hỏa, sao Kim, sao Mộc, sao Thổ, sao Thiên Vương và sao Hải Vương, cùng với các vệ tinh tự nhiên và các tiểu hành tinh.</p>
 
-    <h2>Khám Phá Vũ Trụ</h2>
+    <h2 id="explore">Khám Phá Vũ Trụ</h2>
     <p>Việc khám phá vũ trụ không chỉ giúp chúng ta hiểu rõ hơn về nguồn gốc và cấu trúc của vũ trụ mà còn mở ra những cơ hội mới trong nghiên cứu khoa học và công nghệ. Các sứ mệnh không gian như việc đưa con người lên Mặt Trăng, khám phá sao Hỏa và nghiên cứu các hành tinh xa xôi là những bước tiến quan trọng trong hành trình khám phá vũ trụ của nhân loại.</p>
   </section>
 
-  <footer>
+  <footer id="contact">
     <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
+    <p>Theo dõi chúng tôi: 
+      <a href="#" style="color: #fff;">Facebook</a> | 
+      <a href="#" style="color: #fff;">YouTube</a>
+    </p>
   </footer>
 
 </body>
