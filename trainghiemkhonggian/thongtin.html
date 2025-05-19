@@ -5,24 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông Tin Vũ Trụ</title>
   <style>
-    /* Nền vũ trụ gradient */
+    /* Đặt nền sao chuyển động */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      overflow: hidden;
+      background-color: #0e0e0e;
+      overflow-x: hidden;
+      height: 100%;
       color: #fff;
+      position: relative;
     }
 
-    /* Sao động */
-    .stars {
+    /* Hiệu ứng nền phi hành gia */
+    .space-background {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: transparent;
+      background: url('https://images.unsplash.com/photo-1578380512121-f1d62d48fa6f') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      animation: moveBackground 60s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 0% 100%; }
+    }
+
+    /* Sao chuyển động */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       z-index: -1;
+      display: block;
     }
 
     .star {
@@ -84,7 +106,7 @@
       line-height: 1.6em;
     }
 
-    /* Ảnh công nghệ 3D */
+    /* Hình ảnh công nghệ 3D */
     .three-d-image {
       display: block;
       width: 100%;
@@ -137,6 +159,9 @@
 </head>
 <body>
 
+  <!-- Nền phi hành gia với hiệu ứng chuyển động -->
+  <div class="space-background"></div>
+
   <!-- Hiệu ứng sao -->
   <div class="stars">
     <div class="star" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
@@ -149,7 +174,7 @@
     <div class="star" style="top: 70%; left: 40%; animation-delay: 0.9s;"></div>
   </div>
 
-  <!-- Nội dung -->
+  <!-- Nội dung chính -->
   <div class="content">
     <h1>Thông Tin Vũ Trụ</h1>
     <p>Vũ trụ là một không gian vô tận, nơi chứa đựng hàng tỷ thiên hà, tinh vân, hành tinh và những điều kỳ diệu chưa được khám phá. Chúng ta chỉ mới bắt đầu hành trình hiểu về nơi đã tạo ra mọi thứ — bao gồm chính chúng ta.</p>
