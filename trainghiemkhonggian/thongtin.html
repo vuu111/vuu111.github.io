@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông Tin Vũ Trụ</title>
   <style>
-    /* Đặt nền sao chuyển động */
+    /* Đặt nền không gian */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
       overflow-x: hidden;
       height: 100%;
       color: #fff;
-      position: relative;
+      background: #0e0e0e;
     }
 
-    /* Hiệu ứng nền phi hành gia */
+    /* Nền sao di chuyển khi cuộn */
     .space-background {
       position: fixed;
       top: 0;
@@ -27,15 +26,11 @@
       background: url('https://images.unsplash.com/photo-1578380512121-f1d62d48fa6f') no-repeat center center fixed;
       background-size: cover;
       z-index: -1;
-      animation: moveBackground 60s linear infinite;
+      transform: translateZ(0);
+      will-change: transform;
     }
 
-    @keyframes moveBackground {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 0% 100%; }
-    }
-
-    /* Sao chuyển động */
+    /* Hiệu ứng sao lấp lánh */
     .stars {
       position: absolute;
       top: 0;
@@ -68,6 +63,7 @@
       padding: 80px 20px;
       max-width: 900px;
       margin: auto;
+      z-index: 1;
     }
 
     h1 {
@@ -159,10 +155,10 @@
 </head>
 <body>
 
-  <!-- Nền phi hành gia với hiệu ứng chuyển động -->
+  <!-- Nền phi hành gia với hiệu ứng parallax -->
   <div class="space-background"></div>
 
-  <!-- Hiệu ứng sao -->
+  <!-- Hiệu ứng sao lấp lánh -->
   <div class="stars">
     <div class="star" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
     <div class="star" style="top: 40%; left: 75%; animation-delay: 1s;"></div>
