@@ -5,69 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông Tin Vũ Trụ</title>
   <style>
-    /* Nền vũ trụ chuyển động */
+    /* Nền vũ trụ gradient + sao */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background: black;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       overflow: hidden;
-      height: 100vh;
+      color: #fff;
     }
 
-    /* Hiệu ứng sao động */
-    .stars, .twinkling {
+    /* Sao động */
+    .stars {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: block;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
       z-index: -1;
     }
 
-    .stars {
-      background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/starfield.png') repeat;
-      animation: moveStars 200s linear infinite;
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
     }
 
-    .twinkling {
-      background: transparent url('https://i.imgur.com/8zE2jWQ.png') repeat;
-      animation: moveTwinkle 100s linear infinite;
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
     }
 
-    @keyframes moveStars {
-      from {background-position: 0 0;}
-      to {background-position: -10000px 5000px;}
-    }
-
-    @keyframes moveTwinkle {
-      from {background-position: 0 0;}
-      to {background-position: 10000px 5000px;}
-    }
-
-    /* Overlay nội dung */
     .content {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 900px;
       margin: auto;
     }
 
     h1 {
       font-size: 3.5em;
-      margin-bottom: 0.4em;
+      margin-bottom: 0.5em;
       text-shadow: 0 0 10px #00f5ff;
     }
 
     p {
-      font-size: 1.3em;
+      font-size: 1.4em;
       line-height: 1.8em;
       color: #e0e0e0;
-      margin-bottom: 40px;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+      margin-bottom: 50px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     }
 
-    /* Nút liên kết đẹp */
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -110,25 +103,31 @@
 </head>
 <body>
 
-  <!-- Nền sao động -->
-  <div class="stars"></div>
-  <div class="twinkling"></div>
+  <!-- Hiệu ứng sao -->
+  <div class="stars">
+    <div class="star" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
+    <div class="star" style="top: 40%; left: 75%; animation-delay: 1s;"></div>
+    <div class="star" style="top: 10%; left: 50%; animation-delay: 0.5s;"></div>
+    <div class="star" style="top: 60%; left: 20%; animation-delay: 1.2s;"></div>
+    <div class="star" style="top: 80%; left: 60%; animation-delay: 0.8s;"></div>
+    <div class="star" style="top: 30%; left: 80%; animation-delay: 1.5s;"></div>
+    <div class="star" style="top: 50%; left: 10%; animation-delay: 0.3s;"></div>
+    <div class="star" style="top: 70%; left: 40%; animation-delay: 0.9s;"></div>
+  </div>
 
-  <!-- Nội dung chính -->
+  <!-- Nội dung -->
   <div class="content">
     <h1>Thông Tin Vũ Trụ</h1>
-    <p>Vũ trụ là một không gian rộng lớn, chứa đựng hàng tỷ thiên hà và vô số điều kỳ diệu. Chúng ta mới chỉ khám phá một phần rất nhỏ trong đó. Hãy cùng tiếp tục hành trình tìm hiểu về nơi khởi đầu của mọi thứ.</p>
+    <p>Vũ trụ là một không gian vô tận, nơi chứa đựng hàng tỷ thiên hà, tinh vân, hành tinh và những điều kỳ diệu chưa được khám phá. Chúng ta chỉ mới bắt đầu hành trình hiểu về nơi đã tạo ra mọi thứ — bao gồm chính chúng ta.</p>
 
-    <!-- Các liên kết -->
     <div class="links">
-  
       <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
       <a href="subianvutru.html">Sự biến vũ trụ</a>
       <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
     </div>
   </div>
 
-  <!-- Nhạc nền không gian -->
+  <!-- Nhạc nền -->
   <audio autoplay loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
   </audio>
