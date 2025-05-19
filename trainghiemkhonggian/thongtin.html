@@ -1,264 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vũ Trụ Sống Động</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin Vũ Trụ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1580151014095-99b5f9ecf055?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: 'Orbitron', sans-serif;
-      color: #e0e0ff;
-      background: #000;
-    }
+        /* Hiệu ứng sao lấp lánh */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+        }
 
-    canvas {
-      position: fixed;
-      top: 0; left: 0;
-      z-index: -1;
-    }
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
 
-    header {
-      background: rgba(0, 0, 50, 0.6);
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 0 10px #00ffffaa;
-    }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
 
-    header h1 {
-      color: #00ffff;
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #00ffff;
-    }
+        /* Overlay nền */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
-      list-style: none;
-    }
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1em;
+        }
 
-    nav ul li {
-      margin: 10px 20px;
-    }
+        p {
+            font-size: 1.5em;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 2em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      padding: 8px 16px;
-      border-radius: 8px;
-    }
+        /* Nút liên kết */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-    nav ul li a:hover {
-      background: #00ffff33;
-      color: #00ffff;
-      box-shadow: 0 0 10px #00ffff;
-      transform: scale(1.1);
-    }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            background-color: rgba(0, 0, 255, 0.7);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
 
-    .hero {
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      padding: 0 20px;
-    }
+        .links a:hover {
+            background-color: rgba(0, 0, 255, 1);
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
 
-    .hero h2 {
-      font-size: 3em;
-      z-index: 1;
-      text-shadow: 0 0 15px #00ffff;
-    }
+        /* Thêm hiệu ứng cho sao */
+        .star:nth-child(odd) {
+            animation-duration: 2.5s;
+        }
 
-    .typed-text {
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-    }
-
-    .content {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-      background: rgba(0, 0, 40, 0.7);
-      border-radius: 20px;
-      box-shadow: 0 0 20px #6600ff88;
-    }
-
-    .content h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #ff66cc;
-      font-size: 2em;
-      text-shadow: 0 0 8px #ff66cc;
-    }
-
-    .content p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #ccc;
-    }
-
-    .parallax {
-      background-image: url('https://cdn.pixabay.com/photo/2015/09/18/18/03/earth-942264_1280.jpg');
-      height: 300px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-      box-shadow: inset 0 0 30px #000;
-    }
-
-    footer {
-      background: rgba(0, 0, 80, 0.9);
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 0 10px #00ffff99;
-      margin-top: 50px;
-    }
-
-    footer a {
-      color: #00ffff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 2em;
-      }
-
-      nav ul {
-        flex-direction: column;
-      }
-
-      nav ul li {
-        margin: 5px 0;
-      }
-    }
-  </style>
+        .star:nth-child(even) {
+            animation-duration: 1.8s;
+        }
+    </style>
 </head>
 <body>
 
-<canvas id="stars"></canvas>
+    <!-- Hiệu ứng sao lấp lánh -->
+    <div class="stars">
+        <div class="star" style="top: 20%; left: 25%;"></div>
+        <div class="star" style="top: 40%; left: 75%;"></div>
+        <div class="star" style="top: 10%; left: 50%;"></div>
+        <div class="star" style="top: 60%; left: 20%;"></div>
+        <div class="star" style="top: 80%; left: 60%;"></div>
+        <div class="star" style="top: 30%; left: 80%;"></div>
+        <div class="star" style="top: 50%; left: 10%;"></div>
+        <div class="star" style="top: 70%; left: 40%;"></div>
+        <!-- Thêm nhiều sao lấp lánh khác -->
+    </div>
 
-<header>
-  <h1><span class="typed-text"></span></h1>
-  <nav>
-    <ul>
-      <li><a href="thongtin.html">Vũ Trụ</a></li>
-      <li><a href="#subianvevutru.html">Hệ Mặt Trời</a></li>
-      <li><a href="#nhungdieucanbiet.html">Khám Phá</a></li>
-      <li><a href="#chieeusauvekhonggian.html">Liên Hệ</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- Nội dung chính -->
+    <div class="overlay">
+        <h1>Thông Tin Vũ Trụ</h1>
+        <p>Vũ trụ là một không gian vô cùng rộng lớn và kỳ diệu. Chúng ta chỉ mới khám phá được một phần rất nhỏ trong đó, với hàng tỷ ngôi sao và hành tinh chưa được khám phá.</p>
+        <p>Ở đây, chúng ta sẽ cùng khám phá những điều thú vị về vũ trụ, từ các hành tinh đến các hiện tượng thiên văn kỳ lạ.</p>
 
-<section class="hero">
-  <h2>Hành Trình Khám Phá Không Gian</h2>
-</section>
+        <!-- Các liên kết -->
+        <div class="links">
+            <a href="space_experience.html">Quay lại trang chính</a>
+            <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
+            <a href="subianvutru.html">Sự biến vũ trụ</a>
+            <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
+        </div>
+    </div>
 
-<section class="content" data-aos="fade-up">
-  <h2 id="universe">Vũ Trụ Là Gì?</h2>
-  <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại. Nó bao gồm hành tinh, ngôi sao, thiên thể, và cấu trúc không gian vĩ đại. Vũ trụ không ngừng mở rộng kể từ vụ nổ Big Bang cách đây khoảng 13.8 tỷ năm.</p>
+    <!-- Âm thanh nền không gian -->
+    <audio id="spaceAudio" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
-  <h2 id="solar">Hệ Mặt Trời</h2>
-  <p>Hệ Mặt Trời bao gồm Mặt Trời và các thiên thể quay quanh nó như Trái Đất, sao Hỏa, sao Kim, cùng hàng triệu tiểu hành tinh, vệ tinh và sao chổi. Đó là một phần nhỏ của dải Ngân Hà rộng lớn.</p>
-
-  <h2 id="explore">Khám Phá Vũ Trụ</h2>
-  <p>Con người đã và đang thực hiện các sứ mệnh không gian như tàu Voyager, trạm ISS, hay kế hoạch đưa người lên sao Hỏa. Việc khám phá không chỉ giúp hiểu rõ về vũ trụ mà còn thúc đẩy công nghệ và hiểu biết về chính Trái Đất.</p>
-</section>
-
-<section class="parallax"></section>
-
-<footer id="contact">
-  <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
-  <p>Theo dõi: 
-    <a href="#">Facebook</a> | 
-    <a href="#">YouTube</a>
-  </p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  var typed = new Typed('.typed-text', {
-    strings: ["KHÁM PHÁ VŨ TRỤ", "KHÔNG GIAN BAO LA", "TƯƠNG LAI CỦA NHÂN LOẠI"],
-    typeSpeed: 60,
-    backSpeed: 30,
-    backDelay: 2000,
-    loop: true
-  });
-
-  // Hiệu ứng sao di chuyển bằng canvas
-  const canvas = document.getElementById('stars');
-  const ctx = canvas.getContext('2d');
-  let stars = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  function createStars() {
-    stars = [];
-    for (let i = 0; i < 150; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5,
-        dx: Math.random() * 0.2 - 0.1,
-        dy: Math.random() * 0.2 - 0.1
-      });
-    }
-  }
-
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#ffffff';
-    stars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-      ctx.fill();
-      star.x += star.dx;
-      star.y += star.dy;
-
-      if (star.x < 0 || star.x > canvas.width || star.y < 0 || star.y > canvas.height) {
-        star.x = Math.random() * canvas.width;
-        star.y = Math.random() * canvas.height;
-      }
-    });
-    requestAnimationFrame(drawStars);
-  }
-
-  window.addEventListener('resize', () => {
-    resizeCanvas();
-    createStars();
-  });
-
-  resizeCanvas();
-  createStars();
-  drawStars();
-</script>
 </body>
 </html>
