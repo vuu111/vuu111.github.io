@@ -3,212 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thông Tin Vũ Trụ</title>
+  <title>Trải Nghiệm Vũ Trụ</title>
   <style>
     /* Đặt nền cho body */
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-      height: 100%;
-      color: #fff;
-      background: #0e0e0e;
-    }
-
-    /* Nền không gian (Parallax) */
-    .space-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1578380512121-f1d62d48fa6f') no-repeat center center fixed;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      background: url('https://images.unsplash.com/photo-1580151014095-99b5f9ecf055?ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8dm5vdHJvJTIwYmlrZSUyMGFpbndheXxlbnwwfHx8fDE2Nzk4MzQ4NTQ&crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8dm5vdHJvJTIwYmlrZSUyMGFpbndheXxlbnwwfHx8fDE2Nzk4MzQ4NTQ&crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8dm5vdHJvJTIwYmlrZSUyMGFpbndheXxlbnwwfHx8fDE2Nzk4MzQ4NTQ&crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8dm5vdHJvJTIwYmlrZSUyMGFpbndheXxlbnwwfHx8fDE2Nzk4MzQ4NTQ&crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY2h8MXx8dm5vdHJvJTIwYmlrZSUyMGFpbndheXxlbnwwfHx8fDE2Nzk8) no-repeat center center fixed;
       background-size: cover;
-      z-index: -1;
-      transform: translateZ(0);
-      will-change: transform;
-      opacity: 0.6;
-    }
-
-    /* Hiệu ứng sao lấp lánh */
-    .stars {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      display: block;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 2s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
+      overflow: hidden;
     }
 
     /* Nội dung */
     .content {
       text-align: center;
       padding: 80px 20px;
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
-      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
     }
 
     h1 {
       font-size: 3.5em;
       margin-bottom: 0.5em;
-      text-shadow: 0 0 10px #00f5ff;
+      color: #00f5ff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }
 
     p {
-      font-size: 1.4em;
-      line-height: 1.8em;
-      color: #e0e0e0;
-      margin-bottom: 50px;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Phần báo cáo */
-    .report-section {
-      background: linear-gradient(145deg, #0077ff, #00f5ff);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-      margin-bottom: 40px;
-      color: white;
-    }
-
-    .report-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 1em;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px #ff007f;
-    }
-
-    .report-section p {
       font-size: 1.2em;
       line-height: 1.6em;
-    }
-
-    /* Hình ảnh công nghệ 3D */
-    .three-d-image {
-      display: block;
-      width: 100%;
-      max-width: 600px;
-      margin: 50px auto;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      margin-bottom: 40px;
+      color: #e0e0e0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
 
     /* Nút liên kết */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .links a {
-      background: linear-gradient(135deg, #00f5ff, #0077ff);
+    .button {
+      background: #00f5ff;
       color: white;
-      text-decoration: none;
       padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
       border-radius: 30px;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .links a:hover {
+    .button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2em;
-      }
-
-      p {
-        font-size: 1.1em;
-      }
-
-      .links a {
-        font-size: 1em;
-        padding: 12px 24px;
-      }
-    }
-
-    /* Hiệu ứng cuộn parallax cho nền */
-    .parallax {
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1578380512121-f1d62d48fa6f');
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Nền phi hành gia với hiệu ứng parallax -->
-  <div class="space-background"></div>
-
-  <!-- Hiệu ứng sao lấp lánh -->
-  <div class="stars">
-    <div class="star" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
-    <div class="star" style="top: 40%; left: 75%; animation-delay: 1s;"></div>
-    <div class="star" style="top: 10%; left: 50%; animation-delay: 0.5s;"></div>
-    <div class="star" style="top: 60%; left: 20%; animation-delay: 1.2s;"></div>
-    <div class="star" style="top: 80%; left: 60%; animation-delay: 0.8s;"></div>
-    <div class="star" style="top: 30%; left: 80%; animation-delay: 1.5s;"></div>
-    <div class="star" style="top: 50%; left: 10%; animation-delay: 0.3s;"></div>
-    <div class="star" style="top: 70%; left: 40%; animation-delay: 0.9s;"></div>
-  </div>
-
-  <!-- Nội dung chính -->
   <div class="content">
-    <h1>Thông Tin Vũ Trụ</h1>
-    <p>Vũ trụ là một không gian vô tận, nơi chứa đựng hàng tỷ thiên hà, tinh vân, hành tinh và những điều kỳ diệu chưa được khám phá. Chúng ta chỉ mới bắt đầu hành trình hiểu về nơi đã tạo ra mọi thứ — bao gồm chính chúng ta.</p>
-
-    <!-- Phần báo cáo -->
-    <div class="report-section">
-      <h2>Báo Cáo Vũ Trụ</h2>
-      <p>Trong vũ trụ này, có hàng nghìn hành tinh mà chúng ta chưa biết đến. Các nghiên cứu mới đây chỉ ra rằng những hành tinh nằm ngoài hệ mặt trời có thể tồn tại sự sống. Một trong những nghiên cứu gần đây cho thấy, trong vũ trụ có thể có những loài sống giống như chúng ta!</p>
-      <p>Việc hiểu rõ vũ trụ không chỉ giúp chúng ta khám phá những thế giới mới mà còn có thể mở ra những ứng dụng công nghệ vượt bậc giúp cải thiện chất lượng sống của con người.</p>
-    </div>
-
-    <!-- Hình ảnh công nghệ 3D -->
-    <img src="https://via.placeholder.com/600x400.png?text=3D+Technology+Image" alt="Hình ảnh công nghệ 3D" class="three-d-image">
-
-    <!-- Các liên kết khác -->
-    <div class="links">
-      <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
-      <a href="subianvutru.html">Sự biến vũ trụ</a>
-      <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
-    </div>
+    <h1>Khám Phá Vũ Trụ</h1>
+    <p>Hãy tưởng tượng bạn đang ở giữa vũ trụ, giữa vô vàn các vì sao sáng lấp lánh. Cảm nhận sự rộng lớn và huyền bí của không gian bao la này.</p>
+    <button class="button" onclick="alert('🚀 Chuẩn bị cất cánh!')">Khởi hành</button>
   </div>
-
-  <!-- Nhạc nền -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-  </audio>
 
 </body>
 </html>
