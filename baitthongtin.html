@@ -1,215 +1,137 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suzuki Việt Nam - Xe Mới 2025</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Giới Thiệu Vũ Trụ</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: linear-gradient(120deg, #0d0d1a, #1a0033);
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Nền chấm sáng di chuyển */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveStars 60s linear infinite;
+    z-index: -1;
+  }
+  @keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+  }
 
-    body {
-      background: url('https://media.vov.vn/sites/default/files/styles/large/public/2020-12/1._ngoai_hinh_thoi_thuong_hut_mat_nguoi_nhin_cua_suzuki_swift.jpg') no-repeat center center fixed;
-      background-size: cover; /* Giúp background bao phủ toàn bộ trang */
-      color: #333;
-      line-height: 1.6;
-      font-size: 18px; /* Tăng kích thước font chữ */
-    }
-
-    header {
-      background: rgba(0, 31, 63, 0.8); /* Màu nền header */
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    header img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 36px;
-      margin-top: 15px;
-    }
-
-    nav {
-      background: rgba(0, 51, 102, 0.8); /* Màu nền thanh điều hướng */
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 18px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #0059b3;
-    }
-
-    .car-gallery {
-      display: flex;
-      justify-content: space-around; /* Chỉnh các hình ảnh thành hàng ngang và đều */
-      gap: 20px;
-      padding: 40px 20px;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      max-width: 1200px;
-    }
-
-    .car-item {
-      width: 280px;
-      height: auto;
-      text-align: center;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .car-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-
-    .car-item:hover {
-      transform: scale(1.05);
-    }
-
-    .car-item h3 {
-      font-size: 20px;
-      margin: 15px 0;
-      color: #333;
-    }
-
-    .car-item p {
-      font-size: 16px;
-      color: #555;
-      padding: 0 15px 15px;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-
-    section h2 {
-      font-size: 32px;
-      color: #003366;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background: rgba(0, 31, 63, 0.8); /* Màu nền footer */
-      color: #fff;
-      text-align: center;
-      padding: 25px 10px;
-      font-size: 16px;
-    }
-
-    footer small {
-      display: block;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    @media (max-width: 768px) {
-      .car-gallery {
-        justify-content: center; 
-      }
-
-      .car-item {
-        width: 90%; 
-      }
-    }
-  </style>
+  .ai-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: rgba(0, 0, 50, 0.8);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px #00ffffaa;
+    max-width: 700px;
+    width: 90%;
+  }
+  .ai-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: url('https://cdn-icons-png.flaticon.com/512/4712/4712072.png') no-repeat center/cover;
+    box-shadow: 0 0 25px #00ffff;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .ai-avatar:hover {
+    transform: scale(1.1) rotate(10deg);
+  }
+  .ai-text {
+    font-size: 1.3em;
+    max-width: 520px;
+    min-height: 140px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+  button {
+    margin-top: 40px;
+    padding: 14px 28px;
+    font-size: 1.2em;
+    background: #00ffff;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ffff;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="https://inkythuatso.com/uploads/images/2021/11/logo-suzuki-inkythuatso-2-01-15-14-24-02.jpg" alt="Logo Suzuki">
-    <h1>Chào Mừng Đến Với Suzuki Việt Nam</h1>
-    <p>Khám phá các dòng xe mới nhất năm 2025</p>
-  </header>
+<div class="ai-container" role="region" aria-label="Nhân vật AI giới thiệu về vũ trụ">
+  <div class="ai-avatar" aria-hidden="true"></div>
+  <div class="ai-text" id="aiText" aria-live="polite" aria-atomic="true"></div>
+</div>
 
-  <nav>
-    <a href="#xe">Xe Mới</a>
-    <a href="#gioi-thieu">Giới Thiệu</a>
-    <a href="#dich-vu">Dịch Vụ</a>
-    <a href="#tin-tuc">Tin Tức</a>
-    <a href="#lien-he">Liên Hệ</a>
-  </nav>
+<button id="startBtn" aria-label="Bắt đầu phần giới thiệu AI">Bắt đầu giới thiệu</button>
 
-  <section id="xe">
-    <h2>Xe Mới 2025</h2>
-    <div class="car-gallery">
-      <!-- Xe 1 -->
-      <div class="car-item">
-        <img src="https://suzuki-binhduong.vn/wp-content/uploads/2023/01/xe-dien-suzuki-1.jpg" alt="Suzuki Mẫu 1">
-        <h3>Suzuki Swift 2025</h3>
-        <p>Động cơ mạnh mẽ, tiết kiệm nhiên liệu vượt trội, thiết kế năng động và thời trang, phù hợp cho mọi gia đình.</p>
-      </div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  const aiText = document.getElementById('aiText');
+  const startBtn = document.getElementById('startBtn');
+  let typed;
 
-      <!-- Xe 2 -->
-      <div class="car-item">
-        <img src="https://cdn.congthuong.vn/stores/news_dataimages/2024/042024/10/14/320240410142831.jpg" alt="Suzuki Mẫu 2">
-        <h3>Suzuki Vitara 2025</h3>
-        <p>Xe gầm cao với khả năng vận hành tuyệt vời, hỗ trợ off-road, mang lại cảm giác lái phấn khích và thoải mái.</p>
-      </div>
+  const introText = "Xin chào! Tôi là AI Voyager, và hôm nay tôi sẽ cùng bạn khám phá vẻ đẹp kỳ diệu của vũ trụ bao la. Vũ trụ chứa đựng những điều bí ẩn chưa ai biết đến, và chúng ta đang trên hành trình tìm hiểu chúng.";
 
-      <!-- Xe 3 -->
-      <div class="car-item">
-        <img src="https://image.plo.vn/w1000/Uploaded/2025/yrfjpyysfyr/2021_12_28/mazda-carol-2022_mfke.png.webp" alt="Suzuki Mẫu 3">
-        <h3>Suzuki Jimny 2025</h3>
-        <p>Với thiết kế gọn nhẹ, khả năng di chuyển linh hoạt, Jimny là lựa chọn tuyệt vời cho những người yêu thích xe địa hình.</p>
-      </div>
+  function speakText(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel(); // Hủy bỏ nếu đang đọc
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'vi-VN';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Trình duyệt của bạn không hỗ trợ tính năng đọc tiếng nói.');
+    }
+  }
 
-      <!-- Xe 4 -->
-      <div class="car-item">
-        <img src="https://suzukisaigonauto.com/wp-content/uploads/2023/11/suzuki-jymmi-8.jpg" alt="Suzuki Mẫu 4">
-        <h3>Suzuki XL7 2025</h3>
-        <p>Được trang bị đầy đủ các tính năng hiện đại, XL7 là chiếc xe lý tưởng cho các gia đình yêu thích sự thoải mái và sang trọng.</p>
-      </div>
-    </div>
-  </section>
+  function startIntroduction() {
+    startBtn.disabled = true;
+    if (typed) typed.destroy();
+    aiText.textContent = '';
 
-  <section id="gioi-thieu">
-    <h2>Giới Thiệu</h2>
-    <p>Suzuki là thương hiệu Nhật Bản với hơn 100 năm kinh nghiệm trong lĩnh vực sản xuất xe máy, ô tô và động cơ. Tại Việt Nam, Suzuki mang đến các dòng xe chất lượng cao, tiết kiệm nhiên liệu và độ bền vượt trội. Hướng tới tương lai, Suzuki cam kết đổi mới công nghệ và nâng cao trải nghiệm khách hàng.</p>
-  </section>
+    typed = new Typed('#aiText', {
+      strings: [introText],
+      typeSpeed: 40,
+      onComplete: () => {
+        speakText(introText);
+        startBtn.disabled = false;
+      }
+    });
+  }
 
-  <section id="lien-he">
-    <h2>Liên Hệ</h2>
-    <p>Địa chỉ: Đường số 2, KCN Long Bình, TP. Biên Hòa, Đồng Nai</p>
-    <p>Điện thoại: 0251 3838 707</p>
-    <p>Email: info@suzuki.com.vn</p>
-  </section>
-
-  <footer>
-    &copy; 2025 Công ty TNHH Việt Nam Suzuki. Bản quyền được bảo hộ.
-    <small>Web được thực hiện bởi Huỳnh Vũ Web Design</small>
-  </footer>
+  startBtn.addEventListener('click', startIntroduction);
+</script>
 
 </body>
 </html>
