@@ -3,53 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Khám Phá Vũ Trụ</title>
+  <title>Vũ Trụ Sống Động</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(270deg, #0d0d1a, #1a0033, #001f33);
-      background-size: 600% 600%;
-      animation: gradientFlow 30s ease infinite;
-      color: #e0e0ff;
       overflow-x: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #e0e0ff;
+      background: #000;
     }
 
-    @keyframes gradientFlow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    body::before {
-      content: '';
+    canvas {
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
       z-index: -1;
-      animation: moveBackground 60s linear infinite;
-    }
-
-    @keyframes moveBackground {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
     }
 
     header {
-      background: rgba(0, 0, 50, 0.8);
+      background: rgba(0, 0, 50, 0.6);
       padding: 20px 0;
       text-align: center;
       box-shadow: 0 0 10px #00ffffaa;
@@ -95,18 +70,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       color: #fff;
       text-align: center;
+      position: relative;
       padding: 0 20px;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
     }
 
     .hero h2 {
@@ -124,7 +91,7 @@
       max-width: 1100px;
       margin: 50px auto;
       padding: 20px;
-      background: rgba(0, 0, 40, 0.8);
+      background: rgba(0, 0, 40, 0.7);
       border-radius: 20px;
       box-shadow: 0 0 20px #6600ff88;
     }
@@ -151,8 +118,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
-      border-top: 4px solid #00ffff33;
-      border-bottom: 4px solid #00ffff33;
       box-shadow: inset 0 0 30px #000;
     }
 
@@ -175,27 +140,6 @@
       text-decoration: underline;
     }
 
-    .audio-control {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    .audio-control button {
-      background: #000033;
-      border: 2px solid #00ffff;
-      color: #00ffff;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #00ffff66;
-    }
-
-    .audio-control button:hover {
-      background: #001144;
-    }
-
     @media (max-width: 600px) {
       .hero h2 {
         font-size: 2em;
@@ -213,71 +157,107 @@
 </head>
 <body>
 
-  <header>
-    <h1><span class="typed-text"></span></h1>
-    <nav>
-      <ul>
-        <li><a href="#universe">Vũ Trụ</a></li>
-        <li><a href="#solar">Hệ Mặt Trời</a></li>
-        <li><a href="#explore">Khám Phá</a></li>
-        <li><a href="#contact">Liên Hệ</a></li>
-      </ul>
-    </nav>
-  </header>
+<canvas id="stars"></canvas>
 
-  <section class="hero">
-    <h2>Hành Trình Khám Phá Không Gian</h2>
-  </section>
+<header>
+  <h1><span class="typed-text"></span></h1>
+  <nav>
+    <ul>
+      <li><a href="#universe">Vũ Trụ</a></li>
+      <li><a href="#solar">Hệ Mặt Trời</a></li>
+      <li><a href="#explore">Khám Phá</a></li>
+      <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="content" data-aos="fade-up">
-    <h2 id="universe">Vũ Trụ Là Gì?</h2>
-    <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại. Nó bao gồm hành tinh, ngôi sao, thiên thể, và cấu trúc không gian vĩ đại. Vũ trụ không ngừng mở rộng kể từ vụ nổ Big Bang cách đây khoảng 13.8 tỷ năm.</p>
+<section class="hero">
+  <h2>Hành Trình Khám Phá Không Gian</h2>
+</section>
 
-    <h2 id="solar">Hệ Mặt Trời</h2>
-    <p>Hệ Mặt Trời bao gồm Mặt Trời và các thiên thể quay quanh nó như Trái Đất, sao Hỏa, sao Kim, cùng hàng triệu tiểu hành tinh, vệ tinh và sao chổi. Đó là một phần nhỏ của dải Ngân Hà rộng lớn.</p>
+<section class="content" data-aos="fade-up">
+  <h2 id="universe">Vũ Trụ Là Gì?</h2>
+  <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại. Nó bao gồm hành tinh, ngôi sao, thiên thể, và cấu trúc không gian vĩ đại. Vũ trụ không ngừng mở rộng kể từ vụ nổ Big Bang cách đây khoảng 13.8 tỷ năm.</p>
 
-    <h2 id="explore">Khám Phá Vũ Trụ</h2>
-    <p>Con người đã và đang thực hiện các sứ mệnh không gian như tàu Voyager, trạm ISS, hay kế hoạch đưa người lên sao Hỏa. Việc khám phá không chỉ giúp hiểu rõ về vũ trụ mà còn thúc đẩy công nghệ và hiểu biết về chính Trái Đất.</p>
-  </section>
+  <h2 id="solar">Hệ Mặt Trời</h2>
+  <p>Hệ Mặt Trời bao gồm Mặt Trời và các thiên thể quay quanh nó như Trái Đất, sao Hỏa, sao Kim, cùng hàng triệu tiểu hành tinh, vệ tinh và sao chổi. Đó là một phần nhỏ của dải Ngân Hà rộng lớn.</p>
 
-  <section class="parallax"></section>
+  <h2 id="explore">Khám Phá Vũ Trụ</h2>
+  <p>Con người đã và đang thực hiện các sứ mệnh không gian như tàu Voyager, trạm ISS, hay kế hoạch đưa người lên sao Hỏa. Việc khám phá không chỉ giúp hiểu rõ về vũ trụ mà còn thúc đẩy công nghệ và hiểu biết về chính Trái Đất.</p>
+</section>
 
-  <footer id="contact">
-    <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
-    <p>Theo dõi: 
-      <a href="#">Facebook</a> | 
-      <a href="#">YouTube</a>
-    </p>
-  </footer>
+<section class="parallax"></section>
 
-  <div class="audio-control">
-    <button onclick="toggleAudio()">🔊 Nhạc Nền</button>
-    <audio id="bg-audio" loop>
-      <source src="https://cdn.pixabay.com/audio/2023/02/20/audio_893f5a9d8a.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+<footer id="contact">
+  <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
+  <p>Theo dõi: 
+    <a href="#">Facebook</a> | 
+    <a href="#">YouTube</a>
+  </p>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
 
-    var typed = new Typed('.typed-text', {
-      strings: ["KHÁM PHÁ VŨ TRỤ", "HÀNH TRÌNH KHÔNG GIAN", "TƯƠNG LAI CỦA NHÂN LOẠI"],
-      typeSpeed: 60,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true
-    });
+  var typed = new Typed('.typed-text', {
+    strings: ["KHÁM PHÁ VŨ TRỤ", "KHÔNG GIAN BAO LA", "TƯƠNG LAI CỦA NHÂN LOẠI"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
 
-    function toggleAudio() {
-      var audio = document.getElementById("bg-audio");
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+  // Hiệu ứng sao di chuyển bằng canvas
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function createStars() {
+    stars = [];
+    for (let i = 0; i < 150; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        dx: Math.random() * 0.2 - 0.1,
+        dy: Math.random() * 0.2 - 0.1
+      });
     }
-  </script>
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#ffffff';
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fill();
+      star.x += star.dx;
+      star.y += star.dy;
+
+      if (star.x < 0 || star.x > canvas.width || star.y < 0 || star.y > canvas.height) {
+        star.x = Math.random() * canvas.width;
+        star.y = Math.random() * canvas.height;
+      }
+    });
+    requestAnimationFrame(drawStars);
+  }
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    createStars();
+  });
+
+  resizeCanvas();
+  createStars();
+  drawStars();
+</script>
 </body>
 </html>
