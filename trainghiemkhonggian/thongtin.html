@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông Tin Vũ Trụ</title>
   <style>
-    /* Nền vũ trụ gradient + sao */
+    /* Nền vũ trụ gradient */
     body {
       margin: 0;
       padding: 0;
@@ -40,6 +40,7 @@
       50% { opacity: 1; transform: scale(1.5); }
     }
 
+    /* Nội dung */
     .content {
       text-align: center;
       padding: 80px 20px;
@@ -61,6 +62,39 @@
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     }
 
+    /* Phần báo cáo */
+    .report-section {
+      background: linear-gradient(145deg, #0077ff, #00f5ff);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .report-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #ff007f;
+    }
+
+    .report-section p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    /* Ảnh công nghệ 3D */
+    .three-d-image {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+
+    /* Nút liên kết */
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -120,6 +154,17 @@
     <h1>Thông Tin Vũ Trụ</h1>
     <p>Vũ trụ là một không gian vô tận, nơi chứa đựng hàng tỷ thiên hà, tinh vân, hành tinh và những điều kỳ diệu chưa được khám phá. Chúng ta chỉ mới bắt đầu hành trình hiểu về nơi đã tạo ra mọi thứ — bao gồm chính chúng ta.</p>
 
+    <!-- Phần báo cáo -->
+    <div class="report-section">
+      <h2>Báo Cáo Vũ Trụ</h2>
+      <p>Trong vũ trụ này, có hàng nghìn hành tinh mà chúng ta chưa biết đến. Các nghiên cứu mới đây chỉ ra rằng những hành tinh nằm ngoài hệ mặt trời có thể tồn tại sự sống. Một trong những nghiên cứu gần đây cho thấy, trong vũ trụ có thể có những loài sống giống như chúng ta!</p>
+      <p>Việc hiểu rõ vũ trụ không chỉ giúp chúng ta khám phá những thế giới mới mà còn có thể mở ra những ứng dụng công nghệ vượt bậc giúp cải thiện chất lượng sống của con người.</p>
+    </div>
+
+    <!-- Hình ảnh công nghệ 3D -->
+    <img src="https://via.placeholder.com/600x400.png?text=3D+Technology+Image" alt="Hình ảnh công nghệ 3D" class="three-d-image">
+
+    <!-- Các liên kết khác -->
     <div class="links">
       <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
       <a href="subianvutru.html">Sự biến vũ trụ</a>
