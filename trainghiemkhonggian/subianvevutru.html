@@ -12,12 +12,38 @@
             font-family: 'Arial', sans-serif;
             color: white;
             text-align: center;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 100px 20px;
             min-height: 100vh;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -49,11 +75,44 @@
     </style>
 </head>
 <body>
+
+    <!-- Các ngôi sao lấp lánh -->
+    <div class="stars">
+        <div class="star" style="top: 20%; left: 30%;"></div>
+        <div class="star" style="top: 50%; left: 60%;"></div>
+        <div class="star" style="top: 80%; left: 10%;"></div>
+        <div class="star" style="top: 10%; left: 80%;"></div>
+        <div class="star" style="top: 40%; left: 50%;"></div>
+        <!-- Bạn có thể thêm nhiều ngôi sao hơn ở đây -->
+    </div>
+
+    <!-- Nội dung chính -->
     <div class="overlay">
         <h1>Khám phá Vũ Trụ</h1>
         <p>Hãy tưởng tượng bạn đang trôi nổi trong không gian, ngắm nhìn các vì sao và hành tinh xung quanh. Cùng bắt đầu hành trình chinh phục vũ trụ!</p>
-        <button class="button" onclick="alert('🚀 Đếm ngược bắt đầu... Chuẩn bị cất cánh!')">Khởi hành ngay</button>
+        <button class="button" onclick="countdownAndLaunch()">Khởi hành ngay</button>
     </div>
+
+    <!-- JavaScript đếm ngược -->
+    <script>
+        function countdownAndLaunch() {
+            let count = 5;
+            const btn = document.querySelector('.button');
+            btn.disabled = true;
+            const interval = setInterval(() => {
+                if (count > 0) {
+                    btn.innerText = `🚀 Cất cánh trong ${count}...`;
+                    count--;
+                } else {
+                    clearInterval(interval);
+                    btn.innerText = '🚀 Đã cất cánh!';
+                    document.body.style.transition = 'background 2s';
+                    document.body.style.background = 'black';
+                    // Bạn có thể thêm chuyển hướng hoặc hiệu ứng tiếp theo ở đây
+                }
+            }, 1000);
+        }
+    </script>
+
 </body>
 </html>
-
