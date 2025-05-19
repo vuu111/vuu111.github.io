@@ -72,6 +72,27 @@
         .button:hover {
             background-color: #63b3ed;
         }
+
+        /* Định dạng cho các liên kết */
+        .links {
+            margin-top: 2em;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .links a:hover {
+            background-color: #63b3ed;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +104,6 @@
         <div class="star" style="top: 80%; left: 10%;"></div>
         <div class="star" style="top: 10%; left: 80%;"></div>
         <div class="star" style="top: 40%; left: 50%;"></div>
-        <!-- Bạn có thể thêm nhiều ngôi sao hơn ở đây -->
     </div>
 
     <!-- Nội dung chính -->
@@ -91,7 +111,21 @@
         <h1>Khám phá Vũ Trụ</h1>
         <p>Hãy tưởng tượng bạn đang trôi nổi trong không gian, ngắm nhìn các vì sao và hành tinh xung quanh. Cùng bắt đầu hành trình chinh phục vũ trụ!</p>
         <button class="button" onclick="countdownAndLaunch()">Khởi hành ngay</button>
+
+        <!-- Các liên kết -->
+        <div class="links">
+            <a href="thongtin.html">Thông tin</a>
+            <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
+            <a href="subianvutru.html">Sự biến vũ trụ</a>
+            <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
+        </div>
     </div>
+
+    <!-- Âm thanh nền không gian -->
+    <audio id="spaceAudio" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <!-- JavaScript đếm ngược -->
     <script>
@@ -108,7 +142,10 @@
                     btn.innerText = '🚀 Đã cất cánh!';
                     document.body.style.transition = 'background 2s';
                     document.body.style.background = 'black';
-                    // Bạn có thể thêm chuyển hướng hoặc hiệu ứng tiếp theo ở đây
+                    document.getElementById('spaceAudio').pause();
+                    setTimeout(() => {
+                        window.location.href = 'https://www.nasa.gov'; // Chuyển hướng trang web
+                    }, 2000);
                 }
             }, 1000);
         }
