@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Khám Phá Vũ Trụ</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -18,12 +19,19 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(120deg, #0d0d1a, #1a0033);
+      background: linear-gradient(270deg, #0d0d1a, #1a0033, #001f33);
+      background-size: 600% 600%;
+      animation: gradientFlow 30s ease infinite;
       color: #e0e0ff;
       overflow-x: hidden;
     }
 
-    /* Background động giả */
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     body::before {
       content: '';
       position: fixed;
@@ -79,10 +87,10 @@
       background: #00ffff33;
       color: #00ffff;
       box-shadow: 0 0 10px #00ffff;
+      transform: scale(1.1);
     }
 
     .hero {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       height: 60vh;
       display: flex;
       align-items: center;
@@ -105,6 +113,11 @@
       font-size: 3em;
       z-index: 1;
       text-shadow: 0 0 15px #00ffff;
+    }
+
+    .typed-text {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
     .content {
@@ -132,4 +145,139 @@
 
     .parallax {
       background-image: url('https://cdn.pixabay.com/photo/2015/09/18/18/03/earth-942264_1280.jpg');
-      height: 300
+      height: 300px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      border-top: 4px solid #00ffff33;
+      border-bottom: 4px solid #00ffff33;
+      box-shadow: inset 0 0 30px #000;
+    }
+
+    footer {
+      background: rgba(0, 0, 80, 0.9);
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ffff99;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #00ffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .audio-control button {
+      background: #000033;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffff66;
+    }
+
+    .audio-control button:hover {
+      background: #001144;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><span class="typed-text"></span></h1>
+    <nav>
+      <ul>
+        <li><a href="#universe">Vũ Trụ</a></li>
+        <li><a href="#solar">Hệ Mặt Trời</a></li>
+        <li><a href="#explore">Khám Phá</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hành Trình Khám Phá Không Gian</h2>
+  </section>
+
+  <section class="content" data-aos="fade-up">
+    <h2 id="universe">Vũ Trụ Là Gì?</h2>
+    <p>Vũ trụ là tổng thể của mọi vật chất, năng lượng, không gian và thời gian tồn tại. Nó bao gồm hành tinh, ngôi sao, thiên thể, và cấu trúc không gian vĩ đại. Vũ trụ không ngừng mở rộng kể từ vụ nổ Big Bang cách đây khoảng 13.8 tỷ năm.</p>
+
+    <h2 id="solar">Hệ Mặt Trời</h2>
+    <p>Hệ Mặt Trời bao gồm Mặt Trời và các thiên thể quay quanh nó như Trái Đất, sao Hỏa, sao Kim, cùng hàng triệu tiểu hành tinh, vệ tinh và sao chổi. Đó là một phần nhỏ của dải Ngân Hà rộng lớn.</p>
+
+    <h2 id="explore">Khám Phá Vũ Trụ</h2>
+    <p>Con người đã và đang thực hiện các sứ mệnh không gian như tàu Voyager, trạm ISS, hay kế hoạch đưa người lên sao Hỏa. Việc khám phá không chỉ giúp hiểu rõ về vũ trụ mà còn thúc đẩy công nghệ và hiểu biết về chính Trái Đất.</p>
+  </section>
+
+  <section class="parallax"></section>
+
+  <footer id="contact">
+    <p>&copy; 2025 Khám Phá Vũ Trụ. Bản quyền thuộc về bạn.</p>
+    <p>Theo dõi: 
+      <a href="#">Facebook</a> | 
+      <a href="#">YouTube</a>
+    </p>
+  </footer>
+
+  <div class="audio-control">
+    <button onclick="toggleAudio()">🔊 Nhạc Nền</button>
+    <audio id="bg-audio" loop>
+      <source src="https://cdn.pixabay.com/audio/2023/02/20/audio_893f5a9d8a.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    var typed = new Typed('.typed-text', {
+      strings: ["KHÁM PHÁ VŨ TRỤ", "HÀNH TRÌNH KHÔNG GIAN", "TƯƠNG LAI CỦA NHÂN LOẠI"],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
+
+    function toggleAudio() {
+      var audio = document.getElementById("bg-audio");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
