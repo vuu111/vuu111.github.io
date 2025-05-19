@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỹ Năng Sống Cho Học Sinh</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #00bcd4, #2196f3);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    .hero {
+      background-image: url('https://cdn.pixabay.com/photo/2015/09/18/19/03/earth-944157_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .skills {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .skills h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2196f3;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .skill-content {
+      padding: 15px;
+    }
+
+    .skill-content h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .skill-content p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    footer {
+      background-color: #2196f3;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kỹ Năng Sống Cho Học Sinh</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Trang Chủ</a></li>
+        <li><a href="#">Kỹ Năng Giao Tiếp</a></li>
+        <li><a href="#">Kỹ Năng Quản Lý Thời Gian</a></li>
+        <li><a href="#">Kỹ Năng Giải Quyết Vấn Đề</a></li>
+        <li><a href="#">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Khám Phá Những Kỹ Năng Quan Trọng Cho Học Sinh</h2>
+  </section>
+
+  <section class="skills">
+    <h2>Những Kỹ Năng Sống Quan Trọng</h2>
+    <div class="skill-grid">
+      <div class="skill">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/08/earth-1868104_1280.jpg" alt="Kỹ Năng Giao Tiếp">
+        <div class="skill-content">
+          <h3>Kỹ Năng Giao Tiếp</h3>
+          <p>Giao tiếp hiệu quả giúp học sinh thể hiện ý tưởng, lắng nghe và hiểu người khác, xây dựng mối quan hệ tốt đẹp.</p>
+        </div>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.pixabay.com/photo/2015/09/18/19/03/earth-944157_1280.jpg" alt="Kỹ Năng Quản Lý Thời Gian">
+        <div class="skill-content">
+          <h3>Kỹ Năng Quản Lý Thời Gian</h3>
+          <p>Biết cách sắp xếp thời gian hợp lý giúp học sinh hoàn thành công việc đúng hạn và giảm căng thẳng.</p>
+        </div>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/08/earth-1868104_1280.jpg" alt="Kỹ Năng Giải Quyết Vấn Đề">
+        <div class="skill-content">
+          <h3>Kỹ Năng Giải Quyết Vấn Đề</h3>
+          <p>Khả năng phân tích tình huống và tìm ra giải pháp
 
