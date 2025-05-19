@@ -1,148 +1,137 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông tin Vũ Trụ</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://images.unsplash.com/photo-1580151014095-99b5f9ecf055?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Tin Vũ Trụ</title>
+  <style>
+    /* Nền vũ trụ chuyển động */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: black;
+      overflow: hidden;
+      height: 100vh;
+    }
 
-        /* Hiệu ứng sao lấp lánh */
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: transparent;
-        }
+    /* Hiệu ứng sao động */
+    .stars, .twinkling {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: block;
+      z-index: -1;
+    }
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite ease-in-out;
-        }
+    .stars {
+      background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/starfield.png') repeat;
+      animation: moveStars 200s linear infinite;
+    }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
+    .twinkling {
+      background: transparent url('https://i.imgur.com/8zE2jWQ.png') repeat;
+      animation: moveTwinkle 100s linear infinite;
+    }
 
-        /* Overlay nền */
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 50px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    @keyframes moveStars {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 5000px;}
+    }
 
-        h1 {
-            font-size: 3.5em;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            margin-bottom: 1em;
-        }
+    @keyframes moveTwinkle {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 5000px;}
+    }
 
-        p {
-            font-size: 1.5em;
-            max-width: 900px;
-            margin: 0 auto;
-            margin-bottom: 2em;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-        }
+    /* Overlay nội dung */
+    .content {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-        /* Nút liên kết */
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 0.4em;
+      text-shadow: 0 0 10px #00f5ff;
+    }
 
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 25px;
-            background-color: rgba(0, 0, 255, 0.7);
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
+    p {
+      font-size: 1.3em;
+      line-height: 1.8em;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    }
 
-        .links a:hover {
-            background-color: rgba(0, 0, 255, 1);
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-        }
+    /* Nút liên kết đẹp */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        /* Thêm hiệu ứng cho sao */
-        .star:nth-child(odd) {
-            animation-duration: 2.5s;
-        }
+    .links a {
+      background: linear-gradient(135deg, #00f5ff, #0077ff);
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .star:nth-child(even) {
-            animation-duration: 1.8s;
-        }
-    </style>
+    .links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      .links a {
+        font-size: 1em;
+        padding: 12px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Hiệu ứng sao lấp lánh -->
-    <div class="stars">
-        <div class="star" style="top: 20%; left: 25%;"></div>
-        <div class="star" style="top: 40%; left: 75%;"></div>
-        <div class="star" style="top: 10%; left: 50%;"></div>
-        <div class="star" style="top: 60%; left: 20%;"></div>
-        <div class="star" style="top: 80%; left: 60%;"></div>
-        <div class="star" style="top: 30%; left: 80%;"></div>
-        <div class="star" style="top: 50%; left: 10%;"></div>
-        <div class="star" style="top: 70%; left: 40%;"></div>
-        <!-- Thêm nhiều sao lấp lánh khác -->
+  <!-- Nền sao động -->
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+
+  <!-- Nội dung chính -->
+  <div class="content">
+    <h1>Thông Tin Vũ Trụ</h1>
+    <p>Vũ trụ là một không gian rộng lớn, chứa đựng hàng tỷ thiên hà và vô số điều kỳ diệu. Chúng ta mới chỉ khám phá một phần rất nhỏ trong đó. Hãy cùng tiếp tục hành trình tìm hiểu về nơi khởi đầu của mọi thứ.</p>
+
+    <!-- Các liên kết -->
+    <div class="links">
+      <a href="space_experience.html">Trang chính</a>
+      <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
+      <a href="subianvutru.html">Sự biến vũ trụ</a>
+      <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
     </div>
+  </div>
 
-    <!-- Nội dung chính -->
-    <div class="overlay">
-        <h1>Thông Tin Vũ Trụ</h1>
-        <p>Vũ trụ là một không gian vô cùng rộng lớn và kỳ diệu. Chúng ta chỉ mới khám phá được một phần rất nhỏ trong đó, với hàng tỷ ngôi sao và hành tinh chưa được khám phá.</p>
-        <p>Ở đây, chúng ta sẽ cùng khám phá những điều thú vị về vũ trụ, từ các hành tinh đến các hiện tượng thiên văn kỳ lạ.</p>
-
-        <!-- Các liên kết -->
-        <div class="links">
-            <a href="space_experience.html">Quay lại trang chính</a>
-            <a href="mhungdieucanbiet.html">Mấy điều cần biết</a>
-            <a href="subianvutru.html">Sự biến vũ trụ</a>
-            <a href="chieusauvekhonggian.html">Chiều sâu vũ trụ</a>
-        </div>
-    </div>
-
-    <!-- Âm thanh nền không gian -->
-    <audio id="spaceAudio" autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Nhạc nền không gian -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+  </audio>
 
 </body>
 </html>
