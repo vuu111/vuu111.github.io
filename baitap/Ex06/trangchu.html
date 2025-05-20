@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trang Chủ - Công Ty CNTT IT Chuyên Nghiệp</title>
   <style>
     :root {
@@ -24,172 +24,145 @@
       padding: 0;
       color: var(--text-color);
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* Header với background hình nền rõ */
     header {
-      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=80');
-      background-size: cover;
-      background-position: center;
+      background: none;
       color: white;
       text-align: center;
-      padding: 80px 20px 60px;
-      box-shadow: inset 0 0 0 1000px rgba(30, 144, 255, 0.6);
-      /* lớp màu xanh hơi trong để chữ nổi */
+      padding: 0;
+      position: relative;
+    }
+
+    header img.header-img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     header h1 {
-      margin: 0;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
       font-size: 36px;
-      font-weight: 700;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
-
-    header p {
-      margin: 15px 0 0;
-      font-size: 20px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     nav {
-      margin-top: 20px;
+      background-color: var(--main-color);
+      text-align: center;
+      padding: 10px 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
-      font-weight: 600;
-      font-size: 18px;
-      padding: 8px 12px;
-      border-radius: 6px;
-      background-color: rgba(0, 0, 0, 0.25);
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      background: var(--hover-color);
     }
 
     section {
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 40px auto;
       padding: 30px;
-      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 
     section h2 {
       color: var(--main-color);
       margin-top: 0;
-      font-size: 28px;
-      border-left: 6px solid var(--main-color);
-      padding-left: 12px;
+      font-size: 24px;
     }
 
     section p {
       font-size: 17px;
-      color: var(--text-color);
-      line-height: 1.5;
     }
 
     form {
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     label {
       display: block;
-      font-weight: 600;
+      margin-bottom: 5px;
+      font-weight: bold;
       color: var(--main-color);
-      margin-bottom: 8px;
     }
 
     input[type="email"] {
       width: 100%;
       max-width: 400px;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
+      padding: 10px;
       border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
       margin-bottom: 15px;
-      transition: border-color 0.3s ease;
-    }
-
-    input[type="email"]:focus {
-      outline: none;
-      border-color: var(--main-color);
     }
 
     button {
-      background-color: var(--main-color);
+      background: var(--main-color);
       color: white;
-      padding: 12px 26px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: var(--hover-color);
+      background: var(--hover-color);
     }
 
     .success-message {
       color: green;
       margin-top: 10px;
       display: none;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     img.responsive-img {
       max-width: 100%;
+      height: auto;
       border-radius: 10px;
-      margin-top: 25px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      margin-top: 20px;
     }
 
     footer {
-      background-color: var(--dark-blue);
+      background: var(--dark-blue);
       color: white;
       text-align: center;
       padding: 20px;
-      font-size: 15px;
-      position: relative;
-      z-index: 10;
+      font-size: 14px;
     }
 
     footer a {
       color: #87CEFA;
       text-decoration: none;
-      font-weight: 600;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
 
-    /* Dòng chữ Huỳnh Vũ Web Design nằm dưới footer */
-    .bottom-banner {
-      background-color: var(--dark-blue);
-      color: #00e0ff;
+    .top-banner {
+      margin-top: 10px;
       text-align: center;
-      padding: 12px 0;
       font-weight: bold;
       font-size: 18px;
-      letter-spacing: 2px;
-      box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
-      margin-top: 8px;
+      color: #666;
     }
 
     @media (max-width: 600px) {
@@ -197,27 +170,13 @@
         font-size: 26px;
       }
 
-      header p {
-        font-size: 16px;
-      }
-
       nav a {
-        font-size: 14px;
-        margin: 0 8px;
-        padding: 6px 10px;
+        display: inline-block;
+        margin: 10px 5px;
       }
 
-      main {
-        margin: 20px 15px;
-        padding: 0 10px;
-      }
-
-      section h2 {
-        font-size: 22px;
-      }
-
-      section p, label, input[type="email"], button {
-        font-size: 15px;
+      section {
+        padding: 20px;
       }
     }
   </style>
@@ -226,47 +185,47 @@
 
   <!-- Header với hình nền -->
   <header>
+    <img src="https://www.fpt-software.com/wp-content/uploads/2022/07/fpt-software-banner.jpg" alt="Banner IT" class="header-img">
     <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
-    <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
-    <nav>
-      <a href="trangchu.html">Trang Chủ</a>
-      <a href="thongtin.html">Thông Tin</a>
-      <a href="dichvu.html">Dịch Vụ</a>
-    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
-      <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
+  <!-- Navigation -->
+  <nav>
+    <a href="trangchu.html">Trang Chủ</a>
+    <a href="thongtin.html">Thông Tin</a>
+    <a href="dichvu.html">Dịch Vụ</a>
+  </nav>
 
-      <form id="emailForm">
-        <label for="gmail">Nhập Gmail của bạn:</label>
-        <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
-        <button type="submit">Gửi</button>
-        <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
-      </form>
+  <!-- Nội dung chính -->
+  <section>
+    <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
+    <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
 
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
-           alt="Giải pháp hệ thống CNTT"
-           class="responsive-img" loading="lazy" />
-    </section>
+    <form id="emailForm">
+      <label for="gmail">Nhập Gmail của bạn:</label>
+      <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
+      <button type="submit">Gửi</button>
+      <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
+    </form>
 
-    <section>
-      <h2>Liên hệ ngay hôm nay!</h2>
-      <p>Email hỗ trợ: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
-    </section>
-  </main>
+    <img src="https://www.fpt-software.com/wp-content/uploads/2022/07/fpt-software-banner.jpg"
+         alt="Hình IT" class="responsive-img" />
+  </section>
 
+  <!-- Liên hệ -->
+  <section>
+    <h2>Liên hệ ngay hôm nay!</h2>
+    <p>Email hỗ trợ: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+    <div class="top-banner">Huỳnh Vũ Web Design</div>
   </footer>
 
-  <div class="bottom-banner">
-    Huỳnh Vũ Web Design
-  </div>
-
+  <!-- Script -->
   <script>
     document.getElementById('emailForm').addEventListener('submit', function (e) {
       e.preventDefault();
