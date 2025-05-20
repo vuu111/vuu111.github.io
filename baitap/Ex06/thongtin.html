@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Giới Thiệu - Huỳnh Vũ Web Design</title>
   <style>
     body {
@@ -12,6 +12,7 @@
       line-height: 1.6;
     }
 
+    /* Dòng chữ đầu trang */
     .top-banner {
       background-color: #111;
       color: #00e0ff;
@@ -21,37 +22,28 @@
       letter-spacing: 2px;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1000;
     }
 
-    /* Header với hình nền IT */
+    /* Header */
     header {
-      background-image: url('https://www.fpt-software.com/wp-content/uploads/2022/07/fpt-software-banner.jpg');
+      background-image: url('https://jobs.kidsplaza.vn/wp-content/uploads/2023/04/mo-ta-cong-viec-cua-nhan-vien-it-3.png');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
-      padding: 80px 20px 40px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
-    header h1, header nav {
-      position: relative;
-      z-index: 1;
+      padding: 60px 0 30px 0;
     }
 
     header h1 {
       margin: 0;
       font-size: 42px;
       font-weight: 600;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
     }
 
     header nav {
@@ -76,8 +68,6 @@
       border-top: 1px solid #ddd;
       margin: 20px auto;
       width: 80%;
-      position: relative;
-      z-index: 1;
     }
 
     section {
@@ -114,6 +104,11 @@
       border-radius: 4px;
       width: 260px;
       font-size: 16px;
+    }
+
+    section input[type="email"]:focus {
+      outline: none;
+      border-color: #2196F3;
     }
 
     section button {
@@ -156,13 +151,24 @@
       transform: scale(1.05);
     }
 
+    .logo-huynhvu {
+      text-align: center;
+      margin: 40px auto 0;
+    }
+
+    .logo-huynhvu img {
+      max-width: 220px;
+      height: auto;
+      opacity: 0.9;
+    }
+
     footer {
       background-color: #222;
       color: #ccc;
       text-align: center;
       padding: 20px;
       font-size: 15px;
-      margin-top: 60px;
+      margin-top: 40px;
     }
 
     footer a {
@@ -188,16 +194,21 @@
         width: 100%;
         height: auto;
       }
+
+      .logo-huynhvu img {
+        max-width: 80%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Banner -->
   <div class="top-banner">Huỳnh Vũ Web Design</div>
 
+  <!-- Header -->
   <header>
     <h1>Giới Thiệu</h1>
-    <hr>
     <nav>
       <a href="trangchu.html">Trang Chủ</a> |
       <a href="thongtin.html">Thông Tin</a> |
@@ -205,6 +216,7 @@
     </nav>
   </header>
 
+  <!-- Nội dung -->
   <section>
     <h2>Về chúng tôi</h2>
     <p>Công Ty CNTT IT Chuyên Nghiệp được thành lập nhằm cung cấp các giải pháp công nghệ toàn diện, hiện đại và hiệu quả.</p>
@@ -239,6 +251,12 @@
     </ul>
   </section>
 
+  <!-- Hình Huỳnh Vũ -->
+  <div class="logo-huynhvu">
+    <img src="https://i.imgur.com/vZ3Xhfb.png" alt="Huỳnh Vũ Web Design" />
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
