@@ -17,62 +17,82 @@
       background-attachment: fixed;
     }
     .overlay {
-      background-color: rgba(0,0,0,0.75);
+      background-color: rgba(0,0,0,0.8);
       padding: 30px;
       max-width: 900px;
       margin: auto;
       border-radius: 15px;
       box-sizing: border-box;
+      box-shadow: 0 0 15px rgba(0,0,0,0.9);
     }
     h1 {
       text-align: center;
       color: #ffd700;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-weight: bold;
     }
     /* Style cho phần links */
     .links {
-      text-align: center;
-      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-around; /* căn đều khoảng cách */
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+      gap: 15px;
     }
     .links a {
+      background-color: #003344;
       color: #00ffff;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-      transition: color 0.3s;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,255,255,0.4);
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-block;
+      min-width: 160px;
+      text-align: center;
     }
     .links a:hover {
-      color: #ffd700;
-      text-decoration: underline;
+      background-color: #00ffff;
+      color: #003344;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,255,255,0.8);
     }
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
     .section img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-      margin-top: 15px;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,255,255,0.5);
+      margin-top: 18px;
       display: block;
     }
     .section h2 {
       color: #00ffff;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 24px;
     }
     .section p {
       font-size: 18px;
       line-height: 1.6;
       color: #ddd;
+      font-weight: 500;
     }
     iframe {
       width: 100%;
-      height: 400px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-      margin-top: 15px;
+      height: 420px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,255,255,0.5);
+      margin-top: 20px;
       display: block;
+      border: none;
     }
   </style>
 </head>
@@ -92,25 +112,25 @@
     <div class="section">
       <h2>1. Sự Mở Rộng Của Vũ Trụ</h2>
       <p>Vũ trụ không ngừng mở rộng kể từ sau Big Bang. Khoảng cách giữa các thiên hà ngày càng lớn hơn.</p>
-      <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/galaxy-2695569_1280.jpg" alt="Thiên hà" />
+      <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/space-1835214_1280.jpg" alt="Sự mở rộng của vũ trụ" />
     </div>
 
     <div class="section">
       <h2>2. Các Nguyên Tố Tạo Nên Vũ Trụ</h2>
       <p>Vũ trụ chủ yếu gồm vật chất tối, năng lượng tối và vật chất bình thường mà chúng ta thấy.</p>
-      <img src="https://cdn.pixabay.com/photo/2014/04/05/11/40/cosmic-316661_1280.jpg" alt="Nguyên tố vũ trụ" />
+      <img src="https://cdn.pixabay.com/photo/2013/07/18/20/26/cosmos-164811_1280.jpg" alt="Các nguyên tố vũ trụ" />
     </div>
 
     <div class="section">
       <h2>3. Sóng Gravitational</h2>
       <p>Sóng hấp dẫn là những gợn sóng trong không gian-thời gian, được phát hiện đầu tiên vào năm 2015.</p>
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/09/17/space-1867834_1280.jpg" alt="Sóng hấp dẫn" />
+      <img src="https://cdn.pixabay.com/photo/2020/08/23/15/13/gravitational-waves-5514496_1280.jpg" alt="Sóng hấp dẫn" />
     </div>
 
     <div class="section">
       <h2>Video Mô Phỏng Vũ Trụ</h2>
       <iframe src="https://www.youtube.com/embed/zUyH3XhpLTo" 
-        title="Video mô phỏng vũ trụ" frameborder="0" allowfullscreen></iframe>
+        title="Video mô phỏng vũ trụ" allowfullscreen></iframe>
     </div>
 
   </div>
