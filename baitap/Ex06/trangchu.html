@@ -24,24 +24,20 @@
       padding: 0;
       color: var(--text-color);
       line-height: 1.6;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
-
-    /* Bỏ top-banner ở trên, sẽ xuống dưới footer */
 
     header {
-      background-color: var(--main-color);
+      position: relative;
       color: white;
       text-align: center;
-      padding: 40px 20px 70px; /* tăng padding dưới để chữ không đè hình */
-      position: relative;
+      padding: 60px 20px;
+      background: var(--main-color);
       overflow: hidden;
-      flex-shrink: 0;
     }
 
-    /* Ảnh nền header */
     header::before {
       content: "";
       position: absolute;
@@ -49,13 +45,13 @@
       background-image: url('https://cdn.pixabay.com/photo/2017/08/01/00/34/technology-2563679_960_720.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.25;  /* làm mờ ảnh nền */
+      opacity: 0.3;
       z-index: 0;
     }
 
     header h1, header p, nav {
       position: relative;
-      z-index: 1; /* để lên trên ảnh nền */
+      z-index: 1;
     }
 
     header h1 {
@@ -64,12 +60,8 @@
     }
 
     header p {
-      margin: 10px 0 30px 0;
+      margin: 10px 0 25px;
       font-size: 18px;
-    }
-
-    nav {
-      margin-top: 15px;
     }
 
     nav a {
@@ -81,8 +73,6 @@
       padding: 6px 10px;
       border-radius: 5px;
       transition: background 0.3s;
-      position: relative;
-      z-index: 1;
     }
 
     nav a:hover {
@@ -102,22 +92,10 @@
     section h2 {
       color: var(--main-color);
       margin-top: 0;
-      font-size: 24px;
-    }
-
-    section p {
-      font-size: 17px;
     }
 
     form {
       margin-top: 15px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: var(--main-color);
     }
 
     input[type="email"] {
@@ -164,25 +142,11 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      flex-shrink: 0;
-      position: relative;
     }
 
-    footer a {
-      color: #87CEFA;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Đưa Huỳnh Vũ Web Design xuống cuối footer */
     .footer-banner {
       margin-top: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      font-size: 18px;
+      font-weight: bold;
       color: #87CEFA;
     }
 
@@ -198,10 +162,6 @@
 
       section {
         padding: 20px;
-      }
-
-      .footer-banner {
-        font-size: 16px;
       }
     }
   </style>
