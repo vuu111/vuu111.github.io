@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Chủ - Công Ty CNTT IT Chuyên Nghiệp</title>
+  <style>
+    :root {
+      --main-color: #1E90FF;
+      --hover-color: #4682B4;
+      --bg-light: #f0f8ff;
+      --text-color: #333;
+      --dark-blue: #104E8B;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+
+    header img.logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--hover-color);
+    }
+
+    section {
+      background: white;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    section h2 {
+      color: var(--main-color);
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    section p {
+      font-size: 17px;
+    }
+
+    form {
+      margin-top: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--main-color);
+    }
+
+    input[type="email"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--hover-color);
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+      display: none;
+      font-weight: bold;
+    }
+
+    img.responsive-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #87CEFA;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-banner {
+      background-color: var(--dark-blue);
+      color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 5px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <!-- Ảnh đầu trang -->
+    <img src="https://via.placeholder.com/200x80?text=Logo+IT" alt="Logo công ty" class="logo">
+
+    <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
+    <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
+
+    <nav>
+      <a href="trangchu.html">Trang Chủ</a>
+      <a href="thongtin.html">Thông Tin</a>
+      <a href="dichvu.html">Dịch Vụ</a>
+    </nav>
+  </header>
+
+  <!-- Giới thiệu -->
+  <section>
+    <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
+    <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
+
+    <form id="emailForm">
+      <label for="gmail">Nhập Gmail của bạn:</label>
+      <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
+      <button type="submit">Gửi</button>
+      <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
+    </form>
+
+    <img src="https://jobs.kidsplaza.vn/wp-content/uploads/2023/04/mo-ta-cong-viec-cua-nhan-vien-it-3.png"
+         alt="Giải pháp hệ thống CNTT"
+         class="responsive-img" loading="lazy" />
+  </section>
+
+  <!-- Liên hệ -->
+  <section>
+    <h2>Liên hệ ngay hôm nay!</h2>
+    <p>Email hỗ trợ: <a href="mailto:tranvu11102001@gmail.com">tranvu11102001@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
+    <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+  </footer>
+
+  <!-- Dòng chữ Huỳnh Vũ Web Design -->
+  <div class="bottom-banner">
+    Huỳnh Vũ Web Design
+  </div>
+
+  <!-- Script xử lý form -->
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('gmail');
+      const successMessage = document.getElementById('successMessage');
+
+      if (emailInput.value.trim() !== "") {
+        successMessage.style.display = 'block';
+        emailInput.value = "";
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 4000);
+      }
+    });
+  </script>
+
+</body>
+</html>
