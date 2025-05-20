@@ -24,24 +24,38 @@
       padding: 0;
       color: var(--text-color);
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .top-banner {
-      background-color: var(--dark-blue);
-      color: #fff;
-      text-align: center;
-      padding: 12px 0;
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+    /* Bỏ top-banner ở trên, sẽ xuống dưới footer */
 
     header {
       background-color: var(--main-color);
       color: white;
       text-align: center;
-      padding: 40px 20px 30px;
+      padding: 40px 20px 70px; /* tăng padding dưới để chữ không đè hình */
       position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Ảnh nền header */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://cdn.pixabay.com/photo/2017/08/01/00/34/technology-2563679_960_720.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;  /* làm mờ ảnh nền */
+      z-index: 0;
+    }
+
+    header h1, header p, nav {
+      position: relative;
+      z-index: 1; /* để lên trên ảnh nền */
     }
 
     header h1 {
@@ -49,17 +63,8 @@
       font-size: 30px;
     }
 
-    header img {
-      margin: 20px auto 10px;
-      display: block;
-      max-width: 320px;
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
     header p {
-      margin: 10px 0;
+      margin: 10px 0 30px 0;
       font-size: 18px;
     }
 
@@ -76,6 +81,8 @@
       padding: 6px 10px;
       border-radius: 5px;
       transition: background 0.3s;
+      position: relative;
+      z-index: 1;
     }
 
     nav a:hover {
@@ -89,6 +96,7 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      flex-grow: 1;
     }
 
     section h2 {
@@ -156,6 +164,8 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
+      flex-shrink: 0;
+      position: relative;
     }
 
     footer a {
@@ -167,11 +177,16 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      .top-banner {
-        font-size: 18px;
-      }
+    /* Đưa Huỳnh Vũ Web Design xuống cuối footer */
+    .footer-banner {
+      margin-top: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 18px;
+      color: #87CEFA;
+    }
 
+    @media (max-width: 600px) {
       header h1 {
         font-size: 26px;
       }
@@ -184,18 +199,17 @@
       section {
         padding: 20px;
       }
+
+      .footer-banner {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="top-banner">
-    Huỳnh Vũ Web Design
-  </div>
-
   <header>
     <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
-    <img src="https://cdn.pixabay.com/photo/2017/08/01/00/34/technology-2563679_960_720.jpg" alt="Ảnh IT đẹp" />
     <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
     <nav>
       <a href="trangchu.html">Trang Chủ</a>
@@ -228,6 +242,7 @@
   <footer>
     <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+    <div class="footer-banner">Huỳnh Vũ Web Design</div>
   </footer>
 
   <script>
