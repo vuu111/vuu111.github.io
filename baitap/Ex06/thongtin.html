@@ -13,49 +13,33 @@
       color: #333;
     }
 
-    /* Dòng chữ đầu trang */
-    .top-banner {
-      background-color: #111;
-      color: #00e0ff;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 18px;
-      letter-spacing: 2px;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* Header */
+    /* Header với hình nền */
     header {
       background-image: url('https://jobs.kidsplaza.vn/wp-content/uploads/2023/04/mo-ta-cong-viec-cua-nhan-vien-it-3.png');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 60px 20px 40px;
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
     }
 
     header h1 {
       margin: 0;
       font-size: 42px;
-      font-weight: 600;
-      background: rgba(0, 0, 0, 0.5);
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 10px;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
 
     header nav {
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     header nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
+      margin: 0 18px;
+      font-weight: 600;
       font-size: 18px;
       transition: color 0.3s ease;
     }
@@ -69,14 +53,14 @@
       border-top: 1px solid #ddd;
       margin: 20px auto;
       width: 80%;
+      max-width: 900px;
     }
 
-    /* Nội dung chính */
     section {
       background-color: white;
       max-width: 900px;
       margin: 40px auto;
-      padding: 30px 40px;
+      padding: 30px 30px 40px;
       border-radius: 10px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
@@ -84,9 +68,10 @@
     section h2 {
       color: #2196F3;
       font-size: 26px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border-left: 5px solid #2196F3;
       padding-left: 12px;
+      font-weight: 600;
     }
 
     section p {
@@ -98,6 +83,8 @@
     section label {
       font-size: 16px;
       color: #008080;
+      display: block;
+      margin-bottom: 8px;
     }
 
     section input[type="email"] {
@@ -106,7 +93,7 @@
       border-radius: 4px;
       width: 280px;
       font-size: 16px;
-      transition: border-color 0.3s;
+      margin-bottom: 15px;
     }
 
     section input[type="email"]:focus {
@@ -119,11 +106,11 @@
       color: white;
       padding: 10px 22px;
       border: none;
-      margin-left: 12px;
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
     }
 
     section button:hover {
@@ -131,120 +118,116 @@
     }
 
     section ul {
-      list-style-type: none;
+      list-style: none;
       padding-left: 0;
     }
 
     section li {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    section img {
-      width: 300px;
-      height: 180px;
+    section li img {
+      width: 60px;
+      height: 40px;
       object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
       transition: transform 0.3s;
-      display: block;
-      margin-top: 10px;
     }
 
-    section img:hover {
-      transform: scale(1.05);
+    section li img:hover {
+      transform: scale(1.1);
     }
 
-    /* Footer */
     footer {
       background-color: #222;
       color: #ccc;
       text-align: center;
-      padding: 20px 15px;
+      padding: 25px 15px;
       font-size: 15px;
       margin-top: 60px;
-      position: relative;
-      z-index: 10;
     }
 
     footer a {
       color: #03a9f4;
       text-decoration: none;
-      transition: text-decoration 0.3s;
+      font-weight: 600;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
 
-    /* Dòng chữ cuối cùng "Huỳnh Vũ Design" */
-    .bottom-text {
-      text-align: center;
-      color: #2196F3;
-      font-weight: 600;
-      font-size: 20px;
-      margin: 30px 0 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      letter-spacing: 1.5px;
+    /* Dòng chữ Huỳnh Vũ Design dưới footer */
+    .bottom-banner {
+      margin-top: 20px;
+      color: #00e0ff;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 2px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 30px;
+        font-size: 28px;
       }
 
       header nav a {
-        margin: 0 10px;
+        margin: 0 12px;
         font-size: 16px;
       }
 
-      section {
-        margin: 30px 15px;
-        padding: 25px 15px;
+      section li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
 
-      section img {
+      section li img {
         width: 100%;
+        max-width: 180px;
         height: auto;
       }
 
       section input[type="email"] {
         width: 100%;
-        margin-bottom: 10px;
-      }
-
-      section button {
-        width: 100%;
-        margin-left: 0;
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="top-banner">Huỳnh Vũ Web Design</div>
-
+  <!-- Header với hình nền -->
   <header>
     <h1>Giới Thiệu</h1>
     <nav>
-      <a href="trangchu.html">Trang Chủ</a> |
-      <a href="thongtin.html">Thông Tin</a> |
+      <a href="trangchu.html">Trang Chủ</a>
+      <a href="thongtin.html">Thông Tin</a>
       <a href="dichvu.html">Dịch Vụ</a>
     </nav>
   </header>
 
+  <hr />
+
+  <!-- Nội dung chính -->
   <section>
     <h2>Về chúng tôi</h2>
     <p>Công Ty CNTT IT Chuyên Nghiệp được thành lập nhằm cung cấp các giải pháp công nghệ toàn diện, hiện đại và hiệu quả.</p>
     <form>
-      <label for="gmail">Nhập Gmail:</label><br />
+      <label for="gmail">Nhập Gmail:</label>
       <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
       <button type="submit">Gửi</button>
     </form>
   </section>
 
   <section>
-    <h2>Sứ mệnh & Tầm nhìn</h2>
+    <h2>Sứ mệnh &amp; Tầm nhìn</h2>
     <p><strong>Sứ mệnh:</strong> Mang công nghệ đến gần hơn với doanh nghiệp Việt.</p>
     <p><strong>Tầm nhìn:</strong> Trở thành công ty CNTT dẫn đầu trong lĩnh vực dịch vụ và giải pháp phần mềm.</p>
   </section>
@@ -252,28 +235,31 @@
   <section>
     <h2>Ngôn ngữ lập trình</h2>
     <ul>
-      <li><strong>HTML:</strong> Tạo khung nội dung cho trang web.
+      <li>
+        <strong>HTML:</strong> Tạo khung nội dung cho trang web.
         <img src="https://play-lh.googleusercontent.com/d901TjIPI8fNchMUhmrc6hybcSd9IgBalbhYOsO1cK6t7Z7_889QKi8pdUv8mvJLDg=w240-h480-rw" alt="HTML logo" />
       </li>
-      <li><strong>CSS:</strong> Trang trí và định dạng trang web.
+      <li>
+        <strong>CSS:</strong> Trang trí và định dạng trang web.
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/726px-CSS3_logo_and_wordmark.svg.png" alt="CSS logo" />
       </li>
-      <li><strong>JavaScript:</strong> Tạo tương tác động.
+      <li>
+        <strong>JavaScript:</strong> Tạo tương tác động.
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript logo" />
       </li>
-      <li><strong>Python:</strong> Đa năng và phổ biến trong AI, web.
+      <li>
+        <strong>Python:</strong> Đa năng và phổ biến trong AI, web.
         <img src="https://caodang.fpt.edu.vn/wp-content/uploads/2024/10/462547768_1248021756349032_5842914762294961870_n.png" alt="Python logo" />
       </li>
     </ul>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
+    <div class="bottom-banner">Huỳnh Vũ Web Design</div>
   </footer>
-
-  <!-- Dòng chữ Huỳnh Vũ Design dưới cùng -->
-  <div class="bottom-text">Huỳnh Vũ Design</div>
 
 </body>
 </html>
