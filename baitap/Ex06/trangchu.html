@@ -27,26 +27,24 @@
     }
 
     header {
-      background: var(--main-color);
+      background: var(--main-color) url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fmega.com.vn%2Fmedia%2Fnews%2F2605_hinh-nen-cong-nghe-pc60.jpg&tbnid=Yj5jsc8vCGrHyM&vet=1&imgrefurl=https%3A%2F%2Fmega.com.vn%2Ftop-100-hinh-nen-cong-nghe-khoa-hoc-cuc-chat-danh-cho-pc-laptop-dien-thoai.html&docid=ywc_K9DyyTvs5M&w=3840&h=2160&hl=vi-VN&source=sh%2Fx%2Fim%2Fm6%2F4&kgs=014ce0800753eb69') no-repeat center center;
+      background-size: cover;
       color: white;
       text-align: center;
-      padding: 40px 20px 30px;
-    }
-
-    header img.logo {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 20px;
+      padding: 80px 20px 60px;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     header p {
       margin: 10px 0;
       font-size: 18px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     nav {
@@ -62,6 +60,7 @@
       padding: 6px 10px;
       border-radius: 5px;
       transition: background 0.3s;
+      background-color: rgba(0, 0, 0, 0.1);
     }
 
     nav a:hover {
@@ -181,14 +180,10 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header với ảnh nền -->
   <header>
-    <!-- Ảnh đầu trang -->
-    <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fadvsolutions.vn%2Fwp-content%2Fuploads%2F2019%2F12%2Fbackground-powerpoint-cong-nghe-15.jpg&tbnid=MX8xc4s0rjwkBM&vet=1&imgrefurl=https%3A%2F%2Fadvsolutions.vn%2Fbackground-powerpoint-cong-nghe-dep%2F&docid=4QmnsbzZYTGaUM&w=1300&h=920&hl=vi-VN&source=sh%2Fx%2Fim%2Fm5%2F4&kgs=944a2a12261ba81a=Logo+IT" alt="Logo công ty" class="logo">
-
     <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
     <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
-
     <nav>
       <a href="trangchu.html">Trang Chủ</a>
       <a href="thongtin.html">Thông Tin</a>
@@ -225,7 +220,7 @@
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
   </footer>
 
-  <!-- Dòng chữ Huỳnh Vũ Web Design -->
+  <!-- Dòng chữ dưới cùng -->
   <div class="bottom-banner">
     Huỳnh Vũ Web Design
   </div>
