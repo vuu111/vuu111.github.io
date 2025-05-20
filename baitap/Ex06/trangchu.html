@@ -27,34 +27,28 @@
     }
 
     header {
-      background: none;
+      background-image: url('https://jobs.kidsplaza.vn/wp-content/uploads/2023/04/mo-ta-cong-viec-cua-nhan-vien-it-3.png');
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
-      padding: 0;
-      position: relative;
-    }
-
-    header img.header-img {
-      width: 100%;
-      height: auto;
-      display: block;
+      padding: 100px 20px 80px;
     }
 
     header h1 {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      margin: 0;
+      font-size: 34px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    header p {
+      margin: 10px 0;
+      font-size: 18px;
+      text-shadow: 1px 1px 4px #000;
     }
 
     nav {
-      background-color: var(--main-color);
-      text-align: center;
-      padding: 10px 0;
+      margin-top: 15px;
     }
 
     nav a {
@@ -66,6 +60,7 @@
       padding: 6px 10px;
       border-radius: 5px;
       transition: background 0.3s;
+      background-color: rgba(0,0,0,0.3);
     }
 
     nav a:hover {
@@ -157,17 +152,19 @@
       text-decoration: underline;
     }
 
-    .top-banner {
-      margin-top: 10px;
+    .bottom-banner {
+      background-color: #000;
+      color: #00e0ff;
       text-align: center;
+      padding: 12px 0;
+      font-size: 16px;
       font-weight: bold;
-      font-size: 18px;
-      color: #666;
+      letter-spacing: 1px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 26px;
+        font-size: 28px;
       }
 
       nav a {
@@ -183,20 +180,18 @@
 </head>
 <body>
 
-  <!-- Header với hình nền -->
+  <!-- Header -->
   <header>
-    <img src="https://www.fpt-software.com/wp-content/uploads/2022/07/fpt-software-banner.jpg" alt="Banner IT" class="header-img">
     <h1>CÔNG TY CNTT IT CHUYÊN NGHIỆP</h1>
+    <p>Giải pháp công nghệ dành cho doanh nghiệp hiện đại</p>
+    <nav>
+      <a href="trangchu.html">Trang Chủ</a>
+      <a href="thongtin.html">Thông Tin</a>
+      <a href="dichvu.html">Dịch Vụ</a>
+    </nav>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="trangchu.html">Trang Chủ</a>
-    <a href="thongtin.html">Thông Tin</a>
-    <a href="dichvu.html">Dịch Vụ</a>
-  </nav>
-
-  <!-- Nội dung chính -->
+  <!-- Giới thiệu -->
   <section>
     <h2>Chào mừng bạn đến với IT Chuyên Nghiệp</h2>
     <p>Chúng tôi cung cấp các giải pháp phần mềm, thiết kế website và tư vấn chuyển đổi số chuyên sâu cho doanh nghiệp.</p>
@@ -208,8 +203,9 @@
       <div class="success-message" id="successMessage">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</div>
     </form>
 
-    <img src="https://www.fpt-software.com/wp-content/uploads/2022/07/fpt-software-banner.jpg"
-         alt="Hình IT" class="responsive-img" />
+    <img src="https://jobs.kidsplaza.vn/wp-content/uploads/2023/04/mo-ta-cong-viec-cua-nhan-vien-it-3.png"
+         alt="Giải pháp hệ thống CNTT"
+         class="responsive-img" loading="lazy" />
   </section>
 
   <!-- Liên hệ -->
@@ -222,8 +218,12 @@
   <footer>
     <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
     <p><a href="mailto:tranvu11102001@gmail.com">Liên hệ với chúng tôi</a></p>
-    <div class="top-banner">Huỳnh Vũ Web Design</div>
   </footer>
+
+  <!-- Bottom banner -->
+  <div class="bottom-banner">
+    Huỳnh Vũ Web Design
+  </div>
 
   <!-- Script -->
   <script>
