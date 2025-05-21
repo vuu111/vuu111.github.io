@@ -10,15 +10,14 @@
       padding: 20px;
       font-family: Arial, sans-serif;
       background: #000;
+      color: #fff;
       background-image: url('https://cdn.pixabay.com/photo/2016/11/18/17/20/galaxy-1837306_1280.jpg');
       background-size: cover;
-      background-attachment: fixed;
       background-position: center;
-      color: #fff;
+      background-attachment: fixed;
     }
     .overlay {
-      background-color: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 30px;
       max-width: 1000px;
       margin: auto;
@@ -49,17 +48,13 @@
       color: #002233;
     }
     .section {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     .section img {
       width: 100%;
       border-radius: 10px;
       margin-top: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-      transition: transform 0.3s ease;
-    }
-    .section img:hover {
-      transform: scale(1.05);
     }
     .section h2 {
       color: #00ffff;
@@ -69,11 +64,20 @@
       line-height: 1.6;
       color: #ddd;
     }
-    iframe {
-      width: 100%;
-      height: 400px;
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
       border-radius: 10px;
       margin-top: 15px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       border: none;
     }
   </style>
@@ -90,38 +94,40 @@
     </div>
 
     <div class="section">
-      <h2>1. Vũ Trụ Bắt Đầu Như Thế Nào?</h2>
-      <p>Vũ trụ được cho là bắt đầu từ một vụ nổ lớn gọi là Big Bang khoảng 13,8 tỷ năm trước, khởi nguồn cho sự giãn nở không ngừng.</p>
-      <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/galaxy-5354388_1280.jpg" alt="Big Bang">
+      <h2>1. Sự Mở Rộng Của Vũ Trụ</h2>
+      <p>Vũ trụ không ngừng giãn nở kể từ vụ nổ Big Bang. Các nhà khoa học nhận thấy các thiên hà đang rời xa nhau theo mọi hướng.</p>
+      <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/galaxy-2695569_1280.jpg" alt="Thiên hà giãn nở">
     </div>
 
     <div class="section">
-      <h2>2. Thiên Hà Và Hệ Mặt Trời</h2>
-      <p>Chúng ta đang sống trong Dải Ngân Hà – một thiên hà xoắn ốc với hàng trăm tỷ ngôi sao. Hệ Mặt Trời chỉ là một phần rất nhỏ trong đó.</p>
-      <img src="https://cdn.pixabay.com/photo/2020/05/01/12/04/galaxy-5111418_1280.jpg" alt="Dải Ngân Hà">
+      <h2>2. Cấu Trúc Của Vũ Trụ</h2>
+      <p>Vũ trụ chứa hàng tỷ thiên hà, mỗi thiên hà lại có hàng tỷ ngôi sao cùng hành tinh và vật chất tối.</p>
+      <img src="https://cdn.pixabay.com/photo/2013/07/18/20/26/space-165065_1280.jpg" alt="Cấu trúc vũ trụ">
     </div>
 
     <div class="section">
-      <h2>3. Hố Đen Vũ Trụ</h2>
-      <p>Hố đen là vùng không gian có trọng lực mạnh đến mức ánh sáng cũng không thoát ra được. Nó có thể nuốt chửng cả hành tinh và sao.</p>
-      <img src="https://cdn.pixabay.com/photo/2015/10/31/12/38/space-1014090_1280.jpg" alt="Hố đen">
+      <h2>3. Lỗ Đen</h2>
+      <p>Lỗ đen là những vùng không gian có trọng lực mạnh đến mức ánh sáng cũng không thể thoát ra. Chúng nuốt mọi thứ ở gần.</p>
+      <img src="https://cdn.pixabay.com/photo/2020/03/20/17/06/black-hole-4954264_1280.jpg" alt="Lỗ đen">
     </div>
 
     <div class="section">
-      <h2>4. Vật Chất Tối Và Năng Lượng Tối</h2>
-      <p>95% vũ trụ là điều chúng ta chưa thể thấy bằng mắt thường: vật chất tối giữ thiên hà lại, trong khi năng lượng tối đẩy chúng ra xa nhau.</p>
-      <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/galaxy-2695569_1280.jpg" alt="Vật chất tối">
+      <h2>4. Vật Chất và Năng Lượng Tối</h2>
+      <p>Khoảng 95% vũ trụ là thứ mà chúng ta không thể thấy trực tiếp - gọi là vật chất tối và năng lượng tối.</p>
+      <img src="https://cdn.pixabay.com/photo/2014/04/05/11/40/cosmic-316661_1280.jpg" alt="Vật chất tối">
     </div>
 
     <div class="section">
-      <h2>5. Tương Lai Của Vũ Trụ</h2>
-      <p>Vũ trụ có thể sẽ tiếp tục giãn nở mãi mãi, co lại, hoặc tan rã. Tương lai phụ thuộc vào lượng năng lượng tối tồn tại.</p>
-      <img src="https://cdn.pixabay.com/photo/2021/10/20/14/32/universe-6727594_1280.jpg" alt="Tương lai vũ trụ">
+      <h2>5. Sóng Hấp Dẫn</h2>
+      <p>Sóng hấp dẫn là gợn sóng trong kết cấu không-thời gian, được tạo ra bởi các sự kiện vũ trụ mạnh như va chạm lỗ đen.</p>
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/09/17/space-1867834_1280.jpg" alt="Sóng hấp dẫn">
     </div>
 
     <div class="section">
-      <h2>6. Video Khám Phá Vũ Trụ</h2>
-      <iframe src="https://www.youtube.com/embed/H8Xz-0Xk6uk" title="Khám phá vũ trụ" allowfullscreen></iframe>
+      <h2>Video Mô Phỏng Vũ Trụ</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/zUyH3XhpLTo" title="Video mô phỏng vũ trụ" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </body>
