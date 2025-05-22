@@ -2,107 +2,156 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Biến Đổi Vũ Trụ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sự Bí Ẩn Vũ Trụ</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background: url('https://images.unsplash.com/photo-1477201389074-1863f668fac1?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
       color: white;
-      text-align: center;
+      background: url('https://fonesmart.com.vn/upload_images/images/2023/03/11/hinh-nen-phi-hanh-gia-15.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: auto;
+      height: 100vh;
+      text-align: center;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.3); /* giảm độ tối để hình nền rõ hơn */
-      padding: 40px;
-      border-radius: 20px;
-      animation: fadeIn 3s ease-in-out;
+    .content {
+      padding: 60px 20px;
       max-width: 900px;
-      backdrop-filter: blur(2px);
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+      margin-top: 50px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+      color: #00f5ff;
+      text-shadow: 3px 3px 15px rgba(0, 255, 255, 0.8);
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px black;
+      font-size: 4em;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-top: 40px;
     }
 
     p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 3px black;
+      font-size: 1.3em;
+      line-height: 1.8em;
+      color: #e0e0e0;
+      margin-bottom: 25px;
+      text-align: left;
     }
 
-    .image-container {
-      margin: 20px 0;
-      animation: moveImage 6s infinite alternate;
+    .intro-image, .section-image {
+      margin: 30px auto;
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      display: block;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .image-container img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 15px;
-      opacity: 0.95;
-      box-shadow: 0 0 10px black;
+    .intro-image:hover, .section-image:hover {
+      transform: scale(1.05);
     }
 
     .links {
+      margin-top: 50px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .links a {
-      color: #fdbb2d;
+      color: #00f5ff;
+      font-size: 1.5em;
       text-decoration: none;
-      padding: 10px 20px;
-      border: 2px solid #fdbb2d;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.2);
+      padding: 15px 30px;
+      margin: 10px 0;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .links a:hover {
-      background-color: #fdbb2d;
-      color: #1a2a6c;
+      background: rgba(0, 255, 255, 0.3);
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      .intro-image, .section-image {
+        max-width: 100%;
+      }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes moveImage {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Sự Biến Đổi Vũ Trụ</h1>
-    <p>Chúng ta đang chứng kiến một kỷ nguyên mới trong hành trình khám phá vũ trụ — nơi công nghệ, trí tuệ và khát vọng đưa loài người vươn ra những vì sao xa xôi.</p>
+  <div class="content">
+    <h1>🌌 Sự Bí Ẩn Vũ Trụ</h1>
+    <p>Vũ trụ không chỉ chứa những thiên thể tuyệt đẹp mà còn là nơi ẩn chứa vô số điều kỳ bí, từ những hiện tượng kỳ lạ đến các câu hỏi chưa có lời giải đáp. Hãy cùng khám phá những bí ẩn này!</p>
 
-    <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1581091870622-2b9b7b55c77b?auto=format&fit=crop&w=1400&q=80" alt="Hình ảnh vũ trụ">
-    </div>
+    <h2>🌀 Hố Đen</h2>
+    <p>Hố đen là các vùng không gian có mật độ vật chất cực kỳ cao, với lực hấp dẫn mạnh đến mức không một vật thể nào, kể cả ánh sáng, có thể thoát ra được. Nhưng liệu chúng có phải là lối vào một vũ trụ khác?</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Hố Đen Messier 87" class="section-image" />
+    <p><strong>🔭 Hố đen Messier 87:</strong> Hình ảnh hố đen đầu tiên được chụp bởi Kính viễn vọng Chân trời Sự kiện.</p>
 
-    <!-- Các đường liên kết -->
+    <h2>✨ Vật Chất Tối</h2>
+    <p>Vật chất tối là loại vật chất chưa được hiểu rõ, không phát sáng và không hấp thụ bức xạ. Nó chiếm khoảng 27% vũ trụ, nhưng chúng ta vẫn chưa thể trực tiếp quan sát hoặc đo lường nó.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" alt="Vật Chất Tối" class="section-image" />
+    <p><strong>🔍 Vật Chất Tối:</strong> Vật chất không thể thấy được nhưng lại có ảnh hưởng mạnh mẽ đến các thiên hà và lực hấp dẫn.</p>
+
+    <h2>🌟 Siêu Tinh Vân</h2>
+    <p>Tinh vân là những đám mây khí và bụi trong không gian, là nơi các ngôi sao hình thành. Siêu tinh vân là những tinh vân khổng lồ, chứa hàng tỷ sao mới. Một trong những tinh vân nổi tiếng nhất là Tinh vân Orion.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" alt="Tinh Vân Orion" class="section-image" />
+    <p><strong>🌠 Tinh Vân Orion:</strong> Nơi hình thành hàng nghìn ngôi sao trẻ tuổi, nằm cách chúng ta khoảng 1,344 năm ánh sáng.</p>
+
+    <h2>👽 Vật Thể Ngoài Hành Tinh</h2>
+    <p>Vật thể ngoài hành tinh (UFO) đã trở thành một đề tài nóng hổi trong nhiều thập kỷ qua. Mặc dù chưa có bằng chứng rõ ràng về sự tồn tại của sinh vật ngoài Trái Đất, nhưng có rất nhiều câu chuyện bí ẩn về UFO và những hiện tượng lạ trên bầu trời.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" alt="UFO" class="section-image" />
+    <p><strong>👾 UFO:</strong> Những vật thể bay không xác định xuất hiện trong bầu trời, làm dấy lên những câu hỏi về sự tồn tại của sinh vật ngoài hành tinh.</p>
+
+    <h2>🔗 Khám Phá Thêm</h2>
     <div class="links">
       <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="mhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="subianvutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+      <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+      <a href="khámphavutru.html" target="_blank">🌌 Khám Phá Vũ Trụ</a>
       <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
     </div>
   </div>
