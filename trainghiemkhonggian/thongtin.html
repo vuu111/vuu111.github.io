@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Khám phá sự huyền bí của vũ trụ, từ các vì sao đến các hành tinh." />
+    <meta name="keywords" content="vũ trụ, không gian, khám phá, thiên văn học" />
+    <meta name="author" content="Your Name" />
     <title>Khám Phá Vũ Trụ</title>
     <style>
         body {
@@ -21,19 +24,21 @@
             max-width: 800px;
             margin: auto;
             background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
+            border-radius: 25px;
             margin-top: 100px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 0.5em;
-            text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.7);
+            text-shadow: 2px 2px 15px rgba(0, 255, 255, 0.8);
+            color: #00f5ff;
         }
 
         p {
-            font-size: 1.5em;
-            line-height: 1.6em;
+            font-size: 1.6em;
+            line-height: 1.8em;
             color: #e0e0e0;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
             margin-bottom: 40px;
@@ -43,42 +48,61 @@
             background-color: #00f5ff;
             color: white;
             padding: 15px 30px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             border: none;
-            border-radius: 30px;
+            border-radius: 40px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            background-color: #0099cc;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
         }
 
         .intro-image {
             margin-top: 40px;
-            max-width: 100%;
+            max-width: 90%;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            border-radius: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .links {
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .links a {
             color: #00f5ff;
-            font-size: 1.5em;
+            font-size: 1.6em;
             text-decoration: none;
             display: block;
-            margin: 10px 0;
-            transition: color 0.3s ease;
+            margin: 15px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .links a:hover {
             color: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+            p {
+                font-size: 1.4em;
+            }
+            .button {
+                font-size: 1.1em;
+                padding: 12px 24px;
+            }
+            .links a {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
@@ -87,7 +111,7 @@
     <div class="content">
         <h1>Khám Phá Vũ Trụ</h1>
         <p>Hãy tưởng tượng bạn đang ở giữa không gian rộng lớn, giữa vô vàn vì sao sáng lấp lánh. Cùng nhau khám phá sự huyền bí của vũ trụ.</p>
-        <button class="button" onclick="window.location.href='thongtin.html'">Khởi Hành</button>
+        <button class="button" onclick="window.location.href='thongtin.html'" aria-label="Khởi hành khám phá vũ trụ">Khởi Hành</button>
 
         <!-- Hình ảnh giới thiệu -->
         <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482783kQH/anh-mo-ta.png" alt="Giới thiệu Vũ Trụ" class="intro-image" />
