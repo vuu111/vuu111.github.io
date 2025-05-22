@@ -17,64 +17,72 @@
 
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: white;
-      background: #000;
+      color: #fff;
+      background-color: #000;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow-x: hidden;
+      font-size: 18px;
     }
 
     /* Nền chính */
     .background-image {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-image: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482754nhT/anh-mo-ta.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      filter: brightness(0.35);
+      filter: brightness(0.4);
       z-index: -3;
     }
 
     /* Nền phủ sao */
     .overlay-image {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Starsinthesky.jpg/1280px-Starsinthesky.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      opacity: 0.2;
-      pointer-events: none;
+      opacity: 0.25;
       z-index: -2;
     }
 
     .container {
       background-color: rgba(0, 0, 0, 0.75);
-      border-radius: 15px;
-      max-width: 900px;
-      padding: 30px;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      width: 90%;
       overflow-y: auto;
-      max-height: 90vh;
+      box-shadow: 0 4px 25px rgba(0, 255, 255, 0.5);
+      z-index: 1;
     }
 
     h1 {
       text-align: center;
-      font-size: 3.5rem;
-      margin-bottom: 25px;
+      font-size: 3rem;
       color: #f8d347;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #f8d347, 0 0 20px #f8d347;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px #f8d347, 0 0 30px #f8d347;
+      margin-bottom: 30px;
     }
 
     .links {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 25px;
       flex-wrap: wrap;
       margin-bottom: 30px;
     }
@@ -82,25 +90,25 @@
     .links a {
       color: #00ffff;
       background-color: #001f2d;
-      padding: 10px 18px;
+      padding: 12px 25px;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 0 8px #00ffff;
+      box-shadow: 0 0 12px #00ffff;
     }
 
     .links a:hover {
       background-color: #00ffff;
       color: #001f2d;
-      box-shadow: 0 0 25px #00ffff, 0 0 5px #00ffff inset;
+      box-shadow: 0 0 30px #00ffff, 0 0 10px #00ffff inset;
     }
 
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
     }
 
     .section.visible {
@@ -110,42 +118,65 @@
 
     .section h2 {
       color: #00ffff;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #00ffff;
-      padding-bottom: 6px;
-      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #00ffff;
+      padding-bottom: 8px;
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px #00ffff;
     }
 
     .section p {
-      font-size: 18px;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.8;
       color: #ccc;
+      margin-bottom: 20px;
     }
 
     .section img {
       width: 100%;
-      border-radius: 12px;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
       object-fit: cover;
-      max-height: 350px;
+      max-height: 450px;
     }
 
     iframe {
       width: 100%;
-      height: 400px;
+      height: 500px;
       border-radius: 12px;
-      margin-top: 15px;
+      margin-top: 20px;
       border: none;
-      box-shadow: 0 0 15px #00ffff;
+      box-shadow: 0 0 20px #00ffff;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive Design */
+    @media (max-width: 768px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
+
+      .section h2 {
+        font-size: 1.6rem;
+      }
+
       .section p {
-        font-size: 16px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .links a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .section img {
+        max-height: 350px;
       }
     }
   </style>
@@ -164,34 +195,46 @@
       <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
     </div>
 
-    <div class="section">
+    <div class="section visible">
       <h2>1. Vũ Trụ Mở Rộng</h2>
       <p>Vũ trụ bắt đầu từ vụ nổ Big Bang khoảng 13.8 tỷ năm trước và từ đó không ngừng mở rộng. Khoảng cách giữa các thiên hà liên tục tăng lên, chứng tỏ vũ trụ đang giãn nở.</p>
       <img loading="lazy" src="https://media-cdn-v2.laodong.vn/storage/newsportal/2021/5/22/912014/Bigbang_Final-V01_16.jpg" alt="Ảnh thiên hà từ Hubble">
     </div>
 
-    <div class="section">
+    <div class="section visible">
       <h2>2. Các Thành Phần Chính Của Vũ Trụ</h2>
       <p>Vũ trụ bao gồm vật chất bình thường, vật chất tối (dark matter) và năng lượng tối (dark energy). Vật chất tối và năng lượng tối chiếm phần lớn năng lượng của vũ trụ, nhưng vẫn còn nhiều bí ẩn về chúng.</p>
       <img loading="lazy" src="https://images2.thanhnien.vn/zoom/700_438/528068263637045248/2024/3/16/nasa-17105761611581858529625-12-0-612-960-crop-17105761786811094982809.jpeg" alt="Bản đồ vật chất tối">
     </div>
 
-    <div class="section">
+    <div class="section visible">
       <h2>3. Sóng Gravitational (Sóng Hấp Dẫn)</h2>
       <p>Sóng hấp dẫn là những gợn sóng trong không-thời gian do các vật thể khối lượng lớn di chuyển hoặc va chạm tạo ra, lần đầu tiên được phát hiện trực tiếp năm 2015 bởi LIGO.</p>
       <img loading="lazy" src="https://images.kienthuc.net.vn/w730/Uploaded/2025/ycwkyciv/2024_11_13/15-su-that-thu-vi-ve-hien-tuong-song-hap-dan-trong-vu-tru-Hinh-2.jpg" alt="Sóng hấp dẫn trong vũ trụ">
     </div>
 
-    <div class="section">
+    <div class="section visible">
       <h2>4. Hố Đen</h2>
       <p>Hố đen là những vùng không gian có lực hấp dẫn cực mạnh, đến mức ánh sáng cũng không thể thoát ra. Đây là một trong những hiện tượng bí ẩn nhất trong vũ trụ học.</p>
       <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Black_hole_-_Messier_87_crop_max_res.jpg/1280px-Black_hole_-_Messier_87_crop_max_res.jpg" alt="Ảnh hố đen Messier 87">
     </div>
 
-    <div class="section">
+    <div class="section visible">
       <h2>Video Mô Phỏng Vũ Trụ</h2>
       <iframe src="https://www.youtube.com/embed/zUyH3XhpLTo" title="Video mô phỏng vũ trụ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
+
+  <script>
+    // Để các phần hiển thị sau khi tải trang
+    window.addEventListener('load', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          section.classList.add('visible');
+        }, index * 500); // Hiển thị từng phần với hiệu ứng nhẹ
+      });
+    });
+  </script>
 </body>
 </html>
