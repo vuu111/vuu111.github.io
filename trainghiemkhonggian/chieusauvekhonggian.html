@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiều Sâu Không Gian</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://i.ibb.co/rH9X6Hg/stars.png') repeat top center;
+      animation: moveStars 100s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #00f7ff;
+      text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #ccc;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 2px solid #00f7ff;
+      background: transparent;
+      color: #00f7ff;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #00f7ff;
+      color: #000;
+      box-shadow: 0 0 20px #00f7ff;
+    }
+
+    .links {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #00f7ff;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border: 1px solid #00f7ff;
+      border-radius: 8px;
+      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 5px #00f7ff50;
+    }
+
+    .links a:hover {
+      background-color: #00f7ff;
+      color: #000;
+      box-shadow: 0 0 15px #00f7ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>Vượt Không Gian</h1>
+    <p>Khám phá chiều sâu của vũ trụ nơi mọi giới hạn bị xóa nhòa bởi ánh sáng của tương lai.</p>
+    <button class="button">Khám Phá Ngay</button>
+
+    <!-- Các đường liên kết -->
+    <div class="links">
+      <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
+      <a href="mhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+      <a href="subianvutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+      <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
+    </div>
+  </div>
+</body>
+</html>
