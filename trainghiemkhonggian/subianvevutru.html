@@ -1,170 +1,49 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sự Bí Ẩn Về Vũ Trụ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #000;
-      overflow-x: hidden;
-      color: #ffffff;
-    }
+/* Border phát sáng động cho ảnh */
+.section-image.glow-border {
+  position: relative;
+  border: 2px solid transparent;
+  z-index: 1;
+}
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://cdn.pixabay.com/photo/2016/11/22/19/15/space-1851496_1280.jpg') no-repeat center center;
-      background-size: cover;
-      opacity: 0.1;
-      z-index: -2;
-    }
+.section-image.glow-border::before {
+  content: "";
+  position: absolute;
+  top: -3px; left: -3px;
+  right: -3px; bottom: -3px;
+  background: linear-gradient(45deg, #00f5ff, #ff00ff, #00f5ff);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(6px);
+  animation: borderFlow 6s linear infinite;
+  border-radius: 15px;
+}
 
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://media.giphy.com/media/3o72F3uC7HqqYBVcCk/giphy.gif') repeat;
-      background-size: cover;
-      opacity: 0.05;
-      z-index: -1;
-      animation: moveStars 120s linear infinite;
-    }
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 10000px; }
-    }
+/* Border xoay quanh tiêu đề */
+h1.rotating-border {
+  position: relative;
+  z-index: 1;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.75);
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
-    }
+h1.rotating-border::after {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px;
+  right: -10px; bottom: -10px;
+  background: conic-gradient(from 0deg, #00f5ff, #ff00ff, #00f5ff);
+  border-radius: 50%;
+  animation: rotateRing 8s linear infinite;
+  z-index: -1;
+  filter: blur(10px);
+}
 
-    h1 {
-      font-size: 3em;
-      text-align: center;
-      color: #00ffff;
-      text-shadow: 0 0 15px #00f5ff;
-      margin-bottom: 40px;
-    }
+@keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-    h2 {
-      color: #ff6ec7;
-      font-size: 2em;
-      margin-top: 40px;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.8em;
-      color: #e0e0e0;
-    }
-
-    .section-image {
-      width: 100%;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .section-image:hover {
-      transform: scale(1.04);
-    }
-
-    .links {
-      margin-top: 50px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .links a {
-      background: rgba(255, 255, 255, 0.08);
-      color: #00ffff;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 1.1em;
-      text-decoration: none;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(6px);
-    }
-
-    .links a:hover {
-      background: rgba(0, 255, 255, 0.3);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-      transform: scale(1.08);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        margin: 30px 15px;
-        padding: 25px;
-      }
-
-      h1 {
-        font-size: 2.2em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
-
-      .links a {
-        font-size: 1em;
-        padding: 12px 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h1>🌌 Sự Bí Ẩn Về Vũ Trụ</h1>
-    <p>Vũ trụ là nơi chứa đựng vô số điều kỳ bí mà nhân loại vẫn đang khám phá. Hãy cùng bước vào hành trình tìm hiểu những bí ẩn chưa có lời giải!</p>
-
-    <h2>🌀 Hố Đen</h2>
-    <p>Hố đen là nơi có lực hấp dẫn mạnh đến mức không gì thoát ra được, kể cả ánh sáng. Đây là một trong những bí ẩn lớn nhất của vật lý hiện đại.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Hố Đen" class="section-image">
-
-    <h2>✨ Vật Chất Tối</h2>
-    <p>Dù không thể nhìn thấy hay chạm vào, vật chất tối chiếm tới 27% toàn bộ vũ trụ. Nó ảnh hưởng mạnh mẽ đến cấu trúc và chuyển động của các thiên hà.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" alt="Vật Chất Tối" class="section-image">
-
-    <h2>🌠 Tinh Vân Orion</h2>
-    <p>Là vườn ươm sao rực rỡ nhất trên bầu trời đêm, tinh vân Orion hé lộ cách những ngôi sao được hình thành từ mây khí và bụi vũ trụ.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" alt="Tinh Vân Orion" class="section-image">
-
-    <h2>👽 UFO và Sinh Vật Ngoài Trái Đất</h2>
-    <p>Những hiện tượng UFO và tín hiệu lạ ngoài không gian đang thôi thúc con người đi tìm câu trả lời cho câu hỏi: "Chúng ta có cô đơn trong vũ trụ?"</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" alt="UFO" class="section-image">
-
-    <h2>🔭 Kính Viễn Vọng Không Gian</h2>
-    <p>Kính James Webb là cánh cửa thời gian, giúp chúng ta nhìn ngược về những ngày đầu của vũ trụ, cách đây hơn 13 tỷ năm.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Jwst_home_hero_0.jpg" alt="Kính viễn vọng James Webb" class="section-image">
-
-    <!-- Liên kết -->
-    <div class="links">
-      <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
-      <a href="ufohiendaidang.html" target="_blank">👾 Hiện Đại Hóa UFO</a>
-    </div>
-  </div>
-
-</body>
-</html>
