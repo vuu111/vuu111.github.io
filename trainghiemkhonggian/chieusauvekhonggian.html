@@ -2,115 +2,139 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chiều Sâu Không Gian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khám Phá Vũ Trụ</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #ffffff;
-      overflow: hidden;
+      line-height: 1.6;
     }
 
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: transparent url('https://i.ibb.co/rH9X6Hg/stars.png') repeat top center;
-      animation: moveStars 100s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
       text-align: center;
-      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
     }
 
-    h1 {
-      font-size: 4rem;
-      color: #00f7ff;
-      text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      color: #ccc;
-    }
-
-    .button {
-      margin-top: 30px;
-      padding: 12px 30px;
-      border: 2px solid #00f7ff;
-      background: transparent;
-      color: #00f7ff;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background-color: #00f7ff;
-      color: #000;
-      box-shadow: 0 0 20px #00f7ff;
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
     }
 
     .links {
-      margin-top: 40px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 15px;
+      margin: 30px 0;
+      padding: 0 20px;
     }
 
     .links a {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: #fff;
       text-decoration: none;
-      color: #00f7ff;
-      font-size: 1.1rem;
-      padding: 10px 20px;
-      border: 1px solid #00f7ff;
-      border-radius: 8px;
-      transition: 0.3s;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 5px #00f7ff50;
+      font-size: 1.1em;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: 0.3s ease;
     }
 
     .links a:hover {
-      background-color: #00f7ff;
-      color: #000;
-      box-shadow: 0 0 15px #00f7ff;
+      background-color: rgba(0, 255, 255, 0.2);
+      color: #00ffff;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #00ffff;
+    }
+
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .links {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
-  <div class="container">
-    <h1>Vượt Không Gian</h1>
-    <p>Khám phá chiều sâu của vũ trụ nơi mọi giới hạn bị xóa nhòa bởi ánh sáng của tương lai.</p>
-    <button class="button">Khám Phá Ngay</button>
 
-    <!-- Các đường liên kết -->
-    <div class="links">
-      <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="mhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="subianvutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
-      <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
-    </div>
+  <header>
+    <h1>🌌 Khám Phá Vũ Trụ</h1>
+  </header>
+
+  <div class="links">
+    <a href="#thongtin">🔭 Thông Tin Vũ Trụ</a>
+    <a href="#dieucanbiet">🪐 Những Điều Cần Biết</a>
+    <a href="#subian">🌌 Sự Bí Ẩn Vũ Trụ</a>
+    <a href="#chieusau">🌠 Chiều Sâu Không Gian</a>
   </div>
+
+  <section id="thongtin">
+    <h2>🔭 Thông Tin Vũ Trụ</h2>
+    <p>Vũ trụ được hình thành khoảng 13.8 tỷ năm trước qua vụ nổ Big Bang. Nó không ngừng mở rộng và chứa hàng tỷ thiên hà.</p>
+    <img src="https://images.unsplash.com/photo-1587614382346-acd977736f90?auto=format&fit=crop&w=1050&q=80" alt="Thông tin vũ trụ">
+  </section>
+
+  <section id="dieucanbiet">
+    <h2>🪐 Những Điều Cần Biết</h2>
+    <p>Hố đen, vật chất tối, và các tín hiệu vô tuyến bí ẩn là những điều khiến vũ trụ trở nên hấp dẫn và bí hiểm.</p>
+    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1050&q=80" alt="Những điều cần biết">
+  </section>
+
+  <section id="subian">
+    <h2>🌌 Sự Bí Ẩn Vũ Trụ</h2>
+    <p>95% vũ trụ là năng lượng và vật chất tối mà chúng ta chưa thể quan sát. Đây là lĩnh vực nghiên cứu lớn trong vật lý thiên văn hiện đại.</p>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1050&q=80" alt="Sự bí ẩn vũ trụ">
+  </section>
+
+  <section id="chieusau">
+    <h2>🌠 Chiều Sâu Không Gian</h2>
+    <p>Kính thiên văn James Webb và Hubble đã giúp nhân loại nhìn thấy những vùng xa xôi nhất của vũ trụ, tiết lộ quá khứ hàng tỷ năm ánh sáng.</p>
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1050&q=80" alt="Chiều sâu không gian">
+  </section>
+
+  <footer>
+    &copy; 2025 - Khám phá vũ trụ cùng bạn 🌌
+  </footer>
+
 </body>
 </html>
