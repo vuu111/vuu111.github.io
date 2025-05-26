@@ -2,190 +2,226 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thông Tin Hành Trình Vũ Trụ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khám Phá Vũ Trụ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
+    /* Reset & font */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to bottom, #000010, #000015);
       color: #00f5ff;
+      background: #000;
       overflow-x: hidden;
+      position: relative;
     }
 
-    header {
+    /* Hiệu ứng nền sao */
+    .stars, .twinkling {
       position: fixed;
+      top: 0; left: 0;
       width: 100%;
-      top: 0;
-      z-index: 10;
-      background: rgba(0, 0, 20, 0.8);
-      backdrop-filter: blur(6px);
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 10px #00f5ff;
+      height: 100%;
+      z-index: -2;
+      display: block;
     }
 
-    header h1 {
-      font-size: 1.8rem;
-      color: #fff;
-      text-shadow: 0 0 10px #00f5ff;
+    .stars {
+      background: url('https://i.imgur.com/Yk0vEIG.png') repeat;
+      animation: moveStars 200s linear infinite;
     }
 
-    nav a {
-      margin: 0 15px;
-      color: #00f5ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+    .twinkling {
+      background: url('https://i.imgur.com/1Bzgo5A.png') repeat;
+      animation: moveTwinkling 100s linear infinite;
+      opacity: 0.5;
     }
 
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #0ff;
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
     }
 
-    .hero {
-      height: 100vh;
-      background: url('https://i.pinimg.com/originals/8b/8c/fc/8b8cfc7e6c6f74153c12ed4c4fd0c616.gif') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    @keyframes moveTwinkling {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 10000px; }
+    }
+
+    /* Container chính */
+    .container {
+      max-width: 1000px;
+      margin: 120px auto 60px;
+      background: rgba(0,0,0,0.75);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 0 30px #00f5ff;
+    }
+
+    h1, h2, h3 {
       text-align: center;
+      margin-bottom: 25px;
+      text-shadow: 0 0 15px #00f5ff;
     }
 
-    .hero h2 {
-      font-size: 4rem;
-      color: #fff;
-      text-shadow: 0 0 30px #0ff;
-      animation: pulse 3s infinite;
+    h1 {
+      font-size: 3.5rem;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    h2 {
+      font-size: 2.4rem;
+      margin-top: 50px;
     }
 
-    .section {
-      padding: 100px 30px;
-      background-color: rgba(0, 0, 20, 0.9);
+    h3 {
+      font-size: 2rem;
+      margin-top: 40px;
     }
 
-    .section h3 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 0 0 15px #0ff;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .card {
-      background: rgba(0, 255, 255, 0.05);
-      border: 1px solid #00f5ff44;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      transition: 0.4s;
-      box-shadow: 0 0 10px #00f5ff33;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #00ffffaa;
-    }
-
-    .card img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .card p {
+    p {
+      font-size: 1.3rem;
       color: #ccefff;
-      font-size: 1rem;
+      margin-bottom: 25px;
+      text-align: justify;
     }
 
-    footer {
-      padding: 30px;
+    ul {
+      list-style: none;
+      margin-bottom: 30px;
+      padding-left: 1.2rem;
+      color: #a0eaff;
+      font-size: 1.2rem;
+    }
+
+    ul li::before {
+      content: "🌟 ";
+      margin-right: 8px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 15px;
+      margin: 25px auto;
+      box-shadow: 0 0 20px #00f5ff;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ffff;
+    }
+
+    /* Liên kết khám phá */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .links a {
+      background: linear-gradient(135deg, #00f5ff55, #001e40);
+      color: #00f5ff;
+      padding: 15px 25px;
+      border-radius: 40px;
+      font-weight: bold;
+      text-decoration: none;
       text-align: center;
-      background: #000014;
-      color: #00ffff88;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      border: 1px solid #00f5ff99;
+      box-shadow: 0 0 15px #00f5ff44;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .links a::before {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 0;
+      left: -100%;
+      transform: skewX(25deg);
+      transition: left 0.7s ease;
+    }
+
+    .links a:hover::before {
+      left: 100%;
+    }
+
+    .links a:hover {
+      background: #00f5ff;
+      color: #000;
+      box-shadow: 0 0 30px #00ffffcc;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      p, ul { font-size: 1rem; }
+      .container { margin: 100px 20px 40px; padding: 30px 20px; }
+      .links a { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🚀 Vũ Trụ 360</h1>
-    <nav>
-      <a href="#he-mat-troi">Hệ Mặt Trời</a>
-      <a href="#thien-ha">Thiên Hà</a>
-      <a href="#chom-sao">Chòm Sao</a>
-    </nav>
-  </header>
+  <!-- Nền chuyển động -->
+  <div class="stars"></div>
+  <div class="twinkling"></div>
 
-  <section class="hero">
-    <h2>Khám Phá Vũ Trụ Không Giới Hạn</h2>
-  </section>
+  <div class="container">
+    <h1>🚀 Khám Phá Vũ Trụ</h1>
+    <p>Chào mừng bạn đến với hành trình khám phá vũ trụ kỳ diệu! Hãy cùng tìm hiểu về các hành tinh, thiên hà và chòm sao qua hình ảnh và thông tin hấp dẫn.</p>
 
-  <section class="section" id="he-mat-troi">
-    <h3>🌞 Hệ Mặt Trời</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Hệ mặt trời" />
-        <p>Tập hợp các hành tinh quay quanh Mặt Trời, mỗi hành tinh đều có nét độc đáo riêng biệt.</p>
-      </div>
+    <h2>🌞 Hệ Mặt Trời</h2>
+    <ul>
+      <li>Sao Thủy – hành tinh gần Mặt Trời nhất</li>
+      <li>Sao Kim – hành tinh nóng nhất</li>
+      <li>Trái Đất – hành tinh có sự sống</li>
+      <li>Sao Hỏa – hành tinh đỏ</li>
+      <li>Sao Mộc – hành tinh lớn nhất</li>
+      <li>Sao Thổ – nổi bật với vành đai đặc trưng</li>
+      <li>Sao Thiên Vương & Sao Hải Vương – hành tinh băng giá</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Hệ Mặt Trời" />
+
+    <h2>🌌 Thiên Hà</h2>
+    <p>Dải Ngân Hà là thiên hà chứa hệ Mặt Trời của chúng ta, cùng hàng tỷ thiên hà khác như Andromeda, Sombrero, tạo nên vũ trụ rộng lớn.</p>
+
+    <h2>📷 Hình Ảnh Hố Đen & Thiên Hà</h2>
+    <img src="https://e.khoahoc.tv/photos/image/2017/11/06/black-hole.jpg" alt="Hố Đen M87" />
+    <p><strong>Hố đen Messier 87:</strong> Hình ảnh đầu tiên của hố đen được chụp bởi Kính viễn vọng Chân trời sự kiện.</p>
+
+    <img src="https://tinhvan.net/wp-content/uploads/2020/10/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg" alt="Thiên Hà Andromeda" />
+    <p><strong>Thiên hà Andromeda:</strong> Cách Trái Đất khoảng 2,5 triệu năm ánh sáng, có thể hợp nhất với Dải Ngân Hà trong tương lai xa.</p>
+
+    <h2>📌 Các Chòm Sao Nổi Bật</h2>
+    <p><strong>Orion (Thợ Săn):</strong> Nổi bật với ba ngôi sao thẳng hàng tạo thành “đai Orion”.</p>
+    <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Chòm sao Orion" />
+
+    <p><strong>Ursa Major (Gấu Lớn):</strong> Chòm sao chứa "Cái Gầu Lớn", giúp xác định sao Bắc Cực.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg/1280px-M82_HST_ACS_2006-14-a-large_web.jpg" alt="Chòm sao Ursa Major" />
+
+    <p><strong>Leo (Sư Tử):</strong> Một chòm sao rõ ràng vào mùa xuân, dễ nhận biết trên bầu trời đêm.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Leo_T_color_cutout_hst_12914_04_acs_wfc_f814w_f606w_sci.jpg" alt="Chòm sao Leo" />
+
+    <h3>🔗 Khám Phá Thêm</h3>
+    <div class="links">
+      <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
+      <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+      <a href="subianvevutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+      <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
     </div>
-  </section>
-
-  <section class="section" id="thien-ha">
-    <h3>🌌 Thiên Hà</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://e.khoahoc.tv/photos/image/2017/11/06/black-hole.jpg" alt="Hố đen M87" />
-        <p>Hố đen M87 - một trong những phát hiện quan trọng nhất trong vũ trụ học hiện đại.</p>
-      </div>
-      <div class="card">
-        <img src="https://tinhvan.net/wp-content/uploads/2020/10/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg" alt="Thiên Hà Andromeda" />
-        <p>Thiên hà Andromeda - láng giềng gần nhất, dự kiến hợp nhất với Dải Ngân Hà trong hàng tỷ năm nữa.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="chom-sao">
-    <h3>✨ Các Chòm Sao Nổi Bật</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg" alt="Chòm sao Orion" />
-        <p>Chòm sao Orion – ba ngôi sao thẳng hàng tạo thành "đai Orion".</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg/1280px-M82_HST_ACS_2006-14-a-large_web.jpg" alt="Ursa Major" />
-        <p>Ursa Major – chứa "Cái Gầu Lớn", giúp định vị sao Bắc Cực.</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Leo_T_color_cutout_hst_12914_04_acs_wfc_f814w_f606w_sci.jpg" alt="Leo" />
-        <p>Leo – chòm sao mùa xuân, biểu tượng của sức mạnh và uy lực.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Vũ Trụ 360 | Thiết kế bởi Huỳnh Vũ Web Design 🚀
-  </footer>
+  </div>
 
 </body>
 </html>
