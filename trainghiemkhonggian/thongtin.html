@@ -4,64 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Khám Phá Vũ Trụ</title>
+  <meta name="description" content="Khám phá hành tinh, thiên hà, hố đen và các chòm sao nổi bật trong vũ trụ kỳ diệu." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: url('https://fonesmart.com.vn/upload_images/images/2023/03/11/hinh-nen-phi-hanh-gia-15.jpg') no-repeat center center fixed;
+      background: linear-gradient(#000000cc, #001f3fcc), url('https://fonesmart.com.vn/upload_images/images/2023/03/11/hinh-nen-phi-hanh-gia-15.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #00f5ff;
       min-height: 100vh;
-      line-height: 1.5;
+      line-height: 1.6;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .container {
       max-width: 1000px;
       margin: 120px auto 60px;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 20, 0.85);
       border-radius: 20px;
       padding: 40px 30px;
-      box-shadow: 0 0 30px #00f5ff;
+      box-shadow: 0 0 40px #00ffff99;
     }
 
     h1, h2 {
       text-align: center;
-      margin-bottom: 25px;
       text-shadow: 0 0 15px #00f5ff;
+      margin-bottom: 25px;
     }
 
     h1 {
       font-size: 3.8rem;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       margin-top: 50px;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #ccefff;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       text-align: justify;
     }
 
     ul {
       list-style: none;
-      margin-bottom: 30px;
       padding-left: 1.2rem;
-      color: #a0eaff;
+      margin-bottom: 30px;
       font-size: 1.2rem;
+      color: #a0eaff;
     }
 
     ul li::before {
-      content: "🌟 ";
+      content: "✨ ";
       margin-right: 8px;
     }
 
@@ -70,16 +70,16 @@
       max-width: 100%;
       border-radius: 15px;
       margin: 25px auto;
-      box-shadow: 0 0 20px #00f5ff;
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 25px #00f5ff99;
+      transition: transform 0.4s ease;
       cursor: pointer;
     }
+
     img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 30px #00ffff;
+      box-shadow: 0 0 35px #00ffff;
     }
 
-    /* Links khám phá thêm */
     .explore-links {
       margin-top: 50px;
       display: flex;
@@ -89,17 +89,18 @@
     }
 
     .explore-links a {
-      background: rgba(0,255,255,0.15);
+      background: rgba(0, 255, 255, 0.1);
       color: #00f5ff;
       padding: 14px 30px;
       border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 0 10px #00f5ff;
+      box-shadow: 0 0 15px #00f5ff;
       flex: 1 1 180px;
       text-align: center;
       transition: all 0.3s ease;
     }
+
     .explore-links a:hover {
       background: #00f5ff;
       color: #000;
@@ -107,17 +108,49 @@
       transform: scale(1.1);
     }
 
-    /* Responsive */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 15px #00f5ff; }
+      to { text-shadow: 0 0 30px #00ffff; }
+    }
+
+    /* Nút lên đầu trang */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00f5ff;
+      color: #000;
+      padding: 12px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px #00ffff;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    #backToTop:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px #00ffff;
+    }
+
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      p, ul {
-        font-size: 1rem;
-      }
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 2rem; }
+      p, ul { font-size: 1rem; }
       .container {
         margin: 100px 20px 40px;
         padding: 30px 20px;
@@ -130,7 +163,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container fade-in">
     <h1>🚀 Khám Phá Vũ Trụ</h1>
     <p>Chào mừng bạn đến với hành trình khám phá vũ trụ kỳ diệu! Hãy cùng tìm hiểu về các hành tinh, thiên hà và chòm sao qua hình ảnh và thông tin hấp dẫn.</p>
 
@@ -144,36 +177,39 @@
       <li>Sao Thổ – nổi bật với vành đai đặc trưng</li>
       <li>Sao Thiên Vương & Sao Hải Vương – hành tinh băng giá</li>
     </ul>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Hệ Mặt Trời" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Hệ Mặt Trời" loading="lazy" />
 
     <h2>🌌 Thiên Hà</h2>
     <p>Dải Ngân Hà là thiên hà chứa hệ Mặt Trời của chúng ta, cùng hàng tỷ thiên hà khác như Andromeda, Sombrero, tạo nên vũ trụ rộng lớn.</p>
 
     <h2>📷 Hình Ảnh Hố Đen & Thiên Hà</h2>
-    <img src="https://e.khoahoc.tv/photos/image/2017/11/06/black-hole.jpg" alt="Hố Đen M87" />
+    <img src="https://e.khoahoc.tv/photos/image/2017/11/06/black-hole.jpg" alt="Hố Đen M87" loading="lazy" />
     <p><strong>Hố đen Messier 87:</strong> Hình ảnh đầu tiên của hố đen được chụp bởi Kính viễn vọng Chân trời sự kiện.</p>
 
-    <img src="https://tinhvan.net/wp-content/uploads/2020/10/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg" alt="Thiên Hà Andromeda" />
+    <img src="https://tinhvan.net/wp-content/uploads/2020/10/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg" alt="Thiên Hà Andromeda" loading="lazy" />
     <p><strong>Thiên hà Andromeda:</strong> Cách Trái Đất khoảng 2,5 triệu năm ánh sáng, có thể hợp nhất với Dải Ngân Hà trong tương lai xa.</p>
 
     <h2>📌 Các Chòm Sao Nổi Bật</h2>
     <p><strong>Orion (Thợ Săn):</strong> Nổi bật với ba ngôi sao thẳng hàng tạo thành “đai Orion”.</p>
-    <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Chòm sao Orion" />
+    <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Chòm sao Orion" loading="lazy" />
 
     <p><strong>Ursa Major (Gấu Lớn):</strong> Chòm sao chứa "Cái Gầu Lớn", giúp xác định sao Bắc Cực.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg/1280px-M82_HST_ACS_2006-14-a-large_web.jpg" alt="Chòm sao Ursa Major" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg/1280px-M82_HST_ACS_2006-14-a-large_web.jpg" alt="Chòm sao Ursa Major" loading="lazy" />
 
     <p><strong>Leo (Sư Tử):</strong> Một chòm sao rõ ràng vào mùa xuân, dễ nhận biết trên bầu trời đêm.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Leo_T_color_cutout_hst_12914_04_acs_wfc_f814w_f606w_sci.jpg" alt="Chòm sao Leo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Leo_T_color_cutout_hst_12914_04_acs_wfc_f814w_f606w_sci.jpg" alt="Chòm sao Leo" loading="lazy" />
 
     <h2>🔗 Khám Phá Thêm</h2>
     <div class="explore-links">
       <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
       <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="subianvuvetru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+      <a href="subianvevutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
       <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
     </div>
   </div>
+
+  <!-- Nút lên đầu trang -->
+  <a href="#" id="backToTop">↑</a>
 
 </body>
 </html>
