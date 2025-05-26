@@ -3,213 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sự Bí Ẩn Về Vũ Trụ</title>
+  <title>Hành Trình Vũ Trụ - Phiên Bản Mới</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
+    /* Reset cơ bản */
     * {
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
-    html, body {
-      margin: 0;
-      padding: 0;
+    body {
       font-family: 'Orbitron', sans-serif;
-      background-color: #000;
-      color: #fff;
+      background: linear-gradient(#000010, #000015);
+      color: #00ffff;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    /* Nền động */
-    body::before {
-      content: '';
+    /* Header */
+    header {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://cdn.pixabay.com/photo/2016/11/22/19/15/space-1851496_1280.jpg') no-repeat center center;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: rgba(0,0,0,0.85);
+      border-bottom: 1px solid #00ffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #00ffff;
+      cursor: default;
+    }
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    /* Parallax backgrounds */
+    .parallax {
+      position: relative;
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
-      opacity: 0.1;
-      z-index: -2;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://media.giphy.com/media/3o72F3uC7HqqYBVcCk/giphy.gif') repeat;
-      background-size: cover;
-      opacity: 0.05;
-      z-index: -1;
-      animation: moveStars 120s linear infinite;
-    }
-
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 10000px; }
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
-    }
-
-    h1 {
-      font-size: 3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 0 20px;
       color: #00ffff;
       text-shadow: 0 0 15px #00f5ff;
-      margin-bottom: 40px;
+    }
+    #intro {
+      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+    }
+    #blackhole {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg');
+    }
+    #darkmatter {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg');
+    }
+    #orion {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg');
+    }
+    #ufo {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png');
+    }
+    #explore-more {
+      background: linear-gradient(135deg, #001f2f, #004c66);
+      padding: 80px 20px;
+      height: auto;
+      text-shadow: none;
+      color: #00ffff;
     }
 
+    /* Nội dung chính */
+    .content {
+      max-width: 800px;
+      background: rgba(0,0,0,0.6);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffff;
+      backdrop-filter: blur(6px);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
     h2 {
-      color: #ff6ec7;
-      font-size: 2em;
-      margin-top: 40px;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
     }
-
     p {
-      font-size: 1.2em;
-      line-height: 1.8em;
-      color: #e0e0e0;
-      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #e0f7f7;
     }
 
-    .section-image {
-      width: 100%;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease;
+    /* Button */
+    .btn {
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border: 2px solid #00ffff;
+      border-radius: 40px;
+      background: transparent;
+      color: #00ffff;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
     }
 
-    .section-image:hover {
-      transform: scale(1.04);
-    }
-
-    /* Nút liên kết với viền động */
+    /* Links phần Khám Phá Thêm */
     .links {
-      margin-top: 50px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
+      margin-top: 25px;
     }
-
     .links a {
-      position: relative;
-      display: inline-block;
-      padding: 15px 30px;
-      color: #00ffff;
-      font-size: 1.1rem;
-      text-decoration: none;
+      flex: 1 1 180px;
+      max-width: 220px;
+      padding: 15px 25px;
+      background: rgba(0, 255, 255, 0.15);
       border-radius: 30px;
-      overflow: hidden;
-      background: rgba(0, 255, 255, 0.1);
-      border: 2px solid transparent;
-      backdrop-filter: blur(6px);
-      transition: all 0.4s ease;
+      color: #00ffff;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 8px #00ffff;
+      transition: all 0.3s ease;
+      display: block;
     }
-
-    .links a::before,
-    .links a::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #00ffff, #00aaff);
-      top: 0;
-      left: -100%;
-      transition: left 0.5s ease;
-    }
-
-    .links a::after {
-      bottom: 0;
-      top: auto;
-      left: 100%;
-    }
-
-    .links a:hover::before {
-      left: 0;
-    }
-
-    .links a:hover::after {
-      left: 0;
-    }
-
     .links a:hover {
-      color: #00ccff;
-      box-shadow:
-        0 0 5px #00ffff,
-        0 0 15px #00ffff,
-        0 0 25px #00aaff,
-        0 0 40px #00aaff;
-      border-color: #00ccff;
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
     }
 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #001f2f;
+      color: #00ffff;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .container {
-        margin: 30px 15px;
-        padding: 25px;
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.7rem; }
+      .content {
+        padding: 20px 25px;
       }
-
-      h1 {
-        font-size: 2.2em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
-
       .links a {
-        font-size: 1em;
-        padding: 12px 20px;
+        max-width: 100%;
       }
-
-      .links {
-        flex-direction: column;
-        align-items: center;
+      header {
+        padding: 0 15px;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🌌 Sự Bí Ẩn Về Vũ Trụ</h1>
-    <p>Vũ trụ là nơi chứa đựng vô số điều kỳ bí mà nhân loại vẫn đang khám phá. Hãy cùng bước vào hành trình tìm hiểu những bí ẩn chưa có lời giải!</p>
+  <header>
+    <div class="logo">VŨ TRỤ</div>
+    <nav>
+      <a href="#intro">Trang Chủ</a>
+      <a href="#blackhole">Hố Đen</a>
+      <a href="#darkmatter">Vật Chất Tối</a>
+      <a href="#orion">Tinh Vân Orion</a>
+      <a href="#ufo">UFO</a>
+      <a href="#explore-more">Khám Phá Thêm</a>
+    </nav>
+  </header>
 
-    <h2>🌀 Hố Đen</h2>
-    <p>Hố đen là nơi có lực hấp dẫn mạnh đến mức không gì thoát ra được, kể cả ánh sáng. Đây là một trong những bí ẩn lớn nhất của vật lý hiện đại.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Hố Đen" class="section-image">
-
-    <h2>✨ Vật Chất Tối</h2>
-    <p>Dù không thể nhìn thấy hay chạm vào, vật chất tối chiếm tới 27% toàn bộ vũ trụ. Nó ảnh hưởng mạnh mẽ đến cấu trúc và chuyển động của các thiên hà.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" alt="Vật Chất Tối" class="section-image">
-
-    <h2>🌠 Tinh Vân Orion</h2>
-    <p>Là vườn ươm sao rực rỡ nhất trên bầu trời đêm, tinh vân Orion hé lộ cách những ngôi sao được hình thành từ mây khí và bụi vũ trụ.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" alt="Tinh Vân Orion" class="section-image">
-
-    <h2>👽 UFO và Sinh Vật Ngoài Trái Đất</h2>
-    <p>Những hiện tượng UFO và tín hiệu lạ ngoài không gian đang thôi thúc con người đi tìm câu trả lời cho câu hỏi: "Chúng ta có cô đơn trong vũ trụ?"</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" alt="UFO" class="section-image">
-
-    <h2>🔭 Kính Viễn Vọng Không Gian</h2>
-    <p>Kính James Webb là cánh cửa thời gian, giúp chúng ta nhìn ngược về những ngày đầu của vũ trụ, cách đây hơn 13 tỷ năm.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Jwst_home_hero_0.jpg" alt="Kính viễn vọng James Webb" class="section-image">
-
-    <!-- Liên kết -->
-    <div class="links">
-      <a href="#">🔭 Thông Tin Vũ Trụ</a>
-      <a href="#">🪐 Những Điều Cần Biết</a>
-      <a href="#">🌠 Chiều Sâu Không Gian</a>
-      <a href="#">👾 Hiện Đại Hóa UFO</a>
+  <section id="intro" class="parallax">
+    <div class="content" data-aos="fade-up">
+      <h1>🌌 Hành Trình Vũ Trụ</h1>
+      <p>Khám phá những điều kỳ bí nhất của vũ trụ qua từng vùng không gian huyền ảo.</p>
+      <a href="#blackhole" class="btn">Bắt Đầu</a>
     </div>
-  </div>
+  </section>
+
+  <section id="blackhole" class="parallax">
+    <div class="content" data-aos="fade-up">
+      <h2>🌀 Hố Đen</h2>
+      <p>Nơi mà không có gì thoát ra được – kể cả ánh sáng. Một trong những bí ẩn lớn nhất của vật lý hiện đại.</p>
+    </div>
+  </section>
+
+  <section id="darkmatter" class="parallax">
+    <div class="content" data-aos="fade-up">
+      <h2>✨ Vật Chất Tối</h2>
+      <p>Dù không thể nhìn thấy, nó chiếm hơn 27% vũ trụ. Điều khiển cả chuyển động thiên hà.</p>
+    </div>
+  </section>
+
+  <section id="orion" class="parallax">
+    <div class="content" data-aos="fade-up">
+      <h2>🌠 Tinh Vân Orion</h2>
+      <p>Lò ươm sao nổi bật nhất trên bầu trời – nơi sinh ra những ngôi sao mới.</p>
+    </div>
+  </section>
+
+  <section id="ufo" class="parallax">
+    <div class="content" data-aos="fade-up">
+      <h2>👽 UFO & Sự Sống Ngoài Trái Đất</h2>
+      <p>Chúng ta có cô đơn trong vũ trụ không? Những tín hiệu và hình ảnh lạ vẫn đang được giải mã.</p>
+    </div>
+  </section>
+
+  <section id="explore-more">
+    <div class="content">
+      <h2>🔗 Khám Phá Thêm</h2>
+      <div class="links">
+        <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
+        <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+        <a href="subianvutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+        <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Hành Trình Vũ Trụ | Thiết kế bởi Bạn
+  </footer>
 
 </body>
 </html>
