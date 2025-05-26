@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Khám Phá Vũ Trụ</title>
+  <title>Trang Chủ Khám Phá Vũ Trụ</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
@@ -13,130 +13,149 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: url('https://fonesmart.com.vn/upload_images/images/2023/03/11/hinh-nen-phi-hanh-gia-15.jpg') no-repeat center center fixed;
+      background: linear-gradient(135deg, #000011, #001122 70%), 
+                  url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #00f5ff;
       min-height: 100vh;
-      line-height: 1.5;
+      padding-top: 70px; /* dành chỗ cho header */
       overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 120px auto 60px;
-      background: rgba(0,0,0,0.75);
-      border-radius: 20px;
-      padding: 40px 30px;
-      box-shadow: 0 0 30px #00f5ff;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      text-shadow: 0 0 15px #00f5ff;
-    }
-
-    h1 {
-      font-size: 3.8rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-top: 50px;
-    }
-
-    p {
-      font-size: 1.3rem;
-      color: #ccefff;
-      margin-bottom: 25px;
-      text-align: justify;
-    }
-
-    ul {
-      list-style: none;
-      margin-bottom: 30px;
-      padding-left: 1.2rem;
-      color: #a0eaff;
-      font-size: 1.2rem;
-    }
-
-    ul li::before {
-      content: "🌟 ";
-      margin-right: 8px;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      border-radius: 15px;
-      margin: 25px auto;
-      box-shadow: 0 0 20px #00f5ff;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #00ffff;
-    }
-
-    /* Khám phá thêm */
-    .explore-links {
-      margin-top: 50px;
+    /* Thanh điều hướng cố định */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 0 15px #00f5ff;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
-      border-top: 1px solid #00f5ff;
-      padding-top: 30px;
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(8px);
     }
 
-    .explore-links a {
-      background: rgba(0,255,255,0.15);
-      color: #00f5ff;
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 0 10px #00f5ff;
-      flex: 1 1 180px;
-      text-align: center;
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
+    .links {
+      display: flex;
+      gap: 30px;
     }
-    .explore-links a:hover {
+
+    .links a {
+      color: #00f5ff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 10px 24px;
+      border-radius: 30px;
+      background: rgba(0, 255, 255, 0.15);
+      box-shadow: 0 0 10px #00f5ff;
+      transition: all 0.3s ease;
+      user-select: none;
+      text-shadow: 0 0 8px #00f5ff;
+    }
+
+    .links a:hover {
       background: #00f5ff;
       color: #000;
       box-shadow: 0 0 25px #00ffff;
       transform: scale(1.1);
     }
 
+    /* Nội dung chính */
+    main {
+      max-width: 960px;
+      margin: auto;
+      background: rgba(0,0,0,0.7);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #00f5ff;
+    }
+
+    main h1 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 20px #00f5ff;
+    }
+
+    main p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #ccefff;
+      text-align: justify;
+      text-shadow: 0 0 8px #00aabb;
+    }
+
+    /* Các khối info dạng card */
+    .card {
+      background: rgba(0, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px #00f5ff55;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px #00ffffaa;
+    }
+
+    .card h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 1rem;
+      color: #a0eaff;
+      font-size: 1.1rem;
+    }
+    .card ul li::before {
+      content: "✨ ";
+      margin-right: 8px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.8rem;
+      main {
+        padding: 25px 15px;
       }
-      h2 {
-        font-size: 2rem;
+      main h1 {
+        font-size: 2.5rem;
       }
-      p, ul {
+      main p, .card ul {
         font-size: 1rem;
       }
-      .container {
-        margin: 100px 20px 40px;
-        padding: 30px 20px;
+      .links {
+        gap: 15px;
       }
-      .explore-links a {
-        flex: 1 1 100%;
+      .links a {
+        font-size: 1rem;
+        padding: 8px 18px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🚀 Khám Phá Vũ Trụ</h1>
-    <p>Chào mừng bạn đến với hành trình khám phá vũ trụ kỳ diệu! Hãy cùng tìm hiểu về các hành tinh, thiên hà và chòm sao qua hình ảnh và thông tin hấp dẫn.</p>
+<header>
+  <nav class="links">
+    <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
+    <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+    <a href="subianvuvetru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
+    <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
+  </nav>
+</header>
 
+<main>
+  <h1>🚀 Khám Phá Vũ Trụ Kỳ Diệu</h1>
+  <p>Chào mừng bạn đến với trang chủ khám phá vũ trụ, nơi bạn sẽ tìm thấy những kiến thức hấp dẫn về các hành tinh, thiên hà, hố đen và nhiều bí ẩn vũ trụ khác. Hãy cùng bắt đầu hành trình khám phá không gian bao la vô tận!</p>
+
+  <section class="card">
     <h2>🌞 Hệ Mặt Trời</h2>
     <ul>
       <li>Sao Thủy – hành tinh gần Mặt Trời nhất</li>
@@ -144,39 +163,30 @@
       <li>Trái Đất – hành tinh có sự sống</li>
       <li>Sao Hỏa – hành tinh đỏ</li>
       <li>Sao Mộc – hành tinh lớn nhất</li>
-      <li>Sao Thổ – nổi bật với vành đai đặc trưng</li>
+      <li>Sao Thổ – hành tinh với vành đai đặc trưng</li>
       <li>Sao Thiên Vương & Sao Hải Vương – hành tinh băng giá</li>
     </ul>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Hệ Mặt Trời" />
+  </section>
 
+  <section class="card">
     <h2>🌌 Thiên Hà</h2>
-    <p>Dải Ngân Hà là thiên hà chứa hệ Mặt Trời của chúng ta, cùng hàng tỷ thiên hà khác như Andromeda, Sombrero, tạo nên vũ trụ rộng lớn.</p>
+    <p>Dải Ngân Hà là thiên hà chứa hệ Mặt Trời, cùng hàng tỷ thiên hà khác như Andromeda, Sombrero,... tạo nên vũ trụ rộng lớn và huyền bí.</p>
+  </section>
 
-    <h2>📷 Hình Ảnh Hố Đen & Thiên Hà</h2>
-    <img src="https://e.khoahoc.tv/photos/image/2017/11/06/black-hole.jpg" alt="Hố Đen M87" />
-    <p><strong>Hố đen Messier 87:</strong> Hình ảnh đầu tiên của hố đen được chụp bởi Kính viễn vọng Chân trời sự kiện.</p>
+  <section class="card">
+    <h2>📷 Hố Đen & Thiên Hà</h2>
+    <p>Hố đen Messier 87 – hình ảnh đầu tiên của hố đen được chụp bởi Kính viễn vọng Chân trời sự kiện, mở ra kỷ nguyên mới trong nghiên cứu vũ trụ.</p>
+  </section>
 
-    <img src="https://tinhvan.net/wp-content/uploads/2020/10/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg" alt="Thiên Hà Andromeda" />
-    <p><strong>Thiên hà Andromeda:</strong> Cách Trái Đất khoảng 2,5 triệu năm ánh sáng, có thể hợp nhất với Dải Ngân Hà trong tương lai xa.</p>
-
+  <section class="card">
     <h2>📌 Các Chòm Sao Nổi Bật</h2>
-    <p><strong>Orion (Thợ Săn):</strong> Nổi bật với ba ngôi sao thẳng hàng tạo thành “đai Orion”.</p>
-    <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Chòm sao Orion" />
-
-    <p><strong>Ursa Major (Gấu Lớn):</strong> Chòm sao chứa "Cái Gầu Lớn", giúp xác định sao Bắc Cực.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg/1280px-M82_HST_ACS_2006-14-a-large_web.jpg" alt="Chòm sao Ursa Major" />
-
-    <p><strong>Leo (Sư Tử):</strong> Một chòm sao rõ ràng vào mùa xuân, dễ nhận biết trên bầu trời đêm.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Leo_T_color_cutout_hst_12914_04_acs_wfc_f814w_f606w_sci.jpg" alt="Chòm sao Leo" />
-
-    <h2>🔗 Khám Phá Thêm</h2>
-    <div class="explore-links">
-      <a href="https://example.com/thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="https://example.com/nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="https://example.com/subianvuvetru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
-      <a href="https://example.com/chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
-    </div>
-  </div>
+    <ul>
+      <li><strong>Orion (Thợ Săn):</strong> Với đai Orion đặc trưng ba ngôi sao thẳng hàng.</li>
+      <li><strong>Ursa Major (Gấu Lớn):</strong> Chứa "Cái Gầu Lớn" giúp định hướng bắc cực.</li>
+      <li><strong>Leo (Sư Tử):</strong> Chòm sao dễ nhận biết vào mùa xuân.</li>
+    </ul>
+  </section>
+</main>
 
 </body>
 </html>
