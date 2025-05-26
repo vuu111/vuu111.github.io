@@ -2,136 +2,132 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sự Bí Ẩn Vũ Trụ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 Không Gian Siêu Thực</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    /* Cơ bản */
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      background: url('https://fonesmart.com.vn/upload_images/images/2023/03/11/hinh-nen-phi-hanh-gia-15.jpg') no-repeat center center fixed;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at bottom, #0b0c10 0%, #000000 100%);
+      overflow-x: hidden;
+      color: #ffffff;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://media.giphy.com/media/3o72F3uC7HqqYBVcCk/giphy.gif') repeat;
       background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      opacity: 0.07;
+      z-index: -1;
+      animation: moveStars 120s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 10000px; }
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 25px;
-      padding: 40px 60px;
-      max-width: 1100px;
-      width: 95%;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-      transform: rotate(5deg);
-      animation: slideIn 2s ease-in-out;
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
     }
 
     h1 {
-      font-size: 3.8em;
-      color: #ff9800;
-      margin-bottom: 20px;
+      font-size: 3.2em;
       text-align: center;
-      font-weight: 700;
-      text-shadow: 4px 4px 20px rgba(255, 255, 255, 0.9);
+      color: #00ffff;
+      text-shadow: 0 0 20px #00f5ff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+      }
+      to {
+        text-shadow: 0 0 25px #00f5ff, 0 0 40px #00ffff;
+      }
     }
 
     h2 {
-      font-size: 2.3em;
-      margin-top: 30px;
-      text-transform: uppercase;
-      color: #00f5ff;
-      text-shadow: 3px 3px 15px rgba(0, 255, 255, 0.9);
+      color: #ff6ec7;
+      font-size: 2em;
+      margin-top: 40px;
     }
 
     p {
-      font-size: 1.3em;
-      color: #dcdcdc;
-      line-height: 1.7em;
-      margin-bottom: 30px;
-      text-align: justify;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #e0e0e0;
     }
 
-    /* Hiệu ứng cho hình ảnh */
     .section-image {
-      margin-top: 20px;
       width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-      transition: transform 0.4s ease, filter 0.3s ease-in-out;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      transition: transform 0.5s ease, filter 0.5s;
     }
 
     .section-image:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       filter: brightness(1.2);
     }
 
-    /* Các liên kết */
     .links {
       margin-top: 50px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
 
     .links a {
-      display: inline-block;
-      margin: 15px 20px;
-      padding: 15px 30px;
-      background-color: rgba(0, 255, 255, 0.2);
-      color: #00f5ff;
+      background: rgba(255, 255, 255, 0.08);
+      color: #00ffff;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.2em;
       text-decoration: none;
-      font-size: 1.4em;
-      border-radius: 35px;
-      transition: all 0.4s ease;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(6px);
     }
 
     .links a:hover {
-      background-color: rgba(0, 255, 255, 0.4);
+      background: rgba(0, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
       transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.8);
     }
 
-    /* Hiệu ứng chuyển động */
-    @keyframes slideIn {
-      0% {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* Thiết kế di động */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       .container {
+        margin: 30px 15px;
         padding: 25px;
-        transform: rotate(0deg);
       }
 
       h1 {
-        font-size: 2.8em;
+        font-size: 2.4em;
       }
 
       h2 {
-        font-size: 1.9em;
-      }
-
-      .section-image {
-        width: 100%;
-        height: auto;
+        font-size: 1.5em;
       }
 
       .links a {
-        font-size: 1.2em;
-        padding: 12px 25px;
+        font-size: 1em;
+        padding: 10px 20px;
       }
     }
   </style>
@@ -139,39 +135,32 @@
 <body>
 
   <div class="container">
-    <h1>🌌 Sự Bí Ẩn Vũ Trụ</h1>
-    <p>Vũ trụ là một nơi đầy bí ẩn, từ các hố đen đến vật chất tối, và chúng ta chỉ mới khám phá được một phần nhỏ của nó. Cùng nhau khám phá những điều kỳ bí đang chờ đợi chúng ta trong không gian bao la này!</p>
+    <h1>🚀 KHÔNG GIAN SIÊU THỰC</h1>
+    <p>Khám phá chiều sâu không gian nơi những điều chưa ai từng biết đến đang chờ đón. Hố đen, vật chất tối và UFO – tất cả đều là một phần của bí ẩn vũ trụ.</p>
 
-    <!-- Hình ảnh Hố Đen -->
     <h2>🌀 Hố Đen</h2>
-    <p>Hố đen là một trong những kỳ quan lạ kỳ nhất trong vũ trụ. Chúng có lực hấp dẫn mạnh mẽ đến mức không gì có thể thoát ra, kể cả ánh sáng. Hãy cùng tìm hiểu thêm về chúng.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Hố Đen Messier 87" class="section-image" />
+    <p>Lực hấp dẫn vô cùng mạnh, đến mức ánh sáng không thể thoát. Hố đen là giới hạn cuối của hiểu biết vật lý hiện tại.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" class="section-image" alt="Hố đen" />
 
-    <!-- Hình ảnh Vật Chất Tối -->
     <h2>✨ Vật Chất Tối</h2>
-    <p>Vật chất tối là một yếu tố bí ẩn chiếm đến 27% vũ trụ. Mặc dù không thể nhìn thấy, nhưng chúng có ảnh hưởng rất lớn đến sự hình thành và vận hành của các thiên hà.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" alt="Vật Chất Tối" class="section-image" />
+    <p>Không thể nhìn thấy, nhưng nó chiếm phần lớn khối lượng vũ trụ. Vật chất tối là chìa khóa cho cấu trúc vũ trụ.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" class="section-image" alt="Vật chất tối" />
 
-    <!-- Hình ảnh Tinh Vân Orion -->
     <h2>🌠 Tinh Vân Orion</h2>
-    <p>Tinh vân Orion là nơi sinh ra hàng triệu ngôi sao mới. Đây là một trong những nơi sáng và rộng lớn nhất trong vũ trụ, mang lại cái nhìn tuyệt vời về sự hình thành các thiên hà mới.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" alt="Tinh Vân Orion" class="section-image" />
+    <p>Nơi khai sinh của những vì sao. Một vườn ươm sao khổng lồ nằm trong chòm sao Orion.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" class="section-image" alt="Tinh vân Orion" />
 
-    <!-- Hình ảnh UFO -->
-    <h2>👽 UFO Và Sinh Vật Ngoài Hành Tinh</h2>
-    <p>Liệu chúng ta có phải là sinh vật duy nhất trong vũ trụ? Những dấu hiệu về UFO và sinh vật ngoài hành tinh vẫn đang là một bí ẩn lớn mà khoa học chưa thể giải đáp.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" alt="UFO" class="section-image" />
+    <h2>👽 UFO và Sự Sống Ngoài Trái Đất</h2>
+    <p>Những vật thể bay không xác định – UFO – có thể là dấu hiệu đầu tiên về sự sống ngoài hành tinh?</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" class="section-image" alt="UFO" />
 
-    <!-- Liên kết -->
     <div class="links">
-      <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-      <a href="subianvutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
-      <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
+      <a href="#">🔭 Thông Tin Vũ Trụ</a>
+      <a href="#">🪐 Điều Bí Ẩn</a>
+      <a href="#">🛰️ Trạm Không Gian</a>
+      <a href="#">👾 Giả Thuyết Ngoài Trái Đất</a>
     </div>
   </div>
 
 </body>
 </html>
-
-
