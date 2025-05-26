@@ -3,227 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🌠 Chiều Sâu Không Gian</title>
+  <title>Chiều Sâu Không Gian</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
-    body, html {
-      height: 100%;
-      font-family: 'Orbitron', sans-serif;
-      background: #000;
-      overflow-x: hidden;
-      color: #00e5ff;
-      user-select: none;
-    }
 
-    /* Animated starfield background */
-    @keyframes starfield {
-      from {background-position: 0 0;}
-      to {background-position: 10000px 5000px;}
-    }
     body {
-      background-image:
-        radial-gradient(2px 2px at 20px 20px, #00e5ff, transparent),
-        radial-gradient(1.5px 1.5px at 50px 50px, #00ffff, transparent),
-        radial-gradient(1.8px 1.8px at 80px 80px, #00aaff, transparent);
-      background-repeat: repeat;
-      background-size: 200px 200px;
-      animation: starfield 1000s linear infinite;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas:
-        "nav nav nav"
-        "intro content image"
-        "footer footer footer";
-      height: 100vh;
-      padding: 30px 40px;
-      gap: 30px;
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #00e5ff;
+      min-height: 100vh;
+      padding: 30px 20px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-shadow: 0 0 8px #00cfff;
     }
 
-    /* Navigation bar top */
-    nav {
-      grid-area: nav;
+    h1 {
+      font-size: 3.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #00f5ff;
+      text-shadow: 0 0 20px #00f5ff;
+    }
+
+    .links {
       display: flex;
+      gap: 20px;
       justify-content: center;
-      gap: 30px;
-      background: rgba(0, 229, 255, 0.1);
-      padding: 15px 25px;
-      border-radius: 40px;
-      border: 2px solid #00e5ff;
-      box-shadow: 0 0 30px #00e5ff;
-      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
       flex-wrap: wrap;
+      max-width: 900px;
     }
-    nav a {
-      color: #00e5ff;
-      text-decoration: none;
+    .links a {
+      background: rgba(0, 255, 255, 0.2);
+      color: #00f5ff;
+      padding: 15px 30px;
+      border-radius: 30px;
       font-weight: 700;
-      font-size: 1.3rem;
-      padding: 12px 28px;
-      border-radius: 35px;
-      background: rgba(0, 229, 255, 0.15);
-      box-shadow: 0 0 15px #00e5ff;
-      transition: all 0.25s ease;
-      flex-shrink: 0;
-      user-select: none;
+      font-size: 1.25rem;
+      text-decoration: none;
+      box-shadow: 0 0 15px #00f5ff;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(6px);
+      border: 2px solid #00f5ff;
+      flex: 1 1 180px;
+      text-align: center;
     }
-    nav a:hover {
-      background: #00e5ff;
+    .links a:hover {
+      background: #00f5ff;
       color: #000;
-      box-shadow: 0 0 40px #00ffff;
+      box-shadow: 0 0 35px #00ffff;
       transform: scale(1.1);
     }
 
-    /* Intro text left */
-    .intro {
-      grid-area: intro;
-      font-size: 1.25rem;
-      padding: 20px 30px;
-      background: rgba(0, 0, 0, 0.7);
+    main {
+      max-width: 1000px;
+      background: rgba(0, 0, 40, 0.7);
       border-radius: 25px;
-      box-shadow: 0 0 40px #00e5ff;
-      line-height: 1.7;
-      color: #a0f7ff;
-      text-align: justify;
-      user-select: text;
-      align-self: center;
+      padding: 40px 50px;
+      box-shadow: 0 0 50px #00eaff;
+      color: #ccefff;
     }
 
-    /* Main content center */
-    .content {
-      grid-area: content;
-      background: rgba(0, 0, 0, 0.85);
-      border-radius: 30px;
-      box-shadow: 0 0 60px #00e5ff;
-      padding: 35px 30px;
-      color: #80ffff;
-      font-size: 1.3rem;
-      line-height: 1.75;
-      text-align: justify;
-      overflow-y: auto;
-      max-height: 80vh;
-      user-select: text;
+    section {
+      margin-bottom: 50px;
     }
 
-    /* Image right */
-    .image {
-      grid-area: image;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .image img {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 25px;
-      box-shadow: 0 0 50px #00ffff;
-      transition: transform 0.4s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    .image img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 80px #00ffff;
-    }
-
-    /* Footer bottom */
-    footer {
-      grid-area: footer;
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
       text-align: center;
-      color: #00e5ffaa;
-      text-shadow: 0 0 8px #00e5ff;
+      color: #00f5ff;
+      text-shadow: 0 0 15px #00bfff;
+    }
+
+    .content {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .content img {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00ffff;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .content img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px #00ffff;
+    }
+    .text {
+      flex: 1 1 450px;
+      font-size: 1.25rem;
+      text-align: justify;
+      color: #ccefff;
+      line-height: 1.8;
+      text-shadow: 0 0 6px #00aaff;
+      min-width: 280px;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #00f5ffaa;
       font-size: 1rem;
-      user-select: none;
-      margin-top: 15px;
+      text-align: center;
+      text-shadow: 0 0 8px #00f5ff;
     }
 
-    /* Scrollbar for content */
-    .content::-webkit-scrollbar {
-      width: 8px;
-    }
-    .content::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-    }
-    .content::-webkit-scrollbar-thumb {
-      background: #00e5ffaa;
-      border-radius: 20px;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      body {
-        display: flex;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      .links {
         flex-direction: column;
-        padding: 20px;
-      }
-      nav {
-        justify-content: center;
         gap: 15px;
-        padding: 12px 15px;
       }
-      nav a {
-        padding: 10px 18px;
-        font-size: 1rem;
-      }
-      .intro, .content, .image {
-        max-width: 100%;
-        margin-bottom: 30px;
-        box-shadow: 0 0 30px #00e5ff;
-      }
-      .intro, .content {
-        padding: 20px 15px;
+      .links a {
+        flex: 1 1 100%;
         font-size: 1.1rem;
+        padding: 15px 20px;
+      }
+      main {
+        padding: 20px 25px;
+      }
+      section h2 {
+        font-size: 2rem;
       }
       .content {
-        max-height: none;
-        overflow: visible;
+        flex-direction: column;
       }
-      .image img {
-        max-height: 300px;
+      .content img {
+        width: 100%;
+        max-width: 400px;
+      }
+      .text {
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <h1>🌌 Chiều Sâu Không Gian</h1>
+
+  <div class="links">
     <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
     <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
     <a href="subianvuvetru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
     <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
-  </nav>
-
-  <div class="intro">
-    <h2>Giới thiệu</h2>
-    <p>
-      Chiều sâu không gian không chỉ là khoảng cách vô tận mà còn là cánh cửa mở ra vô số bí ẩn kỳ thú. Khi nhìn vào bầu trời đêm, ta thấy những ánh sao xa xôi, những dải ngân hà rộng lớn, những tinh vân rực rỡ – tất cả tạo nên bức tranh vũ trụ huyền ảo.
-    </p>
-    <p>
-      Sự rộng lớn và phức tạp của không gian kích thích trí tò mò của con người và thúc đẩy những nỗ lực thám hiểm, nghiên cứu không ngừng nghỉ.
-    </p>
   </div>
 
-  <div class="content">
-    <h2>Khám phá chiều sâu không gian</h2>
-    <p>
-      Các kính viễn vọng hiện đại như Hubble và James Webb giúp chúng ta nhìn sâu hơn vào quá khứ vũ trụ, quan sát các thiên hà xa xôi, những ngôi sao mới sinh và thậm chí phát hiện các hành tinh có khả năng hỗ trợ sự sống.
-    </p>
-    <p>
-      Chiều sâu không gian còn là nơi chứa đựng các hiện tượng kỳ bí như hố đen siêu khối lượng, sóng hấp dẫn và các vùng tối vĩnh viễn mà ánh sáng không thể xuyên qua.
-    </p>
-    <p>
-      Việc nghiên cứu và hiểu về chiều sâu không gian không chỉ giúp ta khám phá thế giới ngoài kia mà còn mở ra những kiến thức mới về bản chất của không gian, thời gian và vũ trụ rộng lớn.
-    </p>
-  </div>
+  <main>
+    <section>
+      <h2>Không gian vô tận</h2>
+      <div class="content">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/54/space-1867226_1280.jpg" alt="Không gian vô tận" />
+        <div class="text">
+          Không gian vũ trụ rộng lớn hơn mọi điều tưởng tượng của con người, kéo dài đến vô tận. Với hàng tỷ thiên hà, hàng nghìn tỷ ngôi sao và hành tinh, mỗi một phần nhỏ của không gian lại ẩn chứa những điều kỳ diệu chưa được khám phá.
+        </div>
+      </div>
+    </section>
 
-  <div class="image">
-    <img src="https://cdn.spacetelescope.org/archives/images/thumb700x/heic0903a.jpg" alt="Hố đen siêu khối lượng" title="Hố đen siêu khối lượng tại trung tâm thiên hà" />
-  </div>
+    <section>
+      <h2>Những vùng tối sâu thẳm</h2>
+      <div class="content">
+        <div class="text">
+          Trong không gian có rất nhiều vùng tối mà ánh sáng khó có thể chiếu tới. Những vùng này chứa các đám mây bụi dày đặc, hố đen và các vật thể có mật độ vật chất cực lớn. Chúng vẫn còn là một bí ẩn lớn đối với các nhà thiên văn học.
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2015/09/18/16/45/black-hole-947703_1280.jpg" alt="Hố đen" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Hành trình xuyên thời gian và không gian</h2>
+      <div class="content">
+        <img src="https://cdn.pixabay.com/photo/2017/12/27/14/01/space-3047030_1280.jpg" alt="Hành trình vũ trụ" />
+        <div class="text">
+          Nhờ các công nghệ tiên tiến như kính viễn vọng không gian và tàu thăm dò, con người có thể quan sát và nghiên cứu những vùng sâu xa trong vũ trụ. Hành trình này không chỉ khám phá không gian mà còn mở rộng hiểu biết về thời gian và sự hình thành của vũ trụ.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Thiên hà và các cụm sao</h2>
+      <div class="content">
+        <div class="text">
+          Thiên hà là tập hợp hàng tỷ ngôi sao, hành tinh và các vật thể khác liên kết với nhau bằng lực hấp dẫn. Các cụm sao là những nhóm sao tập trung, là nơi hình thành các ngôi sao mới và đóng vai trò quan trọng trong sự tiến hóa của vũ trụ.
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2016/09/06/21/26/milky-way-1642446_1280.jpg" alt="Thiên hà" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Khám phá không gian sâu xa hơn</h2>
+      <div class="content">
+        <img src="https://cdn.pixabay.com/photo/2018/06/14/17/05/space-3474953_1280.jpg" alt="Khám phá vũ trụ" />
+        <div class="text">
+          Các dự án thám hiểm không gian hiện đại như kính viễn vọng James Webb và các tàu vũ trụ thế hệ mới giúp mở rộng tầm nhìn của nhân loại, đưa chúng ta đến gần hơn với những bí ẩn sâu thẳm của vũ trụ, từ sự hình thành sao cho đến nguồn gốc của vũ trụ.
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>© 2025 - Trang Thông Tin Vũ Trụ</footer>
 
