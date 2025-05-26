@@ -1,61 +1,176 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Công ty Bánh Tráng Tây Ninh</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nước Hoa Trúc - Hương Quyền Quý</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #f0e6d2;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1600185365483-26d7cdb5c2c5?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header .content {
+      position: relative;
+      z-index: 1;
+      color: #ffd700;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #000;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #f9f1d9;
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #1a1a1a;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #ffd700;
+      margin-bottom: 30px;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #d9cba3;
+      line-height: 1.8;
+    }
+
+    .product {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .product-card {
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #ffd70077;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      font-size: 1.5rem;
+      color: #f5e9c5;
+      margin: 15px 0;
+    }
+
+    .product-card p {
+      padding: 0 15px 20px;
+      color: #d9cba3;
+      font-size: 1rem;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      background-color: #000;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .product-card img {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>CTY Bánh Tráng Tây Ninh</h1>
-    <p>Chất lượng - An toàn - Hương vị truyền thống</p>
-  </header>
-
-  <nav>
-    <a href="#">Trang Chủ</a>
-    <a href="#about">Giới Thiệu</a>
-    <a href="#products">Sản Phẩm</a>
-    <a href="#contact">Liên Hệ</a>
-  </nav>
-
-  <div class="hero">
-    <h2>Bánh Tráng Chuẩn Vị Tây Ninh</h2>
-    <p>Đặc sản miền Nam - Giao hàng toàn quốc</p>
+<header>
+  <div class="content">
+    <h1>Nước Hoa Trúc</h1>
+    <p>Hương thơm gợi cảm, thanh khiết và đầy quyền quý – được chiết xuất từ tinh hoa của trúc thiên nhiên phương Đông.</p>
   </div>
+</header>
 
-  <div class="section" id="about">
-    <h2>Về Chúng Tôi</h2>
-    <p>Chúng tôi chuyên sản xuất và phân phối các loại bánh tráng đặc sản Tây Ninh như: bánh tráng me, bánh tráng muối nhuyễn, bánh tráng cuốn, và nhiều loại khác.</p>
-  </div>
+<section class="section">
+  <h2>Vẻ Đẹp Của Trúc Trong Một Lọ Hương</h2>
+  <p>
+    Tượng trưng cho sự thanh cao và uy quyền, nước hoa Trúc mang đến một trải nghiệm hương thơm bí ẩn, dịu nhẹ nhưng đầy cuốn hút. 
+    Sự kết hợp tinh tế giữa hương gỗ trầm, hoa nhài trắng, và tinh chất trúc tạo nên dấu ấn không thể nhầm lẫn.
+  </p>
 
-  <div class="section" id="products">
-    <h2>Sản Phẩm Nổi Bật</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://example.com/banhtrang1.jpg" alt="Bánh tráng me">
-        <h3>Bánh Tráng Me</h3>
-        <p>Đậm đà, chua ngọt, vị cay hấp dẫn.</p>
-      </div>
-      <div class="product">
-        <img src="https://example.com/banhtrang2.jpg" alt="Bánh tráng cuốn">
-        <h3>Bánh Tráng Cuốn</h3>
-        <p>Thơm ngon, tiện lợi, ăn liền.</p>
-      </div>
+  <div class="product">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-b792c3a02b94?auto=format&fit=crop&w=800&q=80" alt="Lọ nước hoa trúc sang trọng">
+      <h3>Trúc Vàng</h3>
+      <p>Phiên bản giới hạn với thiết kế ánh kim, lưu hương 12h, phù hợp cho những buổi tiệc tối và sự kiện cao cấp.</p>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=800&q=80" alt="Nước hoa quyền quý">
+      <h3>Trúc Ngọc</h3>
+      <p>Mùi hương nhẹ nhàng hơn, hòa quyện giữa trầm hương, hoa sen và hổ phách – phù hợp cho mọi thời điểm trong ngày.</p>
     </div>
   </div>
+</section>
 
-  <div class="section" id="contact">
-    <h2>Liên Hệ</h2>
-    <p>Địa chỉ: 123 Đường 30/4, Tây Ninh</p>
-    <p>SĐT: 0909 123 456</p>
-    <p>Email: lienhe@banhtrangtayninh.vn</p>
-  </div>
-
-  <footer>
-    &copy; 2025 CTY Bánh Tráng Tây Ninh. All rights reserved.
-  </footer>
+<footer>
+  © 2025 Nước Hoa Trúc – Tinh Hoa Hương Việt
+</footer>
 
 </body>
 </html>
