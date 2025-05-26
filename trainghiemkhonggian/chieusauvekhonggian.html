@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chiều Sâu Không Gian</title>
+  <title>Chiều Sâu Không Gian - Khám Phá Vũ Trụ</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
@@ -33,6 +33,7 @@
       text-shadow: 0 0 20px #00f5ff;
     }
 
+    /* Link navigation */
     .links {
       display: flex;
       gap: 20px;
@@ -63,58 +64,69 @@
       transform: scale(1.1);
     }
 
-    main {
+    /* Container for cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
       max-width: 1000px;
-      background: rgba(0, 0, 40, 0.7);
-      border-radius: 25px;
-      padding: 40px 50px;
-      box-shadow: 0 0 50px #00eaff;
+      width: 100%;
+    }
+
+    /* Each card */
+    .card {
+      background: rgba(0, 0, 40, 0.75);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px #00eaff;
       color: #ccefff;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #00f5ff;
-      text-shadow: 0 0 15px #00bfff;
-    }
-
-    .content {
+      cursor: pointer;
+      text-decoration: none;
       display: flex;
-      gap: 35px;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 70px #00ffff;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #00f5ff;
+      transition: transform 0.3s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
     }
-    .content img {
-      width: 350px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #00ffff;
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
-      cursor: pointer;
+
+    .card-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #00f5ff;
+      text-shadow: 0 0 10px #00bfff;
     }
-    .content img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 50px #00ffff;
-    }
-    .text {
-      flex: 1 1 450px;
-      font-size: 1.25rem;
-      text-align: justify;
-      color: #ccefff;
-      line-height: 1.8;
-      text-shadow: 0 0 6px #00aaff;
-      min-width: 280px;
+
+    .card-desc {
+      font-size: 1.1rem;
+      color: #a0dfff;
+      line-height: 1.5;
+      flex-grow: 1;
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 40px;
       color: #00f5ffaa;
       font-size: 1rem;
       text-align: center;
@@ -134,21 +146,14 @@
         font-size: 1.1rem;
         padding: 15px 20px;
       }
-      main {
-        padding: 20px 25px;
+      .card img {
+        height: 150px;
       }
-      section h2 {
-        font-size: 2rem;
+      .card-title {
+        font-size: 1.4rem;
       }
-      .content {
-        flex-direction: column;
-      }
-      .content img {
-        width: 100%;
-        max-width: 400px;
-      }
-      .text {
-        text-align: center;
+      .card-desc {
+        font-size: 1rem;
       }
     }
   </style>
@@ -164,57 +169,41 @@
     <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
   </div>
 
-  <main>
-    <section>
-      <h2>Không gian vô tận</h2>
-      <div class="content">
-        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/54/space-1867226_1280.jpg" alt="Không gian vô tận" />
-        <div class="text">
-          Không gian vũ trụ rộng lớn hơn mọi điều tưởng tượng của con người, kéo dài đến vô tận. Với hàng tỷ thiên hà, hàng nghìn tỷ ngôi sao và hành tinh, mỗi một phần nhỏ của không gian lại ẩn chứa những điều kỳ diệu chưa được khám phá.
-        </div>
-      </div>
-    </section>
+  <div class="card-container">
 
-    <section>
-      <h2>Những vùng tối sâu thẳm</h2>
-      <div class="content">
-        <div class="text">
-          Trong không gian có rất nhiều vùng tối mà ánh sáng khó có thể chiếu tới. Những vùng này chứa các đám mây bụi dày đặc, hố đen và các vật thể có mật độ vật chất cực lớn. Chúng vẫn còn là một bí ẩn lớn đối với các nhà thiên văn học.
-        </div>
-        <img src="https://cdn.pixabay.com/photo/2015/09/18/16/45/black-hole-947703_1280.jpg" alt="Hố đen" />
+    <a href="chieusauvekhonggian.html" target="_blank" class="card">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.2hHBuKgPCuYq9Wj_07_iegHaFp?cb=iwp2&rs=1&pid=ImgDetMain" alt="Không gian vô tận" />
+      <div class="card-content">
+        <h3 class="card-title">Không Gian Vô Tận</h3>
+        <p class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
       </div>
-    </section>
+    </a>
 
-    <section>
-      <h2>Hành trình xuyên thời gian và không gian</h2>
-      <div class="content">
-        <img src="https://cdn.pixabay.com/photo/2017/12/27/14/01/space-3047030_1280.jpg" alt="Hành trình vũ trụ" />
-        <div class="text">
-          Nhờ các công nghệ tiên tiến như kính viễn vọng không gian và tàu thăm dò, con người có thể quan sát và nghiên cứu những vùng sâu xa trong vũ trụ. Hành trình này không chỉ khám phá không gian mà còn mở rộng hiểu biết về thời gian và sự hình thành của vũ trụ.
-        </div>
+    <a href="subianvuvetru.html" target="_blank" class="card">
+      <img src="https://s3.cloud.cmctelecom.vn/tinhte2/2019/08/4754036_Cover_black-hole.png" alt="Hố đen" />
+      <div class="card-content">
+        <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
+        <p class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
       </div>
-    </section>
+    </a>
 
-    <section>
-      <h2>Thiên hà và các cụm sao</h2>
-      <div class="content">
-        <div class="text">
-          Thiên hà là tập hợp hàng tỷ ngôi sao, hành tinh và các vật thể khác liên kết với nhau bằng lực hấp dẫn. Các cụm sao là những nhóm sao tập trung, là nơi hình thành các ngôi sao mới và đóng vai trò quan trọng trong sự tiến hóa của vũ trụ.
-        </div>
-        <img src="https://cdn.pixabay.com/photo/2016/09/06/21/26/milky-way-1642446_1280.jpg" alt="Thiên hà" />
+    <a href="thongtin.html" target="_blank" class="card">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.LaEAUYyWXktmcnDEl0E2ZAHaJ5?cb=iwp2&rs=1&pid=ImgDetMain" alt="Hệ Mặt Trời" />
+      <div class="card-content">
+        <h3 class="card-title">Thông Tin Vũ Trụ</h3>
+        <p class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
       </div>
-    </section>
+    </a>
 
-    <section>
-      <h2>Khám phá không gian sâu xa hơn</h2>
-      <div class="content">
-        <img src="https://cdn.pixabay.com/photo/2018/06/14/17/05/space-3474953_1280.jpg" alt="Khám phá vũ trụ" />
-        <div class="text">
-          Các dự án thám hiểm không gian hiện đại như kính viễn vọng James Webb và các tàu vũ trụ thế hệ mới giúp mở rộng tầm nhìn của nhân loại, đưa chúng ta đến gần hơn với những bí ẩn sâu thẳm của vũ trụ, từ sự hình thành sao cho đến nguồn gốc của vũ trụ.
-        </div>
+    <a href="nhungdieucanbiet.html" target="_blank" class="card">
+      <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20200630/ourmid/pngtree-disaster-pictures-of-the-solar-system-image_340734.jpg" alt="Ngân Hà" />
+      <div class="card-content">
+        <h3 class="card-title">Những Điều Cần Biết</h3>
+        <p class="card-desc">Những kiến thức cơ bản về vũ trụ mà ai cũng nên biết để hiểu sâu hơn về không gian bao la.</p>
       </div>
-    </section>
-  </main>
+    </a>
+
+  </div>
 
   <footer>© 2025 - Trang Thông Tin Vũ Trụ</footer>
 
