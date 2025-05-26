@@ -2,35 +2,40 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sự Bí Ẩn Về Vũ Trụ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
       background-color: #000;
+      color: #fff;
       overflow-x: hidden;
-      color: #ffffff;
     }
 
-    /* Nền vũ trụ */
-    body::before, body::after {
+    /* Nền động */
+    body::before {
       content: '';
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      z-index: -2;
-    }
-
-    body::before {
       background: url('https://cdn.pixabay.com/photo/2016/11/22/19/15/space-1851496_1280.jpg') no-repeat center center;
       background-size: cover;
       opacity: 0.1;
+      z-index: -2;
     }
 
     body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: url('https://media.giphy.com/media/3o72F3uC7HqqYBVcCk/giphy.gif') repeat;
       background-size: cover;
       opacity: 0.05;
@@ -47,15 +52,9 @@
       max-width: 1100px;
       margin: 80px auto;
       padding: 40px;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.85);
       border-radius: 20px;
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
-      animation: pulseBox 4s infinite ease-in-out;
-    }
-
-    @keyframes pulseBox {
-      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
-      50% { box-shadow: 0 0 60px rgba(0, 255, 255, 0.6); }
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
     }
 
     h1 {
@@ -63,16 +62,7 @@
       text-align: center;
       color: #00ffff;
       text-shadow: 0 0 15px #00f5ff;
-      border: 3px solid transparent;
-      padding: 15px;
-      border-image: linear-gradient(90deg, #00f5ff, #ff00ff, #00f5ff) 1;
-      animation: borderFlow 6s linear infinite;
-    }
-
-    @keyframes borderFlow {
-      0% { border-image-slice: 1; }
-      50% { border-image-slice: 2; }
-      100% { border-image-slice: 1; }
+      margin-bottom: 40px;
     }
 
     h2 {
@@ -85,111 +75,104 @@
       font-size: 1.2em;
       line-height: 1.8em;
       color: #e0e0e0;
+      text-align: justify;
     }
 
     .section-image {
       width: 100%;
       margin: 20px 0;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
     }
 
-    .section-image::after {
-      content: "";
-      position: absolute;
-      top: -2px; left: -2px;
-      right: -2px; bottom: -2px;
-      background: linear-gradient(60deg, #00f5ff, #ff00ff, #00f5ff);
-      background-size: 300% 300%;
-      animation: glowBorder 5s linear infinite;
-      z-index: -1;
-      border-radius: 15px;
-      filter: blur(6px);
+    .section-image:hover {
+      transform: scale(1.04);
     }
 
-    @keyframes glowBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
+    /* Nút liên kết với viền động */
     .links {
       margin-top: 50px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
 
     .links a {
-      background: rgba(255, 255, 255, 0.08);
+      position: relative;
+      display: inline-block;
+      padding: 15px 30px;
       color: #00ffff;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 1.1em;
+      font-size: 1.1rem;
       text-decoration: none;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      transition: all 0.3s ease;
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(0, 255, 255, 0.1);
+      border: 2px solid transparent;
       backdrop-filter: blur(6px);
+      transition: all 0.4s ease;
+    }
+
+    .links a::before,
+    .links a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #00ffff, #00aaff);
+      top: 0;
+      left: -100%;
+      transition: left 0.5s ease;
+    }
+
+    .links a::after {
+      bottom: 0;
+      top: auto;
+      left: 100%;
+    }
+
+    .links a:hover::before {
+      left: 0;
+    }
+
+    .links a:hover::after {
+      left: 0;
     }
 
     .links a:hover {
-      background: rgba(0, 255, 255, 0.3);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-      transform: scale(1.08);
-    }
-
-    /* Tàu ngầm minh hoạ */
-    .submarine {
-      width: 100px;
-      height: 60px;
-      margin: 60px auto;
-      background: linear-gradient(to right, #444, #888);
-      border-radius: 50px;
-      position: relative;
-      animation: floatSub 5s ease-in-out infinite;
-    }
-
-    .submarine::before {
-      content: "";
-      position: absolute;
-      top: 15px;
-      left: -30px;
-      width: 30px;
-      height: 30px;
-      background: #555;
-      border-radius: 50%;
-    }
-
-    @keyframes floatSub {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Trụ 3D đơn giản */
-    .pillar3d {
-      width: 80px;
-      height: 200px;
-      margin: 50px auto;
-      background: linear-gradient(180deg, #0ff, #004);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-      transform: rotateX(20deg) rotateY(25deg);
-      animation: spinPillar 10s linear infinite;
-    }
-
-    @keyframes spinPillar {
-      0% { transform: rotateY(0deg) rotateX(20deg); }
-      100% { transform: rotateY(360deg) rotateX(20deg); }
+      color: #00ccff;
+      box-shadow:
+        0 0 5px #00ffff,
+        0 0 15px #00ffff,
+        0 0 25px #00aaff,
+        0 0 40px #00aaff;
+      border-color: #00ccff;
     }
 
     @media (max-width: 768px) {
-      .container { margin: 30px 15px; padding: 25px; }
-      h1 { font-size: 2.2em; }
-      h2 { font-size: 1.4em; }
-      .links a { font-size: 1em; padding: 12px 20px; }
+      .container {
+        margin: 30px 15px;
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      .links a {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+
+      .links {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -204,26 +187,20 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Hố Đen" class="section-image">
 
     <h2>✨ Vật Chất Tối</h2>
-    <p>Chiếm tới 27% vũ trụ nhưng không thể nhìn thấy – vật chất tối là bí ẩn vĩ đại đang chờ lời giải.</p>
+    <p>Dù không thể nhìn thấy hay chạm vào, vật chất tối chiếm tới 27% toàn bộ vũ trụ. Nó ảnh hưởng mạnh mẽ đến cấu trúc và chuyển động của các thiên hà.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Illustration_of_Dark_Matter_and_Dark_Energy.jpg" alt="Vật Chất Tối" class="section-image">
 
     <h2>🌠 Tinh Vân Orion</h2>
-    <p>Vườn ươm sao khổng lồ – nơi sinh ra các ngôi sao mới trong vũ trụ bao la.</p>
+    <p>Là vườn ươm sao rực rỡ nhất trên bầu trời đêm, tinh vân Orion hé lộ cách những ngôi sao được hình thành từ mây khí và bụi vũ trụ.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OrionNebula_Hubble.jpg" alt="Tinh Vân Orion" class="section-image">
 
     <h2>👽 UFO và Sinh Vật Ngoài Trái Đất</h2>
-    <p>Liệu chúng ta có cô đơn trong vũ trụ? UFO vẫn là đề tài gây tranh cãi hàng đầu.</p>
+    <p>Những hiện tượng UFO và tín hiệu lạ ngoài không gian đang thôi thúc con người đi tìm câu trả lời cho câu hỏi: "Chúng ta có cô đơn trong vũ trụ?"</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/UFO_Dawn.png" alt="UFO" class="section-image">
 
     <h2>🔭 Kính Viễn Vọng Không Gian</h2>
-    <p>James Webb là cỗ máy thời gian giúp con người nhìn ngược hàng tỷ năm về quá khứ.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Jwst_home_hero_0.jpg" alt="James Webb" class="section-image">
-
-    <!-- Tàu ngầm UFO minh hoạ -->
-    <div class="submarine"></div>
-
-    <!-- Trụ 3D xoay minh hoạ không gian -->
-    <div class="pillar3d"></div>
+    <p>Kính James Webb là cánh cửa thời gian, giúp chúng ta nhìn ngược về những ngày đầu của vũ trụ, cách đây hơn 13 tỷ năm.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Jwst_home_hero_0.jpg" alt="Kính viễn vọng James Webb" class="section-image">
 
     <!-- Liên kết -->
     <div class="links">
