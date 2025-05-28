@@ -6,16 +6,19 @@
   <title>Hành Trình Vũ Trụ - Phiên Bản Mới</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
-    /* Reset cơ bản */
+    /* Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(#000010, #000015);
-      color: #00ffff;
+      color: #00f5ff;
+      min-height: 100vh;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
     }
 
     /* Header */
@@ -24,34 +27,37 @@
       top: 0; left: 0; right: 0;
       height: 60px;
       background: rgba(0,0,0,0.85);
-      border-bottom: 1px solid #00ffff;
+      border-bottom: 2px solid #00f5ff;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 30px;
       z-index: 1000;
       backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 0 15px #00f5ff;
     }
     header .logo {
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 2px;
-      text-shadow: 0 0 10px #00ffff;
+      text-shadow: 0 0 12px #00f5ff;
       cursor: default;
     }
     nav a {
-      color: #00ffff;
+      color: #00f5ff;
       text-decoration: none;
       margin-left: 25px;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: 700;
+      font-size: 1rem;
+      text-shadow: 0 0 6px #00f5ff;
+      transition: color 0.3s, text-shadow 0.3s;
     }
     nav a:hover {
       color: #fff;
-      text-shadow: 0 0 15px #00ffff;
+      text-shadow: 0 0 20px #00ffff;
     }
 
-    /* Parallax backgrounds */
+    /* Parallax sections */
     .parallax {
       position: relative;
       height: 100vh;
@@ -60,14 +66,13 @@
       background-repeat: no-repeat;
       background-size: cover;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      color: #00ffff;
-      text-shadow: 0 0 15px #00f5ff;
+      padding: 20px;
+      color: #00f5ff;
+      text-shadow: 0 0 15px #00bfff;
     }
+
     #intro {
       background-image: url('https://cdn.futura-sciences.com/sources/images/actu/ngc346-jwst-chandra.png');
     }
@@ -83,83 +88,92 @@
     #ufo {
       background-image: url('https://media.hitekno.com/thumbs/2019/02/13/20190-alien-ada-di-suatu-tempat/730x480-img-20190-alien-ada-di-suatu-tempat.jpg');
     }
-    #explore-more {
-      background: linear-gradient(135deg, #001f2f, #004c66);
-      padding: 80px 20px;
-      height: auto;
-      text-shadow: none;
-      color: #00ffff;
-    }
 
-    /* Nội dung chính */
+    /* Content box */
     .content {
-      max-width: 800px;
-      background: rgba(0,0,0,0.6);
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00ffff;
-      backdrop-filter: blur(6px);
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px 50px;
+      border-radius: 30px;
+      box-shadow: 0 0 40px #00f5ff;
+      backdrop-filter: blur(8px);
+      text-align: center;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 20px;
+      text-shadow: 0 0 20px #00f5ff;
     }
     h2 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 15px;
+      text-shadow: 0 0 15px #00bfff;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       line-height: 1.6;
-      color: #e0f7f7;
+      color: #ccefff;
+      text-shadow: 0 0 8px #00d4ff;
     }
 
     /* Button */
     .btn {
-      margin-top: 30px;
-      padding: 15px 35px;
-      font-size: 1.1rem;
-      border: 2px solid #00ffff;
-      border-radius: 40px;
-      background: transparent;
-      color: #00ffff;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      text-decoration: none;
       display: inline-block;
+      margin-top: 30px;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: 2px solid #00f5ff;
+      border-radius: 40px;
+      background: rgba(0, 245, 255, 0.15);
+      color: #00f5ff;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 20px #00f5ff;
+      transition: all 0.4s ease;
     }
     .btn:hover {
-      background: #00ffff;
+      background: #00f5ff;
       color: #000;
-      box-shadow: 0 0 20px #00ffff;
+      box-shadow: 0 0 30px #00ffff;
+      transform: scale(1.1);
     }
 
-    /* Links phần Khám Phá Thêm */
+    /* Links Khám Phá Thêm */
+    #explore-more {
+      background: linear-gradient(135deg, #001f2f, #004c66);
+      padding: 80px 20px;
+      text-align: center;
+      color: #00f5ff;
+      text-shadow: none;
+    }
     .links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-top: 25px;
+      gap: 25px;
+      margin-top: 30px;
     }
     .links a {
       flex: 1 1 180px;
       max-width: 220px;
-      padding: 15px 25px;
-      background: rgba(0, 255, 255, 0.15);
-      border-radius: 30px;
-      color: #00ffff;
-      font-weight: 600;
+      padding: 18px 30px;
+      background: rgba(0, 245, 255, 0.15);
+      border-radius: 40px;
+      color: #00f5ff;
+      font-weight: 700;
+      font-size: 1.1rem;
       text-align: center;
       text-decoration: none;
-      box-shadow: 0 0 8px #00ffff;
+      box-shadow: 0 0 15px #00f5ff;
       transition: all 0.3s ease;
       display: block;
     }
     .links a:hover {
-      background: #00ffff;
+      background: #00f5ff;
       color: #000;
-      box-shadow: 0 0 20px #00ffff;
+      box-shadow: 0 0 30px #00ffff;
+      transform: scale(1.05);
     }
 
     /* Footer */
@@ -167,28 +181,36 @@
       text-align: center;
       padding: 20px 10px;
       background: #001f2f;
-      color: #00ffff;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      color: #00f5ffaa;
+      font-size: 0.95rem;
+      letter-spacing: 1.2px;
       user-select: none;
+      text-shadow: 0 0 8px #00f5ff;
+      margin-top: auto;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.7rem; }
+      h1 {
+        font-size: 2.4rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
       .content {
-        padding: 20px 25px;
-      }
-      .links a {
-        max-width: 100%;
-      }
-      header {
-        padding: 0 15px;
+        padding: 25px 30px;
       }
       nav a {
         margin-left: 15px;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+      }
+      .links {
+        gap: 15px;
+      }
+      .links a {
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 14px 20px;
       }
     }
   </style>
@@ -238,7 +260,7 @@
 
   <section id="ufo" class="parallax">
     <div class="content">
-      <h2>👽 UFO & Sự Sống Ngoài Trái Đất</h2>
+      <h2>👽 UFO &amp; Sự Sống Ngoài Trái Đất</h2>
       <p>Chúng ta có cô đơn trong vũ trụ không? Những tín hiệu và hình ảnh lạ vẫn đang được giải mã.</p>
     </div>
   </section>
@@ -261,4 +283,3 @@
 
 </body>
 </html>
-
