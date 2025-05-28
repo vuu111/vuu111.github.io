@@ -22,27 +22,9 @@
       color: #00ffff;
       min-height: 100vh;
       overflow-x: hidden;
-      padding: 80px 20px 40px; /* để header không chèn lên */
+      padding: 80px 20px 40px;
     }
 
-    /* Header giả (nếu muốn dùng lại header fix) */
-    /* .header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 60px;
-      background: rgba(0,0,0,0.85);
-      border-bottom: 1px solid #00ffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #00ffff;
-    } */
-
-    /* Nền chính */
     .background-image {
       position: fixed;
       inset: 0;
@@ -54,7 +36,6 @@
       z-index: -2;
     }
 
-    /* Nền phủ sao */
     .overlay-image {
       position: fixed;
       inset: 0;
@@ -66,7 +47,6 @@
       z-index: -1;
     }
 
-    /* Container chính */
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -110,7 +90,6 @@
       box-shadow: 0 0 30px #00ffff, 0 0 15px #00ffff inset;
     }
 
-    /* Phần nội dung từng section */
     .section {
       margin-bottom: 60px;
       opacity: 0;
@@ -155,7 +134,6 @@
       box-shadow: 0 0 25px #00ffff;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       h1 {
         font-size: 2.4rem;
@@ -195,7 +173,7 @@
 
     <div class="links">
       <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-      <a href="mhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
+      <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
       <a href="subianvevutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
       <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
     </div>
@@ -203,27 +181,51 @@
     <div class="section">
       <h2>1. Vũ Trụ Mở Rộng</h2>
       <p>Vũ trụ bắt đầu từ vụ nổ Big Bang khoảng 13.8 tỷ năm trước và từ đó không ngừng mở rộng. Khoảng cách giữa các thiên hà liên tục tăng lên, chứng tỏ vũ trụ đang giãn nở.</p>
-      <img loading="lazy" src="https://media-cdn-v2.laodong.vn/storage/newsportal/2021/5/22/912014/Bigbang_Final-V01_16.jpg" alt="Ảnh thiên hà từ Hubble">
+      <img loading="lazy" src="https://media-cdn-v2.laodong.vn/storage/newsportal/2021/5/22/912014/Bigbang_Final-V01_16.jpg" alt="Ảnh thiên hà từ Hubble" />
     </div>
 
     <div class="section">
       <h2>2. Các Thành Phần Chính Của Vũ Trụ</h2>
       <p>Vũ trụ bao gồm vật chất bình thường, vật chất tối (dark matter) và năng lượng tối (dark energy). Vật chất tối và năng lượng tối chiếm phần lớn năng lượng của vũ trụ, nhưng vẫn còn nhiều bí ẩn về chúng.</p>
-      <img loading="lazy" src="https://images2.thanhnien.vn/zoom/700_438/528068263637045248/2024/3/16/nasa-17105761611581858529625-12-0-612-960-crop-17105761786811094982809.jpeg" alt="Bản đồ vật chất tối">
+      <img loading="lazy" src="https://images2.thanhnien.vn/zoom/700_438/528068263637045248/2024/3/16/nasa-17105761611581858529625-12-0-612-960-crop-17105761786811094982809.jpeg" alt="Bản đồ vật chất tối" />
     </div>
 
     <div class="section">
       <h2>3. Sóng Gravitational (Sóng Hấp Dẫn)</h2>
       <p>Sóng hấp dẫn là những gợn sóng trong không-thời gian do các vật thể khối lượng lớn di chuyển hoặc va chạm tạo ra, lần đầu tiên được phát hiện trực tiếp năm 2015 bởi LIGO.</p>
-      <img loading="lazy" src="https://images.kienthuc.net.vn/w730/Uploaded/2025/ycwkyciv/2024_11_13/15-su-that-thu-vi-ve-hien-tuong-song-hap-dan-trong-vu-tru-Hinh-2.jpg" alt="Sóng hấp dẫn trong vũ trụ">
+      <img loading="lazy" src="https://images.kienthuc.net.vn/w730/Uploaded/2025/ycwkyciv/2024_11_13/15-su-that-thu-vi-ve-hien-tuong-song-hap-dan-trong-vu-tru-Hinh-2.jpg" alt="Sóng hấp dẫn trong vũ trụ" />
     </div>
 
     <div class="section">
       <h2>4. Hố Đen</h2>
       <p>Hố đen là những vùng không gian có lực hấp dẫn cực mạnh, đến mức ánh sáng cũng không thể thoát ra. Đây là một trong những hiện tượng bí ẩn nhất trong vũ trụ học.</p>
-      <img loading="lazy" src="https://png.pngtree.com/thumb_back/fh260/background/20230314/pngtree-science-fiction-space-black-hole-image_1947820.jpg" alt="Ảnh hố đen Messier 87">
+      <img loading="lazy" src="https://png.pngtree.com/thumb_back/fh260/background/20230314/pngtree-science-fiction-space-black-hole-image_1947820.jpg" alt="Ảnh hố đen Messier 87" />
     </div>
 
     <div class="section">
       <h2>Video Mô Phỏng Vũ Trụ</h2>
-      <iframe src="https://www.youtube.com/embed/zUyH3XhpLTo" title="Video
+      <iframe src="https://www.youtube.com/embed/zUyH3XhpLTo" title="Video mô phỏng vũ trụ" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Hiệu ứng fade-in khi scroll
+    const sections = document.querySelectorAll('.section');
+
+    function revealSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+  </script>
+
+</body>
+</html>
