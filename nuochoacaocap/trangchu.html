@@ -2,138 +2,122 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nước Hoa Trúc - Hương Quyền Quý</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Trần Huỳnh Vũ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #111;
-      color: #f0e6d2;
+      font-family: 'Poppins', sans-serif;
+      background: #f3f6f9;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1600185365483-26d7cdb5c2c5?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      color: white;
+      padding: 100px 20px;
       text-align: center;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    header .content {
-      position: relative;
-      z-index: 1;
-      color: #ffd700;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #000;
+      font-size: 48px;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      color: #f9f1d9;
+      font-size: 20px;
+      opacity: 0.9;
     }
 
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-      background: #1a1a1a;
-    }
-
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: #ffd700;
-      margin-bottom: 30px;
-    }
-
-    .section p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #d9cba3;
-      line-height: 1.8;
-    }
-
-    .product {
+    nav {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       display: flex;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 50px;
     }
 
-    .product-card {
-      background: #222;
-      border: 1px solid #444;
+    nav a {
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #4f46e5;
+      border-bottom: 2px solid #4f46e5;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
       border-radius: 12px;
-      overflow: hidden;
-      width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px #ffd70077;
+    section h2 {
+      font-size: 30px;
+      color: #4f46e5;
+      margin-bottom: 20px;
     }
 
-    .product-card img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
+    ul {
+      padding-left: 20px;
     }
 
-    .product-card h3 {
-      font-size: 1.5rem;
-      color: #f5e9c5;
-      margin: 15px 0;
+    ul li {
+      margin-bottom: 10px;
     }
 
-    .product-card p {
-      padding: 0 15px 20px;
-      color: #d9cba3;
-      font-size: 1rem;
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: #4338ca;
     }
 
     footer {
-      padding: 30px 20px;
       text-align: center;
-      background-color: #000;
-      color: #aaa;
-      font-size: 0.95rem;
+      padding: 30px;
+      background: #4f46e5;
+      color: white;
+      margin-top: 60px;
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 32px;
       }
 
-      .section h2 {
-        font-size: 2rem;
+      nav {
+        flex-direction: column;
       }
 
-      .product-card img {
-        height: 300px;
+      nav a {
+        padding: 12px;
+      }
+
+      section {
+        margin: 30px 20px;
+        padding: 30px;
       }
     }
   </style>
@@ -141,37 +125,42 @@
 <body>
 
 <header>
-  <div class="content">
-    <h1>Nước Hoa Trúc</h1>
-    <p>Hương thơm gợi cảm, thanh khiết và đầy quyền quý – được chiết xuất từ tinh hoa của trúc thiên nhiên phương Đông.</p>
-  </div>
+  <h1>Trần Huỳnh Vũ</h1>
+  <p>✨ Web Designer | 🚀 Front-end Developer | 🎨 UI/UX Enthusiast</p>
 </header>
 
-<section class="section">
-  <h2>Vẻ Đẹp Của Trúc Trong Một Lọ Hương</h2>
-  <p>
-    Tượng trưng cho sự thanh cao và uy quyền, nước hoa Trúc mang đến một trải nghiệm hương thơm bí ẩn, dịu nhẹ nhưng đầy cuốn hút. 
-    Sự kết hợp tinh tế giữa hương gỗ trầm, hoa nhài trắng, và tinh chất trúc tạo nên dấu ấn không thể nhầm lẫn.
-  </p>
+<nav>
+  <a href="#about">Giới thiệu</a>
+  <a href="#services">Dịch vụ</a>
+  <a href="#contact">Liên hệ</a>
+</nav>
 
-  <div class="product">
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1596462502278-b792c3a02b94?auto=format&fit=crop&w=800&q=80" alt="Lọ nước hoa trúc sang trọng">
-      <h3>Trúc Vàng</h3>
-      <p>Phiên bản giới hạn với thiết kế ánh kim, lưu hương 12h, phù hợp cho những buổi tiệc tối và sự kiện cao cấp.</p>
-    </div>
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=800&q=80" alt="Nước hoa quyền quý">
-      <h3>Trúc Ngọc</h3>
-      <p>Mùi hương nhẹ nhàng hơn, hòa quyện giữa trầm hương, hoa sen và hổ phách – phù hợp cho mọi thời điểm trong ngày.</p>
-    </div>
-  </div>
+<section id="about">
+  <h2>Giới thiệu</h2>
+  <p>Xin chào! Tôi là Vũ – một nhà thiết kế và lập trình viên web yêu thích sáng tạo. Tôi sử dụng các công cụ hiện đại như HTML5, CSS3, JavaScript, cũng như nền tảng như WordPress, Wix để tạo ra các trang web đẹp mắt và hiệu quả.</p>
+  <a href="#contact" class="button">Liên hệ ngay</a>
+</section>
+
+<section id="services">
+  <h2>Dịch vụ</h2>
+  <ul>
+    <li>🚀 Thiết kế website chuyên nghiệp cho cá nhân & doanh nghiệp</li>
+    <li>🎨 Thiết kế giao diện UI/UX hiện đại, tối ưu hóa trải nghiệm</li>
+    <li>📱 Responsive cho mọi thiết bị (mobile, tablet, laptop)</li>
+    <li>🛠 Bảo trì và tư vấn nâng cấp website</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Liên hệ</h2>
+  <p><strong>Email:</strong> <a href="mailto:vudesign@example.com">vudesign@example.com</a></p>
+  <p><strong>Facebook:</strong> <a href="https://facebook.com/vudesign" target="_blank">fb.com/vudesign</a></p>
+  <p><strong>Địa chỉ:</strong> TP. Hồ Chí Minh, Việt Nam</p>
 </section>
 
 <footer>
-  © 2025 Nước Hoa Trúc – Tinh Hoa Hương Việt
+  &copy; 2025 Trần Huỳnh Vũ • Designed with ❤️ and caffeine
 </footer>
 
 </body>
 </html>
-
