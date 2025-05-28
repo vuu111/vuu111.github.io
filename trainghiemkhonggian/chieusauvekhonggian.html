@@ -73,14 +73,19 @@
     /* Card Grid */
     .card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 40px;
-      max-width: 1080px;
+      max-width: 960px;
       width: 100%;
       padding: 0 10px;
     }
 
-    /* Each Card */
+    /* Make first card span 2 columns */
+    .card-container .card:first-child {
+      grid-column: span 2;
+      height: 350px;
+    }
+
     .card {
       background: rgba(0, 30, 50, 0.85);
       border-radius: 22px;
@@ -103,11 +108,12 @@
 
     .card img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       border-bottom: 3px solid #00f5ff;
       transition: transform 0.3s ease;
       filter: drop-shadow(0 0 8px #00bfffcc);
+      flex-shrink: 0;
     }
 
     .card:hover img {
@@ -162,8 +168,15 @@
         font-size: 1.15rem;
         padding: 14px 25px;
       }
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+      .card-container .card:first-child {
+        grid-column: auto;
+        height: 300px;
+      }
       .card img {
-        height: 170px;
+        height: 200px;
       }
       .card-title {
         font-size: 1.6rem;
@@ -203,10 +216,10 @@
   <h1>🌌 Chiều Sâu Không Gian</h1>
 
   <nav class="links" role="navigation" aria-label="Điều hướng trang">
+    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer">🌠 Chiều Sâu Không Gian</a>
+    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer">🌌 Sự Bí Ẩn Vũ Trụ</a>
     <a href="thongtin.html" target="_blank" rel="noopener noreferrer">🔭 Thông Tin Vũ Trụ</a>
     <a href="nhungdieucanbiet.html" target="_blank" rel="noopener noreferrer">🪐 Những Điều Cần Biết</a>
-    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer">🌌 Sự Bí Ẩn Vũ Trụ</a>
-    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer">🌠 Chiều Sâu Không Gian</a>
   </nav>
 
   <section class="card-container" aria-label="Danh sách chủ đề khám phá vũ trụ">
