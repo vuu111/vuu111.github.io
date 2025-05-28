@@ -2,95 +2,67 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Shin rượt chó tuyết</title>
+  <title>Shin và chó tuyết chạy theo sóng sin</title>
   <style>
     body {
       margin: 0;
-      overflow: hidden;
       background: linear-gradient(to bottom, #87ceeb, #ffffff);
-      height: 100vh;
+      overflow: hidden;
     }
-
-    .ground {
+    canvas {
       position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 150px;
-      background: #fff;
-    }
-
-    .shin {
-      position: absolute;
-      bottom: 150px;
-      width: 100px;
-      height: 100px;
-      background: url('https://media.giphy.com/media/TgmiJ4AZ3HSiIqpOj6/giphy.gif') no-repeat center/contain;
-      background-size: contain;
-      animation: runShin 6s linear infinite;
-    }
-
-    .dog {
-      position: absolute;
-      bottom: 150px;
-      width: 120px;
-      height: 80px;
-      background: url('https://media.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif') no-repeat center/contain;
-      background-size: contain;
-      animation: runDog 6s linear infinite;
-    }
-
-    @keyframes runShin {
-      from { left: -100px; }
-      to { left: 80%; }
-    }
-
-    @keyframes runDog {
-      from { left: 0%; }
-      to { left: 100%; }
-    }
-
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      color: white;
-      font-size: 1em;
-      user-select: none;
-      pointer-events: none;
-      animation-name: fall;
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
 <body>
-  <div class="shin"></div>
-  <div class="dog"></div>
-  <div class="ground"></div>
+  <canvas id="canvas"></canvas>
 
   <script>
-    // Tuyết rơi
-    function createSnowflake() {
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-      snowflake.style.left = Math.random() * window.innerWidth + 'px';
-      snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
-      snowflake.textContent = '❄';
-      document.body.appendChild(snowflake);
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-      setTimeout(() => {
-        snowflake.remove();
-      }, 10000);
+    const shinImg = new Image();
+    shinImg.src = "https://media.tenor.com/uwjAYUe-WXIAAAAi/crayon-shin-chan-shin-chan.gif";
+
+    const dogImg = new Image();
+    dogImg.src = "https://media.tenor.com/0AV9GmQkbn0AAAAC/dog-running.gif";
+
+    let x = 0;
+    const speed = 2;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Sóng sin
+      const amplitude = 80; // biên độ sóng
+      const frequency = 0.01;
+
+      const y = canvas.height / 2 + Math.sin(x * frequency) * amplitude;
+
+      // Shin
+      ctx.drawImage(shinImg, x, y, 100, 100);
+
+      // Chó tuyết chạy phía trước
+      const dogX = x + 150;
+      const dogY = canvas.height / 2 + Math.sin((x + 150) * frequency) * amplitude;
+      ctx.drawImage(dogImg, dogX, dogY, 100, 80);
+
+      x += speed;
+      if (x > canvas.width + 200) x = -200;
+
+      requestAnimationFrame(draw);
     }
 
-    setInterval(createSnowflake, 200);
+    // Khi ảnh tải xong mới chạy
+    shinImg.onload = () => {
+      dogImg.onload = () => {
+        draw();
+      };
+    };
   </script>
 </body>
 </html>
