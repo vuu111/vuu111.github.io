@@ -6,16 +6,13 @@
   <title>Chiều Sâu Không Gian - Khám Phá Vũ Trụ</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & Base */
     * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #000011 0%, #001122 80%), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background: linear-gradient(135deg, #000011 0%, #001122 80%), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #00e5ff;
       min-height: 100vh;
@@ -37,7 +34,6 @@
       letter-spacing: 2px;
     }
 
-    /* Navigation links */
     .links {
       display: flex;
       gap: 25px;
@@ -70,20 +66,13 @@
       border-color: #00ffff;
     }
 
-    /* Card Grid */
     .card-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 960px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1140px;
       width: 100%;
       padding: 0 10px;
-    }
-
-    /* Make first card span 2 columns */
-    .card-container .card:first-child {
-      grid-column: span 2;
-      height: 350px;
     }
 
     .card {
@@ -108,102 +97,51 @@
 
     .card img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       border-bottom: 3px solid #00f5ff;
-      transition: transform 0.3s ease;
       filter: drop-shadow(0 0 8px #00bfffcc);
-      flex-shrink: 0;
-    }
-
-    .card:hover img {
-      transform: scale(1.08);
-      filter: drop-shadow(0 0 15px #00ffffdd);
     }
 
     .card-content {
-      padding: 25px 20px;
-      flex-grow: 1;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex-grow: 1;
     }
 
     .card-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 12px;
       color: #00dfff;
       text-shadow: 0 0 14px #00bfff;
-      letter-spacing: 0.03em;
-      user-select: none;
     }
 
     .card-desc {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #a0dfffcc;
       line-height: 1.6;
-      flex-grow: 1;
-      user-select: none;
     }
 
-    /* Footer */
     footer {
       margin-top: 60px;
       color: #00f5ffaa;
       font-size: 1rem;
       text-align: center;
       text-shadow: 0 0 10px #00f5ff;
-      user-select: none;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
+    @media (max-width: 600px) {
       h1 {
-        font-size: 3rem;
-      }
-      .links {
-        gap: 18px;
+        font-size: 2.6rem;
       }
       .links a {
-        font-size: 1.15rem;
-        padding: 14px 25px;
-      }
-      .card-container {
-        grid-template-columns: 1fr;
-      }
-      .card-container .card:first-child {
-        grid-column: auto;
-        height: 300px;
-      }
-      .card img {
-        height: 200px;
+        font-size: 1.1rem;
+        padding: 12px 20px;
       }
       .card-title {
-        font-size: 1.6rem;
-      }
-      .card-desc {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.4rem;
-      }
-      .links {
-        flex-direction: column;
-        gap: 14px;
-      }
-      .links a {
-        flex: 1 1 100%;
-        font-size: 1rem;
-        padding: 14px 20px;
-      }
-      .card img {
-        height: 140px;
-      }
-      .card-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
       .card-desc {
         font-size: 0.95rem;
@@ -216,49 +154,39 @@
   <h1>🌌 Chiều Sâu Không Gian</h1>
 
   <nav class="links" role="navigation" aria-label="Điều hướng trang">
-    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer">🌠 Chiều Sâu Không Gian</a>
-    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer">🌌 Sự Bí Ẩn Vũ Trụ</a>
-    <a href="thongtin.html" target="_blank" rel="noopener noreferrer">🔭 Thông Tin Vũ Trụ</a>
-    <a href="nhungdieucanbiet.html" target="_blank" rel="noopener noreferrer">🪐 Những Điều Cần Biết</a>
+    <a href="chieusauvekhonggian.html">🌠 Chiều Sâu Không Gian</a>
+    <a href="subianvevutru.html">🌌 Sự Bí Ẩn Vũ Trụ</a>
+    <a href="thongtin.html">🔭 Thông Tin Vũ Trụ</a>
+    <a href="nhungdieucanbiet.html">🪐 Những Điều Cần Biết</a>
   </nav>
 
   <section class="card-container" aria-label="Danh sách chủ đề khám phá vũ trụ">
 
-    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-khonggian">
-      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh không gian vô tận với các vì sao và thiên hà" />
+    <a href="chieusauvekhonggian.html" class="card">
+      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=800&q=80" alt="Không gian vô tận" />
       <div class="card-content">
         <h3 class="card-title">Không Gian Vô Tận</h3>
-        <p id="desc-khonggian" class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
+        <p class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
       </div>
     </a>
 
-    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-bian">
-      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh mô tả hố đen với hiệu ứng ánh sáng" />
+    <a href="subianvevutru.html" class="card">
+      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=800&q=80" alt="Hố đen và ánh sáng" />
       <div class="card-content">
         <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
-        <p id="desc-bian" class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
+        <p class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
       </div>
     </a>
 
-    <a href="thongtin.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-thongtin">
-      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh hệ Mặt Trời với các hành tinh quay quanh" />
+    <a href="thongtin.html" class="card">
+      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=800&q=80" alt="Hệ mặt trời" />
       <div class="card-content">
         <h3 class="card-title">Thông Tin Vũ Trụ</h3>
-        <p id="desc-thongtin" class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
+        <p class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
       </div>
     </a>
 
-    <a href="nhungdieucanbiet.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-canbiet">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh Ngân Hà với các ngôi sao sáng" />
+    <a href="nhungdieucanbiet.html" class="card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Dải ngân hà" />
       <div class="card-content">
-        <h3 class="card-title">Những Điều Cần Biết</h3>
-        <p id="desc-canbiet" class="card-desc">Những kiến thức cơ bản về vũ trụ mà ai cũng nên biết để hiểu sâu hơn về không gian bao la.</p>
-      </div>
-    </a>
-
-  </section>
-
-  <footer>© 2025 - Trang Thông Tin Vũ Trụ</footer>
-
-</body>
-</html>
+        <h3 class="card-title">Những Điều Cần Bi
