@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chiều Sâu Không Gian - Khám Phá Vũ Trụ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiều Sâu Không Gian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #000011, #001122);
-      color: #00e5ff;
-      min-height: 100vh;
-      padding: 40px 20px 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-shadow: 0 0 10px #00cfff;
+      background: radial-gradient(circle at top, #000022 0%, #000010 100%);
+      color: #00eaff;
+      line-height: 1.6;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 30px;
-      color: #00f5ff;
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      background-color: rgba(0, 10, 20, 0.6);
+    }
+
+    header h1 {
+      font-size: 3.2rem;
       text-shadow: 0 0 20px #00f5ff;
     }
 
-    .links {
+    nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
+      flex-wrap: wrap;
+      background: rgba(0, 255, 255, 0.05);
+      padding: 10px;
+      border-top: 1px solid #00f5ff33;
+      border-bottom: 1px solid #00f5ff33;
     }
 
-    .links a {
-      background: rgba(0, 255, 255, 0.15);
-      padding: 12px 24px;
-      border-radius: 30px;
-      color: #00f5ff;
+    nav a {
+      color: #00eaff;
       text-decoration: none;
-      font-weight: bold;
-      border: 2px solid #00f5ff;
-      backdrop-filter: blur(6px);
-      transition: 0.3s ease;
+      margin: 8px 15px;
+      padding: 10px 20px;
+      border: 1px solid #00eaff44;
+      border-radius: 25px;
+      transition: 0.3s;
     }
 
-    .links a:hover {
+    nav a:hover {
       background: #00f5ff;
       color: #001122;
-      box-shadow: 0 0 20px #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
+      color: white;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
     }
 
     .card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
+      padding: 60px 20px;
       max-width: 1200px;
-      width: 100%;
+      margin: auto;
     }
 
     .card {
-      background: rgba(0, 30, 50, 0.85);
+      background: rgba(0, 40, 60, 0.9);
       border-radius: 18px;
       overflow: hidden;
-      border: 1.5px solid #00eaffaa;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: #ccefff;
+      border: 1.5px solid #00f5ff88;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #ccefff;
+      text-decoration: none;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 0 30px #00ffffcc;
-      border-color: #00ffff;
+      box-shadow: 0 0 30px #00ffffaa;
     }
 
     .card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: 180px;
       object-fit: cover;
     }
 
@@ -100,93 +118,129 @@
     .card-desc {
       font-size: 1rem;
       color: #a0dfff;
-      line-height: 1.5;
+    }
+
+    .section-info {
+      padding: 40px 20px;
+      max-width: 960px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-info h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f5ff;
+    }
+
+    .section-info p {
+      font-size: 1.1rem;
+      color: #a0e0ff;
+      line-height: 1.8;
     }
 
     footer {
-      margin-top: 50px;
-      color: #00f5ffaa;
-      font-size: 0.9rem;
+      padding: 20px;
       text-align: center;
-      text-shadow: 0 0 10px #00f5ff;
+      background-color: #001020;
+      color: #00eaff99;
+      font-size: 0.9rem;
+      border-top: 1px solid #00f5ff22;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .hero h2 { font-size: 1.5rem; }
+      .card-title { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 
-  <h1>🌌 Chiều Sâu Không Gian</h1>
+  <header>
+    <h1>🌌 Chiều Sâu Không Gian</h1>
+  </header>
 
-  <nav class="links">
-    <a href="#">Chiều Sâu</a>
-    <a href="#">Sự Bí Ẩn</a>
-    <a href="#">Thông Tin</a>
-    <a href="#">Kiến Thức</a>
+  <nav>
+    <a href="chieusauvekhonggian.html">Chiều Sâu</a>
+    <a href="subianvevutru.html">Bí Ẩn Vũ Trụ</a>
+    <a href="thongtin.html">Thông Tin</a>
+    <a href="nhungdieucanbiet.html">Điều Cần Biết</a>
   </nav>
 
+  <section class="hero">
+    <h2>Khám Phá Vũ Trụ Bao La</h2>
+    <p>Hành trình tìm hiểu những điều bí ẩn của vũ trụ từ các thiên hà xa xôi đến khả năng tồn tại sự sống ngoài Trái Đất.</p>
+  </section>
+
   <section class="card-container">
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=800&q=80" alt="Không gian vô tận" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
         <h3 class="card-title">Không Gian Vô Tận</h3>
-        <p class="card-desc">Vũ trụ bao la chứa hàng tỷ thiên hà, mỗi thiên hà lại chứa hàng tỷ ngôi sao.</p>
+        <p class="card-desc">Tìm hiểu kích thước và cấu trúc rộng lớn không thể tưởng tượng của vũ trụ.</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=800&q=80" alt="Hố đen và ánh sáng" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
-        <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
-        <p class="card-desc">Khám phá hố đen, vật chất tối, và các hiện tượng chưa được giải thích.</p>
+        <h3 class="card-title">Hố Đen & Lỗ Giun</h3>
+        <p class="card-desc">Khám phá hiện tượng vật lý cực đoan và khả năng dịch chuyển không gian.</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=800&q=80" alt="Hệ mặt trời" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
-        <h3 class="card-title">Thông Tin Vũ Trụ</h3>
-        <p class="card-desc">Tổng quan về hệ Mặt Trời, các hành tinh, mặt trăng, sao chổi và thiên thạch.</p>
+        <h3 class="card-title">Ngân Hà</h3>
+        <p class="card-desc">Ngôi nhà của hệ Mặt Trời và hàng trăm tỷ ngôi sao khác.</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Ngân Hà" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
-        <h3 class="card-title">Những Điều Cần Biết</h3>
-        <p class="card-desc">Những kiến thức vũ trụ cơ bản giúp bạn hiểu rõ hơn về thế giới ngoài kia.</p>
+        <h3 class="card-title">Hệ Mặt Trời</h3>
+        <p class="card-desc">8 hành tinh quay quanh Mặt Trời với những điều kỳ diệu riêng.</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80" alt="Sự sống ngoài hành tinh" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=80" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Vật Chất Tối</h3>
+        <p class="card-desc">Loại vật chất chưa thể nhìn thấy nhưng chiếm phần lớn khối lượng vũ trụ.</p>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
         <h3 class="card-title">Sự Sống Ngoài Trái Đất</h3>
-        <p class="card-desc">Liệu sự sống tồn tại ở các hành tinh khác? Hãy cùng khám phá.</p>
+        <p class="card-desc">Tìm kiếm tín hiệu và điều kiện cho sự sống trên hành tinh khác.</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1587560699334-4c1bd7fd03ff?auto=format&fit=crop&w=800&q=80" alt="Tên lửa" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
-        <h3 class="card-title">Công Nghệ Du Hành</h3>
-        <p class="card-desc">Từ tàu vũ trụ đầu tiên đến SpaceX, công nghệ đang đưa loài người xa hơn.</p>
+        <h3 class="card-title">Thời Gian & Không Thời Gian</h3>
+        <p class="card-desc">Không gian có thể bẻ cong? Du hành thời gian liệu có thật?</p>
       </div>
     </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=80" alt="Vệ tinh" />
+    <a class="card" href="#">
+      <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80" alt="">
       <div class="card-content">
-        <h3 class="card-title">Vệ Tinh & Trái Đất</h3>
-        <p class="card-desc">Vệ tinh giúp quan sát khí hậu, thiên tai và viễn thông toàn cầu.</p>
-      </div>
-    </a>
-
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80" alt="Ngoại hành tinh" />
-      <div class="card-content">
-        <h3 class="card-title">Hệ Ngoại Hành Tinh</h3>
-        <p class="card-desc">Tìm kiếm hành tinh có thể sống ngoài hệ Mặt Trời – liệu có Trái Đất thứ hai?</p>
+        <h3 class="card-title">Big Bang & Vũ Trụ Khởi Nguồn</h3>
+        <p class="card-desc">Vũ trụ bắt đầu từ một vụ nổ lớn – và chúng ta là kết quả?</p>
       </div>
     </a>
   </section>
 
-  <footer>© 2025 - Khám Phá
+  <section class="section-info">
+    <h3>🌠 Chúng Ta Đang Ở Đâu Trong Vũ Trụ?</h3>
+    <p>Trái Đất – một hạt bụi nhỏ bé trong hệ Mặt Trời, thuộc một nhánh xoắn của Ngân Hà. Hàng tỷ thiên hà khác cũng đang quay cuồng trong không gian rộng lớn. Những khám phá vũ trụ giúp chúng ta hiểu thêm về chính bản thân mình.</p>
+  </section>
+
+  <footer>
+    © 2025 Chiều Sâu Không Gian | Phát triển bởi bạn và sự tò mò về vũ trụ 🪐
+  </footer>
+
+</body>
+</html>
