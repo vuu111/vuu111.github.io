@@ -6,102 +6,117 @@
   <title>Chiều Sâu Không Gian - Khám Phá Vũ Trụ</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
+    /* Reset & Base */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background: linear-gradient(135deg, #000011 0%, #001122 80%), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #00e5ff;
       min-height: 100vh;
-      padding: 30px 20px;
+      padding: 40px 20px 60px;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-shadow: 0 0 8px #00cfff;
+      text-shadow: 0 0 10px #00cfff;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 3.8rem;
-      margin-bottom: 20px;
+      font-size: 4rem;
+      margin-bottom: 35px;
       text-align: center;
       color: #00f5ff;
-      text-shadow: 0 0 20px #00f5ff;
+      text-shadow: 0 0 30px #00f5ff;
+      letter-spacing: 2px;
     }
 
+    /* Navigation links */
     .links {
       display: flex;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       flex-wrap: wrap;
-      max-width: 900px;
+      max-width: 960px;
     }
     .links a {
-      background: rgba(0, 255, 255, 0.2);
+      background: rgba(0, 255, 255, 0.15);
       color: #00f5ff;
-      padding: 15px 30px;
-      border-radius: 30px;
+      padding: 15px 35px;
+      border-radius: 35px;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       text-decoration: none;
       box-shadow: 0 0 15px #00f5ff;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(6px);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(8px);
       border: 2px solid #00f5ff;
-      flex: 1 1 180px;
+      flex: 1 1 200px;
       text-align: center;
+      user-select: none;
     }
     .links a:hover {
       background: #00f5ff;
-      color: #000;
-      box-shadow: 0 0 35px #00ffff;
+      color: #001122;
+      box-shadow: 0 0 40px #00ffff;
       transform: scale(1.1);
+      border-color: #00ffff;
     }
 
+    /* Card Grid */
     .card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 30px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1080px;
       width: 100%;
+      padding: 0 10px;
     }
 
+    /* Each Card */
     .card {
-      background: rgba(0, 0, 40, 0.75);
-      border-radius: 20px;
+      background: rgba(0, 30, 50, 0.85);
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 0 40px #00eaff;
+      box-shadow: 0 0 45px #00eaffcc;
       color: #ccefff;
       cursor: pointer;
       text-decoration: none;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1.5px solid #00eaffaa;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 70px #00ffff;
+      transform: translateY(-12px);
+      box-shadow: 0 0 90px #00ffffcc;
+      border-color: #00ffff;
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
-      border-bottom: 2px solid #00f5ff;
+      border-bottom: 3px solid #00f5ff;
       transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 8px #00bfffcc);
     }
 
     .card:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 15px #00ffffdd);
     }
 
     .card-content {
-      padding: 20px;
+      padding: 25px 20px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -109,48 +124,76 @@
     }
 
     .card-title {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #00f5ff;
-      text-shadow: 0 0 10px #00bfff;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #00dfff;
+      text-shadow: 0 0 14px #00bfff;
+      letter-spacing: 0.03em;
+      user-select: none;
     }
 
     .card-desc {
-      font-size: 1.1rem;
-      color: #a0dfff;
-      line-height: 1.5;
+      font-size: 1.15rem;
+      color: #a0dfffcc;
+      line-height: 1.6;
       flex-grow: 1;
+      user-select: none;
     }
 
+    /* Footer */
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       color: #00f5ffaa;
       font-size: 1rem;
       text-align: center;
-      text-shadow: 0 0 8px #00f5ff;
+      text-shadow: 0 0 10px #00f5ff;
+      user-select: none;
     }
 
-    @media (max-width: 768px) {
+    /* Responsive */
+    @media (max-width: 900px) {
       h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       .links {
-        flex-direction: column;
-        gap: 15px;
+        gap: 18px;
       }
       .links a {
-        flex: 1 1 100%;
-        font-size: 1.1rem;
-        padding: 15px 20px;
+        font-size: 1.15rem;
+        padding: 14px 25px;
       }
       .card img {
-        height: 150px;
+        height: 170px;
       }
       .card-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
       .card-desc {
         font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .links {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .links a {
+        flex: 1 1 100%;
+        font-size: 1rem;
+        padding: 14px 20px;
+      }
+      .card img {
+        height: 140px;
+      }
+      .card-title {
+        font-size: 1.3rem;
+      }
+      .card-desc {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -159,48 +202,48 @@
 
   <h1>🌌 Chiều Sâu Không Gian</h1>
 
-  <div class="links">
-    <a href="thongtin.html" target="_blank">🔭 Thông Tin Vũ Trụ</a>
-    <a href="nhungdieucanbiet.html" target="_blank">🪐 Những Điều Cần Biết</a>
-    <a href="subianvevutru.html" target="_blank">🌌 Sự Bí Ẩn Vũ Trụ</a>
-    <a href="chieusauvekhonggian.html" target="_blank">🌠 Chiều Sâu Không Gian</a>
-  </div>
+  <nav class="links" role="navigation" aria-label="Điều hướng trang">
+    <a href="thongtin.html" target="_blank" rel="noopener noreferrer">🔭 Thông Tin Vũ Trụ</a>
+    <a href="nhungdieucanbiet.html" target="_blank" rel="noopener noreferrer">🪐 Những Điều Cần Biết</a>
+    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer">🌌 Sự Bí Ẩn Vũ Trụ</a>
+    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer">🌠 Chiều Sâu Không Gian</a>
+  </nav>
 
-  <div class="card-container">
+  <section class="card-container" aria-label="Danh sách chủ đề khám phá vũ trụ">
 
-    <a href="chieusauvekhonggian.html" target="_blank" class="card">
-      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5" alt="Không gian vô tận" />
+    <a href="chieusauvekhonggian.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-khonggian">
+      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh không gian vô tận với các vì sao và thiên hà" />
       <div class="card-content">
         <h3 class="card-title">Không Gian Vô Tận</h3>
-        <p class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
+        <p id="desc-khonggian" class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
       </div>
     </a>
 
-    <a href="subianvevutru.html" target="_blank" class="card">
-      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0" alt="Hố đen" />
+    <a href="subianvevutru.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-bian">
+      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh mô tả hố đen với hiệu ứng ánh sáng" />
       <div class="card-content">
         <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
-        <p class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
+        <p id="desc-bian" class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
       </div>
     </a>
 
-    <a href="thongtin.html" target="_blank" class="card">
-      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c" alt="Hệ Mặt Trời" />
+    <a href="thongtin.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-thongtin">
+      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh hệ Mặt Trời với các hành tinh quay quanh" />
       <div class="card-content">
         <h3 class="card-title">Thông Tin Vũ Trụ</h3>
-        <p class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
+        <p id="desc-thongtin" class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
       </div>
     </a>
 
-    <a href="nhungdieucanbiet.html" target="_blank" class="card">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Ngân Hà" />
+    <a href="nhungdieucanbiet.html" target="_blank" rel="noopener noreferrer" class="card" aria-describedby="desc-canbiet">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Hình ảnh Ngân Hà với các ngôi sao sáng" />
       <div class="card-content">
         <h3 class="card-title">Những Điều Cần Biết</h3>
-        <p class="card-desc">Những kiến thức cơ bản về vũ trụ mà ai cũng nên biết để hiểu sâu hơn về không gian bao la.</p>
+        <p id="desc-canbiet" class="card-desc">Những kiến thức cơ bản về vũ trụ mà ai cũng nên biết để hiểu sâu hơn về không gian bao la.</p>
       </div>
     </a>
 
-  </div>
+  </section>
 
   <footer>© 2025 - Trang Thông Tin Vũ Trụ</footer>
 
