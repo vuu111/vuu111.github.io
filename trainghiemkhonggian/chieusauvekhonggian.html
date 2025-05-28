@@ -1,192 +1,63 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chiều Sâu Không Gian - Khám Phá Vũ Trụ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+<a href="chieusauvekhonggian.html" class="card">
+  <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=800&q=80" alt="Không gian vô tận" />
+  <div class="card-content">
+    <h3 class="card-title">Không Gian Vô Tận</h3>
+    <p class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
+  </div>
+</a>
 
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #000011 0%, #001122 80%), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #00e5ff;
-      min-height: 100vh;
-      padding: 40px 20px 60px;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-shadow: 0 0 10px #00cfff;
-      overflow-x: hidden;
-    }
+<a href="subianvevutru.html" class="card">
+  <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=800&q=80" alt="Hố đen và ánh sáng" />
+  <div class="card-content">
+    <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
+    <p class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
+  </div>
+</a>
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 35px;
-      text-align: center;
-      color: #00f5ff;
-      text-shadow: 0 0 30px #00f5ff;
-      letter-spacing: 2px;
-    }
+<a href="thongtin.html" class="card">
+  <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=800&q=80" alt="Hệ mặt trời" />
+  <div class="card-content">
+    <h3 class="card-title">Thông Tin Vũ Trụ</h3>
+    <p class="card-desc">Thông tin tổng quan về hệ Mặt Trời, các hành tinh, mặt trăng và tiểu hành tinh.</p>
+  </div>
+</a>
 
-    .links {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      margin-bottom: 50px;
-      flex-wrap: wrap;
-      max-width: 960px;
-    }
-    .links a {
-      background: rgba(0, 255, 255, 0.15);
-      color: #00f5ff;
-      padding: 15px 35px;
-      border-radius: 35px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      text-decoration: none;
-      box-shadow: 0 0 15px #00f5ff;
-      transition: all 0.4s ease;
-      backdrop-filter: blur(8px);
-      border: 2px solid #00f5ff;
-      flex: 1 1 200px;
-      text-align: center;
-      user-select: none;
-    }
-    .links a:hover {
-      background: #00f5ff;
-      color: #001122;
-      box-shadow: 0 0 40px #00ffff;
-      transform: scale(1.1);
-      border-color: #00ffff;
-    }
+<a href="nhungdieucanbiet.html" class="card">
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Ngân Hà" />
+  <div class="card-content">
+    <h3 class="card-title">Những Điều Cần Biết</h3>
+    <p class="card-desc">Kiến thức cơ bản về vũ trụ giúp bạn hiểu rõ hơn về nguồn gốc và cấu trúc không gian.</p>
+  </div>
+</a>
 
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1140px;
-      width: 100%;
-      padding: 0 10px;
-    }
+<a href="susuongngoaitraidat.html" class="card">
+  <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80" alt="Sự sống ngoài hành tinh" />
+  <div class="card-content">
+    <h3 class="card-title">Sự Sống Ngoài Trái Đất</h3>
+    <p class="card-desc">Liệu chúng ta có cô đơn trong vũ trụ? Cùng khám phá các hành tinh có tiềm năng tồn tại sự sống.</p>
+  </div>
+</a>
 
-    .card {
-      background: rgba(0, 30, 50, 0.85);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 0 45px #00eaffcc;
-      color: #ccefff;
-      cursor: pointer;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      border: 1.5px solid #00eaffaa;
-    }
+<a href="congngheduhanh.html" class="card">
+  <img src="https://images.unsplash.com/photo-1587560699334-4c1bd7fd03ff?auto=format&fit=crop&w=800&q=80" alt="Tên lửa không gian" />
+  <div class="card-content">
+    <h3 class="card-title">Công Nghệ Du Hành</h3>
+    <p class="card-desc">Công nghệ giúp con người tiếp cận không gian, từ tàu Apollo đến tên lửa tái sử dụng.</p>
+  </div>
+</a>
 
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 0 90px #00ffffcc;
-      border-color: #00ffff;
-    }
+<a href="vetinhvaquantrac.html" class="card">
+  <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=80" alt="Vệ tinh Trái Đất" />
+  <div class="card-content">
+    <h3 class="card-title">Vệ Tinh & Quan Trắc</h3>
+    <p class="card-desc">Khám phá vai trò của vệ tinh trong dự báo thời tiết, viễn thám và quan sát Trái Đất.</p>
+  </div>
+</a>
 
-    .card img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-bottom: 3px solid #00f5ff;
-      filter: drop-shadow(0 0 8px #00bfffcc);
-    }
-
-    .card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-grow: 1;
-    }
-
-    .card-title {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-      color: #00dfff;
-      text-shadow: 0 0 14px #00bfff;
-    }
-
-    .card-desc {
-      font-size: 1.1rem;
-      color: #a0dfffcc;
-      line-height: 1.6;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: #00f5ffaa;
-      font-size: 1rem;
-      text-align: center;
-      text-shadow: 0 0 10px #00f5ff;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.6rem;
-      }
-      .links a {
-        font-size: 1.1rem;
-        padding: 12px 20px;
-      }
-      .card-title {
-        font-size: 1.5rem;
-      }
-      .card-desc {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h1>🌌 Chiều Sâu Không Gian</h1>
-
-  <nav class="links" role="navigation" aria-label="Điều hướng trang">
-    <a href="chieusauvekhonggian.html">🌠 Chiều Sâu Không Gian</a>
-    <a href="subianvevutru.html">🌌 Sự Bí Ẩn Vũ Trụ</a>
-    <a href="thongtin.html">🔭 Thông Tin Vũ Trụ</a>
-    <a href="nhungdieucanbiet.html">🪐 Những Điều Cần Biết</a>
-  </nav>
-
-  <section class="card-container" aria-label="Danh sách chủ đề khám phá vũ trụ">
-
-    <a href="chieusauvekhonggian.html" class="card">
-      <img src="https://images.unsplash.com/photo-1581091870622-3b5ec4ecf1c5?auto=format&fit=crop&w=800&q=80" alt="Không gian vô tận" />
-      <div class="card-content">
-        <h3 class="card-title">Không Gian Vô Tận</h3>
-        <p class="card-desc">Khám phá độ rộng lớn vô hạn của vũ trụ, nơi chứa hàng tỷ thiên hà và ngôi sao sáng lấp lánh.</p>
-      </div>
-    </a>
-
-    <a href="subianvevutru.html" class="card">
-      <img src="https://images.unsplash.com/photo-1586985289688-6f26b7d91db0?auto=format&fit=crop&w=800&q=80" alt="Hố đen và ánh sáng" />
-      <div class="card-content">
-        <h3 class="card-title">Sự Bí Ẩn Vũ Trụ</h3>
-        <p class="card-desc">Tìm hiểu về các hố đen, vật chất tối và những hiện tượng kỳ bí chưa được giải thích trong vũ trụ.</p>
-      </div>
-    </a>
-
-    <a href="thongtin.html" class="card">
-      <img src="https://images.unsplash.com/photo-1473929733325-4ce9be7c8f9c?auto=format&fit=crop&w=800&q=80" alt="Hệ mặt trời" />
-      <div class="card-content">
-        <h3 class="card-title">Thông Tin Vũ Trụ</h3>
-        <p class="card-desc">Thông tin tổng quan về hệ mặt trời và các thành phần chính của nó.</p>
-      </div>
-    </a>
-
-    <a href="nhungdieucanbiet.html" class="card">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Dải ngân hà" />
-      <div class="card-content">
-        <h3 class="card-title">Những Điều Cần Bi
+<a href="hengoaihanhtinh.html" class="card">
+  <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80" alt="Ngoại hành tinh" />
+  <div class="card-content">
+    <h3 class="card-title">Hệ Ngoại Hành Tinh</h3>
+    <p class="card-desc">Các hành tinh ngoài hệ Mặt Trời đang mở ra hy vọng về những thế giới khác có thể sinh sống.</p>
+  </div>
+</a>
