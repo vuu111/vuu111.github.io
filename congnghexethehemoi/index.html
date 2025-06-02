@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Suzuki Việt Nam - Trang Chủ</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;}
+  body{background:#f9f9f9;color:#222;line-height:1.6;}
+  header{background:#e60012;color:#fff;padding:20px 40px;text-align:center;font-size:2.3rem;font-weight:700;letter-spacing:2px;box-shadow:0 3px 8px rgba(230,0,18,0.7);}
+  nav{display:flex;justify-content:center;background:#c9000f;padding:12px 0;box-shadow:0 2px 5px rgba(0,0,0,0.15);}
+  nav a{color:#fff;text-decoration:none;margin:0 20px;font-weight:700;letter-spacing:1px;transition:color 0.3s ease;}
+  nav a:hover, nav a.active{color:#ffcc00;}
+  .container{
+    max-width:900px;
+    margin:40px auto;
+    padding:0 20px 40px 20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 7px 25px rgba(0,0,0,0.1);
+  }
+  h1{
+    color:#e60012;
+    font-size:2.5rem;
+    margin-bottom:20px;
+    text-align:center;
+  }
+  p.lead{
+    font-size:1.25rem;
+    color:#555;
+    margin-bottom:40px;
+    text-align:center;
+  }
+  .features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+  }
+  .feature-item{
+    background:#fafafa;
+    padding:25px 20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    text-align:center;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .feature-item:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(230,0,18,0.3);
+  }
+  .feature-item h3{
+    color:#b3000f;
+    margin-bottom:15px;
+  }
+  .feature-item p{
+    color:#666;
+    font-size:1rem;
+  }
+  footer{
+    background:#222;color:#eee;text-align:center;padding:20px;font-size:0.9rem;margin-top:50px;
+  }
+
+  /* Hiệu ứng fade-in */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media(max-width:600px){
+    header{font-size:1.5rem;padding:15px 20px;}
+    .features{
+      grid-template-columns:1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<header>Suzuki Việt Nam</header>
+<nav>
+  <a href="index.html" class="active">Trang Chủ</a>
+  <a href="mauxe.html">Mẫu Xe</a>
+  <a href="tintuc.html">Tin Tức</a>
+  <a href="lienhe.html">Liên Hệ</a>
+</nav>
+
+<div class="container">
+  <h1 class="fade-in">Chào mừng đến với Suzuki Việt Nam</h1>
+  <p class="lead fade-in" style="transition-delay: 0.2s;">Khám phá các mẫu xe hiện đại, tin tức mới nhất và liên hệ với chúng tôi để được hỗ trợ tốt nhất.</p>
+  
+  <div class="features">
+    <div class="feature-item fade-in" style="transition-delay: 0.4s;">
+      <h3>Mẫu xe đa dạng</h3>
+      <p>Suzuki cung cấp nhiều dòng xe từ xe máy đến ô tô với chất lượng và thiết kế vượt trội.</p>
+    </div>
+    <div class="feature-item fade-in" style="transition-delay: 0.6s;">
+      <h3>Công nghệ tiên tiến</h3>
+      <p>Ứng dụng công nghệ hiện đại, thân thiện với môi trường và tiết kiệm nhiên liệu.</p>
+    </div>
+    <div class="feature-item fade-in" style="transition-delay: 0.8s;">
+      <h3>Dịch vụ chuyên nghiệp</h3>
+      <p>Đội ngũ tư vấn và chăm sóc khách hàng tận tâm, luôn sẵn sàng hỗ trợ bạn.</p>
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 Suzuki Việt Nam - Bản quyền thuộc về Suzuki.</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faders = document.querySelectorAll('.fade-in');
+    function checkFadeIn() {
+      const triggerBottom = window.innerHeight * 0.85;
+      faders.forEach(fader => {
+        const top = fader.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          fader.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkFadeIn);
+    checkFadeIn();
+  });
+</script>
+</body>
+</html>
 
