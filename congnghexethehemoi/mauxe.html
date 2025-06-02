@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mẫu Xe Suzuki</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;}
+  body{background:#f9f9f9;color:#222;line-height:1.6;}
+  header{background:#e60012;color:#fff;padding:20px 40px;text-align:center;font-size:2.3rem;font-weight:700;letter-spacing:2px;box-shadow:0 3px 8px rgba(230,0,18,0.7);}
+  nav{display:flex;justify-content:center;background:#c9000f;padding:12px 0;box-shadow:0 2px 5px rgba(0,0,0,0.15);}
+  nav a{color:#fff;text-decoration:none;margin:0 20px;font-weight:700;letter-spacing:1px;transition:color 0.3s ease;}
+  nav a:hover, nav a.active{color:#ffcc00;}
+  .container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px 40px 20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 7px 25px rgba(0,0,0,0.1);
+  }
+  h2{
+    text-align:center;
+    color:#e60012;
+    margin-bottom:40px;
+    font-size:2rem;
+  }
+  .car-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+  }
+  .car-card{
+    background:#fafafa;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    overflow:hidden;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    cursor:pointer;
+  }
+  .car-card:hover{
+    transform: translateY(-10px);
+    box-shadow:0 15px 30px rgba(230,0,18,0.3);
+  }
+  .car-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+  }
+  .car-info{
+    padding:20px;
+  }
+  .car-info h3{
+    color:#b3000f;
+    margin-bottom:12px;
+  }
+  .car-info p{
+    color:#555;
+    font-size:0.95rem;
+    margin-bottom:8px;
+  }
+  .car-info a{
+    display:inline-block;
+    margin-top:10px;
+    color:#e60012;
+    font-weight:700;
+    text-decoration:none;
+    border:1.5px solid #e60012;
+    padding:6px 12px;
+    border-radius:8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .car-info a:hover{
+    background:#e60012;
+    color:#fff;
+  }
+  footer{
+    background:#222;color:#eee;text-align:center;padding:20px;font-size:0.9rem;margin-top:50px;
+  }
+
+  /* Hiệu ứng fade-in */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media(max-width:600px){
+    header{font-size:1.5rem;padding:15px 20px;}
+  }
+</style>
+</head>
+<body>
+<header>Suzuki Việt Nam</header>
+<nav>
+  <a href="index.html">Trang Chủ</a>
+  <a href="mauxe.html" class="active">Mẫu Xe</a>
+  <a href="tintuc.html">Tin Tức</a>
+  <a href="lienhe.html">Liên Hệ</a>
+</nav>
+
+<div class="container">
+  <h2 class="fade-in">Các Mẫu Xe Suzuki Nổi Bật</h2>
+  <div class="car-list">
+    <div class="car-card fade-in" style="transition-delay:0.2s;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Suzuki_GSX-R1000_2020.jpg/320px-Suzuki_GSX-R1000_2020.jpg" alt="Suzuki GSX-R1000" />
+      <div class="car-info">
+        <h3>Suzuki GSX-R1000</h3>
+        <p>Xe mô tô thể thao với thiết kế mạnh mẽ, động cơ 999cc, phù hợp cho các tay lái đam mê tốc độ.</p>
+        <a href="https://www.suzuki.com.vn/moto/gsx-r1000/" target="_blank" rel="noopener noreferrer">Xem chi tiết</a>
+      </div>
+    </div>
+
+    <div class="car-card fade-in" style="transition-delay:0.4s;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Suzuki_Vitara_2015_1.jpg/320px-Suzuki_Vitara_2015_1.jpg" alt="Suzuki Vitara" />
+      <div class="car-info">
+        <h3>Suzuki Vitara</h3>
+        <p>Xe SUV đa dụng với thiết kế trẻ trung, tiện nghi hiện đại, phù hợp cho cả đô thị và địa hình nhẹ.</p>
+        <a href="https://www.suzuki.com.vn/car/vitara/" target="_blank" rel="noopener noreferrer">Xem chi tiết</a>
+      </div>
+    </div>
+
+    <div class="car-card fade-in" style="transition-delay:0.6s;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Suzuki_Swift_2018_01.jpg/320px-Suzuki_Swift_2018_01.jpg" alt="Suzuki Swift" />
+      <div class="car-info">
+        <h3>Suzuki Swift</h3>
+        <p>Xe hatchback nhỏ gọn, tiết kiệm nhiên liệu, phù hợp cho di chuyển trong thành phố đông đúc.</p>
+        <a href="https://www.suzuki.com.vn/car/swift/" target="_blank" rel="noopener noreferrer">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 Suzuki Việt Nam - Bản quyền thuộc về Suzuki.</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faders = document.querySelectorAll('.fade-in');
+    function checkFadeIn() {
+      const triggerBottom = window.innerHeight * 0.85;
+      faders.forEach(fader => {
+        const top = fader.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          fader.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkFadeIn);
+    checkFadeIn();
+  });
+</script>
+</body>
+</html>
 
