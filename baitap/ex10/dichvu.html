@@ -1,1 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dịch Vụ - Huỳnh Vũ Web Design</title>
+  <style>
+    body{
+      font: 15px/1.5 Arial, Helvetica, sans-serif;
+      padding:0;
+      margin:0;
+      background-color:#f4f4f4;
+    }
+
+    /* Global */
+    .container{
+      width:80%;
+      margin:auto;
+      overflow:hidden;
+    }
+
+    ul{
+      margin:0;
+      padding:0;
+    }
+
+    .button_1{
+      height:38px;
+      background:#e8491d;
+      border:0;
+      padding-left: 20px;
+      padding-right:20px;
+      color:#ffffff;
+    }
+
+    .dark{
+      padding:15px;
+      background:#35424a;
+      color:#ffffff;
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    /* Header **/
+    header{
+      background:#35424a;
+      color:#ffffff;
+      padding-top:30px;
+      min-height:70px;
+      border-bottom:#e8491d 3px solid;
+    }
+
+    header a{
+      color:#ffffff;
+      text-decoration:none;
+      text-transform: uppercase;
+      font-size:16px;
+    }
+
+    header li{
+      float:left;
+      display:inline;
+      padding: 0 20px 0 20px;
+    }
+
+    header #branding{
+      float:left;
+    }
+
+    header #branding h1{
+      margin:0;
+    }
+
+    header nav{
+      float:right;
+      margin-top:10px;
+    }
+
+    header .highlight, header .current a{
+      color:#e8491d;
+      font-weight:bold;
+    }
+
+    header a:hover{
+      color:#cccccc;
+      font-weight:bold;
+    }
+
+    /* Newsletter */
+    #newsletter{
+      padding:15px;
+      color:#ffffff;
+      background:#35424a;
+    }
+
+    #newsletter h1{
+      float:left;
+    }
+
+    #newsletter form {
+      float:right;
+      margin-top:15px;
+    }
+
+    #newsletter input[type="email"]{
+      padding:4px;
+      height:25px;
+      width:250px;
+    }
+
+    /* Boxes */
+    #boxes{
+      margin-top:20px;
+    }
+
+    #boxes .box{
+      float:left;
+      text-align: center;
+      width:30%;
+      padding:10px;
+    }
+
+    #boxes .box img{
+      width:90px;
+    }
+
+    /* Sidebar */
+    aside#sidebar{
+      float:right;
+      width:30%;
+      margin-top:10px;
+    }
+
+    aside#sidebar .quote input, aside#sidebar .quote textarea{
+      width:90%;
+      padding:5px;
+    }
+
+    /* Main-col */
+    article#main-col{
+      float:left;
+      width:65%;
+    }
+
+    /* Services */
+    ul#services li{
+      list-style: none;
+      padding:20px;
+      border: #cccccc solid 1px;
+      margin-bottom:5px;
+      background:#e6e6e6;
+    }
+
+    /* Form & Section styling */
+    section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden; /* clearfix for floated children */
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #e8491d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #cf3b15;
+    }
+
+    ol {
+      padding-left: 20px;
+      margin-top: 30px;
+    }
+
+    ol li {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    footer{
+      padding:20px;
+      margin-top:20px;
+      color:#ffffff;
+      background-color:#e8491d;
+      text-align: center;
+      clear: both;
+    }
+
+    @media(max-width: 768px){
+      header #branding,
+      header nav,
+      header nav li,
+      #newsletter h1,
+      #newsletter form,
+      #boxes .box,
+      article#main-col,
+      aside#sidebar{
+        float:none;
+        text-align:center;
+        width:100%;
+      }
+
+      header{
+        padding-bottom:20px;
+      }
+    }
+
+    /* Huỳnh Vũ Design */
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight">Huỳnh Vũ</span> Web Design</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="trangchu.html">Trang Chủ</a></li>
+          <li><a href="thongtin.html">Thông Tin</a></li>
+          <li class="current"><a href="dichvu.html">Dịch Vụ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Nội dung dịch vụ -->
+  <section class="container">
+    <h2>Dịch vụ chúng tôi cung cấp</h2>
+
+    <form method="post" action="#">
+      <label for="gmail">Nhập Gmail:</label>
+      <input type="email" id="gmail" name="gmail" placeholder="example@gmail.com" required />
+
+      <label for="ten">Họ và tên:</label>
+      <input type="text" id="ten" name="ten" placeholder="Nhập họ và tên của bạn" required />
+
+      <label for="noidung">Nội dung:</label>
+      <textarea id="noidung" name="noidung" rows="5" placeholder="Nội dung liên hệ hoặc góp ý..." required></textarea>
+
+      <input type="submit" value="Gửi" />
+    </form>
+
+    <ol>
+      <li>✅ Thiết kế website chuẩn SEO, hiện đại</li>
+      <li>🧩 Phần mềm quản lý doanh nghiệp linh hoạt</li>
+      <li>🌐 Chuyển đổi số & tư vấn hạ tầng CNTT</li>
+      <li>🛠️ Bảo trì hệ thống, bảo mật và hỗ trợ kỹ thuật</li>
+    </ol>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Bản quyền © 2025 Công Ty CNTT IT Chuyên Nghiệp</p>
+    <div class="credits">Thiết kế bởi Huỳnh Vũ Web Design</div>
+  </footer>
+
+</body>
+</html>
 
