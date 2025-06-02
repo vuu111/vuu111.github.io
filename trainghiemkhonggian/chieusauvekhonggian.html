@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chiều Sâu Không Gian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdnphoto.dantri.com.vn/D7_X5e7m51wfOPco_DK_SCYa5EA=/zoom/1200_630/2022/11/21/sao-hoa-0-crop-1668985491481.jpeg" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -14,9 +14,14 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #000022 0%, #000010 100%);
+      background-image: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482744yax/anh-mo-ta.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #00eaff;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     header {
@@ -59,9 +64,10 @@
     .hero {
       text-align: center;
       padding: 60px 20px;
-      background: url('https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
+      background: rgba(0,0,0,0.6);
       color: white;
       text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 40px;
     }
 
     .hero h2 {
@@ -79,7 +85,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
-      padding: 60px 20px;
+      padding: 0 20px 60px;
       max-width: 1200px;
       margin: auto;
     }
@@ -89,9 +95,18 @@
       border-radius: 18px;
       overflow: hidden;
       border: 1.5px solid #00f5ff88;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, max-height 0.5s ease;
       color: #ccefff;
       text-decoration: none;
+      cursor: pointer;
+      max-height: 300px;
+      position: relative;
+    }
+
+    .card.expanded {
+      max-height: 1000px; /* đủ dài để show hết nội dung */
+      box-shadow: 0 0 40px #00ffffcc;
+      z-index: 10;
     }
 
     .card:hover {
@@ -103,6 +118,7 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
+      border-bottom: 1px solid #00f5ff44;
     }
 
     .card-content {
@@ -118,6 +134,7 @@
     .card-desc {
       font-size: 1rem;
       color: #a0dfff;
+      white-space: pre-wrap;
     }
 
     .section-info {
@@ -125,6 +142,11 @@
       max-width: 960px;
       margin: auto;
       text-align: center;
+      background: rgba(0, 10, 20, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 30px #00f5ffaa;
+      color: #a0e0ff;
+      margin-bottom: 60px;
     }
 
     .section-info h3 {
@@ -136,7 +158,6 @@
 
     .section-info p {
       font-size: 1.1rem;
-      color: #a0e0ff;
       line-height: 1.8;
     }
 
@@ -175,62 +196,87 @@
   </section>
 
   <section class="card-container">
-    <a class="card" href="#">
-      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230714/pngtree-endless-expanse-billions-of-galaxies-and-stars-in-the-vast-universe-image_3884307.jpg" alt="">
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230714/pngtree-endless-expanse-billions-of-galaxies-and-stars-in-the-vast-universe-image_3884307.jpg" alt="Không Gian Vô Tận" />
       <div class="card-content">
         <h3 class="card-title">Không Gian Vô Tận</h3>
-        <p class="card-desc">Tìm hiểu kích thước và cấu trúc rộng lớn không thể tưởng tượng của vũ trụ.</p>
+        <p class="card-desc">
+          Vũ trụ rộng lớn vượt xa mọi trí tưởng tượng với hàng tỷ thiên hà, mỗi thiên hà chứa hàng tỷ ngôi sao và hành tinh. Kích thước vô tận này khiến con người luôn tò mò, không ngừng khám phá về những điều chưa biết. Từ khi nhân loại bắt đầu nhìn lên bầu trời, chúng ta đã không ngừng đặt câu hỏi về bản chất thực sự của vũ trụ, về sự tồn tại của những thế giới khác, và liệu chúng ta có đơn độc trong không gian rộng lớn này.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://thanhnien.mediacdn.vn/Uploaded/thuymien/2022_11_17/lo-giun-1152.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://thanhnien.mediacdn.vn/Uploaded/thuymien/2022_11_17/lo-giun-1152.jpg" alt="Hố Đen & Lỗ Giun" />
       <div class="card-content">
         <h3 class="card-title">Hố Đen & Lỗ Giun</h3>
-        <p class="card-desc">Khám phá hiện tượng vật lý cực đoan và khả năng dịch chuyển không gian.</p>
+        <p class="card-desc">
+          Hố đen là vùng không gian với lực hấp dẫn mạnh đến mức không có vật thể nào có thể thoát ra, kể cả ánh sáng. Lỗ giun được giả thuyết là những đường hầm nối liền các điểm khác nhau trong không gian và thời gian, có thể cho phép du hành tức thời giữa các vùng vũ trụ. Những hiện tượng vật lý cực đoan này không chỉ là đề tài nghiên cứu mà còn là nguồn cảm hứng bất tận cho khoa học viễn tưởng.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://nld.mediacdn.vn/thumb_w/698/2018/3/29/100600882c0218241-andromedagalaxyopticalimage-spl-1522314793790919443577.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://nld.mediacdn.vn/thumb_w/698/2018/3/29/100600882c0218241-andromedagalaxyopticalimage-spl-1522314793790919443577.jpg" alt="Ngân Hà" />
       <div class="card-content">
         <h3 class="card-title">Ngân Hà</h3>
-        <p class="card-desc">Ngôi nhà của hệ Mặt Trời và hàng trăm tỷ ngôi sao khác.</p>
+        <p class="card-desc">
+          Ngân Hà là thiên hà chứa hệ Mặt Trời của chúng ta cùng hàng trăm tỷ ngôi sao khác. Nó có hình dạng xoắn ốc với nhiều cánh tay chứa các đám mây khí, bụi và những vùng sao mới sinh. Hiểu rõ cấu trúc và sự tiến hóa của Ngân Hà giúp chúng ta hiểu hơn về lịch sử hình thành và tương lai của hệ Mặt Trời cũng như các hành tinh khác.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://media.istockphoto.com/id/182792016/vi/anh/h%E1%BB%87-m%E1%BA%B7t-tr%E1%BB%9Di.jpg?s=612x612&w=0&k=20&c=tRSssXZ7a1g4PlCdrzZeHRIu5mmNfJ8n704-t7YnzQc=" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://media.istockphoto.com/id/182792016/vi/anh/h%E1%BB%87-m%E1%BA%B7t-tr%E1%BB%9Di.jpg?s=612x612&w=0&k=20&c=tRSssXZ7a1g4PlCdrzZeHRIu5mmNfJ8n704-t7YnzQc=" alt="Hệ Mặt Trời" />
       <div class="card-content">
         <h3 class="card-title">Hệ Mặt Trời</h3>
-        <p class="card-desc">8 hành tinh quay quanh Mặt Trời với những điều kỳ diệu riêng.</p>
+        <p class="card-desc">
+          Hệ Mặt Trời bao gồm Mặt Trời và tám hành tinh quay quanh nó cùng vô số vệ tinh, tiểu hành tinh, sao chổi. Mỗi hành tinh có đặc điểm riêng biệt, tạo nên một hệ thống phức tạp và đầy kỳ diệu. Nghiên cứu hệ Mặt Trời giúp ta hiểu về nguồn gốc sự sống và các điều kiện thích hợp cho sự phát triển sinh vật.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://images2.thanhnien.vn/thumb_w/686/528068263637045248/2024/3/16/nasa-17105761611581858529625-0-248-640-728-crop-17105761911831029464522.jpeg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://images2.thanhnien.vn/thumb_w/686/528068263637045248/2024/3/16/nasa-17105761611581858529625-0-248-640-728-crop-17105761911831029464522.jpeg" alt="Vật Chất Tối" />
       <div class="card-content">
         <h3 class="card-title">Vật Chất Tối</h3>
-        <p class="card-desc">Loại vật chất chưa thể nhìn thấy nhưng chiếm phần lớn khối lượng vũ trụ.</p>
+        <p class="card-desc">
+          Vật chất tối chiếm đến 85% tổng khối lượng vật chất trong vũ trụ nhưng không phát sáng hoặc phản xạ ánh sáng, nên rất khó phát hiện. Nó ảnh hưởng mạnh đến sự hình thành và vận động của các thiên hà, đồng thời mở ra nhiều câu hỏi về bản chất thực sự của vũ trụ mà khoa học đang cố gắng giải mã.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://ddk.1cdn.vn/2023/06/06/image.daidoanket.vn-images-upload-nghipm-06052023-_anh-bai-nho.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://ddk.1cdn.vn/2023/06/06/image.daidoanket.vn-images-upload-nghipm-06052023-_anh-bai-nho.jpg" alt="Sự Sống Ngoài Trái Đất" />
       <div class="card-content">
         <h3 class="card-title">Sự Sống Ngoài Trái Đất</h3>
-        <p class="card-desc">Tìm kiếm tín hiệu và điều kiện cho sự sống trên hành tinh khác.</p>
+        <p class="card-desc">
+          Con người luôn tìm kiếm dấu hiệu sự sống ngoài hành tinh trong vũ trụ. Các nghiên cứu về các hành tinh thuộc vùng có thể sinh sống và tín hiệu sóng radio ngoài không gian mở ra nhiều khả năng và kịch bản về sự sống ngoài Trái Đất. Liệu chúng ta có cô đơn trong vũ trụ bao la này?
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://photo.znews.vn/w660/Uploaded/ayplbuo/2021_05_24/space_time_NASA.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://photo.znews.vn/w660/Uploaded/ayplbuo/2021_05_24/space_time_NASA.jpg" alt="Thời Gian & Không Thời Gian" />
       <div class="card-content">
         <h3 class="card-title">Thời Gian & Không Thời Gian</h3>
-        <p class="card-desc">Không gian có thể bẻ cong? Du hành thời gian liệu có thật?</p>
+        <p class="card-desc">
+          Thời gian không phải là một chiều tĩnh mà có thể bị uốn cong, giãn nở tùy thuộc vào vận tốc và trọng lực theo thuyết tương đối của Einstein. Khái niệm không-thời gian là nền tảng của vật lý hiện đại và là đề tài nghiên cứu về du hành thời gian, sự giãn nở thời gian trong vũ trụ.
+        </p>
       </div>
-    </a>
-    <a class="card" href="#">
-      <img src="https://genk.mediacdn.vn/N0WoyYblO3QdmZFKPMtKnadHAHTevz/Image/2012/01/NEO/big-bang-co-ban-1_3247d.jpg" alt="">
+    </div>
+
+    <div class="card" onclick="toggleExpand(this)">
+      <img src="https://genk.mediacdn.vn/N0WoyYblO3QdmZFKPMtKnadHAHTevz/Image/2012/01/NEO/big-bang-co-ban-1_3247d.jpg" alt="Big Bang & Vũ Trụ Khởi Nguồn" />
       <div class="card-content">
         <h3 class="card-title">Big Bang & Vũ Trụ Khởi Nguồn</h3>
-        <p class="card-desc">Vũ trụ bắt đầu từ một vụ nổ lớn – và chúng ta là kết quả?</p>
+        <p class="card-desc">
+          Vụ nổ lớn Big Bang được xem là sự khởi đầu của vũ trụ khoảng 13.8 tỷ năm trước. Từ điểm vô cùng đặc và nóng, vũ trụ giãn nở, hình thành các thiên hà, sao, hành tinh. Hiểu được Big Bang là chìa khóa giúp ta hiểu nguồn gốc và tương lai của vũ trụ rộng lớn.
+        </p>
       </div>
-    </a>
+    </div>
+
   </section>
 
   <section class="section-info">
@@ -242,5 +288,17 @@
     © 2025 Chiều Sâu Không Gian | Phát triển bởi bạn và sự tò mò về vũ trụ 🪐
   </footer>
 
+  <script>
+    function toggleExpand(card) {
+      if(card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+      } else {
+        // thu nhỏ tất cả card trước khi mở cái này
+        document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+        card.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+    }
+  </script>
 </body>
 </html>
