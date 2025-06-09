@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Sự Kỳ Diệu Về Vũ Trụ</title>
   <style>
     * {
@@ -9,82 +9,88 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: Arial, sans-serif;
       background: url('https://hinhanhonline.com/Hinhanh/images07/AnhAL/hinh-nen-may-tinh-dep-doc-dao-nhat-19.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.7);
       min-height: 100vh;
-      display: flex;
     }
-
     .sidebar {
-      width: 240px;
-      background-color: rgba(20, 20, 60, 0.9);
-      padding: 20px;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 260px;
       height: 100vh;
+      background: url('https://tq5.mediacdn.vn/162123310254002176/2020/11/13/photo1605235395176-160523539552224493268.png') no-repeat center center;
+      background-size: cover;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.7);
+      overflow-y: auto;
+      backdrop-filter: brightness(0.4);
+      z-index: 1000;
     }
-
     .sidebar h3 {
       margin-bottom: 20px;
-      font-size: 20px;
+      font-size: 22px;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
     }
-
     .sidebar a {
       display: block;
-      margin-bottom: 10px;
-      padding: 10px;
-      background-color: #1a1a5e;
+      margin-bottom: 15px;
+      padding: 12px 15px;
+      background-color: rgba(0, 0, 0, 0.6);
       color: #fff;
       text-decoration: none;
-      border-radius: 6px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0 0 5px #00ffff88;
     }
-
     .sidebar a:hover {
       background-color: #00bcd4;
       color: #000;
+      box-shadow: 0 0 15px #00ffff;
     }
 
     .main {
-      flex: 1;
+      margin-left: 260px;
       padding: 40px;
+      min-height: 100vh;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
     }
-
     .main h1 {
       font-size: 36px;
       color: #00ffff;
       margin-bottom: 30px;
+      text-shadow: 0 0 8px #00ffff;
     }
-
     .section {
       margin-bottom: 60px;
     }
-
     .section h2 {
       font-size: 24px;
       color: #ffcc00;
       margin-bottom: 10px;
+      text-shadow: 0 0 6px #ffcc00;
     }
-
     .section p {
       font-size: 16px;
       line-height: 1.6;
+      margin-bottom: 10px;
     }
-
     .section img {
       max-width: 100%;
       border-radius: 10px;
-      margin-top: 10px;
       box-shadow: 0 0 12px #00ffff88;
+      transition: transform 0.3s ease;
     }
-
+    .section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffffcc;
+    }
     footer {
       text-align: center;
       margin-top: 80px;
@@ -94,54 +100,61 @@
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="sidebar">
-      <h3>🔭 Khám Phá</h3>
-      <a href="thongtin.html">🔭 Thông Tin Vũ Trụ</a>
-      <a href="nhungdieucanbiet.html">🪐 Những Điều Cần Biết</a>
-      <a href="subianvevutru.html">🌌 Sự Bí Ẩn Vũ Trụ</a>
-      <a href="chieusauvekhonggian.html">🌠 Chiều Sâu Không Gian</a>
-      <a href="sukidieuvevutru.html">✨ Sự Kỳ Diệu</a>
+  <div class="sidebar">
+    <h3>🔭 Khám Phá</h3>
+    <a href="thongtin.html">🔭 Thông Tin Vũ Trụ</a>
+    <a href="nhungdieucanbiet.html">🪐 Những Điều Cần Biết</a>
+    <a href="subianvevutru.html">🌌 Sự Bí Ẩn Vũ Trụ</a>
+    <a href="chieusauvekhonggian.html">🌠 Chiều Sâu Không Gian</a>
+    <a href="sukidieuvevutru.html">✨ Sự Kỳ Diệu</a>
+  </div>
+
+  <div class="main">
+    <h1>✨ Sự Kỳ Diệu Về Vũ Trụ</h1>
+
+    <div class="section">
+      <h2>💫 Tinh Vân</h2>
+      <p>
+        Tinh vân là những đám mây khổng lồ gồm bụi và khí hydro, heli trong không gian. Đây là những "nhà máy" sản sinh ngôi sao mới khi các hạt bụi co lại dưới trọng lực. Màu sắc rực rỡ của tinh vân là do các nguyên tử bị kích thích bởi ánh sáng sao tạo ra. Tinh vân không chỉ đẹp mắt mà còn là nơi khởi nguồn của mọi sự sống trong vũ trụ.
+      </p>
+      <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Tinh Vân" />
     </div>
 
-    <div class="main">
-      <h1>✨ Sự Kỳ Diệu Về Vũ Trụ</h1>
-
-      <div class="section">
-        <h2>💫 Tinh Vân</h2>
-        <p>Tinh vân là những đám mây bụi và khí trong không gian, là nơi sản sinh ra các ngôi sao mới. Chúng thường có màu sắc rực rỡ và hình dáng huyền ảo.</p>
-        <img src="https://vcdn1-vnexpress.vnecdn.net/2022/09/13/-6444-1663056728.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=gJcMK0Tr0sDJ0YswQNZT5w" alt="Tinh Vân">
-      </div>
-
-      <div class="section">
-        <h2>🌟 Siêu Tân Tinh</h2>
-        <p>Khi một ngôi sao lớn chết, nó phát nổ dưới dạng siêu tân tinh – một trong những sự kiện mạnh mẽ nhất trong vũ trụ. Ánh sáng từ vụ nổ có thể chiếu sáng cả một thiên hà.</p>
-        <img src="https://images2.thanhnien.vn/zoom/686_429/528068263637045248/2024/8/1/2a3221be4dd8c47b9e5df68a295bcec2-17225059469481361289535-0-160-900-1600-crop-17225067808951478135209.jpg" alt="Siêu Tân Tinh">
-      </div>
-
-      <div class="section">
-        <h2>🌀 Lỗ Đen</h2>
-        <p>Lỗ đen là vùng không gian có trọng lực cực lớn, không gì có thể thoát khỏi – kể cả ánh sáng. Chúng là một trong những bí ẩn lớn nhất trong ngành vật lý thiên văn.</p>
-        <img src="https://genk.mediacdn.vn/zoom/700_438/139269124445442048/2024/12/11/avatar1733890876452-17338908772971981433411.jpg" alt="Lỗ đen">
-      </div>
-
-      <div class="section">
-        <h2>🌈 Ánh sáng từ quá khứ</h2>
-        <p>Ánh sáng từ những vì sao xa xôi mất hàng ngàn, thậm chí hàng triệu năm để đến được mắt ta. Vì vậy, khi ta nhìn lên bầu trời, là ta đang ngắm nhìn quá khứ của vũ trụ.</p>
-        <img src="https://sohanews.sohacdn.com/160588918557773824/2022/2/7/photo-1-16442267707891279326110.jpg" alt="Ánh sáng từ quá khứ">
-      </div>
-
-      <div class="section">
-        <h2>🧠 Sự Kỳ Diệu Của Trí Tuệ Con Người</h2>
-        <p>Nhờ vào kính thiên văn, tàu vũ trụ và toán học, con người đã khám phá ra hàng tỷ thiên hà. Đó là minh chứng cho sự kỳ diệu của trí tuệ – thứ có thể vươn tới tận cùng vũ trụ.</p>
-        <img src="https://st.download.vn/data/image/2022/12/30/su-ki-dieu-cua-tri-tuong-tu.jpg" alt="Hubble Deep Field">
-      </div>
-
-      <footer>
-        &copy; 2025 | Thiết kế bởi huỳnh vũ 💫
-      </footer>
+    <div class="section">
+      <h2>🌟 Siêu Tân Tinh</h2>
+      <p>
+        Khi một ngôi sao lớn chết, nó phát nổ dưới dạng siêu tân tinh – một trong những sự kiện mạnh mẽ nhất trong vũ trụ. Ánh sáng từ vụ nổ có thể chiếu sáng cả một thiên hà, tạo ra các nguyên tố nặng cần thiết cho sự sống.
+      </p>
+      <img src="https://images2.thanhnien.vn/zoom/686_429/528068263637045248/2024/8/1/2a3221be4dd8c47b9e5df68a295bcec2-17225059469481361289535-0-160-900-1600-crop-17225067808951478135209.jpg" alt="Siêu Tân Tinh" />
     </div>
+
+    <div class="section">
+      <h2>🌀 Lỗ Đen</h2>
+      <p>
+        Lỗ đen là vùng không gian có trọng lực cực lớn, không gì có thể thoát khỏi – kể cả ánh sáng. Chúng hình thành khi các ngôi sao cực lớn sụp đổ. Nghiên cứu lỗ đen giúp con người hiểu sâu hơn về các định luật vật lý.
+      </p>
+      <img src="https://genk.mediacdn.vn/zoom/700_438/139269124445442048/2024/12/11/avatar1733890876452-17338908772971981433411.jpg" alt="Lỗ đen" />
+    </div>
+
+    <div class="section">
+      <h2>🌈 Ánh sáng từ quá khứ</h2>
+      <p>
+        Ánh sáng từ những vì sao xa xôi mất hàng ngàn, thậm chí hàng triệu năm để đến được mắt ta. Vì vậy, khi ta nhìn lên bầu trời, là ta đang ngắm nhìn quá khứ của vũ trụ, thấy sự kiện diễn ra từ rất lâu trước đây.
+      </p>
+      <img src="https://sohanews.sohacdn.com/160588918557773824/2022/2/7/photo-1-16442267707891279326110.jpg" alt="Ánh sáng từ quá khứ" />
+    </div>
+
+    <div class="section">
+      <h2>🧠 Sự Kỳ Diệu Của Trí Tuệ Con Người</h2>
+      <p>
+        Nhờ vào kính thiên văn, tàu vũ trụ và toán học, con người đã khám phá ra hàng tỷ thiên hà. Đó là minh chứng cho sự kỳ diệu của trí tuệ – thứ có thể vươn tới tận cùng vũ trụ và giúp ta hiểu về bản thân mình.
+      </p>
+      <img src="https://st.download.vn/data/image/2022/12/30/su-ki-dieu-cua-tri-tuong-tu.jpg" alt="Hubble Deep Field" />
+    </div>
+
+    <footer>
+      &copy; 2025 | Thiết kế bởi huỳnh vũ 💫
+    </footer>
   </div>
 </body>
 </html>
-
