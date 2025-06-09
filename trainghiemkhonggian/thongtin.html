@@ -21,6 +21,7 @@
       justify-content: flex-start;
       align-items: center;
       padding: 40px 20px;
+      overflow-x: hidden; /* Ẩn hoàn toàn thanh cuộn ngang */
     }
 
     h1 {
@@ -43,8 +44,8 @@
     /* Link container */
     .links {
       display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 8px;
+      flex-wrap: nowrap;        /* Không xuống dòng */
       justify-content: center;
       max-width: 900px;
       margin-bottom: 50px;
@@ -52,22 +53,23 @@
     .links a {
       background: rgba(0, 255, 255, 0.15);
       color: #00f5ff;
-      padding: 18px 40px;
-      border-radius: 40px;
+      padding: 8px 16px;
+      border-radius: 25px;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 0.85rem;
       text-decoration: none;
-      box-shadow: 0 0 15px #00f5ff;
+      box-shadow: 0 0 10px #00f5ff;
       transition: all 0.3s ease;
-      flex: 1 1 180px;
+      flex: 0 0 auto;
       text-align: center;
       backdrop-filter: blur(8px);
       border: 2px solid #00f5ff;
+      white-space: nowrap;
     }
     .links a:hover {
       background: #00f5ff;
       color: #000;
-      box-shadow: 0 0 30px #00ffff;
+      box-shadow: 0 0 25px #00ffff;
       transform: scale(1.1);
     }
 
@@ -125,13 +127,12 @@
         font-size: 1.1rem;
       }
       .links {
-        flex-direction: column;
-        gap: 15px;
+        justify-content: center;
+        overflow-x: auto; /* Cho phép cuộn ngang trên mobile */
       }
       .links a {
-        flex: 1 1 100%;
-        font-size: 1.1rem;
-        padding: 15px 20px;
+        font-size: 0.75rem;
+        padding: 6px 12px;
       }
       .content-section {
         flex-direction: column;
