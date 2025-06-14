@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Nhớ Em 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff5f8);
+      text-align: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      transition: background 1s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #d63384;
+    }
+
+    #counter {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      color: #6c757d;
+    }
+
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff85c1;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 1.5rem;
+      color: #c2185b;
+      min-height: 40px;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 24px;
+      animation: floatUp 3s ease-out forwards;
+      color: red;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-200px) scale(1.5); }
+    }
+
+    .shake {
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Anh nhớ em 💖</h1>
+  <div id="counter"></div>
+
+  <button id="loveBtn" onclick="showLove()">Bấm vào nếu em cũng nhớ</button>
+  <div id="message"></div>
+
+  <script>
+    const startDate = new Date("2024-06-21");
+    const loveBtn = document.getElementById("loveBtn");
+    const messages = [
+      "Anh nhớ em nhiều lắm 😢",
+      "Em là nguồn năng lượng của anh 🌟",
+      "Không có em, code của anh lỗi tùm lum 💔",
+      "Từng phút giây không nhắn tin cho em là bug 🐞",
+      "Em là biến const trong trái tim anh 💖",
+      "Anh yêu em như server yêu uptime 😘",
+      "Gặp em là commit đẹp nhất đời anh 🥹"
+    ];
+
+    function updateCounter() {
+      const now = new Date();
+      const diffTime = now - startDate;
+      const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("counter").textContent = `Mình đã bên nhau được ${days} ngày rồi 💞`;
+    }
+
+    function showLove() {
+      // Hiện tin nhắn ngẫu nhiên
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").textContent = msg;
+
+      // Rung nút
+      loveBtn.classList.add("shake");
+      setTimeout(() => loveBtn.classList.remove("shake"), 300);
+
+      // Trái tim bay
+      createHeart();
+
+      // Đổi màu nền nhẹ
+      changeBackground();
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "80vh";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    }
+
+    function changeBackground() {
+      const colors = [
+        "#ffdde1", "#fbd0d9", "#ffe6fa", "#f9f9f9", "#fff0f5"
+      ];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.background = `linear-gradient(to bottom, ${color}, #fff5f8)`;
+    }
+
+    // Trái tim rơi liên tục
+    setInterval(() => {
+      createHeart();
+    }, 1000);
+
+    updateCounter();
+    setInterval(updateCounter, 60000);
+  </script>
+
+</body>
+</html>
